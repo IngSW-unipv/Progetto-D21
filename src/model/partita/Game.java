@@ -22,8 +22,20 @@ public class Game {
 	}
 	
 	public void giveTurn(Player turnEnder) {
+		//controlla la vittoria
 		//disabilita l'interfaccia per il giocatore che gli passiamo
 	}
+	
+	private void checkVictory(Player checked) {
+		
+		TokenColor tempColor = checked.getColor();
+		if(/*condizioni di controllo colore gettoni adiacenti*/) {
+			
+		}
+		
+	}
+	
+	
 	
 
 }
