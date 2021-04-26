@@ -26,6 +26,7 @@ public class Game {
 		//disabilita l'interfaccia per il giocatore che gli passiamo
 	}
 	
+	// metodo eseguito all'interno di giveturn
 	private void checkVictory(Player checked) {
 		
 		TokenColor tempColor = checked.getColor();
