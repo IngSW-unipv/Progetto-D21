@@ -34,6 +34,8 @@ public class Grid {
 		
 	}
 	
+	// controllo colonne
+	
 	public boolean checkColonna(int x,int y,TokenColor c) {
 		int victoryCounter = 0 ;
 		
@@ -49,6 +51,18 @@ public class Grid {
 			return true;
 		else
 			return false;
+	}
+	
+	public boolean checkDiagonale(int x, int y,TokenColor c) {
+		
+		int victoryCounter1 = 0;
+		int victoryCounter2 = 0;
+		
+		for(int i=x,j=y;i>=0||j>=0;i--,j--) {
+			
+		}
+		
+		
 	}
 
 }
