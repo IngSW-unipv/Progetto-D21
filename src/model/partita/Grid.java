@@ -33,5 +33,22 @@ public class Grid {
 			return false;
 		
 	}
+	
+	public boolean checkColonna(int x,int y,TokenColor c) {
+		int victoryCounter = 0 ;
+		
+		for(int i=0;i<7;i++) {
+			if(gameGrid[x][i].getTokenColor == c) {
+				victoryCounter++;
+			}
+			else {
+				victoryCounter = 0;
+			}
+		}
+		if(victoryCounter==4) 
+			return true;
+		else
+			return false;
+	}
 
 }
