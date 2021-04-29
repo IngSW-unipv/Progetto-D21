@@ -30,7 +30,7 @@ public class Game {
 	private void checkVictory(Player checked) {
 		
 		TokenColor tempColor = checked.getColor();
-		if(/*condizioni di controllo colore gettoni adiacenti*/) {
+		if(/*condizioni di controllo colore gettoni adiacenti*/ ) {
 			
 		}
 		
