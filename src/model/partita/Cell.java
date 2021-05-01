@@ -21,5 +21,9 @@ public class Cell {
 	public String toString() {
 		return " ";
 	}
-
+	
+	public Token getToken() {
+		return this.localToken;
+	}
+	
 }

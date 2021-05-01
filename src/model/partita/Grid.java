@@ -125,7 +125,7 @@ public boolean checkDiagonale(int x, int y,TokenColor c) {
 		int posPlayer = y;
 
 		for(int i = 5; i >= 0; i--){
-			if(gameGrid[i][posPlayer]== null){
+			if(gameGrid[i][posPlayer].getToken() == null){
 				gameGrid[i][posPlayer].addToken(new Token(c));
 				if(this.checkColonna(i, posPlayer, c)||this.checkRiga(i, posPlayer, c)||this.checkDiagonale(i, posPlayer, c))
 					System.out.println("VITTORIA " + c);
