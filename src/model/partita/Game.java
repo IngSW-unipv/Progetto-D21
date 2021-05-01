@@ -32,17 +32,16 @@ public class Game {
 	}
 	
 	// metodo eseguito all'interno di giveturn
-	private void checkVictory(Player checked) {
-		
-		TokenColor tempColor = checked.getColor();
-<<<<<<< HEAD
-		if(/*condizioni di controllo colore gettoni adiacenti*/ ) {
-=======
-		 //if(/*condizioni di controllo colore gettoni adiacenti*/) {
-			
-		//}
-		
-	}
+//	private void checkVictory(Player checked) {
+//		
+//		TokenColor tempColor = checked.getColor();
+//		if(/*condizioni di controllo colore gettoni adiacenti*/ ) {
+//
+//		 //if(/*condizioni di controllo colore gettoni adiacenti*/) {
+//			
+//		//}
+//		
+//	}
 	
 	public void turn() {
 		
@@ -62,7 +61,6 @@ public class Game {
 			in = s.nextInt();
 			this.gameGrid.tokenPlaced(player2.getColor(), in);
 			this.gameGrid.displayGrid();
->>>>>>> 2e87807de39c2ff89f64bc317038749be6764d4b
 			
 		}
 		

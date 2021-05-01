@@ -1,29 +1,39 @@
 package model.partita;
 
 public class Cell {
-	
+
 	private Token localToken;
-	
+	private Boolean hasToken;
+
 	public Cell() {
-		
+		hasToken = false;
 	}
-	
+
 	public void addToken(Token t) {
 		this.localToken = t;
 	}
-	
-	public TokenColor getTokenColor() {
-		
-		return this.localToken.getColor();
-		
+
+	public void cellHasToken() {
+		hasToken = true;
 	}
-	
+
+	//verrà richiamato nei controlli del check vittoria
+	public Boolean getHasToken() {
+		return hasToken;
+	}
+
+	public TokenColor getTokenColor() {
+
+		return this.localToken.getColor();
+
+	}
+
 	public String toString() {
 		return " ";
 	}
-	
+
 	public Token getToken() {
 		return this.localToken;
 	}
-	
+
 }
