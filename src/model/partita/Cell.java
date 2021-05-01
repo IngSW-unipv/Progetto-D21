@@ -17,5 +17,9 @@ public class Cell {
 		return this.localToken.getColor();
 		
 	}
+	
+	public String toString() {
+		return " ";
+	}
 
 }
