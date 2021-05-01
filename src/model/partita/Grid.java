@@ -48,8 +48,6 @@ public class Grid {
 
 		for (int i = 0; i < this.lenght; i++) {
 
-
-			
 			if (gameGrid[x][i].getHasToken()) {
 				if (gameGrid[x][i].getTokenColor() == c) {
 					victoryCounter++;
@@ -70,66 +68,73 @@ public class Grid {
 		int victoryCounter1 = 0;
 		int victoryCounter2 = 0;
 
-		// controllo della diagonale
+		// controllo della diagonale in alto a sx
+			if (x!=0 && y!=0) {
+				for (int i = x , j = y ; i >= 0 || j >0; i--, j--) {		//ERRORE SE PROVO COMBINAZIONE 0-0-1
+					if (!gameGrid[i][j].getHasToken()) {
+						System.out.println(gameGrid[i][j].getHasToken());
+						break;
+					} else if(gameGrid[i][j].getTokenColor() == c)
 			
-			for (int i = x , j = y ; i >= 0 || j >0; i--, j--) {
-				if (!gameGrid[i][j].getHasToken()) {
-					System.out.println(gameGrid[i][j].getHasToken());
-					break;
-				} else if(gameGrid[i][j].getTokenColor() == c)
+		//			if (gameGrid[i][j].getTokenColor() != c) {		Non va bene!!!
+		//				break;
+		//			} else
+						victoryCounter1++;
 		
-	//			if (gameGrid[i][j].getTokenColor() != c) {		Non va bene!!!
-	//				break;
-	//			} else
-					victoryCounter1++;
-	
-				if (victoryCounter1 == 4) {
-	
-					return true;
+					if (victoryCounter1 >= 4) {
+		
+						return true;
+					}
+					
 				}
-				
 			}
 		
-
-		for (int i = x + 1, j = y + 1; i >= 5 || j >= 6; i++, j++) {
-			if (!gameGrid[i][j].getHasToken()) {
-				break;
-			} else if(gameGrid[i][j].getTokenColor() == c)
-				victoryCounter1++;
-
-			if (victoryCounter1 == 3) {
-
-				return true;
+		// controllo della diagonale in basso a dx
+			if(x!=5 && y!=6) {
+				for (int i = x, j = y; i >= 5 || j >= 6; i++, j++) {
+					if (!gameGrid[i][j].getHasToken()) {
+						break;
+					} else if(gameGrid[i][j].getTokenColor() == c)
+						victoryCounter1++;
+		
+					if (victoryCounter1 >= 4) {
+		
+						return true;
+					}
+		
+				}
 			}
 
-		}
-
-		// check other diag (in basso a dx)
-		for (int i = x - 1, j = y + 1; i <= 0 || j <= 0; i--, j++) {
-			if (!gameGrid[i][j].getHasToken()) {
-				break;
-			} else if(gameGrid[i][j].getTokenColor() == c)
-				victoryCounter2++;
-
-			if (victoryCounter2 == 3) {
-				return true;
+			// check other diag (in alto a dx)
+			if(x!=0 && y!=6)
+				for (int i = x, j = y; i <= 0 || j <= 0; i--, j++) {
+					if (!gameGrid[i][j].getHasToken()) {
+						break;
+					} else if(gameGrid[i][j].getTokenColor() == c)
+						victoryCounter2++;
+		
+					if (victoryCounter2 >= 4) {
+						return true;
+					}
+	
 			}
-
-		}
 
 		// andiamo in basso a sx
-		for (int i = x + 1, j = y - 1; i >= 5 || j >= 6; i++, j--) {
-			if (!gameGrid[i][j].getHasToken()) {
-				break;
-			} else if(gameGrid[i][j].getTokenColor() == c)
-				victoryCounter2++;
-
-			if (victoryCounter2 == 3) {
-				return true;
+		if(x!= 5 && y!=0) {
+			for (int i = x; i >= 5 ; i++) {
+				for (int j = y;j >= 0;j--) {
+					if (!gameGrid[i][j].getHasToken()) {
+						break;
+					} else if(gameGrid[i][j].getTokenColor() == c)
+						victoryCounter2++;
+		
+					if (victoryCounter2 >= 4) {
+						return true;
+					}
+				}
 			}
 
-		}
-
+		}	
 		// il giocatore di turno non ha vinto, via al prossimo ciclo
 		return false;
 
@@ -142,7 +147,7 @@ public class Grid {
 		for (int i = 5; i >= 0; i--) {
 			if (gameGrid[i][posPlayer].getToken() == null) {
 				gameGrid[i][posPlayer].addToken(new Token(c));
-				//se inseriamo un token, settiamo a true la HasToken
+				// se inseriamo un token, settiamo a true la HasToken
 				gameGrid[i][posPlayer].cellHasToken();
 				if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)
 						|| this.checkDiagonale(i, posPlayer, c))
@@ -165,6 +170,5 @@ public class Grid {
 			System.out.println(" ------------------------");
 		}
 	}
-
 
 }
