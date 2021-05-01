@@ -53,7 +53,7 @@ public class Grid {
     }
     
     //controllo delle diagonali
-public boolean checkDiagonale(int x, int y,TokenColor c) {
+    public boolean checkDiagonale(int x, int y,TokenColor c) {
 
         int victoryCounter1 = 0;
         int victoryCounter2 = 0;
