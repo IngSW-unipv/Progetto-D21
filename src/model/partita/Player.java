@@ -13,4 +13,10 @@ public class Player {
 	public TokenColor getColor() {
 		return color;
 	}
+	
+	public void setColore(TokenColor c) {
+		
+		this.color = c;
+		
+	}
 }
