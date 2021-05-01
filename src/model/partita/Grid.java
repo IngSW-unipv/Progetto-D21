@@ -1,24 +1,31 @@
 package model.partita;
 
+import java.util.Arrays;
+
 public class Grid {
 
     //Matrice di celle della griglia
     private Cell[][] gameGrid;
-    private int height = 5;
-    private int lenght = 6;
+    private int height = 6;
+    private int lenght = 7;
 
     public Grid() {
 
         //inizializzazione matrice
         this.gameGrid = new Cell[height][lenght];
-
+        //riempimento della griglia a celle vuote
+        for(int i = 0;i<this.height;i++) {
+        	for(int j = 0;j<this.lenght;j++)
+        		this.gameGrid[i][j]= new Cell();
+        }
+       
     }
 
     //controllo righe
     public boolean checkRiga(int x,int y,TokenColor c) {
         int victoryCounter = 0 ;
 
-        for(int i=0;i<6;i++) {
+        for(int i=0;i<this.height;i++) {
             if(gameGrid[i][y].getTokenColor() == c) {
                 victoryCounter++;
             }
@@ -38,7 +45,7 @@ public class Grid {
     public boolean checkColonna(int x,int y,TokenColor c) {
         int victoryCounter = 0 ;
 
-        for(int i=0;i<6;i++) {
+        for(int i=0;i<this.lenght;i++) {
             if(gameGrid[x][i].getTokenColor() == c) {
                 victoryCounter++;
             }
@@ -117,13 +124,29 @@ public class Grid {
 		
 		int posPlayer = y;
 
-		for(int i = 6; i >= 0; i--){
-			if(gameGrid[i][posPlayer]== null){
+		for(int i = 5; i >= 0; i--){
+			if(gameGrid[i][posPlayer].getToken() == null){
 				gameGrid[i][posPlayer].addToken(new Token(c));
+				if(this.checkColonna(i, posPlayer, c)||this.checkRiga(i, posPlayer, c)||this.checkDiagonale(i, posPlayer, c))
+					System.out.println("VITTORIA " + c);
 				return; //si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
 			}
 		}
 	}
+	
+	public void displayGrid(){
+        //scrivo num colonne perché mi perdo
+        System.out.println("   0  1  2  3  4  5  6");
+        for(int i =0; i < this.height; i++){
+            System.out.print(" |");
+            for(int j = 0; j < this.lenght; j++){
+                System.out.print(gameGrid[i][j]+" |");
+            }
+            //vado a capo perché esce bene
+            System.out.println();
+            System.out.println(" ------------------------");
+        }
+    }
 
 
 }
