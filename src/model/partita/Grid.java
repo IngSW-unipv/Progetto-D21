@@ -20,7 +20,7 @@ public class Grid {
         int victoryCounter = 0 ;
 
         for(int i=0;i<6;i++) {
-            if(gameGrid[i][y].getTokenColor == c) {
+            if(gameGrid[i][y].getTokenColor() == c) {
                 victoryCounter++;
             }
             else {
@@ -40,7 +40,7 @@ public class Grid {
         int victoryCounter = 0 ;
 
         for(int i=0;i<6;i++) {
-            if(gameGrid[x][i].getTokenColor == c) {
+            if(gameGrid[x][i].getTokenColor() == c) {
                 victoryCounter++;
             }
             else {
@@ -52,14 +52,16 @@ public class Grid {
         else
             return false;
     }
+    
+    //controllo delle diagonali
 public boolean checkDiagonale(int x, int y,TokenColor c) {
 
         int victoryCounter1 = 0;
         int victoryCounter2 = 0;
 
-
+        // controllo della diagonale
         for(int i=x-1,j=y-1; i<=0 || j<=0; i--,j--) {
-            if(gameGrid[i][j].getTokenColor != c){
+            if(gameGrid[i][j].getTokenColor() != c){
                 break;
             } else victoryCounter1++;
 
@@ -71,7 +73,7 @@ public boolean checkDiagonale(int x, int y,TokenColor c) {
         }
 
         for(int i=x+1,j=y+1 ; i>=5 || j>=6 ; i++,j++) {
-            if(gameGrid[i][j].getTokenColor != c){
+            if(gameGrid[i][j].getTokenColor() != c){
                 break;
             } else victoryCounter1++;
 
@@ -85,7 +87,7 @@ public boolean checkDiagonale(int x, int y,TokenColor c) {
 
         //check other diag (in basso a dx)
         for(int i=x-1,j=y+1; i<=0 || j<=0; i--,j++) {
-            if(gameGrid[i][j].getTokenColor != c){
+            if(gameGrid[i][j].getTokenColor() != c){
                 break;
             } else victoryCounter2++;
 
@@ -97,7 +99,7 @@ public boolean checkDiagonale(int x, int y,TokenColor c) {
 
         //andiamo in basso a sx
         for(int i=x+1,j=y-1 ; i>=5||j>=6 ; i++,j--) {
-            if(gameGrid[i][j].getTokenColor != c){
+            if(gameGrid[i][j].getTokenColor() != c){
                 break;
             } else victoryCounter2++;
 
@@ -112,4 +114,18 @@ public boolean checkDiagonale(int x, int y,TokenColor c) {
 
     }
 
+	public void tokenPlaced(TokenColor c, int y){
+		
+		int posPlayer = y;
+
+		for(int i = 6; i >= 0; i--){
+			if(gameGrid[i][posPlayer]== null){
+				gameGrid[i][posPlayer].addToken(new Token(c));
+				return; //si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
+			}
+		}
+	}
+
+
 }
+
