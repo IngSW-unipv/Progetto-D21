@@ -22,7 +22,7 @@ public class Grid {
 	}
 
 	// controllo righe
-	public boolean checkRiga(int x, int y, TokenColor c) {
+	public boolean checkColonna(int x, int y, TokenColor c) {
 		int victoryCounter = 0;
 
 		for (int i = 0; i < this.height; i++) {
@@ -34,8 +34,10 @@ public class Grid {
 				}
 			}
 		}
-		if (victoryCounter == 4)
+		if (victoryCounter == 4) {
+			System.out.println("vittoria colonna");
 			return true;
+			}
 		else
 			return false;
 
@@ -43,7 +45,7 @@ public class Grid {
 
 	// controllo colonne
 
-	public boolean checkColonna(int x, int y, TokenColor c) {
+	public boolean checkRiga(int x, int y, TokenColor c) {
 		int victoryCounter = 0;
 
 		for (int i = 0; i < this.lenght; i++) {
@@ -56,8 +58,10 @@ public class Grid {
 				}
 			}
 		}
-		if (victoryCounter == 4)
+		if (victoryCounter == 4) {
+			System.out.println("vittoria rigah");
 			return true;
+			}
 		else
 			return false;
 	}
@@ -70,67 +74,67 @@ public class Grid {
 
 		// controllo della diagonale in alto a sx
 			if (x!=0 && y!=0) {
-				for (int i = x , j = y ; i >= 0 || j >0; i--, j--) {		//ERRORE SE PROVO COMBINAZIONE 0-0-1
+				for (int i = x , j = y ; i >= 0 && j >=0; i--, j--) {
+					//ERRORE SE PROVO COMBINAZIONE 0-0-1
 					if (!gameGrid[i][j].getHasToken()) {
-						System.out.println(gameGrid[i][j].getHasToken());
+		//				System.out.println(gameGrid[i][j].getHasToken());
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
 			
-		//			if (gameGrid[i][j].getTokenColor() != c) {		Non va bene!!!
-		//				break;
-		//			} else
 						victoryCounter1++;
 		
-					if (victoryCounter1 >= 4) {
+					if (victoryCounter1 == 5) {
 		
 						return true;
 					}
-					
+					System.out.println("V1 "+victoryCounter1);
 				}
+				
 			}
 		
 		// controllo della diagonale in basso a dx
 			if(x!=5 && y!=6) {
-				for (int i = x, j = y; i >= 5 || j >= 6; i++, j++) {
+				for (int i = x, j = y; i >= 5 && j >= 6; i++, j++) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
 						victoryCounter1++;
 		
-					if (victoryCounter1 >= 4) {
+					if (victoryCounter1 == 5) {
 		
 						return true;
 					}
-		
+					System.out.println("V1 "+victoryCounter1);
 				}
 			}
 
 			// check other diag (in alto a dx)
 			if(x!=0 && y!=6)
-				for (int i = x, j = y; i <= 0 || j <= 0; i--, j++) {
+				for (int i = x, j = y; i <= 0 && j <= 0; i--, j++) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
 						victoryCounter2++;
 		
-					if (victoryCounter2 >= 4) {
+					if (victoryCounter2 == 5) {
 						return true;
 					}
-	
+					System.out.println("V2 "+victoryCounter2);	
 			}
 
 		// andiamo in basso a sx
 		if(x!= 5 && y!=0) {
-			for (int i = x; i >= 5 ; i++) {
+			for (int i = x; i<6 ; i++) {
 				for (int j = y;j >= 0;j--) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
 						victoryCounter2++;
 		
-					if (victoryCounter2 >= 4) {
+					if (victoryCounter2 == 5) {
 						return true;
 					}
+					System.out.println("V2 "+victoryCounter2);
 				}
 			}
 
@@ -143,18 +147,18 @@ public class Grid {
 	public void tokenPlaced(TokenColor c, int y) {
 
 		int posPlayer = y;
-
-		for (int i = 5; i >= 0; i--) {
+		int i;
+		for (i = 5; i >= 0; i--) {
 			if (gameGrid[i][posPlayer].getToken() == null) {
 				gameGrid[i][posPlayer].addToken(new Token(c));
-				// se inseriamo un token, settiamo a true la HasToken
 				gameGrid[i][posPlayer].cellHasToken();
-				if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)
-						|| this.checkDiagonale(i, posPlayer, c))
-					System.out.println("VITTORIA " + c);
+					if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)|| this.checkDiagonale(i, posPlayer, c))
+						System.out.println("VITTORIA " + c);
 				return; // si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
 			}
 		}
+		if(i<0)
+			System.out.println("posizione non valida");
 	}
 
 	public void displayGrid() {

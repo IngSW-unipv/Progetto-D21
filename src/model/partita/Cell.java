@@ -29,7 +29,14 @@ public class Cell {
 	}
 
 	public String toString() {
-		return " ";
+		if(this.getHasToken()) {
+			if(getTokenColor()==TokenColor.RED)
+				return "R";
+			else
+				return "Y";
+		}
+		else
+			return " ";
 	}
 
 	public Token getToken() {
