@@ -110,10 +110,13 @@ public class Grid {
 
 			// check other diag (in alto a dx)
 			if(x!=0 && y!=6)
-				for (int i = x, j = y; i <= 0 && j <= 0; i--, j++) {
+				System.out.println("aa");
+				for (int i = x, j = y; i >= 0 && j <= 6; i--, j++) {
+					System.out.println("bb");
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
+						System.out.println(gameGrid[i][j].getTokenColor()+ " alto a dx ");
 						victoryCounter2++;
 		
 					if (victoryCounter2 == 5) {
@@ -124,11 +127,11 @@ public class Grid {
 
 		// andiamo in basso a sx
 		if(x!= 5 && y!=0) {
-			for (int i = x; i<6 ; i++) {
-				for (int j = y;j >= 0;j--) {
+			for (int i = x, j = y; i<6 && j >= 0; i++, j--) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
+						System.out.println(gameGrid[i][j].getTokenColor()+ " basso a sx ");
 						victoryCounter2++;
 		
 					if (victoryCounter2 == 5) {
@@ -136,9 +139,7 @@ public class Grid {
 					}
 					System.out.println("V2 "+victoryCounter2);
 				}
-			}
-
-		}	
+		}
 		// il giocatore di turno non ha vinto, via al prossimo ciclo
 		return false;
 
