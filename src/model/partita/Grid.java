@@ -79,15 +79,15 @@ public class Grid {
 					if (!gameGrid[i][j].getHasToken()) {
 		//				System.out.println(gameGrid[i][j].getHasToken());
 						break;
-					} else if(gameGrid[i][j].getTokenColor() == c)
+					} else if(gameGrid[i][j].getTokenColor() == c) {
 			
 						victoryCounter1++;
-		
+						System.out.println("V1 "+victoryCounter1);
+					}
 					if (victoryCounter1 == 5) {
 		
 						return true;
 					}
-					System.out.println("V1 "+victoryCounter1);
 				}
 				
 			}
@@ -97,14 +97,14 @@ public class Grid {
 				for (int i = x, j = y; i <= 5 && j <= 6; i++, j++) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
-					} else if(gameGrid[i][j].getTokenColor() == c)
+					} else if(gameGrid[i][j].getTokenColor() == c) {
 						victoryCounter1++;
-		
+						System.out.println("V1 "+victoryCounter1);
+					}
 					if (victoryCounter1 == 5) {
 		
 						return true;
 					}
-					System.out.println("V1 "+victoryCounter1);
 				}
 			}
 
@@ -115,14 +115,14 @@ public class Grid {
 					System.out.println("bb");
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
-					} else if(gameGrid[i][j].getTokenColor() == c)
+					} else if(gameGrid[i][j].getTokenColor() == c) {
 						System.out.println(gameGrid[i][j].getTokenColor()+ " alto a dx ");
 						victoryCounter2++;
-		
+						System.out.println("V2 "+victoryCounter2);
+					}
 					if (victoryCounter2 == 5) {
 						return true;
-					}
-					System.out.println("V2 "+victoryCounter2);	
+					}	
 			}
 
 		// andiamo in basso a sx
@@ -130,14 +130,14 @@ public class Grid {
 			for (int i = x, j = y; i<6 && j >= 0; i++, j--) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
-					} else if(gameGrid[i][j].getTokenColor() == c)
+					} else if(gameGrid[i][j].getTokenColor() == c) {
 						System.out.println(gameGrid[i][j].getTokenColor()+ " basso a sx ");
 						victoryCounter2++;
-		
+						System.out.println("V2 "+victoryCounter2);
+					}
 					if (victoryCounter2 == 5) {
 						return true;
 					}
-					System.out.println("V2 "+victoryCounter2);
 				}
 		}
 		// il giocatore di turno non ha vinto, via al prossimo ciclo
