@@ -94,7 +94,7 @@ public class Grid {
 		
 		// controllo della diagonale in basso a dx
 			if(x!=5 && y!=6) {
-				for (int i = x, j = y; i >= 5 && j >= 6; i++, j++) {
+				for (int i = x, j = y; i <= 5 && j <= 6; i++, j++) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c)
