@@ -11,11 +11,12 @@ public class Grid {
 
 	private int victoryDiag1;
 	private int victoryDiag2;
-	
+	private boolean finalVictory;
 	
 	public Grid() {
 		victoryDiag1 = 0;
 		victoryDiag2 = 0;
+		finalVictory=false;
 		// inizializzazione matrice
 		this.gameGrid = new Cell[height][lenght];
 		// riempimento della griglia a celle vuote
@@ -259,13 +260,18 @@ public class Grid {
 			if (gameGrid[i][posPlayer].getToken() == null) {
 				gameGrid[i][posPlayer].addToken(new Token(c));
 				gameGrid[i][posPlayer].cellHasToken();
-					if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)|| this.checkDiagonali(i, posPlayer, c))
+					if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)|| this.checkDiagonali(i, posPlayer, c)) {
 						System.out.println("VITTORIA " + c);
+						finalVictory=true;
+					}
 				return; // si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
+				
 			}
 		}
-		if(i<0)
+		if(i<0) {
 			System.out.println("posizione non valida");
+		}
+		
 	}
 
 	public void displayGrid() {
@@ -281,5 +287,11 @@ public class Grid {
 			System.out.println(" ------------------------");
 		}
 	}
+
+	public boolean isFinalVictory() {
+		return finalVictory;
+	}
+	
+	
 
 }

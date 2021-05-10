@@ -57,16 +57,18 @@ public class Game {
 			this.gameGrid.tokenPlaced(player1.getColor(), in);
 			this.gameGrid.displayGrid();
 			
+			if(gameGrid.isFinalVictory()) {
+				break;
+			}
+				
 			//test giocatore 2 inserimento rosso
 			in = s.nextInt();
-			this.gameGrid.tokenPlaced(player2.getColor(), in);
+			gameGrid.tokenPlaced(player2.getColor(), in);
 			this.gameGrid.displayGrid();
 			
+			if(gameGrid.isFinalVictory()) {		
+				break;
+			}	
 		}
-		
 	}
-	
-	
-	
-
 }
