@@ -1,6 +1,7 @@
 package guiB;
 
 import java.awt.EventQueue;
+import java.io.File;
 
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
@@ -11,6 +12,7 @@ import javax.swing.SwingConstants;
 import guiB.control.ButtonListener;
 import model.partita.Game;
 import model.partita.Player;
+import model.partita.util.SoundPlayer;
 
 import javax.swing.ImageIcon;
 import java.awt.Color;
@@ -23,6 +25,7 @@ public class Forza4 {
 	private Player p1;
 	private Player p2;
 	private Game test1;
+	private SoundPlayer p;
 	
 
 	/**
@@ -47,6 +50,8 @@ public class Forza4 {
 	public Forza4() {
 		gameSetup();
 		initialize();
+		this.p = SoundPlayer.getSoundPlayer();
+		p.RiproduciSuono(new File("resources/sounds/01-Radioactive.wav"));
 	}
 
 	/**
