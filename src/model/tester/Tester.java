@@ -1,4 +1,4 @@
-package model.tester;
+/*package model.tester;
 
 import model.partita.*;
 
@@ -15,4 +15,4 @@ public class Tester {
 
 	}
 
-}
+}*/
