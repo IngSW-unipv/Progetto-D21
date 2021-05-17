@@ -44,12 +44,6 @@ public class Frame extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\catg2\\Desktop\\rosso.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 778, 613);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0};
-		gridBagLayout.rowHeights = new int[]{0};
-		gridBagLayout.columnWeights = new double[]{Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{Double.MIN_VALUE};
-		getContentPane().setLayout(gridBagLayout);
 	}
 
 }
