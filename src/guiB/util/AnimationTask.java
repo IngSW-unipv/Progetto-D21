@@ -39,7 +39,7 @@ public class AnimationTask extends TimerTask {
 			panelToupdate.repaint();
 			
 		}
-		RiproduciSuono("");
+		RiproduciSuono(new File("resources/sounds/tok.wav"));
 		cancel();
 	}
 	
