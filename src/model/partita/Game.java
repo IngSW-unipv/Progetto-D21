@@ -64,7 +64,7 @@ public class Game {
 		this.gameGrid.displayGrid();
 		
 		if(gameGrid.isFinalVictory()) {
-			s.RiproduciSuono(new File("resources/sounds/tok.wav"));
+			s.RiproduciSuono(new File("resources/sounds/win.wav"));
 			return;
 		}
 		
