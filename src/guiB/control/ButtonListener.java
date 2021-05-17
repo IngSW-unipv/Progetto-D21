@@ -41,8 +41,6 @@ public class ButtonListener implements ActionListener {
 		System.out.println("Bottone premuto,successso "+ butt.getActionCommand());
 		
 		tokenX = Integer.parseInt(butt.getActionCommand());
-		//todo : logica di trasmissione di dato alla partita
-		//todo : se il turno non è valido viene displayato il gettone precedente
 		boradToUpdate.turn(tokenX);
 		
 		tokenY = status.getLastY();

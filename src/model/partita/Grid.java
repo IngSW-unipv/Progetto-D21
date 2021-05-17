@@ -33,56 +33,53 @@ public class Grid {
 
 	}
 
-	// controllo righe
-	public boolean checkColonna(int x, int y, TokenColor c) {
-		int victoryCounter = 0;
+	// controllo colonna
+		public boolean checkColonna(int x, int y, TokenColor c) {
+			int victoryCounter = 0;
 
-		for (int i = 0; i < this.height; i++) {
-			if (gameGrid[i][y].getHasToken()) {
-				if (gameGrid[i][y].getTokenColor() == c) {
-					victoryCounter++;
-					if(victoryCounter==4){
-						return true;
+			for (int i = 0; i < this.height; i++) {
+				if (gameGrid[i][y].getHasToken()) {
+					if (gameGrid[i][y].getTokenColor() == c) {
+						victoryCounter++;
+					} else {
+						victoryCounter = 0;
 					}
-				} else {
+				}
+			
+				if (victoryCounter == 4) {
+					System.out.println("vittoria colonna");
+					return true;
+				}
+			} return false;
+		}
+
+
+		// controllo righe
+
+		public boolean checkRiga(int x, int y, TokenColor c) {
+			int victoryCounter = 0;
+
+			for (int i = 0; i < this.lenght; i++) {
+
+				if (gameGrid[x][i].getHasToken()) {
+					if (gameGrid[x][i].getTokenColor() == c) {
+						victoryCounter++;
+						System.out.println(victoryCounter);
+					} else {
+						victoryCounter = 0;
+						System.out.println("spazio");
+					}
+				}else {
 					victoryCounter = 0;
 				}
-			}
-		}
-		if (victoryCounter == 4) {
-			System.out.println("vittoria colonna");
-			return true;
-			}
-		else
-			return false;
-
-	}
-
-	// controllo colonne
-
-	public boolean checkRiga(int x, int y, TokenColor c) {
-		int victoryCounter = 0;
-
-		for (int i = 0; i < this.lenght; i++) {
-
-			if (gameGrid[x][i].getHasToken()) {
-				if (gameGrid[x][i].getTokenColor() == c) {
-					victoryCounter++;
-					if(victoryCounter==4){
-						return true;
-					}
-				} else {
-					victoryCounter = 0;
+			
+				if (victoryCounter == 4) {
+					System.out.println("vittoria rigah");
+					return true;
 				}
-			}
+			} return false;
 		}
-		if (victoryCounter == 4) {
-			System.out.println("vittoria rigah");
-			return true;
-			}
-		else
-			return false;
-	}
+
 
 	public boolean checkDiagonali(int x, int y, TokenColor c) {
 		
@@ -107,8 +104,8 @@ public class Grid {
 		
 		
 		
-	public void checkDiagAltoSx(int x, int y, TokenColor c) {
-		if (x!=0 && y!=0) {
+	public void checkDiagAltoSx(int x, int y, TokenColor c) {//int i = x, j = y; i >= 0 && j <= 6; i--, j++
+	//	if (x!=0 && y!=0) {
 			for (int i = x , j = y ; i >= 0 && j >=0; i--, j--) {
 				//ERRORE SE PROVO COMBINAZIONE 0-0-1
 				if (!gameGrid[i][j].getHasToken()) {
@@ -117,37 +114,37 @@ public class Grid {
 				} else if(gameGrid[i][j].getTokenColor() == c) {
 		
 					victoryDiag1++;
-					System.out.println("V1 "+victoryDiag1);
+					System.out.println("V1 upcounter"+victoryDiag1);
 				}
 				if (victoryDiag1 == 5) {
 					break;
 				}
 			}
 		
-		}
+	//	}
 	}
 	
 	public void checkDiagBassoDx(int x, int y, TokenColor c) {
-		if(x!=5 && y!=6) {
+	//	if(x!=5 && y!=6) {
 			for (int i = x, j = y; i <= 5 && j <= 6; i++, j++) {
 				if (!gameGrid[i][j].getHasToken()) {
 					break;
 				} else if(gameGrid[i][j].getTokenColor() == c) {
 					victoryDiag1++;
-					System.out.println("V1 "+victoryDiag1);
+					System.out.println("V1 downcounter "+victoryDiag1);
 				}
 				if (victoryDiag1 == 5) {
 					break;
 				}
 			}
-		}
+	//	}
 		
 	}
 	
 	public void checkDiagAltoDx(int x, int y, TokenColor c) {
 		if(x!=0 && y!=6)
 			System.out.println("aa");
-			for (int i = x, j = y; i >= 0 && j <= 6; i--, j++) {
+			for (int i = x, j = y; i >= 0 && j <= 6; i--, j++) { //
 				System.out.println("bb");
 				if (!gameGrid[i][j].getHasToken()) {
 					break;
@@ -164,7 +161,7 @@ public class Grid {
 	}
 	
 	public void checkDiagBassoSx(int x, int y, TokenColor c) {
-		if(x!= 5 && y!=0) {
+		//if(x!= 5 && y!=0) {
 			for (int i = x, j = y; i<6 && j >= 0; i++, j--) {
 					if (!gameGrid[i][j].getHasToken()) {
 						break;
@@ -177,7 +174,7 @@ public class Grid {
 						break;
 					}
 				}
-		}
+		//}
 		
 	}
 		
