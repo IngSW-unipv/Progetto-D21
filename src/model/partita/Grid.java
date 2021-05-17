@@ -39,14 +39,12 @@ public class Grid {
 					victoryCounter = 0;
 				}
 			}
-		}
-		if (victoryCounter == 4) {
-			System.out.println("vittoria colonna");
-			return true;
+		
+			if (victoryCounter == 4) {
+				System.out.println("vittoria colonna");
+				return true;
 			}
-		else
-			return false;
-
+		} return false;
 	}
 
 	// controllo colonne
@@ -59,17 +57,18 @@ public class Grid {
 			if (gameGrid[x][i].getHasToken()) {
 				if (gameGrid[x][i].getTokenColor() == c) {
 					victoryCounter++;
+					System.out.println(victoryCounter);
 				} else {
 					victoryCounter = 0;
+					System.out.println("spazio");
 				}
 			}
-		}
-		if (victoryCounter == 4) {
-			System.out.println("vittoria rigah");
-			return true;
+		
+			if (victoryCounter == 4) {
+				System.out.println("vittoria rigah");
+				return true;
 			}
-		else
-			return false;
+		} return false;
 	}
 
 	public boolean checkDiagonali(int x, int y, TokenColor c) {
