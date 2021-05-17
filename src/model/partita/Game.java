@@ -5,6 +5,9 @@ package model.partita;
 
 import java.util.TimerTask;
 
+import model.partita.util.SoundPlayer;
+
+import java.io.File;
 import java.util.Scanner;
 
 import java.util.Timer;
@@ -17,6 +20,7 @@ public class Game {
 	private int turnsElapsed;
 	private TokenColor startingColor;
 	private Timer gameTimer;
+	private SoundPlayer s;
 
 	//il controller globale passa i giocatori alla partita generata, la partita inizializza la sua grid
 	
@@ -30,6 +34,7 @@ public class Game {
 		this.turnsElapsed=0;
 		this.startingColor = TokenColor.RED;
 		this.gameTimer = new Timer();
+		this.s=SoundPlayer.getSoundPlayer();
 	}
 	
 	public void giveTurn(Player turnEnder) {
@@ -59,6 +64,7 @@ public class Game {
 		this.gameGrid.displayGrid();
 		
 		if(gameGrid.isFinalVictory()) {
+			s.RiproduciSuono(new File("resources/sounds/tok.wav"));
 			return;
 		}
 		

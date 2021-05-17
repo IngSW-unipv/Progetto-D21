@@ -8,6 +8,8 @@ import javax.sound.sampled.Clip;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import model.partita.util.SoundPlayer;
+
 public class AnimationTask extends TimerTask {
 	
 	private JLabel imageToMove;
@@ -16,6 +18,7 @@ public class AnimationTask extends TimerTask {
 	private int finishY;
 	private JPanel panelToupdate;
 	private int size;
+	private SoundPlayer s;
 
 	public AnimationTask(JLabel l,JPanel p,int iy,int fy,int x) {
 		super();
@@ -25,6 +28,7 @@ public class AnimationTask extends TimerTask {
 		this.X=x;
 		this.finishY=fy;
 		this.size=100;
+		this.s = SoundPlayer.getSoundPlayer();
 	}
 	@Override
 	public void run() {
@@ -39,19 +43,8 @@ public class AnimationTask extends TimerTask {
 			panelToupdate.repaint();
 			
 		}
-		RiproduciSuono(new File("resources/sounds/tok.wav"));
+		s.RiproduciSuono(new File("resources/sounds/tok.wav"));
 		cancel();
 	}
-	
-	static void RiproduciSuono(File Suono) {
-		  try {
-		    Clip clip = AudioSystem.getClip();
-		    clip.open(AudioSystem.getAudioInputStream(Suono));
-		    clip.start();
-		  } catch (Exception e) {
-		    System.out.println(e);
-		  }
-		}
-
 
 }
