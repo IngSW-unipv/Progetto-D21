@@ -1,7 +1,10 @@
 package guiB.util;
 
+import java.io.File;
 import java.util.TimerTask;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -36,7 +39,19 @@ public class AnimationTask extends TimerTask {
 			panelToupdate.repaint();
 			
 		}
+		RiproduciSuono("");
 		cancel();
 	}
+	
+	static void RiproduciSuono(File Suono) {
+		  try {
+		    Clip clip = AudioSystem.getClip();
+		    clip.open(AudioSystem.getAudioInputStream(Suono));
+		    clip.start();
+		  } catch (Exception e) {
+		    System.out.println(e);
+		  }
+		}
+
 
 }
