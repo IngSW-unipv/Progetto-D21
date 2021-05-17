@@ -16,6 +16,7 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
+import javax.swing.JLayeredPane;
 
 public class Frame extends JFrame {
 
@@ -43,13 +44,11 @@ public class Frame extends JFrame {
 		setAutoRequestFocus(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\catg2\\Desktop\\rosso.png"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 778, 613);
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0};
-		gridBagLayout.rowHeights = new int[]{0};
-		gridBagLayout.columnWeights = new double[]{Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{Double.MIN_VALUE};
-		getContentPane().setLayout(gridBagLayout);
+		setBounds(100, 100, 918, 813);
+		getContentPane().setLayout(null);
+		
+		JLayeredPane layeredPane = new JLayeredPane();
+		layeredPane.setBounds(0, 0, 900, 800);
+		getContentPane().add(layeredPane);
 	}
-
 }

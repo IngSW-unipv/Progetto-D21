@@ -2,12 +2,16 @@ package model.partita;
 
 import java.util.Arrays;
 
+import model.partita.util.GridStatus;
+
 public class Grid {
 
 	// Matrice di celle della griglia
 	private Cell[][] gameGrid;
 	private int height = 6;
 	private int lenght = 7;
+	private int lastAdded[];
+	private GridStatus status;
 
 	private int victoryDiag1;
 	private int victoryDiag2;
@@ -17,8 +21,10 @@ public class Grid {
 		victoryDiag1 = 0;
 		victoryDiag2 = 0;
 		finalVictory=false;
+		this.status = GridStatus.getGameStatus();
 		// inizializzazione matrice
 		this.gameGrid = new Cell[height][lenght];
+		this.lastAdded = new int[2];
 		// riempimento della griglia a celle vuote
 		for (int i = 0; i < this.height; i++) {
 			for (int j = 0; j < this.lenght; j++)
@@ -35,6 +41,9 @@ public class Grid {
 			if (gameGrid[i][y].getHasToken()) {
 				if (gameGrid[i][y].getTokenColor() == c) {
 					victoryCounter++;
+					if(victoryCounter==4){
+						return true;
+					}
 				} else {
 					victoryCounter = 0;
 				}
@@ -59,6 +68,9 @@ public class Grid {
 			if (gameGrid[x][i].getHasToken()) {
 				if (gameGrid[x][i].getTokenColor() == c) {
 					victoryCounter++;
+					if(victoryCounter==4){
+						return true;
+					}
 				} else {
 					victoryCounter = 0;
 				}
@@ -169,10 +181,6 @@ public class Grid {
 		
 	}
 		
-	
-		
-	
-	
 	// controllo delle diagonali
 	public boolean checkDiagonale(int x, int y, TokenColor c) {
 
@@ -260,6 +268,7 @@ public class Grid {
 			if (gameGrid[i][posPlayer].getToken() == null) {
 				gameGrid[i][posPlayer].addToken(new Token(c));
 				gameGrid[i][posPlayer].cellHasToken();
+				status.updateGameStatus(posPlayer, i, c);
 					if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)|| this.checkDiagonali(i, posPlayer, c)) {
 						System.out.println("VITTORIA " + c);
 						finalVictory=true;

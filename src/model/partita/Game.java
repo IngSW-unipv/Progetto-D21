@@ -1,6 +1,8 @@
 package model.partita;
 
 
+//inizializzo il game come singletone?
+
 import java.util.TimerTask;
 
 import java.util.Scanner;
@@ -11,8 +13,10 @@ public class Game {
 	
 	private Player player1;
 	private Player player2;
-	
 	private Grid gameGrid;
+	private int turnsElapsed;
+	private TokenColor startingColor;
+	private Timer gameTimer;
 
 	//il controller globale passa i giocatori alla partita generata, la partita inizializza la sua grid
 	
@@ -22,8 +26,10 @@ public class Game {
 		this.player1.setColore(TokenColor.YELLOW);
 		this.player2 = player2;
 		this.player2.setColore(TokenColor.RED);
-		
 		this.gameGrid = new Grid();
+		this.turnsElapsed=0;
+		this.startingColor = TokenColor.RED;
+		this.gameTimer = new Timer();
 	}
 	
 	public void giveTurn(Player turnEnder) {
@@ -42,33 +48,29 @@ public class Game {
 //		//}
 //		
 //	}
+	//devo impleneteare una logica fittizzia per l'alternarsi dei turni
+	public void turn(int x) {
 	
-	public void turn() {
+		if(turnsElapsed>=41) {
+			return;
+		}
 		
+		this.gameGrid.tokenPlaced(this.startingColor, x);
 		this.gameGrid.displayGrid();
-		Scanner s = new Scanner(System.in);
-		int in;
 		
+		if(gameGrid.isFinalVictory()) {
+			return;
+		}
 		
-		for(int i=0;i<21;i++) {
-			
-			//test giocatore 1 inserimento giallo
-			in = s.nextInt();
-			this.gameGrid.tokenPlaced(player1.getColor(), in);
-			this.gameGrid.displayGrid();
-			
-			if(gameGrid.isFinalVictory()) {
-				break;
-			}
-				
-			//test giocatore 2 inserimento rosso
-			in = s.nextInt();
-			gameGrid.tokenPlaced(player2.getColor(), in);
-			this.gameGrid.displayGrid();
-			
-			if(gameGrid.isFinalVictory()) {		
-				break;
-			}	
+		if(this.startingColor==TokenColor.RED) {
+			this.startingColor=TokenColor.YELLOW;
+		}else {
+			this.startingColor=TokenColor.RED;
 		}
 	}
+	
+	public Timer getGameTimer() {
+		return this.gameTimer;
+	}
+	
 }
