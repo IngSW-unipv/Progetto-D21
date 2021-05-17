@@ -65,7 +65,7 @@ public class Forza4 {
 		frame.getContentPane().add(layeredPane);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("GrigliaBackgrond3.png"));
+		lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
 		lblNewLabel.setBounds(0, 0, 800, 700);
 		layeredPane.add(lblNewLabel);
 		
