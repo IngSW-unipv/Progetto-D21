@@ -51,7 +51,7 @@ public class Forza4 {
 		gameSetup();
 		initialize();
 		this.p = SoundPlayer.getSoundPlayer();
-		p.RiproduciSuono(new File("resources/sounds/01-Radioactive.wav"));
+	//	p.RiproduciSuono(new File("resources/sounds/01-Radioactive.wav"));
 	}
 
 	/**
