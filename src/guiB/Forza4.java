@@ -103,7 +103,7 @@ public class Forza4 {
 		for(int i=0;i<7;i++) {
 			for(int j=0;j<6;j++) {
 				
-				JButton tempButt = new JButton(i+","+j);
+				JButton tempButt = new JButton();
 				tempButt.setFocusPainted( false );
 				tempButt.setContentAreaFilled( false );
 				tempButt.setOpaque(false);
