@@ -63,6 +63,7 @@ public class Game {
 		this.gameGrid.displayGrid();
 		
 		if(gameGrid.isFinalVictory()) {
+			SoundPlayer.setVol(1, 0);
 			SoundPlayer.playSound(new File("resources/sounds/win.wav"),1);
 			return;
 		}
