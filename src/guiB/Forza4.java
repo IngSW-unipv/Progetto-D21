@@ -107,6 +107,7 @@ public class Forza4 {
 				tempButt.setFocusPainted( false );
 				tempButt.setContentAreaFilled( false );
 				tempButt.setOpaque(false);
+				tempButt.setBorderPainted(false);
 				tempButt.setBounds(i*100, j*100, buttonsize, buttonsize);
 				buttonsPanel.add(tempButt);
 				tempButt.setActionCommand(""+i);
