@@ -51,11 +51,11 @@ public class Forza4 {
 		gameSetup();
 		initialize();
 		this.p = SoundPlayer.getSoundPlayer();
-<<<<<<< HEAD
+
 	//	p.RiproduciSuono(new File("resources/sounds/01-Radioactive.wav"));
-=======
-		p.RiproduciSuono(new File("resources/sounds/Tetris 8 bit Music Tetris Theme Song_2.wav"));
->>>>>>> 338db85dd163fdaf30ec3bdf6a68c8170af09228
+
+		p.RiproduciSuono(new File("resources/sounds/memories (online-audio-converter.com).wav"));
+
 	}
 
 	/**
