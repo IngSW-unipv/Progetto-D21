@@ -1,1 +1,1 @@
-Questa cartella contiene il progetto client
+Cartella contentente il progetto del server
