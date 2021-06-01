@@ -63,7 +63,7 @@ public class Game {
 		this.gameGrid.displayGrid();
 		
 		if(gameGrid.isFinalVictory()) {
-			SoundPlayer.setVol(1, 0);
+			SoundPlayer.setVol(1, 0); //modifica del volume dinamica
 			SoundPlayer.playSound(new File("resources/sounds/win.wav"),1);
 			return;
 		}
