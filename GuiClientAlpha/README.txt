@@ -1,1 +1,0 @@
-Questa cartella contiene la gui in corso di sviluppo, slegata da logica client e server

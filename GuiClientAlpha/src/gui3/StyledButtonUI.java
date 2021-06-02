@@ -5,14 +5,19 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
-class StyledButtonUI extends BasicButtonUI {
-
+public class StyledButtonUI extends BasicButtonUI {
+/*
+per questa classe ho seguito un tizio su stackoverflow e in generale tutti fanno così
+non mi è chairissimo perché usano abstract button ma va bene
+installUI è solo un metodo che configura ulteriormente il JComponent del caso
+il resto sono solo impostazioni di stile/grafica quindi nulla da capire
+ */
     @Override
     public void installUI (JComponent c) {
         super.installUI(c);
         AbstractButton button = (AbstractButton) c;
         button.setOpaque(false);
-        button.setBorder(new EmptyBorder(5, 15, 5, 15));
+        button.setBorder(new EmptyBorder(5, 20, 10, 20));
     }
 
     @Override
