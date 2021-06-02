@@ -3,6 +3,9 @@ package core;
 import java.io.*;
 import java.net.Socket;
 
+import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.model.partita.util.GridStatus;
+
 import static tester.Tester1.serverLogger;
 
 public class WorkerThread extends Thread{
@@ -12,6 +15,7 @@ public class WorkerThread extends Thread{
     private PrintWriter socketOutput=null;
     private Player player = null;
     private ServerMemory myMemory;
+    private GameThread assignedGame;
 
     public WorkerThread(Socket socket){
 
@@ -55,18 +59,17 @@ public class WorkerThread extends Thread{
 
     public void parseString(String message){
         String[] parts = message.split(",");
+        TokenColor recievedColor=null;
 
         switch (parts[0]){
             case "newNick":
                 this.player = new Player(socket,parts[1]);
                 this.myMemory.addPlayer(player);
                 break;
-            /*
+            
             case "addToken":
-                if(gameStatus.lastcolor==parts[1])
-                    //aggiunta token in parts[2]
-                    break;
-            case "casualMatch":*/
+            	assignedGame.setX(Integer.parseInt(parts[1]));
+            	assignedGame.run();
         }
 
 

@@ -4,17 +4,32 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import gameGui.guiB.util.AnimationTask;
+import gameGui.guiB.util.TokenColor;
+
 import static tester.ClientMainProva1.clientLogger;
 
 public class NetworkThread extends Thread {
 
     private Socket socket;
-    private int port;
+    private static int port=25565;
     private PrintWriter socketOutput = null;
     private BufferedReader socketInput = null;
+    private static NetworkThread myThread=null;
+    private JPanel animPanel;
 
-    public NetworkThread(int port) {
+    private NetworkThread(int port) {
         this.port = port;
+    }
+    
+    public static NetworkThread getNetworkThread() {
+    	if(myThread==null)
+    		myThread = new NetworkThread(port);
+    	return myThread;
     }
 
     @Override
@@ -49,4 +64,51 @@ public class NetworkThread extends Thread {
             }
         }
     }
+    
+    public void parseString(String message){
+        String[] parts = message.split(",");
+
+        switch (parts[0]){
+        	case "abilitaInterfaccia":
+        		//todo abilita buttonpanel;
+        		break;
+        	case "disabilitaInterfaccia":
+        		//todo diabilita buttonpanel;
+        		break;
+        	case "addToken": //addToken,x,y	
+        		addLabel(x, y, c);
+        		break;
+        	case "begin":
+        		// apri cose
+        	case "victory":
+        		// vittoira
+        	case "defeat":
+        		//sconfitta
+        }
+    }
+    
+    
+    
+    public void setAnimPanel(JPanel animPanel) {
+		this.animPanel = animPanel;
+	}
+
+	public void sendMessage(String message) {
+    	socketOutput.println(message);
+    }
+    
+    private void addLabel(int x,int y,TokenColor c) {
+		
+		JLabel lbl = new JLabel("");
+		if(c==TokenColor.RED) {
+			lbl.setIcon(new ImageIcon("resources/textures/RedToken2.png"));
+		}
+		if(c==TokenColor.YELLOW) {
+			lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
+		}
+		this.gameTimer.schedule(new AnimationTask(lbl, animPanel, 0, 50+tokenY*100, 50+tokenX*100),this.refreshRate );
+		System.out.println("aa");
+	}
+    
+    
 }
