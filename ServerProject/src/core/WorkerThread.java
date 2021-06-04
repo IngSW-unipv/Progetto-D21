@@ -3,8 +3,11 @@ package core;
 import java.io.*;
 import java.net.Socket;
 
+import core.gameLogic.model.partita.Game;
 import core.gameLogic.model.partita.TokenColor;
 import core.gameLogic.model.partita.util.GridStatus;
+import core.queue.GameParameters;
+import core.queue.Queue;
 
 import static tester.Tester1.serverLogger;
 
@@ -16,6 +19,8 @@ public class WorkerThread extends Thread{
     private Player player = null;
     private ServerMemory myMemory;
     private GameThread assignedGame;
+    private Player invitedPlayer;
+    private GameParameters inviteParameters;
 
     public WorkerThread(Socket socket){
 
@@ -63,16 +68,45 @@ public class WorkerThread extends Thread{
 
         switch (parts[0]){
             case "newNick":
-                this.player = new Player(socket,parts[1]);
+                this.player = new Player(socket,parts[1],this);
                 this.myMemory.addPlayer(player);
                 break;
             
             case "addToken":
             	assignedGame.setX(Integer.parseInt(parts[1]));
             	assignedGame.run();
+            	break;
+            
+            case "sendInvite":
+            	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName());
+            	invitedPlayer = myMemory.getPlayer(parts[1]);
+            	this.inviteParameters = new GameParameters();
+            	this.inviteParameters.setDuration(parts[2]);
+            	
+            	break;
+            	
+            case "inviteAcceptedOrRefused":
+            	if(Integer.parseInt(parts[1])==1)
+            		System.out.println("messaggio di accettazione ricevuto"+parts[0]);
+            		GameThread newGame = new GameThread(player, invitedPlayer, inviteParameters);
+            	break;
+            
+            case "addmeToQueue":
+            	this.player.sendMessage("//apri la finestra di attesa");
+            	GameParameters tempGameParameters = new GameParameters();
+            	tempGameParameters.setDuration(parts[1]);
+            	Queue.getQueue().addPlayerToQueue(player,tempGameParameters);
+            	System.out.println("player "+player.getNickName()+" addedd to queue on "+ parts[1]);
+            	break;
+            
         }
-
 
     }
 
+	public void setAssignedGame(GameThread assignedGame) {
+		this.assignedGame = assignedGame;
+	}
+
+    
+    
 }

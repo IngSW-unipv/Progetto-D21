@@ -76,7 +76,7 @@ public class NetworkThread extends Thread {
         		//todo diabilita buttonpanel;
         		break;
         	case "addToken": //addToken,x,y	
-        		addLabel(x, y, c);
+        		//addLabel(x, y, c);
         		break;
         	case "begin":
         		// apri cose
@@ -86,6 +86,8 @@ public class NetworkThread extends Thread {
         		//sconfitta
             case "invitoRicevuto" :
                 //apertura invito con nome il nome dell'invitatne sara in args1
+            case "gamefound" :
+                System.out.println("parita trovata");
         }
     }
     
@@ -100,19 +102,5 @@ public class NetworkThread extends Thread {
 
         socketOutput.println(message);
     }
-    
-    private void addLabel(int x,int y,TokenColor c) {
-		
-		JLabel lbl = new JLabel("");
-		if(c==TokenColor.RED) {
-			lbl.setIcon(new ImageIcon("resources/textures/RedToken2.png"));
-		}
-		if(c==TokenColor.YELLOW) {
-			lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
-		}
-		this.gameTimer.schedule(new AnimationTask(lbl, animPanel, 0, 50+tokenY*100, 50+tokenX*100),this.refreshRate );
-		System.out.println("aa");
-	}
-    
     
 }

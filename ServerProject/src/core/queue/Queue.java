@@ -1,5 +1,6 @@
 package core.queue;
 
+import core.GameThread;
 import core.Player;
 
 import java.util.HashMap;
@@ -21,12 +22,22 @@ public class Queue {
         return myQueue;
     }
 
-    public synchronized void addPlayerToQueue(Player player,GameParameters gameParameters){
-        queue.put(player, gameParameters);
+    public synchronized void addPlayerToQueue(Player player1,GameParameters gameParameters){
+        queue.put(player1, gameParameters);
         for(Map.Entry<Player,GameParameters> entry : queue.entrySet()){
 
-            if(gameParameters.compareParameters(entry.getValue())&&(player!= entry.getKey())){
-                //TODO GENERAZIONE NUOVA PARTITA
+            if(gameParameters.compareParameters(entry.getValue())&&(player1!= entry.getKey())){
+            	
+            	Player player2 = entry.getKey();
+            	
+                player2.sendMessage("gamefound,"+player1.getNickName());
+                player1.sendMessage("gamefound,"+player2.getNickName());
+                
+                GameThread newGame = new GameThread(player1, player2, gameParameters);
+                player1.getWorkerThread().setAssignedGame(newGame);
+                player2.getWorkerThread().setAssignedGame(newGame);
+                newGame.start();
+                
             }
         }
     }

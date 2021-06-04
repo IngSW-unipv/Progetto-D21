@@ -21,5 +21,9 @@ public class ServerMemory {
         currentPlayersList.put(p.getNickName(),p);
         System.out.println("Player"+p.getNickName()+"added");
     }
+    
+    public Player getPlayer(String s){
+    	return currentPlayersList.get(s);
+    }
 
 }

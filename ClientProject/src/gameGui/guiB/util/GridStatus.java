@@ -1,6 +1,6 @@
 package gameGui.guiB.util;
 
-import model.partita.TokenColor;
+import gameGui.guiB.util.*;
 
 public class GridStatus {
 	

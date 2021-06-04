@@ -18,10 +18,12 @@ public class Player {
     private PlayerStatus status;
     private TokenColor color;
     private PrintWriter out;
+    private WorkerThread workerThread;
     
-    public Player(Socket playerSocket, String nickName) {
+    public Player(Socket playerSocket, String nickName,WorkerThread thread) {
         this.playerSocket = playerSocket;
         this.nickName = nickName;
+        this.workerThread = thread;
         
         try {
 			this.out = new PrintWriter(new OutputStreamWriter(playerSocket.getOutputStream()),true);
@@ -68,5 +70,11 @@ public class Player {
     	this.out.println(message);
     	
     }
+
+	public WorkerThread getWorkerThread() {
+		return workerThread;
+	}
+    
+    
     
 }
