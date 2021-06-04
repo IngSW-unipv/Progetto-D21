@@ -13,7 +13,7 @@ public class Queue {
     private HashMap<Player,GameParameters> queue;
 
     private Queue(){
-
+    	queue = new HashMap<Player, GameParameters>();
     }
 
     public static Queue getQueue(){
@@ -36,7 +36,7 @@ public class Queue {
                 GameThread newGame = new GameThread(player1, player2, gameParameters);
                 player1.getWorkerThread().setAssignedGame(newGame);
                 player2.getWorkerThread().setAssignedGame(newGame);
-                newGame.start();
+                //newGame.start();
                 
             }
         }

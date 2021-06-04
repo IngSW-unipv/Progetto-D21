@@ -4,6 +4,9 @@ import core.GuiThread;
 import core.NetworkThread;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Timer;
 import java.util.logging.Logger;
 
@@ -29,6 +32,21 @@ public class ClientMainProva1 {
         clientLogger.info("Startup Successful");
         startGui();
         clientLogger.info("gui inizializzata");
+
+        BufferedReader tastiera = new BufferedReader(new InputStreamReader(System.in));
+        String msg = null;
+
+        while (true) {
+            try {
+                msg = tastiera.readLine();
+                System.out.println(msg);
+                NetworkThread.getNetworkThread().sendMessage(msg);
+                System.out.println(msg+"inviato");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 
     }
 

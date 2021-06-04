@@ -39,9 +39,9 @@ public class GameThread extends Thread{
 		int y = GridStatus.getGameStatus().getLastY();
 		
 		
-		
-		player1.sendMessage("addToken,"+x+","+y+","+","+getColor());
-		player2.sendMessage("addToken,"+x+","+y+","+","+getColor());
+		System.out.println("addToken,"+x+","+y+","+getColor());
+		player1.sendMessage("addToken,"+x+","+y+","+getColor());
+		player2.sendMessage("addToken,"+x+","+y+","+getColor());
 		
 		
 	}

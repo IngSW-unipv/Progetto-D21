@@ -41,13 +41,13 @@ public class WorkerThread extends Thread{
             while (true) {
 
                 System.out.println("aa");
-                System.out.println(this.socketInput.readLine());
+                //System.out.println(this.socketInput.readLine());
                 parseString(this.socketInput.readLine());
 
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("client "+socket.getInetAddress()+" disconnected");
         }
 
 
@@ -65,11 +65,14 @@ public class WorkerThread extends Thread{
     public void parseString(String message){
         String[] parts = message.split(",");
         TokenColor recievedColor=null;
+        
+        System.out.println(parts[0]+parts[1]);
 
         switch (parts[0]){
             case "newNick":
                 this.player = new Player(socket,parts[1],this);
                 this.myMemory.addPlayer(player);
+                System.out.println(this.player.toString()+"debugincaseswitch");
                 break;
             
             case "addTokenInvirtualGrid":
@@ -99,6 +102,9 @@ public class WorkerThread extends Thread{
             	System.out.println("player "+player.getNickName()+" addedd to queue on "+ parts[1]);
             	break;
             
+            default :
+            	this.player.sendMessage("invalid message check syntax");
+            	System.out.println("invalid message recieved");
         }
 
     }

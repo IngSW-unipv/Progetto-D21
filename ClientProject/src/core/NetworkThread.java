@@ -50,16 +50,13 @@ public class NetworkThread extends Thread {
             clientLogger.info("I/O Error");
         }
 
-        BufferedReader tastiera = new BufferedReader(new InputStreamReader(System.in));
-        String msg = null;
 
         while (true) {
 
             try {
-                msg = tastiera.readLine();
-                System.out.println(msg);
-                socketOutput.println(msg);
-                System.out.println(msg+"inviato");
+
+                parseString(this.socketInput.readLine());
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -11,9 +11,9 @@ public class GameParameters {
     }
 
     public void setDuration(String s){
-        if(s=="f")
+        if(s.compareTo("s")==0)
             this.duration = GameDuration.SHORT;
-        if(s=="l")
+        if(s.compareTo("l")==0)
             this.duration = GameDuration.LONG;
     }
 

@@ -74,6 +74,10 @@ public class Player {
 	public WorkerThread getWorkerThread() {
 		return workerThread;
 	}
+	
+	public String toString() {
+		return this.nickName;
+	}
     
     
     
