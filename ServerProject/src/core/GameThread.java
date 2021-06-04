@@ -1,6 +1,8 @@
 package core;
 
 import core.gameLogic.model.partita.Game;
+import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.model.partita.util.GridStatus;
 import core.queue.GameParameters;
 
 public class GameThread extends Thread{
@@ -33,8 +35,13 @@ public class GameThread extends Thread{
 		
 		localGame.turn(x);
 		alternatePlayer();
-		player1.sendMessage("aggiungi token gui");
-		player2.sendMessage("aggiungi token gui");
+		int x = GridStatus.getGameStatus().getLastX();
+		int y = GridStatus.getGameStatus().getLastY();
+		
+		
+		
+		player1.sendMessage("addToken,"+x+","+y+","+","+getColor());
+		player2.sendMessage("addToken,"+x+","+y+","+","+getColor());
 		
 		
 	}
@@ -59,6 +66,18 @@ public class GameThread extends Thread{
     		player2.sendMessage("disabilita interfaccia");
     	}
     	nextPlayer.sendMessage("abilita interfaccia");
+    }
+    
+    private String getColor() {
+    	
+    	String colorString=null;
+    	if(GridStatus.getGameStatus().getLastColor()==TokenColor.RED)
+    		colorString = "r";
+    	if(GridStatus.getGameStatus().getLastColor()==TokenColor.YELLOW)
+    		colorString = "y";
+    		
+    	return colorString;
+  
     }
     
 }

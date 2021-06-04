@@ -72,7 +72,7 @@ public class WorkerThread extends Thread{
                 this.myMemory.addPlayer(player);
                 break;
             
-            case "addToken":
+            case "addTokenInvirtualGrid":
             	assignedGame.setX(Integer.parseInt(parts[1]));
             	assignedGame.run();
             	break;

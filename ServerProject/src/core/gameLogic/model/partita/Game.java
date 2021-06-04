@@ -6,6 +6,7 @@ package core.gameLogic.model.partita;
 import java.util.TimerTask;
 
 import core.Player;
+import core.gameLogic.model.partita.util.GridStatus;
 import core.gameLogic.model.partita.util.SoundPlayer;
 
 import java.io.File;
@@ -79,5 +80,6 @@ public class Game {
 	public Timer getGameTimer() {
 		return this.gameTimer;
 	}
+	
 	
 }
