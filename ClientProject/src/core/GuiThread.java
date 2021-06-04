@@ -14,6 +14,7 @@ public class GuiThread extends Thread{
     private static final int buttonsize=100;
     private java.util.Timer myTimer;
     private JPanel animationPanel;
+    private JPanel buttonsPanel;
     private static final long refreshRate = 1l;
 
     public GuiThread(Timer timer){
@@ -57,7 +58,7 @@ public class GuiThread extends Thread{
         layeredPane.add(animationPanel);
         animationPanel.setLayout(null);
 
-        JPanel buttonsPanel = new JPanel();
+        this.buttonsPanel = new JPanel();
         buttonsPanel.setOpaque(false);
         //buttonsPanel.setVisible(false);
         layeredPane.setLayer(buttonsPanel, 3);
@@ -94,5 +95,9 @@ public class GuiThread extends Thread{
         }
         this.myTimer.schedule(new AnimationTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),this.refreshRate );
         System.out.println("aa");
+    }
+
+    public JPanel getButtonsPanel() {
+        return buttonsPanel;
     }
 }

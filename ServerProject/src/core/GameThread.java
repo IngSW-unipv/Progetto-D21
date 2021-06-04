@@ -26,7 +26,7 @@ public class GameThread extends Thread{
     private void gameSetup() {
     	localGame = new Game(player1, player2);
     	nextPlayer = player1;
-    	nextPlayer.sendMessage("abilita interfaccia");
+    	nextPlayer.sendMessage("abilitaInterfaccia");
     	
     }
 
@@ -58,14 +58,14 @@ public class GameThread extends Thread{
     private void alternatePlayer() {
     	if(nextPlayer==player1) {
     		nextPlayer=player2;
-    		player1.sendMessage("disabilita interfaccia");
+    		player1.sendMessage("disabilitaInterfaccia");
     	}
     		
     	if(nextPlayer==player2) {
     		nextPlayer=player1;
-    		player2.sendMessage("disabilita interfaccia");
+    		player2.sendMessage("disabilitaInterfaccia");
     	}
-    	nextPlayer.sendMessage("abilita interfaccia");
+    	nextPlayer.sendMessage("abilitaInterfaccia");
     }
     
     private String getColor() {

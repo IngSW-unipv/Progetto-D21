@@ -68,10 +68,11 @@ public class NetworkThread extends Thread {
 
         switch (parts[0]){
         	case "abilitaInterfaccia":
-        		//todo abilita buttonpanel;
+                guiThread.getButtonsPanel().setVisible(true);
         		break;
         	case "disabilitaInterfaccia":
-        		//todo diabilita buttonpanel;
+        	    guiThread.getButtonsPanel().setVisible(false);
+
         		break;
         	case "addToken": //addToken,x,y	
 
