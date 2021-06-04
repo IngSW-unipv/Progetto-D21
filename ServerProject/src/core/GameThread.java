@@ -26,8 +26,8 @@ public class GameThread extends Thread{
     private void gameSetup() {
     	localGame = new Game(player1, player2);
     	nextPlayer = player1;
-    	nextPlayer.sendMessage("abilitaInterfaccia");
-    	player2.sendMessage("disabilitaInterfaccia");
+    	nextPlayer.sendMessage("abi");
+    	player2.sendMessage("NOTabi");
     	
     }
 
@@ -57,16 +57,18 @@ public class GameThread extends Thread{
     
     
     private void alternatePlayer() {
-    	if(nextPlayer==player1) {
+    	if(nextPlayer.equals(player1)) {
     		nextPlayer=player2;
-    		player1.sendMessage("disabilitaInterfaccia");
-    		nextPlayer.sendMessage("abilitaInterfaccia");
+    		player1.sendMessage("NOTabi");
+    		nextPlayer.sendMessage("abi");
+    		return;
     	}
     		
-    	if(nextPlayer==player2) {
+    	if(nextPlayer.equals(player2)) {
     		nextPlayer=player1;
-    		player2.sendMessage("disabilitaInterfaccia");
-    		nextPlayer.sendMessage("abilitaInterfaccia");
+    		player2.sendMessage("NOTabi");
+    		nextPlayer.sendMessage("abi");
+    		return;
     	}
     	
     }

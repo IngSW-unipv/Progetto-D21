@@ -65,8 +65,8 @@ public class Game {
 		this.gameGrid.displayGrid();
 		
 		if(gameGrid.isFinalVictory()) {
-			SoundPlayer.setVol(1, 0); //modifica del volume dinamica
-			SoundPlayer.playSound(new File("resources/sounds/win.wav"),1);
+			//SoundPlayer.setVol(1, 0); //modifica del volume dinamica
+			//SoundPlayer.playSound(new File("resources/sounds/win.wav"),1);
 			return;
 		}
 		
@@ -81,5 +81,7 @@ public class Game {
 		return this.gameTimer;
 	}
 	
-	
+	public boolean getFinalVictory() {
+		return this.gameGrid.isFinalVictory();
+	}
 }
