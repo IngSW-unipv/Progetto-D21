@@ -84,17 +84,21 @@ public class NetworkThread extends Thread {
         		// vittoira
         	case "defeat":
         		//sconfitta
+            case "invitoRicevuto" :
+                //apertura invito con nome il nome dell'invitatne sara in args1
         }
     }
     
     
     
     public void setAnimPanel(JPanel animPanel) {
-		this.animPanel = animPanel;
+
+        this.animPanel = animPanel;
 	}
 
 	public void sendMessage(String message) {
-    	socketOutput.println(message);
+
+        socketOutput.println(message);
     }
     
     private void addLabel(int x,int y,TokenColor c) {

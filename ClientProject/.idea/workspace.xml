@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GuiClientAlpha/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../GuiClientAlpha/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientConnect4/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientConnect4/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientConnect4/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/out/production/GuiClientAlpha/CelsiusiGUI$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/out/production/GuiClientAlpha/CelsiusiGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GuiClientAlpha/out/production/GuiClientAlpha/provalayeredpane/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/Connect4 Server/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
