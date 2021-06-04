@@ -40,7 +40,7 @@ public class AnimationTask extends TimerTask {
 			panelToupdate.repaint();
 			
 		}
-		SoundPlayer.playSound((new File("resources/sounds/tok.wav")),0.5);
+		//SoundPlayer.playSound((new File("resources/sounds/tok.wav")),0.5);
 		cancel();
 	}
 

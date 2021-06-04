@@ -67,11 +67,17 @@ public class NetworkThread extends Thread {
         String[] parts = message.split(",");
 
         switch (parts[0]){
-        	case "abilitaInterfaccia":
+        	case "abi":
+        	    System.out.println("abilitato");
                 guiThread.getButtonsPanel().setVisible(true);
+                guiThread.getButtonsPanel().revalidate();
+                guiThread.getButtonsPanel().repaint();
         		break;
-        	case "disabilitaInterfaccia":
+        	case "NOTabi":
+        	    System.out.println("disabilitato");
         	    guiThread.getButtonsPanel().setVisible(false);
+                guiThread.getButtonsPanel().revalidate();
+                guiThread.getButtonsPanel().repaint();
 
         		break;
         	case "addToken": //addToken,x,y	
