@@ -21,6 +21,7 @@ public class NetworkThread extends Thread {
     private BufferedReader socketInput = null;
     private static NetworkThread myThread=null;
     private JPanel animPanel;
+    private GuiThread guiThread;
 
     private NetworkThread(int port) {
         this.port = port;
@@ -76,7 +77,12 @@ public class NetworkThread extends Thread {
         		//todo diabilita buttonpanel;
         		break;
         	case "addToken": //addToken,x,y	
-        		//addLabel(x, y, c);
+
+                if (parts[3].compareTo("r")==0)
+                    guiThread.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
+                if (parts[3].compareTo("y")==0)
+                    guiThread.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);
+
         		break;
         	case "begin":
         		// apri cose
@@ -101,6 +107,10 @@ public class NetworkThread extends Thread {
 	public void sendMessage(String message) {
 
         socketOutput.println(message);
+    }
+
+    public void setGuiThread(GuiThread thread){
+        this.guiThread = thread;
     }
     
 }

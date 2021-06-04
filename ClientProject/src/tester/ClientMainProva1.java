@@ -4,6 +4,7 @@ import core.GuiThread;
 import core.NetworkThread;
 
 import java.awt.Color;
+import java.util.Timer;
 import java.util.logging.Logger;
 
 import javax.swing.ImageIcon;
@@ -18,6 +19,7 @@ public class ClientMainProva1 {
     private static int port = 25565;
     public static Logger clientLogger = Logger.getLogger("ClientLogger");
     private int buttonsize = 100;
+    private static Timer gameTimer;
 
 
     public static void main(String[] args) {
@@ -25,8 +27,8 @@ public class ClientMainProva1 {
         clientLogger.info("Client starting");
         startConnection(port);
         clientLogger.info("Startup Successful");
-
-        GuiThread guiThread = new GuiThread();
+        startGui();
+        clientLogger.info("gui inizializzata");
 
     }
 
@@ -38,5 +40,11 @@ public class ClientMainProva1 {
 
     }
 
+    private static void startGui(){
+        gameTimer = new Timer();
+        GuiThread guiThread = new GuiThread(gameTimer);
+        NetworkThread.getNetworkThread().setGuiThread(guiThread);
+
+    }
 
 }

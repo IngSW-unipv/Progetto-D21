@@ -6,15 +6,20 @@ import gameGui.guiB.util.TokenColor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Timer;
 
 public class GuiThread extends Thread{
 
     private JFrame frame;
     private static final int buttonsize=100;
+    private java.util.Timer myTimer;
+    private JPanel animationPanel;
+    private static final long refreshRate = 1l;
 
-    public GuiThread(){
+    public GuiThread(Timer timer){
 
         startGui();
+        myTimer = timer;
 
     }
 
@@ -45,7 +50,7 @@ public class GuiThread extends Thread{
         layeredPane.add(lblNewLabel);
 
 
-        JPanel animationPanel = new JPanel();
+        this.animationPanel = new JPanel();
         animationPanel.setOpaque(false);
         layeredPane.setLayer(animationPanel, 2);
         animationPanel.setBounds(0, 0, 800, 700);
@@ -78,7 +83,7 @@ public class GuiThread extends Thread{
 
     }
 
-    private void addLabel(int x, int y, TokenColor c) {
+    public void addLabel(int x, int y, TokenColor c) {
 
         JLabel lbl = new JLabel("");
         if(c==TokenColor.RED) {
@@ -87,7 +92,7 @@ public class GuiThread extends Thread{
         if(c==TokenColor.YELLOW) {
             lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
         }
-        //this.gameTimer.schedule(new AnimationTask(lbl, animPanel, 0, 50+tokenY*100, 50+tokenX*100),this.refreshRate );
+        this.myTimer.schedule(new AnimationTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),this.refreshRate );
         System.out.println("aa");
     }
 }

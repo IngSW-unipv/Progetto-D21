@@ -30,7 +30,7 @@ public class ButtonListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		System.out.println("Bottone premuto,successso "+ butt.getActionCommand());	
-		networkThread.sendMessage(butt.getActionCommand());
+		networkThread.sendMessage("addTokenInvirtualGrid,"+butt.getActionCommand());
 	}
 	
 }
