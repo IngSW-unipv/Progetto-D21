@@ -2,12 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/GUIForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/GUIForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/PlayersBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/uitl/LinkedHashMapListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/ServerMemory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/ServerMemory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/queue/GameParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/queue/GameParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ServerMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/Tester1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -21,6 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="Tester1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -52,5 +78,16 @@
       <updated>1622792396816</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

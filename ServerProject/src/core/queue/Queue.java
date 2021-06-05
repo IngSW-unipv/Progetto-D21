@@ -1,5 +1,6 @@
 package core.queue;
 
+import GUI.uitl.LinkedHashMapListModel;
 import core.GameThread;
 import core.Player;
 
@@ -10,10 +11,10 @@ public class Queue {
 
     private static Queue myQueue = null;
 
-    private HashMap<Player,GameParameters> queue;
+    private LinkedHashMapListModel<Player,GameParameters> queue;
 
     private Queue(){
-    	queue = new HashMap<Player, GameParameters>();
+    	queue = new LinkedHashMapListModel<Player, GameParameters>();
     }
 
     public static Queue getQueue(){
@@ -43,6 +44,12 @@ public class Queue {
     }
 
     public synchronized void removePlayer(Player p){
+
         queue.remove(p);
     }
+
+    public LinkedHashMapListModel<Player,GameParameters> getQueueLIst(){
+        return queue;
+    }
+
 }

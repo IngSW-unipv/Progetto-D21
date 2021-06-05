@@ -1,14 +1,16 @@
 package core;
 
+import GUI.uitl.LinkedHashMapListModel;
+
 import java.util.HashMap;
 
 public class ServerMemory {
 
-    private HashMap<String,Player> currentPlayersList;
+    private LinkedHashMapListModel<String,Player> currentPlayersList;
     private static ServerMemory memory = null;
 
     private ServerMemory(){
-        currentPlayersList = new HashMap<>();
+        currentPlayersList = new LinkedHashMapListModel<>();
     }
 
     public synchronized static ServerMemory getServerMemory(){
@@ -23,7 +25,11 @@ public class ServerMemory {
     }
     
     public Player getPlayer(String s){
-    	return currentPlayersList.get(s);
+
+        return currentPlayersList.get(s);
     }
 
+    public LinkedHashMapListModel<String, Player> getCurrentPlayersList() {
+        return currentPlayersList;
+    }
 }

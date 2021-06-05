@@ -76,7 +76,7 @@ public class Player {
 	}
 	
 	public String toString() {
-		return this.nickName;
+        return this.nickName;
 	}
     
     
