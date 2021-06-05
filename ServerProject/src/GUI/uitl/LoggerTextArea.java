@@ -7,7 +7,7 @@ public class LoggerTextArea extends TextArea {
     String currentText="";
 
     public void addLine(String string){
-       currentText =  
+       currentText = "";//TODO implement method
     }
 
 }
