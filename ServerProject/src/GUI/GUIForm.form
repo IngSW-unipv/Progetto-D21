@@ -78,7 +78,12 @@
           <preferredSize width="200" height="75"/>
         </properties>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="f9eb7" class="javax.swing.JTextArea" binding="loggerTextarea">
+            <constraints/>
+            <properties/>
+          </component>
+        </children>
       </scrollpane>
       <vspacer id="4528a">
         <constraints>

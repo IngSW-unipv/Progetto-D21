@@ -103,7 +103,7 @@ public class WorkerThread extends Thread{
             	break;
             
             default :
-            	this.player.sendMessage("invalid message check syntax");
+            	socketOutput.println("invalid message sent by you");
             	System.out.println("invalid message recieved");
         }
 

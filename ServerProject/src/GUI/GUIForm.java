@@ -12,6 +12,7 @@ public class GUIForm {
     private JScrollPane LoggerPane;
     private JPanel mainPanel;
     private JList PlayersInQueue;
+    private JTextArea loggerTextarea;
 
     public GUIForm(){
         //inizialization of the Jlist and its model

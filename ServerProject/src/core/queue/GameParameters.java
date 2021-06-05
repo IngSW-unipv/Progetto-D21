@@ -23,4 +23,10 @@ public class GameParameters {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "GameParameters{" +
+                "duration=" + duration +
+                '}';
+    }
 }
