@@ -2,20 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/ExplicitMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LoggerTextArea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerProject/src/core/config/loggerconfig.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/util/TextAreaLoggerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/GUIForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/GUIForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/ExplicitMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/ExplicitMap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/GameParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/GameParameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LoggerTextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LoggerTextArea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

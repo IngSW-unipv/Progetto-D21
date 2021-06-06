@@ -13,8 +13,17 @@ public class GUIForm {
     private JPanel mainPanel;
     private JList PlayersInQueue;
     private JTextArea loggerTextarea;
+    private static GUIForm myGuiForm=null;
 
-    public GUIForm(){
+    public static GUIForm getGuiForm(){
+
+        if(myGuiForm==null)
+            myGuiForm = new GUIForm();
+        return myGuiForm;
+
+    }
+
+    private GUIForm(){
         //inizialization of the Jlist and its model
         OnlinePlayersList.setModel(ServerMemory.getServerMemory().getCurrentPlayersList());
         PlayersInQueue.setModel(Queue.getQueue().getQueueLIst());
@@ -22,19 +31,15 @@ public class GUIForm {
 
     }
 
-    public void setData(PlayersBean data) {
-
-    }
-
-    public void getData(PlayersBean data) {
-    }
-
-    public boolean isModified(PlayersBean data) {
-
-        return false;
-    }
-
     public JPanel getMainPanel() {
+
         return mainPanel;
+
+    }
+
+    public void appendToLoggerText(String message){
+
+        loggerTextarea.append(message);
+
     }
 }
