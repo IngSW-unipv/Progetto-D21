@@ -6,9 +6,12 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class VolumeFrame extends JFrame {
+public class VolumeFrame extends JFrame{
 
     private JSlider slider;
     private JButton button1;
@@ -39,9 +42,10 @@ public class VolumeFrame extends JFrame {
         slider.setPaintLabels (true);
 
 
-
+        ImageIcon c0 = new ImageIcon("src/mainmenu/img/music.png");
+        ImageIcon c1 = new ImageIcon("src/mainmenu/img/music-off.png");
         button1 = new JButton();
-        button1.setIcon(new ImageIcon("src/mainmenu/img/music.png"));
+        button1.setIcon(c0);
         button1.setBounds(238,38,36,37);
         button1.setContentAreaFilled(false);
         button1.setFocusPainted(false);
@@ -49,10 +53,7 @@ public class VolumeFrame extends JFrame {
         button1.setUI(new StyledButtonUI());
         button1.setBackground(Color.ORANGE);
         
-        ActionListener musicOff = e->{
-            button1.setIcon(new ImageIcon("src/mainmenu/img/music-off.png"));
-        };
-
+        
         label1 = new JLabel();
         label1.setBounds(0,0,300,150);
         label1.setIcon(new ImageIcon("src/mainmenu/img/blur300x150.jpg"));
@@ -63,7 +64,16 @@ public class VolumeFrame extends JFrame {
         layeredPane.add(label1, Integer.valueOf(0));
         this.add(layeredPane);
         
-        button1.addActionListener(musicOff);
         
+        button1.addActionListener(
+            new ActionListener(){
+                private boolean flag = true;
+
+                @Override
+                public void actionPerformed(ActionEvent arg0){
+                    button1.setIcon(flag ? c1 : c0);
+                    flag = !flag;
+                }
+            });
     }
 }
