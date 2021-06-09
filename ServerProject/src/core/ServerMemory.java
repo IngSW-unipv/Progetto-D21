@@ -30,6 +30,11 @@ public class ServerMemory {
     }
 
     public LinkedHashMapListModel<String, Player> getCurrentPlayersList() {
+
         return currentPlayersList;
+    }
+
+    public synchronized void removePlayer(String nickToRemove){
+        currentPlayersList.remove(nickToRemove);
     }
 }

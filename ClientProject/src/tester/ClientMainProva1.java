@@ -2,6 +2,7 @@ package tester;
 
 import core.GuiThread;
 import core.NetworkThread;
+import menuGUI.mainmenu.First_Menu;
 
 import java.awt.Color;
 import java.io.BufferedReader;
@@ -59,9 +60,18 @@ public class ClientMainProva1 {
     }
 
     private static void startGui(){
+
+        First_Menu first_menu = new First_Menu();
+        first_menu.setVisible(true);
+        first_menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //TODO spostare questo codice dentro il networkthread
+        /*
         gameTimer = new Timer();
         GuiThread guiThread = new GuiThread(gameTimer);
         NetworkThread.getNetworkThread().setGuiThread(guiThread);
+           */
+
 
     }
 

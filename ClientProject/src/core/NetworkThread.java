@@ -51,7 +51,7 @@ public class NetworkThread extends Thread {
         }
 
 
-        while (true/*TODO METTERE CONDIZIONI DECENTI*/) {
+        while (socket.isBound()) {
 
             try {
 

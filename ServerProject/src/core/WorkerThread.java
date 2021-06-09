@@ -47,7 +47,11 @@ public class WorkerThread extends Thread{
             }
 
         } catch (IOException e) {
+            //quando la lettura fallisce è perche i reader sono chiusi quindi il socket disconnesso
             System.out.println("client "+socket.getInetAddress()+" disconnected");
+            if(player!=null){
+                ServerMemory.getServerMemory().removePlayer(player.getNickName());
+            }
         }
 
 

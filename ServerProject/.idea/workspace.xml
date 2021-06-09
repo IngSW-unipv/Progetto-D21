@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ClientProject/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/mainmenu/control/ButtonAndTextAreaListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GuiClientAlpha/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientConnect4/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/tester/ClientMainProva1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/tester/ClientMainProva1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/tester/ClientMainProva1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/tester/ClientMainProva1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/ServerMemory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/ServerMemory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/GameParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/GameParameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/tester/Tester1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ServerMemory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +45,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Tester1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-16.0.1-1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="tester.Tester1" />
       <module name="ServerProject" />
       <extension name="coverage">
