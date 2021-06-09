@@ -51,7 +51,7 @@ public class NetworkThread extends Thread {
         }
 
 
-        while (true) {
+        while (true/*TODO METTERE CONDIZIONI DECENTI*/) {
 
             try {
 

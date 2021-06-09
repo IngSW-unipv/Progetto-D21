@@ -94,7 +94,7 @@ public class WorkerThread extends Thread{
             		GameThread newGame = new GameThread(player, invitedPlayer, inviteParameters);
             	break;
             
-            case "addmeToQueue":
+            case "addmeToQueue": //addmeToQueue,l
             	this.player.sendMessage("//apri la finestra di attesa");
             	GameParameters tempGameParameters = new GameParameters();
             	tempGameParameters.setDuration(parts[1]);
