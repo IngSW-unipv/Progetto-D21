@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="" />
+    <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/tester/ClientMainProva1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/tester/ClientMainProva1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/mainmenu/Second_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/mainmenu/Second_Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/mainmenu/maintest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/mainmenu/maintest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/tester/ClientMainProva1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/tester/ClientMainProva1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -77,6 +77,7 @@ public class WorkerThread extends Thread{
                 this.player = new Player(socket,parts[1],this);
                 this.myMemory.addPlayer(player);
                 System.out.println(this.player.toString()+"debugincaseswitch");
+                player.sendMessage("openMainMenu");
                 break;
             
             case "addTokenInvirtualGrid":

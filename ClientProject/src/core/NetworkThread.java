@@ -17,7 +17,7 @@ public class NetworkThread extends Thread {
     private BufferedReader socketInput = null;
     private static NetworkThread myThread=null;
     private JPanel animPanel;
-    private GUI guiThread;
+    private GUI guiHandler;
 
     private NetworkThread(int port) {
         this.port = port;
@@ -65,24 +65,23 @@ public class NetworkThread extends Thread {
         switch (parts[0]){
         	case "abi":
         	    System.out.println("abilitato");
-                guiThread.getButtonsPanel().setVisible(true);
-                guiThread.getButtonsPanel().revalidate();
-                guiThread.getButtonsPanel().repaint();
+                guiHandler.getButtonsPanel().setVisible(true);
+                guiHandler.getButtonsPanel().revalidate();
+                guiHandler.getButtonsPanel().repaint();
         		break;
         	case "NOTabi":
         	    System.out.println("disabilitato");
-        	    guiThread.getButtonsPanel().setVisible(false);
-                guiThread.getButtonsPanel().revalidate();
-                guiThread.getButtonsPanel().repaint();
+        	    guiHandler.getButtonsPanel().setVisible(false);
+                guiHandler.getButtonsPanel().revalidate();
+                guiHandler.getButtonsPanel().repaint();
 
         		break;
         	case "addToken": //addToken,x,y	
 
                 if (parts[3].compareTo("r")==0)
-                    guiThread.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
+                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
                 if (parts[3].compareTo("y")==0)
-                    guiThread.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);
-
+                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);
         		break;
         	case "begin":
         		// apri cose
@@ -94,6 +93,9 @@ public class NetworkThread extends Thread {
                 //apertura invito con nome il nome dell'invitatne sara in args1
             case "gamefound" :
                 System.out.println("parita trovata");
+                break;
+            case "openMainMenu":
+                guiHandler.openMenu();
         }
     }
     
@@ -109,8 +111,8 @@ public class NetworkThread extends Thread {
         socketOutput.println(message);
     }
 
-    public void setGuiThread(GUI thread){
-        this.guiThread = thread;
+    public void setGuiHandler(GUI thread){
+        this.guiHandler = thread;
     }
     
 }

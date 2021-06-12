@@ -44,7 +44,7 @@ public class Second_Menu extends JFrame {
         this.setLocationRelativeTo(null);
 
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/mainmenu/img/icon.png");
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
         setIconImage(img);
 
         layeredPane = new JLayeredPane();
@@ -52,15 +52,15 @@ public class Second_Menu extends JFrame {
 
         label0 = new JLabel();
         label0.setBounds(0,0,700,500);
-        label0.setIcon(new ImageIcon("src/mainmenu/img/blur.jpg"));
+        label0.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur.jpg"));
 
         label3 = new JLabel();
-        label3.setIcon(new ImageIcon("src/mainmenu/img/CHOOSE YOUR.png"));
+        label3.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/CHOOSE YOUR.png"));
         label3.setOpaque(false);
         label3.setBounds(110,0,450,180);
 
         label7 = new JLabel();
-        label7.setIcon(new ImageIcon("src/mainmenu/img/OPPONENT.png"));
+        label7.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/OPPONENT.png"));
         label7.setOpaque(false);
         label7.setBounds(160,60,400,180);
 
@@ -85,7 +85,7 @@ public class Second_Menu extends JFrame {
         button2.setBackground(Color.orange);
 
         button3 = new JButton();
-        button3.setIcon(new ImageIcon("src/mainmenu/img/white-gear.png"));
+        button3.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/white-gear.png"));
         button3.setBounds(640,20,35,35);
         button3.setFocusPainted(false);
         button3.setBorder(line);
@@ -182,6 +182,9 @@ public class Second_Menu extends JFrame {
         layeredPane.add(label6, Integer.valueOf(2));
         layeredPane.add(label7, Integer.valueOf(2));
         this.add(layeredPane);
+        // il pannello per qualche motivo non completa la sua generazione fino a che non viene aggiornato
+        this.revalidate();
+        this.repaint();
 
     }
 }

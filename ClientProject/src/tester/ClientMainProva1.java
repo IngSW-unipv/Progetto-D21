@@ -1,5 +1,6 @@
 package tester;
 
+import core.GUI;
 import core.NetworkThread;
 import menuGUI.mainmenu.First_Menu;
 
@@ -54,9 +55,7 @@ public class ClientMainProva1 {
 
     private static void startGui(){
 
-        First_Menu first_menu = new First_Menu();
-        first_menu.setVisible(true);
-        first_menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GUI g = new GUI(new Timer());
 
         //TODO spostare questo codice dentro il networkthread
         /*

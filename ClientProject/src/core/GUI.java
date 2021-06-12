@@ -5,12 +5,14 @@ import gameGui.guiB.gameScreen.GameInfoPanel;
 import gameGui.guiB.util.AnimationTask;
 import gameGui.guiB.util.TokenColor;
 import menuGUI.mainmenu.First_Menu;
+import menuGUI.mainmenu.Second_Menu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.util.Timer;
 
-public class GUI extends Thread{
+public class GUI {
 
     private JFrame frame;
     private static final int buttonsize=100;
@@ -19,18 +21,18 @@ public class GUI extends Thread{
     private JPanel buttonsPanel;
     private static final long refreshRate = 1l;
     private JFrame menuFrame;
+    // implemento questo per tenere traccia dei frame aperti e chiuderli a necessità se solo avessimo dei pannelli...
+    private JFrame currentOpenFrame=null;
 
     public GUI(Timer timer){
 
-        startGameIO("5");
+        //startGameIO("5");
         myTimer = timer;
-
+        NetworkThread.getNetworkThread().setGuiHandler(this);
+        startLoginMenu();
     }
 
-    @Override
-    public void run() {
 
-    }
 
     public void startGameIO(String duration){
 
@@ -109,11 +111,26 @@ public class GUI extends Thread{
         return buttonsPanel;
     }
 
-    private void startMainMenu(){
-        First_Menu menuFrame = new First_Menu();
-        menuFrame.setVisible(true);
-        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    private void startLoginMenu(){
+        First_Menu loginFrame = new First_Menu();
+        currentOpenFrame = loginFrame;
+        loginFrame.setVisible(true);
+        loginFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
+    public void openMenu(){
+
+        closeFrame(currentOpenFrame);
+
+        Second_Menu menu = new Second_Menu();
+
+
+    }
+
+    private void closeFrame(JFrame bastardo){
+
+        WindowEvent closeFrame = new WindowEvent(bastardo,WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeFrame);
+    }
 
 }
