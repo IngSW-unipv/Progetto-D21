@@ -1,14 +1,10 @@
 package core;
 
 import java.io.*;
-import java.net.InetAddress;
 import java.net.Socket;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gameGui.guiB.util.AnimationTask;
 import gameGui.guiB.util.TokenColor;
 
 import static tester.ClientMainProva1.clientLogger;
@@ -21,7 +17,7 @@ public class NetworkThread extends Thread {
     private BufferedReader socketInput = null;
     private static NetworkThread myThread=null;
     private JPanel animPanel;
-    private GuiThread guiThread;
+    private GUI guiThread;
 
     private NetworkThread(int port) {
         this.port = port;
@@ -113,7 +109,7 @@ public class NetworkThread extends Thread {
         socketOutput.println(message);
     }
 
-    public void setGuiThread(GuiThread thread){
+    public void setGuiThread(GUI thread){
         this.guiThread = thread;
     }
     

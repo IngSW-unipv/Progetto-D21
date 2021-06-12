@@ -1,14 +1,16 @@
 package core;
 
 import gameGui.guiB.control.ButtonListener;
+import gameGui.guiB.gameScreen.GameInfoPanel;
 import gameGui.guiB.util.AnimationTask;
 import gameGui.guiB.util.TokenColor;
+import menuGUI.mainmenu.First_Menu;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 
-public class GuiThread extends Thread{
+public class GUI extends Thread{
 
     private JFrame frame;
     private static final int buttonsize=100;
@@ -16,10 +18,11 @@ public class GuiThread extends Thread{
     private JPanel animationPanel;
     private JPanel buttonsPanel;
     private static final long refreshRate = 1l;
+    private JFrame menuFrame;
 
-    public GuiThread(Timer timer){
+    public GUI(Timer timer){
 
-        startGui();
+        startGameIO("5");
         myTimer = timer;
 
     }
@@ -29,7 +32,7 @@ public class GuiThread extends Thread{
 
     }
 
-    private void startGui(){
+    public void startGameIO(String duration){
 
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -82,6 +85,11 @@ public class GuiThread extends Thread{
             }
         }
 
+        GameInfoPanel infoPanel = new GameInfoPanel(duration);
+
+        frame.getContentPane().add(infoPanel);
+        infoPanel.setBounds(800,0,300,600);
+        infoPanel.setVisible(true);
     }
 
     public void addLabel(int x, int y, TokenColor c) {
@@ -100,4 +108,12 @@ public class GuiThread extends Thread{
     public JPanel getButtonsPanel() {
         return buttonsPanel;
     }
+
+    private void startMainMenu(){
+        First_Menu menuFrame = new First_Menu();
+        menuFrame.setVisible(true);
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+
 }

@@ -1,22 +1,15 @@
 package tester;
 
-import core.GuiThread;
 import core.NetworkThread;
 import menuGUI.mainmenu.First_Menu;
 
-import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Timer;
 import java.util.logging.Logger;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 
 public class ClientMainProva1 {
 

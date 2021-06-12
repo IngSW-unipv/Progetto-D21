@@ -1,12 +1,14 @@
 package menuGUI.mainmenu;
 
+import core.GUI;
+
 import javax.swing.*;
+import java.util.Timer;
 
 public class maintest {
     public static void main(String[] args) {
-        First_Menu first_menu = new First_Menu();
-        first_menu.setVisible(true);
-        first_menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        GUI gui = new GUI(new Timer());
+        gui.startGameIO("5");
 
     }
 }
