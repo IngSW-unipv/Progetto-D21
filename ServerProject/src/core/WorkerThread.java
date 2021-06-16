@@ -66,6 +66,7 @@ public class WorkerThread extends Thread{
         }
     }
 
+    //TODO GESTIRE LA MANCANZA DI PRAMETRI NEI COMANDI
     public void parseString(String message){
         String[] parts = message.split(",");
         TokenColor recievedColor=null;

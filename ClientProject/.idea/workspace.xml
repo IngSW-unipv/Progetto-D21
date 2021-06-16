@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gameGui/guiB/gameScreen/GameFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/ErrorFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/GameModeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/Second_Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/Second_Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/maintest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/maintest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/GameModeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/Second_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/Second_Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/maintest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/maintest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +44,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
   </component>
-  <component name="RunManager" selected="Application.ClientMainProva1">
+  <component name="RunManager" selected="Application.maintest">
     <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-16.0.1-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -67,8 +79,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMainProva1" />
         <item itemvalue="Application.maintest" />
+        <item itemvalue="Application.ClientMainProva1" />
       </list>
     </recent_temporary>
   </component>

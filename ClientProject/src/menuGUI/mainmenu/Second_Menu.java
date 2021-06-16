@@ -1,5 +1,6 @@
 package menuGUI.mainmenu;
 
+import core.NetworkThread;
 import menuGUI.gui3.StyledButtonUI;
 
 import javax.swing.*;
@@ -32,6 +33,8 @@ public class Second_Menu extends JFrame {
     private JMenuItem item2;
     private JMenuItem item3;
     private JPopupMenu popupMenu;
+    private String gamelenght;
+    private GameModeFrame gameModeFrame;
 
     public Second_Menu(){
         setSize(new Dimension(700,500));
@@ -137,8 +140,8 @@ public class Second_Menu extends JFrame {
         };
 
         ActionListener gameMode = e->{
-            GameModeFrame gm = new GameModeFrame();
-            gm.setVisible(true);
+            this.gameModeFrame = new GameModeFrame();
+            gameModeFrame.setVisible(true);
         };
 
         ActionListener invite = e->{
@@ -158,8 +161,18 @@ public class Second_Menu extends JFrame {
         };
 
         ActionListener random = e->{
-            RandomFrame ranf = new RandomFrame();
-            ranf.setVisible(true);
+
+           if(gameModeFrame!=null){
+               if(gameModeFrame.getGameSpeed()!=null){
+                   NetworkThread.getNetworkThread().sendMessage("addmeToQueue,"+ gameModeFrame.getGameSpeed());
+                   RandomFrame ranf = new RandomFrame();
+                   ranf.setVisible(true);
+                    return;
+               }
+
+           }
+           ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
+
         };
 
         item1.addActionListener(volume);
