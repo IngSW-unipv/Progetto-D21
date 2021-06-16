@@ -21,7 +21,6 @@ public class GUI {
     private JPanel buttonsPanel;
     private static final long refreshRate = 1l;
     private JFrame menuFrame;
-    // implemento questo per tenere traccia dei frame aperti e chiuderli a necessità se solo avessimo dei pannelli...
     private JFrame currentOpenFrame=null;
 
     public GUI(Timer timer){
