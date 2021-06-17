@@ -55,7 +55,7 @@ public class ClientMainProva1 {
 
     private static void startGui(){
 
-        GUI g = new GUI(new Timer());
+        GUI g = GUI.getGuiHandler();
 
         //TODO spostare questo codice dentro il networkthread
         /*

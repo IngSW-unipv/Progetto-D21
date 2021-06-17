@@ -6,6 +6,7 @@ import java.net.Socket;
 import javax.swing.JPanel;
 
 import gameGui.guiB.util.TokenColor;
+import menuGUI.mainmenu.ErrorFrame;
 
 import static tester.ClientMainProva1.clientLogger;
 
@@ -36,7 +37,9 @@ public class NetworkThread extends Thread {
             this.socket = new Socket("2.36.254.212", port);
             clientLogger.info("Connection established");
         } catch (IOException e) {
-            clientLogger.info("Impossible to establish connection to:" + socket.getInetAddress());
+            clientLogger.info("Impossible to establish connetcion to server");
+            ErrorFrame errorFrame = new ErrorFrame("Impossible to establish \n connetcion to server");
+            return;
         }
 
         try {
@@ -54,9 +57,13 @@ public class NetworkThread extends Thread {
                 parseString(this.socketInput.readLine());
 
             } catch (IOException e) {
-                e.printStackTrace();
+                ErrorFrame errorFrame = new ErrorFrame("Connection dropped");
+                break;
             }
         }
+
+
+
     }
     
     public void parseString(String message){
@@ -65,15 +72,11 @@ public class NetworkThread extends Thread {
         switch (parts[0]){
         	case "abi":
         	    System.out.println("abilitato");
-                guiHandler.getButtonsPanel().setVisible(true);
-                guiHandler.getButtonsPanel().revalidate();
-                guiHandler.getButtonsPanel().repaint();
+                guiHandler.enableGameGui();
         		break;
         	case "NOTabi":
         	    System.out.println("disabilitato");
-        	    guiHandler.getButtonsPanel().setVisible(false);
-                guiHandler.getButtonsPanel().revalidate();
-                guiHandler.getButtonsPanel().repaint();
+        	    guiHandler.disableGameGui();
 
         		break;
         	case "addToken": //addToken,x,y	
@@ -84,18 +87,22 @@ public class NetworkThread extends Thread {
                     guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);
         		break;
         	case "begin":
-        		// apri cose
+        		guiHandler.startGameIO(parts[1]);
         	case "victory":
-        		// vittoira
+        		guiHandler.victoryScreen(parts[0]);
         	case "defeat":
-        		//sconfitta
+        		guiHandler.victoryScreen(parts[0]);
             case "invitoRicevuto" :
-                //apertura invito con nome il nome dell'invitatne sara in args1
+                guiHandler.displayInvite(parts[1]+parts[2]);
+                break;
             case "gamefound" :
                 System.out.println("parita trovata");
                 break;
             case "openMainMenu":
                 guiHandler.openMenu();
+                break;
+            case "decline":
+                guiHandler.displayDeclineFrame();
         }
     }
     

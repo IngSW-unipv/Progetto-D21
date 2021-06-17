@@ -7,9 +7,8 @@ import java.util.Timer;
 
 public class maintest {
     public static void main(String[] args) {
-        GUI aaa = new GUI(new Timer());
-        aaa.startGameIO("5");
-
+        GUI aaa = GUI.getGuiHandler();
+        aaa.displayDeclineFrame();
 
     }
 }

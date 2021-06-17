@@ -48,9 +48,11 @@ public class WorkerThread extends Thread{
 
         } catch (IOException e) {
             //quando la lettura fallisce è perche i reader sono chiusi quindi il socket disconnesso
-            System.out.println("client "+socket.getInetAddress()+" disconnected");
+            serverLogger.info("client "+socket.getInetAddress()+" disconnected");
             if(player!=null){
+                //se il player è gia stato istanziato lo rimuovo da coda e elenco di giocatori
                 ServerMemory.getServerMemory().removePlayer(player.getNickName());
+                Queue.getQueue().removePlayer(player);
             }
         }
 
@@ -87,7 +89,7 @@ public class WorkerThread extends Thread{
             	break;
             
             case "sendInvite":
-            	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName());
+            	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
             	invitedPlayer = myMemory.getPlayer(parts[1]);
             	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
@@ -95,9 +97,13 @@ public class WorkerThread extends Thread{
             	break;
             	
             case "inviteAcceptedOrRefused":
-            	if(Integer.parseInt(parts[1])==1)
-            		System.out.println("messaggio di accettazione ricevuto"+parts[0]);
-            		GameThread newGame = new GameThread(player, invitedPlayer, inviteParameters);
+            	if(Integer.parseInt(parts[1])==1) {
+                    System.out.println("messaggio di accettazione ricevuto" + parts[0]);
+                    GameThread newGame = new GameThread(player, invitedPlayer, inviteParameters);
+                } else {
+            	    player.sendMessage("decline");
+                }
+
             	break;
             
             case "addmeToQueue": //addmeToQueue,l
@@ -116,7 +122,9 @@ public class WorkerThread extends Thread{
     }
 
 	public void setAssignedGame(GameThread assignedGame) {
-		this.assignedGame = assignedGame;
+
+        this.assignedGame = assignedGame;
+
 	}
 
     

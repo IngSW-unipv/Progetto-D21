@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gameGui/guiB/gameScreen/GameFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/ErrorFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gameGui/guiB/util/ButtonsListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/DeclineFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/RequestFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/VictoryPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/control/BackToMenuLIstener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/GameModeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/gameGui/guiB/gameScreen/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/gameGui/guiB/gameScreen/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/ErrorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/ErrorFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/InviteFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/Second_Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/Second_Menu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/maintest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/mainmenu/maintest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/tester/ClientMainProva1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/tester/ClientMainProva1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/GameModeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameGui/guiB/gameScreen/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameGui/guiB/gameScreen/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/ErrorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/ErrorFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/InviteFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/Second_Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/Second_Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/maintest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/maintest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tester/ClientMainProva1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/ClientMainProva1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +45,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1tM9V44IY0eyxyaw6GYuTQTkE1m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
   </component>
-  <component name="RunManager" selected="Application.maintest">
+  <component name="RunManager" selected="Application.ClientMainProva1">
     <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-16.0.1-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -79,8 +100,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.maintest" />
         <item itemvalue="Application.ClientMainProva1" />
+        <item itemvalue="Application.maintest" />
       </list>
     </recent_temporary>
   </component>

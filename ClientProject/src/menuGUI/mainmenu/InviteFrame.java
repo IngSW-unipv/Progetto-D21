@@ -1,11 +1,13 @@
 package menuGUI.mainmenu;
 
+import core.NetworkThread;
 import menuGUI.gui3.StyledButtonUI;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class InviteFrame extends JFrame {
 
@@ -14,12 +16,15 @@ public class InviteFrame extends JFrame {
     private JLabel label1;
     private JLabel label2;
     private JButton jb1;
+    private Second_Menu second_menu;
 
 
-    public InviteFrame(){
+    public InviteFrame(Second_Menu second_menu){
+
         setSize(new Dimension(300,100));
         setResizable(false);
 
+        this.second_menu = second_menu;
 
         this.getContentPane().setBackground(new Color(0xFFE57510, true));
         this.setLayout(null);
@@ -27,7 +32,7 @@ public class InviteFrame extends JFrame {
         this.setLocationRelativeTo(null);
 
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/mainmenu/img/icon.png");
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
         setIconImage(img);
 
         Border line = new LineBorder(new Color(0x0F142A, true));
@@ -43,6 +48,13 @@ public class InviteFrame extends JFrame {
         label1.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
         label1.setForeground(Color.BLACK);
 
+        ActionListener sendInvite = e ->{
+            if(this.second_menu!=null){
+                NetworkThread.getNetworkThread().sendMessage("sendInvite,"+textField.getText()+","+second_menu.getGameLenght());
+            }
+            //TODO CHIUDI IL PANNELLO APERTO CORRENTE
+        };
+
         jb1 = new JButton("INVITE");
         jb1.setBounds(180, 20, 100, 25);
         jb1.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
@@ -53,7 +65,7 @@ public class InviteFrame extends JFrame {
 
         label2 = new JLabel();
         label2.setBounds(0,0,300,100);
-        label2.setIcon(new ImageIcon("src/mainmenu/img/blur300x100.jpg"));
+        label2.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur300x100.jpg"));
 
 
         layeredPane.add(textField, Integer.valueOf(1));

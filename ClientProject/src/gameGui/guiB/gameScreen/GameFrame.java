@@ -15,6 +15,7 @@ public class GameFrame extends JFrame {
     public static final int buttonsize = 100;
     private String duration;
     private Timer myTimer;
+    private JLayeredPane layeredPane;
 
     public  GameFrame(String duration){
 
@@ -27,7 +28,7 @@ public class GameFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         c.setLayout(null);
 
-        JLayeredPane layeredPane = new JLayeredPane();
+        layeredPane = new JLayeredPane();
         layeredPane.setBackground(Color.CYAN);
         layeredPane.setBounds(0, 0, 800, 700);
         c.add(layeredPane);
@@ -96,5 +97,12 @@ public class GameFrame extends JFrame {
 
     public JPanel getButtonsPanel() {
         return buttonsPanel;
+    }
+
+    //questo metodo si occupa di aggiungere i componenti specificati al livello dato
+    public void addToLayeredPane(Component component,int level){
+
+        layeredPane.add(component,Integer.valueOf(level));
+
     }
 }

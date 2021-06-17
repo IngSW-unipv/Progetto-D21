@@ -58,6 +58,9 @@ public class ErrorFrame extends JFrame {
 
         this.add(layeredPane);
 
+        revalidate();
+        repaint();
+
     }
 
 }

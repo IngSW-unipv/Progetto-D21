@@ -26,6 +26,8 @@ public class GameThread extends Thread{
     private void gameSetup() {
     	localGame = new Game(player1, player2);
     	nextPlayer = player1;
+    	player1.sendMessage("begin,"+parameters.getTimestring());
+    	player2.sendMessage("begin"+parameters.getTimestring());
     	nextPlayer.sendMessage("abi");
     	player2.sendMessage("NOTabi");
     	

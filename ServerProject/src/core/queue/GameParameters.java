@@ -2,9 +2,14 @@ package core.queue;
 
 import core.queue.util.GameDuration;
 
+import java.time.Duration;
+
 public class GameParameters {
 
     public GameDuration duration;
+    private String longTime = "6";
+    private String shortTime = "3";
+
 
     public GameParameters(){
         //TODO FORSE
@@ -28,5 +33,12 @@ public class GameParameters {
         return "GameParameters{" +
                 "duration=" + duration +
                 '}';
+    }
+
+    public String getTimestring(){
+        if(duration == GameDuration.LONG){
+            return longTime;
+        }
+        return shortTime;
     }
 }
