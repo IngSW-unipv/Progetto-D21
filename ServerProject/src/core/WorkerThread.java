@@ -19,7 +19,7 @@ public class WorkerThread extends Thread{
     private Player player = null;
     private ServerMemory myMemory;
     private GameThread assignedGame;
-    private Player invitedPlayer;
+    private String invitedPlayer;
     private GameParameters inviteParameters;
 
     public WorkerThread(Socket socket){
@@ -90,7 +90,7 @@ public class WorkerThread extends Thread{
             
             case "sendInvite":
             	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
-            	this.invitedPlayer = myMemory.getPlayer(parts[1]);
+            	this.invitedPlayer = myMemory.getPlayer(parts[1]).getNickName();
             	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
             	
@@ -99,9 +99,9 @@ public class WorkerThread extends Thread{
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
                     System.out.println("messaggio di accettazione ricevuto" + parts[1]);
-                    System.out.println(this.invitedPlayer.toString());
-                    GameThread assignedGame = new GameThread(player, this.invitedPlayer, inviteParameters);
-                    this.invitedPlayer.getWorkerThread().setAssignedGame(assignedGame);
+                    System.out.println(this.invitedPlayer);
+                    GameThread assignedGame = new GameThread(player, myMemory.getPlayer(this.invitedPlayer), inviteParameters);
+                    myMemory.getPlayer(this.invitedPlayer).getWorkerThread().setAssignedGame(assignedGame);
                 } else {
             	    player.sendMessage("decline");
                 }
