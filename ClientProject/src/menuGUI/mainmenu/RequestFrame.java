@@ -81,5 +81,8 @@ public class RequestFrame extends JFrame {
         layeredPane.add(jb2, Integer.valueOf(1));
 
         this.add(layeredPane);
+
+        revalidate();
+        repaint();
     }
 }
