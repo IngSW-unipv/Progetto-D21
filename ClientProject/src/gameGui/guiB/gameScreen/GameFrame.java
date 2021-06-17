@@ -16,10 +16,12 @@ public class GameFrame extends JFrame {
     private String duration;
     private Timer myTimer;
     private JLayeredPane layeredPane;
+    private GameInfoPanel infoPanel;
 
     public  GameFrame(String duration){
 
         this.duration=duration;
+        myTimer = new Timer();
 
         Container c = new Container();
         c = getContentPane();
@@ -70,7 +72,7 @@ public class GameFrame extends JFrame {
             }
         }
 
-        GameInfoPanel infoPanel = new GameInfoPanel(duration);
+        infoPanel = new GameInfoPanel(duration);
 
         c.add(infoPanel);
         infoPanel.setBounds(800,0,300,600);
@@ -104,5 +106,15 @@ public class GameFrame extends JFrame {
 
         layeredPane.add(component,Integer.valueOf(level));
 
+    }
+
+    public void resetTimer(){
+        infoPanel.resetTimer();
+    }
+    public void setMyTurn(){
+        infoPanel.setTurnOwnerME();
+    }
+    public void setOppositeTurn(){
+        infoPanel.setTurnOwnerOPPOSITE();
     }
 }

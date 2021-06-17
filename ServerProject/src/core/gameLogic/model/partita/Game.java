@@ -22,6 +22,7 @@ public class Game {
 	private int turnsElapsed;
 	private TokenColor startingColor;
 	private Timer gameTimer;
+	private boolean victory = false;
 
 
 	//il controller globale passa i giocatori alla partita generata, la partita inizializza la sua grid
@@ -67,6 +68,7 @@ public class Game {
 		if(gameGrid.isFinalVictory()) {
 			//SoundPlayer.setVol(1, 0); //modifica del volume dinamica
 			//SoundPlayer.playSound(new File("resources/sounds/win.wav"),1);
+			victory = true;
 			return;
 		}
 		
@@ -84,4 +86,10 @@ public class Game {
 	public boolean getFinalVictory() {
 		return this.gameGrid.isFinalVictory();
 	}
+
+	public boolean isVictory() {
+		return victory;
+	}
 }
+
+

@@ -85,15 +85,14 @@ public class WorkerThread extends Thread{
             	assignedGame.run();
             	break;
 
-            case "sendInvite":
+            case "sendInvite":{
             	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
             	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
-            	return;
+            	return;}
 
-            case "inviteAcceptedOrRefused":
+            case "inviteAcceptedOrRefused":{
             	if(Integer.parseInt(parts[1])==1) {
-                    System.out.println("messaggio di accettazione ricevuto" + parts[1]);
                     System.out.println(myMemory.getPlayer(parts[2]).toString());
                     GameThread assignedGame = new GameThread(player, myMemory.getPlayer(parts[2]), inviteParameters);
                     myMemory.getPlayer(parts[2]).getWorkerThread().setAssignedGame(assignedGame);
@@ -101,7 +100,7 @@ public class WorkerThread extends Thread{
             	    player.sendMessage("decline");
                 }
 
-            	break;
+            	break;}
 
 
             case "addmeToQueue": //addmeToQueue,l

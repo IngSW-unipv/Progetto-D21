@@ -102,4 +102,16 @@ public class GUI {
         DeclineFrame declineFrame = new DeclineFrame();
     }
 
+    public void resetTimer(){
+        gameFrame.resetTimer();
+    }
+
+    public void setMyturn(){
+        gameFrame.setMyTurn();
+    }
+
+    public void setOpponentTurn(){
+        gameFrame.setOppositeTurn();
+    }
+
 }

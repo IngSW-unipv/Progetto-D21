@@ -5,6 +5,8 @@ import core.gameLogic.model.partita.TokenColor;
 import core.gameLogic.model.partita.util.GridStatus;
 import core.queue.GameParameters;
 
+import java.nio.channels.NetworkChannel;
+
 public class GameThread extends Thread{
 	
 	private Player player1;
@@ -13,12 +15,14 @@ public class GameThread extends Thread{
 	private Game localGame;
 	private int x;
 	private Player nextPlayer;
+	private Player oTherPlayer;
 
     public GameThread(Player player1, Player player2,GameParameters parameters) {
     	
     	this.player1=player1;
     	this.player2=player2;
     	this.parameters=parameters;
+		this.oTherPlayer =null;
     	gameSetup();
     	
     }
@@ -37,6 +41,10 @@ public class GameThread extends Thread{
 	public void run() {
 		
 		localGame.turn(x);
+		if(localGame.isVictory()){
+			nextPlayer.sendMessage("victory");
+			oTherPlayer.sendMessage("defeat");
+		}
 		alternatePlayer();
 		int x = GridStatus.getGameStatus().getLastX();
 		int y = GridStatus.getGameStatus().getLastY();
@@ -61,6 +69,7 @@ public class GameThread extends Thread{
     private void alternatePlayer() {
     	if(nextPlayer.equals(player1)) {
     		nextPlayer=player2;
+    		oTherPlayer = player1;
     		player1.sendMessage("NOTabi");
     		nextPlayer.sendMessage("abi");
     		return;
@@ -68,6 +77,7 @@ public class GameThread extends Thread{
     		
     	if(nextPlayer.equals(player2)) {
     		nextPlayer=player1;
+    		oTherPlayer = player2;
     		player2.sendMessage("NOTabi");
     		nextPlayer.sendMessage("abi");
     		return;

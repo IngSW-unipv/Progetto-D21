@@ -74,10 +74,14 @@ public class NetworkThread extends Thread {
         	case "abi":
         	    System.out.println("abilitato");
                 guiHandler.enableGameGui();
+                GUI.getGuiHandler().resetTimer();
+                GUI.getGuiHandler().setMyturn();
         		break;
         	case "NOTabi":
         	    System.out.println("disabilitato");
         	    guiHandler.disableGameGui();
+                GUI.getGuiHandler().resetTimer();
+                GUI.getGuiHandler().setOpponentTurn();
 
         		break;
         	case "addToken": //addToken,x,y	
