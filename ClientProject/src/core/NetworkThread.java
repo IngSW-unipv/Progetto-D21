@@ -88,10 +88,13 @@ public class NetworkThread extends Thread {
         		break;
         	case "begin":
         		guiHandler.startGameIO(parts[1]);
+        		break;
         	case "victory":
         		guiHandler.victoryScreen(parts[0]);
+        		break;
         	case "defeat":
         		guiHandler.victoryScreen(parts[0]);
+        		break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]+parts[2]);
                 break;
@@ -103,6 +106,7 @@ public class NetworkThread extends Thread {
                 break;
             case "decline":
                 guiHandler.displayDeclineFrame();
+                break;
         }
     }
     

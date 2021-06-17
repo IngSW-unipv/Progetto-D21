@@ -40,7 +40,7 @@ public class WorkerThread extends Thread{
 
             while (true) {
 
-                System.out.println("aa");
+                System.out.println("Stringa ricevuta");
                 //System.out.println(this.socketInput.readLine());
                 parseString(this.socketInput.readLine());
 
@@ -90,7 +90,7 @@ public class WorkerThread extends Thread{
             
             case "sendInvite":
             	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
-            	invitedPlayer = myMemory.getPlayer(parts[1]);
+            	this.invitedPlayer = myMemory.getPlayer(parts[1]);
             	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
             	
@@ -98,8 +98,10 @@ public class WorkerThread extends Thread{
             	
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
-                    System.out.println("messaggio di accettazione ricevuto" + parts[0]);
-                    GameThread newGame = new GameThread(player, invitedPlayer, inviteParameters);
+                    System.out.println("messaggio di accettazione ricevuto" + parts[1]);
+                    System.out.println(this.invitedPlayer.toString());
+                    GameThread assignedGame = new GameThread(player, this.invitedPlayer, inviteParameters);
+                    this.invitedPlayer.getWorkerThread().setAssignedGame(assignedGame);
                 } else {
             	    player.sendMessage("decline");
                 }

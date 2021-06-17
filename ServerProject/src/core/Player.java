@@ -66,7 +66,8 @@ public class Player {
 	}
     
     public void sendMessage(String message) {
-    	
+
+        System.out.println(message);
     	this.out.println(message);
     	
     }
@@ -78,7 +79,6 @@ public class Player {
 	public String toString() {
         return this.nickName+"dbug";
 	}
-    
-    
+
     
 }

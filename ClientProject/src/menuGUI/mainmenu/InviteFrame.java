@@ -60,6 +60,7 @@ public class InviteFrame extends JFrame {
         jb1.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
         jb1.setBackground(Color.ORANGE.brighter());
         jb1.setForeground(Color.BLACK);
+        jb1.addActionListener(sendInvite);
 
         jb1.setUI(new StyledButtonUI());
 

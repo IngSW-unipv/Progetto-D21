@@ -25,8 +25,9 @@ public class ServerMemory {
     }
     
     public Player getPlayer(String s){
-
+        System.out.println(currentPlayersList.get(s).toString());
         return currentPlayersList.get(s);
+
     }
 
     public LinkedHashMapListModel<String, Player> getCurrentPlayersList() {

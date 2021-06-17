@@ -24,7 +24,7 @@ public class RandomFrame extends JFrame {
         this.setLocationRelativeTo(null);
 
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/mainmenu/img/icon.png");
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
         setIconImage(img);
 
         Border line = new LineBorder(new Color(0x0F142A, true));
@@ -42,14 +42,14 @@ public class RandomFrame extends JFrame {
 
         //aggiungere bottoni di conferma e rifiuto (come LOL)
         label1 = new JLabel();
-        label1.setIcon(new ImageIcon("src/mainmenu/img/blur300x150.jpg"));
+        label1.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur300x150.jpg"));
         label1.setBounds(0,0,300,150);
 
         label2 = new JLabel();
         //label2.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
         label2.setBounds(0,0, 300,150);
         //label2.setForeground(Color.BLACK);
-        label2.setIcon(new ImageIcon("src/mainmenu/img/hourglass.png"));
+        label2.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/hourglass.png"));
 
         label3 = new JLabel("WAITING...");
         label3.setBounds(110,10,200, 50);

@@ -176,7 +176,6 @@ public class Second_Menu extends JFrame {
                     ranf.setVisible(true);
                     return;
                 }
-
             }
             ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
 
@@ -212,9 +211,6 @@ public class Second_Menu extends JFrame {
     public String getGameLenght() {
         if (gameModeFrame != null) {
             if (gameModeFrame.getGameSpeed() != null) {
-                NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + gameModeFrame.getGameSpeed());
-                RandomFrame ranf = new RandomFrame();
-                ranf.setVisible(true);
                 return gameModeFrame.getGameSpeed();
             }
         }return "a";
