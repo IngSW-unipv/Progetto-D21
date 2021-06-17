@@ -24,6 +24,7 @@ public class ButtonAndTextAreaListener implements ActionListener {
         switch (command){
             case "newNick":
                if(!nickField.getText().equals("")){
+                   NetworkThread.getNetworkThread().setNickName(nickField.getText());
                    NetworkThread.getNetworkThread().sendMessage(command+","+nickField.getText());
                    break;
                }

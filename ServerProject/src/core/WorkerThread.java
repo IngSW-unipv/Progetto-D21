@@ -3,9 +3,7 @@ package core;
 import java.io.*;
 import java.net.Socket;
 
-import core.gameLogic.model.partita.Game;
 import core.gameLogic.model.partita.TokenColor;
-import core.gameLogic.model.partita.util.GridStatus;
 import core.queue.GameParameters;
 import core.queue.Queue;
 
@@ -19,7 +17,6 @@ public class WorkerThread extends Thread{
     private Player player = null;
     private ServerMemory myMemory;
     private GameThread assignedGame;
-    private String invitedPlayer;
     private GameParameters inviteParameters;
 
     public WorkerThread(Socket socket){
@@ -87,27 +84,26 @@ public class WorkerThread extends Thread{
             	assignedGame.setX(Integer.parseInt(parts[1]));
             	assignedGame.run();
             	break;
-            
+
             case "sendInvite":
             	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
-            	this.invitedPlayer = myMemory.getPlayer(parts[1]).getNickName();
             	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
-            	
-            	break;
-            	
+            	return;
+
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
                     System.out.println("messaggio di accettazione ricevuto" + parts[1]);
-                    System.out.println(this.invitedPlayer);
-                    GameThread assignedGame = new GameThread(player, myMemory.getPlayer(this.invitedPlayer), inviteParameters);
-                    myMemory.getPlayer(this.invitedPlayer).getWorkerThread().setAssignedGame(assignedGame);
+                    System.out.println(myMemory.getPlayer(parts[2]).toString());
+                    GameThread assignedGame = new GameThread(player, myMemory.getPlayer(parts[2]), inviteParameters);
+                    myMemory.getPlayer(parts[2]).getWorkerThread().setAssignedGame(assignedGame);
                 } else {
             	    player.sendMessage("decline");
                 }
 
             	break;
-            
+
+
             case "addmeToQueue": //addmeToQueue,l
             	this.player.sendMessage("//apri la finestra di attesa");
             	GameParameters tempGameParameters = new GameParameters();
@@ -129,6 +125,4 @@ public class WorkerThread extends Thread{
 
 	}
 
-    
-    
 }

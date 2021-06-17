@@ -19,6 +19,7 @@ public class NetworkThread extends Thread {
     private static NetworkThread myThread=null;
     private JPanel animPanel;
     private GUI guiHandler;
+    private String nickName;
 
     private NetworkThread(int port) {
         this.port = port;
@@ -125,5 +126,12 @@ public class NetworkThread extends Thread {
     public void setGuiHandler(GUI thread){
         this.guiHandler = thread;
     }
-    
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
 }
