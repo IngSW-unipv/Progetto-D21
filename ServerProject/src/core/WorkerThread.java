@@ -24,6 +24,7 @@ public class WorkerThread extends Thread{
         this.socket = socket;
         setupReaders();
         myMemory = ServerMemory.getServerMemory();
+        inviteParameters = new GameParameters();
 
     }
 
@@ -69,6 +70,7 @@ public class WorkerThread extends Thread{
     public void parseString(String message){
         String[] parts = message.split(",");
         TokenColor recievedColor=null;
+        boolean creategame = false;
         
         System.out.println(parts[0]+parts[1]);
 
@@ -87,20 +89,17 @@ public class WorkerThread extends Thread{
 
             case "sendInvite":{
             	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
-            	this.inviteParameters = new GameParameters();
             	this.inviteParameters.setDuration(parts[2]);
             	return;}
 
-            case "inviteAcceptedOrRefused":{
+            case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
-                    System.out.println(myMemory.getPlayer(parts[2]).toString());
-                    GameThread assignedGame = new GameThread(player, myMemory.getPlayer(parts[2]), inviteParameters);
-                    myMemory.getPlayer(parts[2]).getWorkerThread().setAssignedGame(assignedGame);
+                    creategame = true;
                 } else {
             	    player.sendMessage("decline");
                 }
 
-            	break;}
+            	break;
 
 
             case "addmeToQueue": //addmeToQueue,l
@@ -114,6 +113,14 @@ public class WorkerThread extends Thread{
             default :
             	socketOutput.println("invalid message sent by you");
             	System.out.println("invalid message recieved");
+        }
+
+        if(creategame){
+            //ottengo il player con il quale creare la partita
+            Player player2 = myMemory.getPlayer(parts[2]);
+            System.out.println(player2.toString());
+            GameThread assignedGame = new GameThread(player, player2, inviteParameters);
+            player2.getWorkerThread().setAssignedGame(assignedGame);
         }
 
     }
