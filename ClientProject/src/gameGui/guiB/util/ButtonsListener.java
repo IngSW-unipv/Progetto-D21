@@ -18,7 +18,7 @@ public class ButtonsListener implements ActionListener {
 
         switch (butt.getActionCommand()){
             case "accept":
-                NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,1,"+NetworkThread.getNetworkThread().getNickName());
+                NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,1,"+NetworkThread.getNetworkThread().getOpponent());
                 break;
             case "decline":
                 NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,0,"+NetworkThread.getNetworkThread().getNickName());

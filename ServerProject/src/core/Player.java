@@ -19,7 +19,11 @@ public class Player {
     private TokenColor color;
     private PrintWriter out;
     private WorkerThread workerThread;
-    
+
+    public Player(){
+        //costruttore vuoto per istanziare e basta
+    }
+
     public Player(Socket playerSocket, String nickName,WorkerThread thread) {
         this.playerSocket = playerSocket;
         this.nickName = nickName;
@@ -80,5 +84,15 @@ public class Player {
         return this.nickName+"dbug";
 	}
 
-    
+    public void playerBuilder(Player p){
+
+        this.workerThread = p.getWorkerThread();
+        this.playerSocket = workerThread.getSocket();
+        try {
+            this.out = new PrintWriter(new OutputStreamWriter(playerSocket.getOutputStream()),true);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
 }

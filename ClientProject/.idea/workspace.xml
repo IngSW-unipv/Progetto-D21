@@ -3,7 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientConnect4/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientConnect4/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientConnect4/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientConnect4/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientConnect4/tester/ClientMainProva1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientConnect4/tester/ClientMainProva1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameGui/guiB/util/ButtonsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameGui/guiB/util/ButtonsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/CelsiusiGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/mainmenu/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/mainmenu/InviteFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

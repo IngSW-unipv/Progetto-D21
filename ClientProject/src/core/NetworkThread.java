@@ -20,8 +20,10 @@ public class NetworkThread extends Thread {
     private JPanel animPanel;
     private GUI guiHandler;
     private String nickName;
+    private String opponent;
 
     private NetworkThread(int port) {
+        this.opponent="";
         this.port = port;
     }
     
@@ -69,6 +71,7 @@ public class NetworkThread extends Thread {
     
     public void parseString(String message){
         String[] parts = message.split(",");
+        System.out.println(message);
 
         switch (parts[0]){
         	case "abi":
@@ -102,6 +105,7 @@ public class NetworkThread extends Thread {
         		break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]+parts[2]);
+                this.opponent=parts[2];
                 break;
             case "gamefound" :
                 System.out.println("parita trovata");
@@ -112,6 +116,9 @@ public class NetworkThread extends Thread {
             case "decline":
                 guiHandler.displayDeclineFrame();
                 break;
+                //default con gestione errore messaggio
+            default:
+                ErrorFrame errorFrame = new ErrorFrame("invalid message recived");
         }
     }
     
@@ -137,5 +144,9 @@ public class NetworkThread extends Thread {
 
     public String getNickName() {
         return nickName;
+    }
+
+    public String getOpponent(){
+        return opponent;
     }
 }

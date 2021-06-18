@@ -18,6 +18,7 @@ public class WorkerThread extends Thread{
     private ServerMemory myMemory;
     private GameThread assignedGame;
     private GameParameters inviteParameters;
+    private Player invitedPLayer;
 
     public WorkerThread(Socket socket){
 
@@ -25,6 +26,7 @@ public class WorkerThread extends Thread{
         setupReaders();
         myMemory = ServerMemory.getServerMemory();
         inviteParameters = new GameParameters();
+        invitedPLayer = new Player();
 
     }
 
@@ -72,7 +74,7 @@ public class WorkerThread extends Thread{
         TokenColor recievedColor=null;
         boolean creategame = false;
         
-        System.out.println(parts[0]+parts[1]);
+        System.out.println(message);
 
         switch (parts[0]){
             case "newNick":
@@ -80,6 +82,7 @@ public class WorkerThread extends Thread{
                 this.myMemory.addPlayer(player);
                 System.out.println(this.player.toString()+"debugincaseswitch");
                 player.sendMessage("openMainMenu");
+                this.setName(parts[1]);
                 break;
             
             case "addTokenInvirtualGrid":
@@ -87,14 +90,16 @@ public class WorkerThread extends Thread{
             	assignedGame.run();
             	break;
 
-            case "sendInvite":{
-            	myMemory.getPlayer(parts[1]).sendMessage("invitoRicevuto"+","+player.getNickName()+","+parts[2]);
+            case "sendInvite":
+                invitedPLayer.playerBuilder(myMemory.getPlayer(parts[1]));
+            	invitedPLayer.sendMessage("invitoRicevuto,"+player.getNickName()+","+parts[2]);
             	this.inviteParameters.setDuration(parts[2]);
-            	return;}
+            	return;
 
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
                     creategame = true;
+                    System.out.println("INVITO RICEVUTO DA "+parts[2]);
                 } else {
             	    player.sendMessage("decline");
                 }
@@ -117,10 +122,13 @@ public class WorkerThread extends Thread{
 
         if(creategame){
             //ottengo il player con il quale creare la partita
+            System.out.println(myMemory.getPlayer(parts[2]));
             Player player2 = myMemory.getPlayer(parts[2]);
             System.out.println(player2.toString());
             GameThread assignedGame = new GameThread(player, player2, inviteParameters);
+            this.setAssignedGame(assignedGame);
             player2.getWorkerThread().setAssignedGame(assignedGame);
+
         }
 
     }
@@ -130,5 +138,9 @@ public class WorkerThread extends Thread{
         this.assignedGame = assignedGame;
 
 	}
+
+	public Socket getSocket(){
+        return this.socket;
+    }
 
 }

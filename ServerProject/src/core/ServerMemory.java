@@ -25,7 +25,6 @@ public class ServerMemory {
     }
     
     public Player getPlayer(String s){
-        System.out.println(currentPlayersList);
         return currentPlayersList.get(s);
 
     }
