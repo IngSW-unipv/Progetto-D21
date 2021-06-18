@@ -105,7 +105,7 @@ public class NetworkThread extends Thread {
         		break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]+parts[2]);
-                this.opponent=parts[2];
+                this.opponent=parts[1];
                 break;
             case "gamefound" :
                 System.out.println("parita trovata");

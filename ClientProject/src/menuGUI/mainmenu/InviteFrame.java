@@ -53,7 +53,7 @@ public class InviteFrame extends JFrame {
                 NetworkThread.getNetworkThread().sendMessage("sendInvite,"+textField.getText()+","+second_menu.getGameLenght());
                 return;
             }ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
-            
+
         };
 
         jb1 = new JButton("INVITE");
