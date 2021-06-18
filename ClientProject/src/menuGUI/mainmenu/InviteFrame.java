@@ -49,7 +49,7 @@ public class InviteFrame extends JFrame {
         label1.setForeground(Color.BLACK);
 
         ActionListener sendInvite = e ->{
-            if((this.second_menu!=null)&&(second_menu.getGameLenght().compareTo("a")!=0)){
+            if((this.second_menu!=null)){
                 NetworkThread.getNetworkThread().sendMessage("sendInvite,"+textField.getText()+","+second_menu.getGameLenght());
             }ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
             //TODO CHIUDI IL PANNELLO APERTO CORRENTE
