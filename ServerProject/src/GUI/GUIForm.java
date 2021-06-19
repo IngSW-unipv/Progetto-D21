@@ -25,8 +25,6 @@ public class GUIForm {
 
     private GUIForm(){
 
-        OnlinePlayersList = new JList();
-        PlayersInQueue = new JList();
         OnlinePlayersList.setModel(ServerMemory.getServerMemory().getCurrentPlayersList());
         PlayersInQueue.setModel(Queue.getQueue().getQueueLIst());
         //ServerMemory.getServerMemory().addPlayer();

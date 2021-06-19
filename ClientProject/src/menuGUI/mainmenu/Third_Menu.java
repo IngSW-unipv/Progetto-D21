@@ -30,7 +30,7 @@ public class Third_Menu extends JFrame {
         this.setLocationRelativeTo(null);
 
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/mainmenu/img/icon.png");
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
         setIconImage(img);
 
         layeredPane = new JLayeredPane();
@@ -44,17 +44,17 @@ public class Third_Menu extends JFrame {
 
         jb1 = new JButton();
         jb1.setBackground(Color.ORANGE);
-        jb1.setIcon(new ImageIcon("src/gui3/themes/stitch.png"));
+        jb1.setIcon(new ImageIcon("src/menuGUI/gui3/themes/stitch.png"));
 
 
         jb2 = new JButton();
         jb2.setBackground(Color.ORANGE);
-        jb2.setIcon(new ImageIcon("src/gui3/themes/avengers.png"));
+        jb2.setIcon(new ImageIcon("src/menuGUI/gui3/themes/avengers.png"));
 
 
         jb3 = new JButton();
         jb3.setBackground(Color.orange);
-        jb3.setIcon(new ImageIcon("src/gui3/themes/mario.png"));
+        jb3.setIcon(new ImageIcon("src/menuGUI/gui3/themes/mario.png"));
 
 
         jb4 = new JButton("Default theme");
@@ -66,7 +66,7 @@ public class Third_Menu extends JFrame {
         jb5 = new JButton();
         jb5.setBackground(new Color(0xC61F29));
         jb5.setBounds(30,621,35,35);
-        jb5.setIcon(new ImageIcon("src/mainmenu/img/double-arrow-left.png"));
+        jb5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/double-arrow-left.png"));
 
 
         jb1.setUI(new StyledButtonUI());
@@ -76,15 +76,15 @@ public class Third_Menu extends JFrame {
         jb5.setUI(new StyledButtonUI());
 
         label1 = new JLabel();
-        label1.setIcon(new ImageIcon("src/mainmenu/img/blur500x700.jpg"));
+        label1.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur500x700.jpg"));
         label1.setBounds(0,0,500,700);
 
         label2 = new JLabel();
-        label2.setIcon(new ImageIcon("src/mainmenu/img/CHOOSE YOUR.png"));
+        label2.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/CHOOSE YOUR.png"));
         label2.setBounds(10,10,700,80);
 
         label4 = new JLabel();
-        label4.setIcon(new ImageIcon("src/mainmenu/img/THEME.png"));
+        label4.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/THEME.png"));
         label4.setBounds(120,70,700,80);
 
         label3 = new JLabel();
