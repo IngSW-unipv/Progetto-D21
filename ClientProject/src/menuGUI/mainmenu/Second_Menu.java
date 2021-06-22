@@ -9,7 +9,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-//TODO METTERE IL BOTTONE TEMI SOTTO A TUTTI PER FARCI BELLI
+
 public class Second_Menu extends JFrame {
 
     private JLayeredPane layeredPane;

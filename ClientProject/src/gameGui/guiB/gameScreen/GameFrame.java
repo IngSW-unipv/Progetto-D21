@@ -17,6 +17,7 @@ public class GameFrame extends JFrame {
     private Timer myTimer;
     private JLayeredPane layeredPane;
     private GameInfoPanel infoPanel;
+    private VictoryPanel victoryPanel;
 
     public  GameFrame(String duration){
 
@@ -77,6 +78,8 @@ public class GameFrame extends JFrame {
         c.add(infoPanel);
         infoPanel.setBounds(800,0,300,600);
         infoPanel.setVisible(true);
+
+
 
     }
 

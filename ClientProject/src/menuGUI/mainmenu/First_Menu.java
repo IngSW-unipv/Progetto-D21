@@ -26,6 +26,7 @@ public class First_Menu extends JFrame {
 
         Toolkit kit = Toolkit.getDefaultToolkit();
         Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
+
         setIconImage(img);
 
         label1 = new JLabel();
@@ -90,6 +91,8 @@ public class First_Menu extends JFrame {
         layeredPane.add(label4,Integer.valueOf(2));
         this.add(layeredPane);
         this.setLocationRelativeTo(null);
+        revalidate();
+        repaint();
 
     }
 }

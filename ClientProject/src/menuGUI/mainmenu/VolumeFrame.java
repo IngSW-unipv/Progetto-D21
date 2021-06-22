@@ -25,7 +25,7 @@ public class VolumeFrame extends JFrame{
         this.setLocationRelativeTo(null);
 
         Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/mainmenu/img/icon.png");
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
         setIconImage(img);
 
         Border line = new LineBorder(new Color(0x0F142A, true));
@@ -34,16 +34,16 @@ public class VolumeFrame extends JFrame{
         layeredPane.setBounds(0,0,300,150);
 
 
-        slider = new JSlider(JSlider.HORIZONTAL,0,50,25);
+        slider = new JSlider(JSlider.HORIZONTAL,0,100,25);
         slider.setBounds(40,30,170,50);  
-        slider.setMinorTickSpacing(2);  
-        slider.setMajorTickSpacing (10);  
+        slider.setMinorTickSpacing(5);
+        slider.setMajorTickSpacing (50);
         slider.setPaintTicks (true);  
         slider.setPaintLabels (true);
 
 
-        ImageIcon c0 = new ImageIcon("src/mainmenu/img/music.png");
-        ImageIcon c1 = new ImageIcon("src/mainmenu/img/music-off.png");
+        ImageIcon c0 = new ImageIcon("src/menuGUI/mainmenu/img/music.png");
+        ImageIcon c1 = new ImageIcon("src/menuGUI/mainmenu/img/music-off.png");
         button1 = new JButton();
         button1.setIcon(c0);
         button1.setBounds(238,38,36,37);
@@ -56,7 +56,7 @@ public class VolumeFrame extends JFrame{
         
         label1 = new JLabel();
         label1.setBounds(0,0,300,150);
-        label1.setIcon(new ImageIcon("src/mainmenu/img/blur300x150.jpg"));
+        label1.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur300x150.jpg"));
 
 
         layeredPane.add(slider, Integer.valueOf(1));

@@ -1,4 +1,4 @@
-package menuGUI.mainmenu;
+package gameGui.guiB.gameScreen;
 
 import menuGUI.gui3.StyledButtonUI;
 import menuGUI.mainmenu.control.BackToMenuLIstener;

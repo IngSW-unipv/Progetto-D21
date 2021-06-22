@@ -1,6 +1,9 @@
 package core;
 
 import gameGui.guiB.gameScreen.GameFrame;
+import gameGui.guiB.gameScreen.LoserFrame;
+import gameGui.guiB.gameScreen.VictoryFrame;
+import gameGui.guiB.gameScreen.VictoryPanel;
 import gameGui.guiB.util.TokenColor;
 import menuGUI.mainmenu.*;
 
@@ -48,9 +51,16 @@ public class GUI {
 
     public void victoryScreen(String victory){
         disableGameGui();
-        if(victory.equals("victory"))
-            gameFrame.addToLayeredPane(new VictoryPanel(true),3);
-        gameFrame.addToLayeredPane(new VictoryPanel(false),3);
+        if(victory.equals("victory")){
+            VictoryFrame victoryFrame = new VictoryFrame();
+            victoryFrame.setVisible(true);
+            victoryFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }else{
+            LoserFrame loserFrame= new LoserFrame();
+            loserFrame.setVisible(true);
+            loserFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        }
+
     }
 
     private void startLoginMenu(){
@@ -96,6 +106,12 @@ public class GUI {
         RequestFrame requestFrame = new RequestFrame(playerName);
         requestFrame.setVisible(true);
         requestFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+    }
+
+    public void displayVictory(){
+        VictoryFrame victoryFrame = new VictoryFrame();
+        victoryFrame.setVisible(true);
+        victoryFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public void displayDeclineFrame(){
