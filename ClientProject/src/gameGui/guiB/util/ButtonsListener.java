@@ -1,6 +1,7 @@
 package gameGui.guiB.util;
 
 import core.NetworkThread;
+import menuGUI.mainmenu.DeclineFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -23,6 +24,9 @@ public class ButtonsListener implements ActionListener {
                 break;
             case "decline":
                 NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,0,"+NetworkThread.getNetworkThread().getNickName());
+                DeclineFrame declineFrame = new DeclineFrame();
+                declineFrame.setVisible(true);
+                declineFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 break;
         }
 
