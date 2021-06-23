@@ -35,7 +35,7 @@ public class Second_Menu extends JFrame {
     private JPopupMenu popupMenu;
     private GameModeFrame gameModeFrame;
     private String gameLenght;
-    private JButton button6;
+
 
     public Second_Menu() {
         setSize(new Dimension(700, 500));
@@ -68,58 +68,59 @@ public class Second_Menu extends JFrame {
         label7.setOpaque(false);
         label7.setBounds(160, 60, 400, 180);
 
-
-        label4 = new JLabel("Invite Player");
-        label4.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        label4.setForeground(Color.black);
-        label4.setBounds(290, 155, 200, 117);
-
-        label5 = new JLabel("Random Player");
-        label5.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        label5.setForeground(Color.black);
-        label5.setBounds(280, 220, 200, 117);
-
-
         Border line = new LineBorder(new Color(0x0F142A, true));
 
-        button2 = new JButton();
-        button2.setBounds(275, 260, 140, 45);
-        button2.setUI(new StyledButtonUI());
-        button2.setBackground(Color.orange);
+        button5 = new JButton();
+        button5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/white-gear.png"));
+        button5.setBounds(640, 20, 35, 35);
+        button5.setFocusPainted(false);
+        button5.setBorder(line);
+        button5.setContentAreaFilled(false);
 
-        button3 = new JButton();
-        button3.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/white-gear.png"));
-        button3.setBounds(640, 20, 35, 35);
+        button1 = new JButton("Invite Player");
+        button1.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        button1.setForeground(Color.BLACK);
+        button1.setOpaque(true);
+        button1.setContentAreaFilled(false);
+        button1.setFocusPainted(false);
+        button1.setBorder(line);
+        button1.setBounds(260, 193, 170, 45);
+        button1.setBackground(Color.orange);
+        button1.setUI(new StyledButtonUI());
+
+
+        button2 = new JButton("Random Player");
+        button2.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        button2.setForeground(Color.BLACK);
+        button2.setOpaque(true);
+        button2.setContentAreaFilled(false);
+        button2.setFocusPainted(false);
+        button2.setBorder(line);
+        button2.setBounds(260, 260, 170, 45);
+        button2.setBackground(Color.orange);
+        button2.setUI(new StyledButtonUI());
+
+        button3 = new JButton("Game Mode");
+        button3.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        button3.setForeground(Color.BLACK);
+        button3.setOpaque(true);
+        button3.setContentAreaFilled(false);
         button3.setFocusPainted(false);
         button3.setBorder(line);
-        button3.setContentAreaFilled(false);
+        button3.setBounds(260, 325, 170, 45);
+        button3.setBackground(Color.orange);
+        button3.setUI(new StyledButtonUI());
 
-        button4 = new JButton();
-        button4.setBounds(275, 193, 140, 45);
+        button4 = new JButton("Themes");
+        button4.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        button4.setForeground(Color.BLACK);
+        button4.setOpaque(true);
+        button4.setContentAreaFilled(false);
+        button4.setFocusPainted(false);
+        button4.setBorder(line);
+        button4.setBounds(260, 390, 170, 45);
+        button4.setBackground(Color.orange);
         button4.setUI(new StyledButtonUI());
-        button4.setBackground(Color.ORANGE);
-
-
-        button5 = new JButton();
-        button5.setBounds(275, 325, 140, 45);
-        button5.setUI(new StyledButtonUI());
-        button5.setBackground(Color.ORANGE);
-
-        label6 = new JLabel("Game Mode");
-        label6.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        label6.setForeground(Color.black);
-        label6.setBounds(290, 285, 200, 117);
-
-        button6 = new JButton("Themes");
-        button6.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        button6.setForeground(Color.BLACK);
-        button6.setOpaque(true);
-        button6.setContentAreaFilled(false);
-        button6.setFocusPainted(false);
-        button6.setBorder(line);
-        button6.setBounds(275, 390, 140, 45);
-        button6.setBackground(Color.orange);
-        button6.setUI(new StyledButtonUI());
 
         popupMenu = new JPopupMenu();
 
@@ -182,7 +183,7 @@ public class Second_Menu extends JFrame {
         };
 
         item1.addActionListener(volume);
-        button6.addActionListener(tema);
+        button1.addActionListener(tema);
         button3.addActionListener(menubutton);
         button5.addActionListener(gameMode);
         item2.addActionListener(rules);
@@ -194,13 +195,12 @@ public class Second_Menu extends JFrame {
         layeredPane.add(label3, Integer.valueOf(2));
         layeredPane.add(button3, Integer.valueOf(1));
         layeredPane.add(button4, Integer.valueOf(1));
-        layeredPane.add(label4, Integer.valueOf(2));
-        layeredPane.add(label5, Integer.valueOf(2));
+
         layeredPane.add(popupMenu, Integer.valueOf(1));
         layeredPane.add(button5, Integer.valueOf(1));
-        layeredPane.add(label6, Integer.valueOf(2));
+        //layeredPane.add(label6, Integer.valueOf(2));
         layeredPane.add(label7, Integer.valueOf(2));
-        layeredPane.add(button6, Integer.valueOf(1));
+        layeredPane.add(button1, Integer.valueOf(1));
         this.add(layeredPane);
         // il pannello per qualche motivo non completa la sua generazione fino a che non viene aggiornato
         this.revalidate();
