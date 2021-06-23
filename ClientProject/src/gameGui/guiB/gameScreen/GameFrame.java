@@ -3,6 +3,7 @@ package gameGui.guiB.gameScreen;
 import gameGui.guiB.control.ButtonListener;
 import gameGui.guiB.util.AnimationTask;
 import gameGui.guiB.util.TokenColor;
+import menuGUI.mainmenu.Third_Menu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +18,8 @@ public class GameFrame extends JFrame {
     private Timer myTimer;
     private JLayeredPane layeredPane;
     private GameInfoPanel infoPanel;
-    private VictoryPanel victoryPanel;
+    private JLabel lblNewLabel;
+    private Third_Menu third;
 
     public  GameFrame(String duration){
 
@@ -36,10 +38,30 @@ public class GameFrame extends JFrame {
         layeredPane.setBounds(0, 0, 800, 700);
         c.add(layeredPane);
 
-        JLabel lblNewLabel = new JLabel("");
+        third = new Third_Menu();
+
+        lblNewLabel = new JLabel("");
         lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
+
+        switch(third.getChoosenTheme()){
+            case 1:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+                break;
+            case 2:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmangrid.png"));
+                break;
+            case 3:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
+                break;
+            case 0:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+                break;
+            default:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+        }
+        //TODO da testare
 
 
         this.animationPanel = new JPanel();

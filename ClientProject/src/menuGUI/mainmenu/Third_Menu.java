@@ -20,6 +20,7 @@ public class Third_Menu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
+    private int choosenTheme;
 
     public Third_Menu(){
         setSize(new Dimension(500,700));
@@ -42,15 +43,25 @@ public class Third_Menu extends JFrame {
         boxLayout = new BoxLayout(jPanel, BoxLayout.Y_AXIS);
         jPanel.setLayout(boxLayout);
 
+        choosenTheme = 0;
+
         jb1 = new JButton();
         jb1.setBackground(Color.ORANGE);
         jb1.setIcon(new ImageIcon("src/menuGUI/gui3/themes/stitch.png"));
-
 
         jb2 = new JButton();
         jb2.setBackground(Color.ORANGE);
         jb2.setIcon(new ImageIcon("src/menuGUI/gui3/themes/avengers.png"));
 
+        ActionListener Theme2 = e -> {
+            JButton jb = new JButton();
+            if(jb.isSelected()){
+                choosenTheme = 2;
+            }
+            else choosenTheme = 0;
+        };
+
+        jb2.addActionListener(Theme2);
 
         jb3 = new JButton();
         jb3.setBackground(Color.orange);
@@ -63,11 +74,34 @@ public class Third_Menu extends JFrame {
         jb4.setBackground(new Color(0xC61F29));
         jb4.setForeground(Color.BLACK);
 
+        ActionListener Theme = e -> {
+            if(jb1.isSelected()){
+                choosenTheme = 1;
+            } else if(jb2.isSelected()){
+                choosenTheme = 2;
+            } else if(jb3.isSelected()){
+                choosenTheme = 3;
+            } else choosenTheme = 4;
+        };
+
+        jb1.addActionListener(Theme);
+        jb2.addActionListener(Theme);
+        jb3.addActionListener(Theme);
+        jb4.addActionListener(Theme);
+
+
         jb5 = new JButton();
         jb5.setBackground(new Color(0xC61F29));
         jb5.setBounds(30,621,35,35);
         jb5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/double-arrow-left.png"));
 
+        ActionListener BackToMenu = e -> {
+            if(jb5.isSelected()){
+                this.setVisible(false);
+            }
+        };
+
+        jb5.addActionListener(BackToMenu);
 
         jb1.setUI(new StyledButtonUI());
         jb2.setUI(new StyledButtonUI());
@@ -113,4 +147,7 @@ public class Third_Menu extends JFrame {
 
     }
 
+    public int getChoosenTheme() {
+        return choosenTheme;
+    }
 }

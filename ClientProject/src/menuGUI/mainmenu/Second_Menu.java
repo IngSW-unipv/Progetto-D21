@@ -13,23 +13,14 @@ import java.awt.event.ActionListener;
 public class Second_Menu extends JFrame {
 
     private JLayeredPane layeredPane;
-    private JLabel label0;
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
-    private JLabel label4;
-    private JLabel label5;
-    private JLabel label6;
-    private JLabel label7;
-    private JTextField textField;
+    private JButton button0;
     private JButton button1;
     private JButton button2;
     private JButton button3;
     private JButton button4;
-    private JButton button5;
-    private JRadioButton radioButton1;
-    private JRadioButton radioButton2;
-    private JMenu menu;
     private JMenuItem item1;
     private JMenuItem item2;
     private JPopupMenu popupMenu;
@@ -54,28 +45,28 @@ public class Second_Menu extends JFrame {
         layeredPane = new JLayeredPane();
         layeredPane.setBounds(0, 0, 700, 500);
 
-        label0 = new JLabel();
-        label0.setBounds(0, 0, 700, 500);
-        label0.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur.jpg"));
+        label1 = new JLabel();
+        label1.setBounds(0, 0, 700, 500);
+        label1.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/blur.jpg"));
+
+        label2 = new JLabel();
+        label2.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/CHOOSE YOUR.png"));
+        label2.setOpaque(false);
+        label2.setBounds(110, 0, 450, 180);
 
         label3 = new JLabel();
-        label3.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/CHOOSE YOUR.png"));
+        label3.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/OPPONENT.png"));
         label3.setOpaque(false);
-        label3.setBounds(110, 0, 450, 180);
-
-        label7 = new JLabel();
-        label7.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/OPPONENT.png"));
-        label7.setOpaque(false);
-        label7.setBounds(160, 60, 400, 180);
+        label3.setBounds(160, 60, 400, 180);
 
         Border line = new LineBorder(new Color(0x0F142A, true));
 
-        button5 = new JButton();
-        button5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/white-gear.png"));
-        button5.setBounds(640, 20, 35, 35);
-        button5.setFocusPainted(false);
-        button5.setBorder(line);
-        button5.setContentAreaFilled(false);
+        button0 = new JButton();
+        button0.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/white-gear.png"));
+        button0.setBounds(640, 20, 35, 35);
+        button0.setFocusPainted(false);
+        button0.setBorder(line);
+        button0.setContentAreaFilled(false);
 
         button1 = new JButton("Invite Player");
         button1.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
@@ -87,7 +78,6 @@ public class Second_Menu extends JFrame {
         button1.setBounds(260, 193, 170, 45);
         button1.setBackground(Color.orange);
         button1.setUI(new StyledButtonUI());
-
 
         button2 = new JButton("Random Player");
         button2.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
@@ -185,21 +175,20 @@ public class Second_Menu extends JFrame {
         item1.addActionListener(volume);
         button1.addActionListener(tema);
         button3.addActionListener(menubutton);
-        button5.addActionListener(gameMode);
+        button0.addActionListener(gameMode);
         item2.addActionListener(rules);
         button4.addActionListener(invite);
         button2.addActionListener(random);
 
-        layeredPane.add(label0, Integer.valueOf(0));
+        layeredPane.add(label1, Integer.valueOf(0));
         layeredPane.add(button2, Integer.valueOf(1));
-        layeredPane.add(label3, Integer.valueOf(2));
+        layeredPane.add(label2, Integer.valueOf(2));
         layeredPane.add(button3, Integer.valueOf(1));
         layeredPane.add(button4, Integer.valueOf(1));
 
         layeredPane.add(popupMenu, Integer.valueOf(1));
-        layeredPane.add(button5, Integer.valueOf(1));
-        //layeredPane.add(label6, Integer.valueOf(2));
-        layeredPane.add(label7, Integer.valueOf(2));
+        layeredPane.add(button0, Integer.valueOf(1));
+        layeredPane.add(label3, Integer.valueOf(2));
         layeredPane.add(button1, Integer.valueOf(1));
         this.add(layeredPane);
         // il pannello per qualche motivo non completa la sua generazione fino a che non viene aggiornato
