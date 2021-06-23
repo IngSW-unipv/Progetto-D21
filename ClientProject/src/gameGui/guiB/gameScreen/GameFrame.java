@@ -41,7 +41,7 @@ public class GameFrame extends JFrame {
         third = new Third_Menu();
 
         lblNewLabel = new JLabel("");
-        lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
+        //lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
 
