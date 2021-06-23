@@ -43,7 +43,6 @@ public class Third_Menu extends JFrame {
         boxLayout = new BoxLayout(jPanel, BoxLayout.Y_AXIS);
         jPanel.setLayout(boxLayout);
 
-        choosenTheme = 0;
 
         jb1 = new JButton();
         jb1.setBackground(Color.ORANGE);

@@ -60,7 +60,7 @@ public class RequestFrame extends JFrame {
         jb1.setBackground(Color.orange.brighter());
         jb1.setUI(new StyledButtonUI());
         jb1.setActionCommand("accept");
-        jb1.addActionListener(new ButtonsListener(jb1));
+        jb1.addActionListener(new ButtonsListener(jb1,this));
 
         jb2 = new JButton("DECLINE");
         jb2.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
@@ -73,7 +73,7 @@ public class RequestFrame extends JFrame {
         jb2.setBackground(Color.orange.brighter());
         jb2.setUI(new StyledButtonUI());
         jb2.setActionCommand("decline");
-        jb2.addActionListener(new ButtonsListener(jb2));
+        jb2.addActionListener(new ButtonsListener(jb2,this));
 
         layeredPane.add(label1, Integer.valueOf(0));
         layeredPane.add(label2, Integer.valueOf(1));
