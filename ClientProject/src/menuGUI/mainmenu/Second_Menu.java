@@ -173,11 +173,11 @@ public class Second_Menu extends JFrame {
         };
 
         item1.addActionListener(volume);
-        button1.addActionListener(tema);
-        button3.addActionListener(menubutton);
-        button0.addActionListener(gameMode);
+        button4.addActionListener(tema);
+        button0.addActionListener(menubutton);
+        button3.addActionListener(gameMode);
         item2.addActionListener(rules);
-        button4.addActionListener(invite);
+        button1.addActionListener(invite);
         button2.addActionListener(random);
 
         layeredPane.add(label1, Integer.valueOf(0));

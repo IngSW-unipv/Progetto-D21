@@ -53,15 +53,6 @@ public class Third_Menu extends JFrame {
         jb2.setBackground(Color.ORANGE);
         jb2.setIcon(new ImageIcon("src/menuGUI/gui3/themes/avengers.png"));
 
-        ActionListener Theme2 = e -> {
-            JButton jb = new JButton();
-            if(jb.isSelected()){
-                choosenTheme = 2;
-            }
-            else choosenTheme = 0;
-        };
-
-        jb2.addActionListener(Theme2);
 
         jb3 = new JButton();
         jb3.setBackground(Color.orange);
@@ -74,20 +65,24 @@ public class Third_Menu extends JFrame {
         jb4.setBackground(new Color(0xC61F29));
         jb4.setForeground(Color.BLACK);
 
-        ActionListener Theme = e -> {
-            if(jb1.isSelected()){
-                choosenTheme = 1;
-            } else if(jb2.isSelected()){
-                choosenTheme = 2;
-            } else if(jb3.isSelected()){
-                choosenTheme = 3;
-            } else choosenTheme = 4;
+        ActionListener Theme1 = e -> {
+            choosenTheme = 1;
+        };
+        ActionListener Theme2 = e -> {
+            choosenTheme = 2;
+        };
+        ActionListener Theme3 = e -> {
+            choosenTheme = 3;
+        };
+        ActionListener Theme4 = e -> {
+            choosenTheme = 0;
         };
 
-        jb1.addActionListener(Theme);
-        jb2.addActionListener(Theme);
-        jb3.addActionListener(Theme);
-        jb4.addActionListener(Theme);
+
+        jb1.addActionListener(Theme1);
+        jb2.addActionListener(Theme2);
+        jb3.addActionListener(Theme3);
+        jb4.addActionListener(Theme4);
 
 
         jb5 = new JButton();
@@ -96,9 +91,7 @@ public class Third_Menu extends JFrame {
         jb5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/double-arrow-left.png"));
 
         ActionListener BackToMenu = e -> {
-            if(jb5.isSelected()){
-                this.setVisible(false);
-            }
+                this.dispose();
         };
 
         jb5.addActionListener(BackToMenu);
