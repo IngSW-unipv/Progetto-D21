@@ -24,9 +24,9 @@ public class ButtonsListener implements ActionListener {
                 break;
             case "decline":
                 NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,0,"+NetworkThread.getNetworkThread().getNickName());
-                DeclineFrame declineFrame = new DeclineFrame();
-                declineFrame.setVisible(true);
-                declineFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                //DeclineFrame declineFrame = new DeclineFrame();
+                //declineFrame.setVisible(true);
+                //declineFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 break;
         }
 
