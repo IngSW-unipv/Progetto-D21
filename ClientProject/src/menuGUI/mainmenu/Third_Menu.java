@@ -1,5 +1,6 @@
 package menuGUI.mainmenu;
 
+import gameGui.guiB.gameScreen.GameFrame;
 import menuGUI.gui3.StyledButtonUI;
 
 import javax.swing.*;
@@ -20,7 +21,8 @@ public class Third_Menu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
-    private int choosenTheme;
+    public int choosenTheme;
+    private GameFrame gameFrame;
 
     public Third_Menu(){
         setSize(new Dimension(500,700));
@@ -64,19 +66,23 @@ public class Third_Menu extends JFrame {
         jb4.setBackground(new Color(0xC61F29));
         jb4.setForeground(Color.BLACK);
 
+
+
         ActionListener Theme1 = e -> {
-            choosenTheme = 1;
+            setChoosenTheme(1);
+
         };
         ActionListener Theme2 = e -> {
-            choosenTheme = 2;
+            setChoosenTheme(2);
         };
         ActionListener Theme3 = e -> {
-            choosenTheme = 3;
+            System.out.println("MARIO");
+            setChoosenTheme(3);
+            System.out.println(getChoosenTheme());
         };
         ActionListener Theme4 = e -> {
-            choosenTheme = 0;
+            setChoosenTheme(0);
         };
-
 
         jb1.addActionListener(Theme1);
         jb2.addActionListener(Theme2);
@@ -90,7 +96,8 @@ public class Third_Menu extends JFrame {
         jb5.setIcon(new ImageIcon("src/menuGUI/mainmenu/img/double-arrow-left.png"));
 
         ActionListener BackToMenu = e -> {
-                this.dispose();
+            this.dispose();
+            System.out.println(getChoosenTheme());
         };
 
         jb5.addActionListener(BackToMenu);
@@ -141,5 +148,9 @@ public class Third_Menu extends JFrame {
 
     public int getChoosenTheme() {
         return choosenTheme;
+    }
+
+    public void setChoosenTheme(int choosenTheme) {
+        this.choosenTheme = choosenTheme;
     }
 }

@@ -38,15 +38,28 @@ public class GameFrame extends JFrame {
         layeredPane.setBounds(0, 0, 800, 700);
         c.add(layeredPane);
 
-        third = new Third_Menu();
+        //third = new Third_Menu();
 
         lblNewLabel = new JLabel("");
         //lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
 
-        switch(third.getChoosenTheme()){
+        //int a = third.getChoosenTheme();
+        //System.out.println(a);
+        setGriglia(third.getChoosenTheme());
+
+
+
+
+
+
+
+
+        /*
+        switch(a){
             case 1:
+                System.out.println("scemo");
                 lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
                 break;
             case 2:
@@ -56,11 +69,17 @@ public class GameFrame extends JFrame {
                 lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
                 break;
             case 0:
+                System.out.println("OOOH");
                 lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
                 break;
             default:
+                System.out.println("Scemo non entra nello switch case");
                 lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
         }
+
+         */
+
+
         //TODO da testare
 
 
@@ -91,7 +110,7 @@ public class GameFrame extends JFrame {
                 buttonsPanel.add(tempButt);
                 tempButt.setActionCommand(""+i);
                 tempButt.addActionListener(new ButtonListener(tempButt));
-                System.out.println("bottone generato");
+                //System.out.println("bottone generato");
             }
         }
 
@@ -142,4 +161,22 @@ public class GameFrame extends JFrame {
     public void setOppositeTurn(){
         infoPanel.setTurnOwnerOPPOSITE();
     }
+
+    public void setGriglia(int a){
+        if(a == 1){
+            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+        }else if(a == 2){
+            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmangrid.png"));
+        }else if(a == 3){
+            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
+        }else if(a == 0){
+            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+        }else{
+            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+        }
+    }
+
+
+
+
 }
