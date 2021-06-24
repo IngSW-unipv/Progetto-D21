@@ -21,7 +21,7 @@ public class Third_Menu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
-    public int choosenTheme;
+    public static int choosenTheme;
     private GameFrame gameFrame;
 
     public Third_Menu(){
