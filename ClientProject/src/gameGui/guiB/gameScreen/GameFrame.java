@@ -37,50 +37,11 @@ public class GameFrame extends JFrame {
         layeredPane.setBounds(0, 0, 800, 700);
         c.add(layeredPane);
 
-        //third = new Third_Menu();
-
         lblNewLabel = new JLabel("");
-        //lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
 
-        //int a = third.getChoosenTheme();
-        //System.out.println(a);
         setGriglia(Third_Menu.choosenTheme);
-
-
-
-
-
-
-
-
-        /*
-        switch(a){
-            case 1:
-                System.out.println("scemo");
-                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
-                break;
-            case 2:
-                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmangrid.png"));
-                break;
-            case 3:
-                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
-                break;
-            case 0:
-                System.out.println("OOOH");
-                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
-                break;
-            default:
-                System.out.println("Scemo non entra nello switch case");
-                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
-        }
-
-         */
-
-
-        //TODO da testare
-
 
         this.animationPanel = new JPanel();
         animationPanel.setOpaque(false);
@@ -146,17 +107,17 @@ public class GameFrame extends JFrame {
 
     //questo metodo si occupa di aggiungere i componenti specificati al livello dato
     public void addToLayeredPane(Component component,int level){
-
         layeredPane.add(component,Integer.valueOf(level));
-
     }
 
     public void resetTimer(){
         infoPanel.resetTimer();
     }
+
     public void setMyTurn(){
         infoPanel.setTurnOwnerME();
     }
+
     public void setOppositeTurn(){
         infoPanel.setTurnOwnerOPPOSITE();
     }
@@ -174,8 +135,4 @@ public class GameFrame extends JFrame {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
         }
     }
-
-
-
-
 }
