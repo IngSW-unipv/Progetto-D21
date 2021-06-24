@@ -21,7 +21,7 @@ public class Third_Menu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
-    public static int choosenTheme;  //TODO quando riordiniamo i package mettere questa variabile PROTECTED
+    public int choosenTheme;
     private GameFrame gameFrame;
 
     public Third_Menu(){
@@ -70,7 +70,6 @@ public class Third_Menu extends JFrame {
 
         ActionListener Theme1 = e -> {
             setChoosenTheme(1);
-
         };
         ActionListener Theme2 = e -> {
             setChoosenTheme(2);
@@ -150,11 +149,7 @@ public class Third_Menu extends JFrame {
         return choosenTheme;
     }
 
-
-
-   public void setChoosenTheme(int choosenTheme) {
+    public void setChoosenTheme(int choosenTheme) {
         this.choosenTheme = choosenTheme;
     }
-
-
 }

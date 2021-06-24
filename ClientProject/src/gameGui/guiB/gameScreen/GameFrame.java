@@ -19,7 +19,7 @@ public class GameFrame extends JFrame {
     private JLayeredPane layeredPane;
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
-
+    private Third_Menu third;
 
     public  GameFrame(String duration){
 
@@ -38,16 +38,50 @@ public class GameFrame extends JFrame {
         layeredPane.setBounds(0, 0, 800, 700);
         c.add(layeredPane);
 
-
+        //third = new Third_Menu();
 
         lblNewLabel = new JLabel("");
         //lblNewLabel.setIcon(new ImageIcon("resources/textures/GrigliaBackgrond3.png"));
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
 
+        //int a = third.getChoosenTheme();
+        //System.out.println(a);
+        setGriglia(third.getChoosenTheme());
 
-        setGriglia(Third_Menu.choosenTheme);
-        
+
+
+
+
+
+
+
+        /*
+        switch(a){
+            case 1:
+                System.out.println("scemo");
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+                break;
+            case 2:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmangrid.png"));
+                break;
+            case 3:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
+                break;
+            case 0:
+                System.out.println("OOOH");
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+                break;
+            default:
+                System.out.println("Scemo non entra nello switch case");
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
+        }
+
+         */
+
+
+        //TODO da testare
+
 
         this.animationPanel = new JPanel();
         animationPanel.setOpaque(false);
