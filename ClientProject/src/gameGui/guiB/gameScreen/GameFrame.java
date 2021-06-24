@@ -19,7 +19,6 @@ public class GameFrame extends JFrame {
     private JLayeredPane layeredPane;
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
-    private Third_Menu third;
 
     public  GameFrame(String duration){
 
@@ -47,7 +46,7 @@ public class GameFrame extends JFrame {
 
         //int a = third.getChoosenTheme();
         //System.out.println(a);
-        setGriglia(third.getChoosenTheme());
+        setGriglia(Third_Menu.choosenTheme);
 
 
 
