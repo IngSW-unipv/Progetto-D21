@@ -21,7 +21,7 @@ public class Third_Menu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
-    public static int choosenTheme;
+    public static int choosenTheme; //TODO rendere questo attributo PROTECTED quando la GUI verrà messa TUTTA nello stesso package
     private GameFrame gameFrame;
 
     public Third_Menu(){
@@ -69,18 +69,16 @@ public class Third_Menu extends JFrame {
 
 
         ActionListener Theme1 = e -> {
-            setChoosenTheme(1);
+            choosenTheme = 1;
         };
         ActionListener Theme2 = e -> {
-            setChoosenTheme(2);
+            choosenTheme = 2;
         };
         ActionListener Theme3 = e -> {
-            System.out.println("MARIO");
-            setChoosenTheme(3);
-            System.out.println(getChoosenTheme());
+            choosenTheme = 3;
         };
         ActionListener Theme4 = e -> {
-            setChoosenTheme(0);
+            choosenTheme = 0;
         };
 
         jb1.addActionListener(Theme1);
@@ -96,7 +94,6 @@ public class Third_Menu extends JFrame {
 
         ActionListener BackToMenu = e -> {
             this.dispose();
-            System.out.println(getChoosenTheme());
         };
 
         jb5.addActionListener(BackToMenu);
@@ -145,11 +142,4 @@ public class Third_Menu extends JFrame {
 
     }
 
-    public int getChoosenTheme() {
-        return choosenTheme;
-    }
-
-    public void setChoosenTheme(int choosenTheme) {
-        this.choosenTheme = choosenTheme;
-    }
 }

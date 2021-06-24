@@ -19,6 +19,7 @@ public class GameFrame extends JFrame {
     private JLayeredPane layeredPane;
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
+    private JLabel lbl;
 
     public  GameFrame(String duration){
 
@@ -27,8 +28,8 @@ public class GameFrame extends JFrame {
 
         Container c = new Container();
         c = getContentPane();
-        c.setBackground(Color.MAGENTA);
-        setBounds(100, 100, 1129, 841);
+        c.setBackground(Color.WHITE);
+        setBounds(100, 100, 1129, 737);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         c.setLayout(null);
 
@@ -40,6 +41,10 @@ public class GameFrame extends JFrame {
         lblNewLabel = new JLabel("");
         lblNewLabel.setBounds(0, 0, 800, 700);
         layeredPane.add(lblNewLabel);
+
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Image img = kit.getImage("src/menuGUI/mainmenu/img/icon.png");
+        setIconImage(img);
 
         setGriglia(Third_Menu.choosenTheme);
 
@@ -85,13 +90,12 @@ public class GameFrame extends JFrame {
     }
 
     public void addLabel(int x, int y, TokenColor c) {
-
-        JLabel lbl = new JLabel("");
+        lbl = new JLabel("");
         if(c==TokenColor.RED) {
-            lbl.setIcon(new ImageIcon("resources/textures/RedToken2.png"));
+            setTockenRosso(Third_Menu.choosenTheme);
         }
         if(c==TokenColor.YELLOW) {
-            lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
+            setTockenGiallo(Third_Menu.choosenTheme);
         }
         this.myTimer.schedule(new AnimationTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
         System.out.println("aa");
@@ -122,17 +126,45 @@ public class GameFrame extends JFrame {
         infoPanel.setTurnOwnerOPPOSITE();
     }
 
-    public void setGriglia(int a){
-        if(a == 1){
+    public void setGriglia(int a) {
+        if (a == 1) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
-        }else if(a == 2){
+        } else if (a == 2) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmangrid.png"));
-        }else if(a == 3){
+        } else if (a == 3) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/firstmariogrid.png"));
-        }else if(a == 0){
+        } else if (a == 0) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
-        }else{
+        } else {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/gui3/themes/GrigliaBackgrond3.png"));
         }
     }
-}
+
+        public void setTockenRosso(int a){
+            if (a == 1) {
+                lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/stitch90px.png"));
+            } else if (a == 2) {
+                lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/capamericatoken.png"));
+            } else if (a == 3) {
+                lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/powerup.png"));
+            } else if (a == 0) {
+                lbl.setIcon(new ImageIcon("resources/textures/RedToken2.png"));
+            } else {
+                lbl.setIcon(new ImageIcon("resources/textures/RedToken2.png"));
+            }
+        }
+
+    public void setTockenGiallo(int a){
+        if (a == 1) {
+            lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/angelog90px.png"));
+        } else if (a == 2) {
+            lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/ironmantoken.png"));
+        } else if (a == 3) {
+            lbl.setIcon(new ImageIcon("src/menuGUI/gui3/themes/1uppng.png"));
+        } else if (a == 0) {
+            lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
+        } else {
+            lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
+        }
+    }
+    }
