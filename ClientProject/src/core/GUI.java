@@ -1,17 +1,6 @@
 package core;
 
-<<<<<<< HEAD
 import menuGUI.windows.*;
-=======
-import gameGui.guiB.gameScreen.GameFrame;
-import gameGui.guiB.gameScreen.LoserFrame;
-import gameGui.guiB.gameScreen.VictoryFrame;
-import gameGui.guiB.gameScreen.VictoryPanel;
-import gameGui.guiB.util.SoundPlayer;
-import gameGui.guiB.util.TokenColor;
-import menuGUI.mainmenu.*;
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -42,13 +31,7 @@ public class GUI {
         gameFrame = new GameFrame(duration);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setVisible(true);
-<<<<<<< HEAD
-=======
         SoundPlayer.playSound(new File("resources/sounds/memories (online-audio-converter.com).wav"),VolumeControl.volume);
-
-
-
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b
     }
 
     //metodi per la gestione della schermata della partita

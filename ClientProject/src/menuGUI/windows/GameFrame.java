@@ -1,8 +1,8 @@
 package menuGUI.windows;
 
-import menuGUI.listeners.ButtonListener;
-import core.AnimationTask;
+import core.AnimationsTask;
 import core.TokenColor;
+import menuGUI.listeners.ButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,12 +19,8 @@ public class GameFrame extends JFrame {
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
     private JLabel lbl;
-<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
     private Container c;
-=======
     private JButton[][] matrix = new JButton[6][7]; //matrice bottoni
-
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java
 
     public  GameFrame(String duration){
         this.duration=duration;
@@ -74,11 +70,8 @@ public class GameFrame extends JFrame {
                 buttonsPanel.add(tempButt);
                 tempButt.setActionCommand(""+i);
                 tempButt.addActionListener(new ButtonListener(tempButt));
-<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
-=======
                 matrix[j][i] = tempButt; //riempio matrice dei bottoni
                 //System.out.println("bottone generato");
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java
             }
         }
 
@@ -101,7 +94,7 @@ public class GameFrame extends JFrame {
         if(c==TokenColor.YELLOW) {
             setTockenGiallo(Third_Menu.choosenTheme);
         }
-        this.myTimer.schedule(new AnimationTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
+        this.myTimer.schedule(new AnimationsTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
         System.out.println("aa");
     }
 
@@ -170,15 +163,12 @@ public class GameFrame extends JFrame {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
         }
     }
-<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
-}
-=======
-    
-    public void disableColumn(int column) {//disabilita la colonna, viene richiamato quando la colonna è piena
+
+    public void disableColumn(int column) {//disabilita la colonna, viene richiamato quando la colonna ï¿½ piena
         for(int i = column,j=0;j<6;j++) {
             matrix[j][i].setVisible(false);
         }
 
     }
-    }
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java
+}
+

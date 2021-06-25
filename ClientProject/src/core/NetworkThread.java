@@ -75,16 +75,10 @@ public class NetworkThread extends Thread {
                 GUI.getGuiHandler().resetTimer();
                 GUI.getGuiHandler().setOpponentTurn();
         		break;
-<<<<<<< HEAD
-        	case "addToken": //addToken,x,y
-=======
-        		
-        	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
+        	case "NOTabiCOLONNA"://disabilita colonna quando Ã¨ riempita di token
                   guiHandler.disableColumn(Integer.parseInt(parts[1]));
                   break;
-        	case "addToken": //addToken,x,y	
-
->>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b
+        	case "addToken": //addToken,x,y
                 if (parts[3].compareTo("r")==0)
                     guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
                 if (parts[3].compareTo("y")==0)
