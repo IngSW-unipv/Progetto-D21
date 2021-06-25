@@ -5,8 +5,7 @@ import java.net.Socket;
 
 import javax.swing.JPanel;
 
-import gameGui.guiB.util.TokenColor;
-import menuGUI.mainmenu.ErrorFrame;
+import menuGUI.windows.ErrorFrame;
 
 import static tester.ClientMainProva1.clientLogger;
 
@@ -35,38 +34,28 @@ public class NetworkThread extends Thread {
 
     @Override
     public void run() {
-
         try {
-            this.socket = new Socket("2.36.254.212", port);
+            this.socket = new Socket("188.218.173.220", port);
             clientLogger.info("Connection established");
         } catch (IOException e) {
-            clientLogger.info("Impossible to establish connetcion to server");
-            ErrorFrame errorFrame = new ErrorFrame("Impossible to establish \n connetcion to server");
+            clientLogger.info("Impossible to establish connection to server");
+            ErrorFrame errorFrame = new ErrorFrame("Impossible to establish \n connection to server");
             return;
         }
-
         try {
             socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             socketOutput = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);
         } catch (IOException e) {
             clientLogger.info("I/O Error");
         }
-
-
         while (socket.isBound()) {
-
             try {
-
                 parseString(this.socketInput.readLine());
-
             } catch (IOException e) {
                 ErrorFrame errorFrame = new ErrorFrame("Connection dropped");
                 break;
             }
         }
-
-
-
     }
     
     public void parseString(String message){
@@ -85,10 +74,8 @@ public class NetworkThread extends Thread {
         	    guiHandler.disableGameGui();
                 GUI.getGuiHandler().resetTimer();
                 GUI.getGuiHandler().setOpponentTurn();
-
         		break;
-        	case "addToken": //addToken,x,y	
-
+        	case "addToken": //addToken,x,y
                 if (parts[3].compareTo("r")==0)
                     guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
                 if (parts[3].compareTo("y")==0)
@@ -121,16 +108,12 @@ public class NetworkThread extends Thread {
                 ErrorFrame errorFrame = new ErrorFrame("invalid message recived");
         }
     }
-    
-    
-    
-    public void setAnimPanel(JPanel animPanel) {
 
+    public void setAnimPanel(JPanel animPanel) {
         this.animPanel = animPanel;
 	}
 
 	public void sendMessage(String message) {
-
         socketOutput.println(message);
     }
 
