@@ -5,6 +5,10 @@ import menuGUI.gui3.StyledButtonUI;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
+
+import gameGui.guiB.util.AnimationTask;
+import gameGui.guiB.volumeControl.VolumeControl;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +21,7 @@ public class VolumeFrame extends JFrame{
     private JButton button1;
     private JLayeredPane layeredPane;
     private JLabel label1;
+    private boolean flag; //flag per bottone muto
 
     public VolumeFrame(){
 
@@ -34,18 +39,24 @@ public class VolumeFrame extends JFrame{
         layeredPane.setBounds(0,0,300,150);
 
 
-        slider = new JSlider(JSlider.HORIZONTAL,0,100,25);
-        slider.setBounds(40,30,170,50);  
-        slider.setMinorTickSpacing(5);
-        slider.setMajorTickSpacing (50);
-        slider.setPaintTicks (true);  
+        slider = new JSlider(JSlider.HORIZONTAL,0,90, (int)((VolumeControl.volume)*100)); //cambiamento
+        slider.setBounds(40,30,170,50);
+        slider.setMinorTickSpacing(2);
+        slider.setMajorTickSpacing (10);
+        slider.setPaintTicks (true);
         slider.setPaintLabels (true);
-
+        slider.addChangeListener(new VolumeControl());
+       
 
         ImageIcon c0 = new ImageIcon("src/menuGUI/mainmenu/img/music.png");
         ImageIcon c1 = new ImageIcon("src/menuGUI/mainmenu/img/music-off.png");
         button1 = new JButton();
-        button1.setIcon(c0);
+        if (AnimationTask.volumeOffset !=0) {
+        	button1.setIcon(c0);
+        }else if(AnimationTask.volumeOffset ==0){
+        		button1.setIcon(c1);
+        	}
+        
         button1.setBounds(238,38,36,37);
         button1.setContentAreaFilled(false);
         button1.setFocusPainted(false);
@@ -66,14 +77,41 @@ public class VolumeFrame extends JFrame{
         
         
         button1.addActionListener(
-            new ActionListener(){
-                private boolean flag = true;
+                new ActionListener(){
+                	
+                	boolean flag= setFlag();
+                	double memVol;
+                	
+                	public boolean setFlag(){
+                		
+                		if (AnimationTask.volumeOffset !=0) {
+                			return true;
+                		}else if(AnimationTask.volumeOffset ==0){
+                			return false;
+                    	}
+					return false;
+                	}
+    
+                    @Override
+                    public void actionPerformed(ActionEvent arg0){
+                    	
+                        button1.setIcon(flag ? c1 : c0);
+                        flag = !flag;
+                        if(!flag) {
+                        	memVol= VolumeControl.volume;
+                            VolumeControl.volume = 0;
+                            AnimationTask.volumeOffset = 0;
+                            slider.setVisible(false);
+                            
+                            //poi anche vittoria
+                        }else {
+                        	 slider.setVisible(true);
+                            VolumeControl.volume = memVol;
+                            AnimationTask.volumeOffset = 0.1;
+                        }
 
-                @Override
-                public void actionPerformed(ActionEvent arg0){
-                    button1.setIcon(flag ? c1 : c0);
-                    flag = !flag;
-                }
-            });
+                        System.out.println("nuovo flag è "+flag);
+                    }
+                });
     }
 }

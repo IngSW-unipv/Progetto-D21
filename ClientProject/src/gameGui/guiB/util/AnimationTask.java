@@ -8,6 +8,8 @@ import javax.sound.sampled.Clip;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import gameGui.guiB.volumeControl.VolumeControl;
+
 
 public class AnimationTask extends TimerTask {
 	
@@ -17,6 +19,7 @@ public class AnimationTask extends TimerTask {
 	private int finishY;
 	private JPanel panelToupdate;
 	private int size;
+	public static double volumeOffset = 0.1; //maggiorazione di suono per alcuni eventi : tok, vittoria....
 
 	public AnimationTask(JLabel l,JPanel p,int iy,int fy,int x) {
 		super();
@@ -41,7 +44,14 @@ public class AnimationTask extends TimerTask {
 			
 		}
 		//SoundPlayer.playSound((new File("resources/sounds/tok.wav")),0.5);
+		SoundPlayer.playSound((new File("resources/sounds/tok.wav")),VolumeControl.volume + volumeOffset);
+		
 		cancel();
 	}
+	
+	public void muteVolumeOffset() {
+        volumeOffset =0;
+
+    }
 
 }

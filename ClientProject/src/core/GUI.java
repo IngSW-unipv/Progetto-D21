@@ -4,12 +4,15 @@ import gameGui.guiB.gameScreen.GameFrame;
 import gameGui.guiB.gameScreen.LoserFrame;
 import gameGui.guiB.gameScreen.VictoryFrame;
 import gameGui.guiB.gameScreen.VictoryPanel;
+import gameGui.guiB.util.SoundPlayer;
 import gameGui.guiB.util.TokenColor;
+import gameGui.guiB.volumeControl.VolumeControl;
 import menuGUI.mainmenu.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
 public class GUI {
 
@@ -40,6 +43,9 @@ public class GUI {
         gameFrame = new GameFrame(duration);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setVisible(true);
+        SoundPlayer.playSound(new File("resources/sounds/memories (online-audio-converter.com).wav"),VolumeControl.volume);
+
+
 
     }
     //metodi per la gestione della schermata della partita
