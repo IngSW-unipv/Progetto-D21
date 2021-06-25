@@ -5,7 +5,7 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 import gameGui.guiB.util.AnimationTask;
-import gameGui.guiB.volumeControl.VolumeControl;
+import core.VolumeControl;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -126,7 +126,7 @@ public class VolumeFrame extends JFrame{
                             AnimationTask.volumeOffset = 0.1;
                         }
 
-                        System.out.println("nuovo flag è "+flag);
+                        System.out.println("nuovo flag ï¿½ "+flag);
                     }
                 });
 >>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/menuGUI/mainmenu/VolumeFrame.java

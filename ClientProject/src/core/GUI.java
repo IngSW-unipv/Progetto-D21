@@ -9,7 +9,6 @@ import gameGui.guiB.gameScreen.VictoryFrame;
 import gameGui.guiB.gameScreen.VictoryPanel;
 import gameGui.guiB.util.SoundPlayer;
 import gameGui.guiB.util.TokenColor;
-import gameGui.guiB.volumeControl.VolumeControl;
 import menuGUI.mainmenu.*;
 >>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b
 

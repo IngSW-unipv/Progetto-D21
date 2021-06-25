@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 
 <<<<<<< HEAD:ClientProject/src/core/AnimationTask.java
 =======
-import gameGui.guiB.volumeControl.VolumeControl;
 
 
 >>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/util/AnimationTask.java

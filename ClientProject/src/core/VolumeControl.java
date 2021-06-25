@@ -1,4 +1,4 @@
-package gameGui.guiB.volumeControl;
+package core;
 
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
