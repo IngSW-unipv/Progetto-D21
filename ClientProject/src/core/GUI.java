@@ -129,5 +129,10 @@ public class GUI {
     public void setOpponentTurn(){
         gameFrame.setOppositeTurn();
     }
+    
+    public void disableColumn(int column) {//disabilita la colonna
+        gameFrame.disableColumn(column);
+    }
+
 
 }

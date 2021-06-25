@@ -37,7 +37,7 @@ public class NetworkThread extends Thread {
     public void run() {
 
         try {
-            this.socket = new Socket("2.36.254.212", port);
+            this.socket = new Socket("188.218.173.220", port);
             clientLogger.info("Connection established");
         } catch (IOException e) {
             clientLogger.info("Impossible to establish connetcion to server");
@@ -85,8 +85,11 @@ public class NetworkThread extends Thread {
         	    guiHandler.disableGameGui();
                 GUI.getGuiHandler().resetTimer();
                 GUI.getGuiHandler().setOpponentTurn();
-
         		break;
+        		
+        	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
+                  guiHandler.disableColumn(Integer.parseInt(parts[1]));
+                  break;
         	case "addToken": //addToken,x,y	
 
                 if (parts[3].compareTo("r")==0)

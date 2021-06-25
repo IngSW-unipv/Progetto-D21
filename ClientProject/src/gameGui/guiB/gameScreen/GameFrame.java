@@ -20,6 +20,8 @@ public class GameFrame extends JFrame {
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
     private JLabel lbl;
+    private JButton[][] matrix = new JButton[6][7]; //matrice bottoni
+
 
     public  GameFrame(String duration){
 
@@ -75,6 +77,7 @@ public class GameFrame extends JFrame {
                 buttonsPanel.add(tempButt);
                 tempButt.setActionCommand(""+i);
                 tempButt.addActionListener(new ButtonListener(tempButt));
+                matrix[j][i] = tempButt; //riempio matrice dei bottoni
                 //System.out.println("bottone generato");
             }
         }
@@ -166,5 +169,12 @@ public class GameFrame extends JFrame {
         } else {
             lbl.setIcon(new ImageIcon("resources/textures/YellowToken2.png"));
         }
+    }
+    
+    public void disableColumn(int column) {//disabilita la colonna, viene richiamato quando la colonna è piena
+        for(int i = column,j=0;j<6;j++) {
+            matrix[j][i].setVisible(false);
+        }
+
     }
     }
