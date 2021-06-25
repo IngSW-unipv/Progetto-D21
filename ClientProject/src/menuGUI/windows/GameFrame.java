@@ -19,7 +19,12 @@ public class GameFrame extends JFrame {
     private GameInfoPanel infoPanel;
     private JLabel lblNewLabel;
     private JLabel lbl;
+<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
     private Container c;
+=======
+    private JButton[][] matrix = new JButton[6][7]; //matrice bottoni
+
+>>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java
 
     public  GameFrame(String duration){
         this.duration=duration;
@@ -69,6 +74,11 @@ public class GameFrame extends JFrame {
                 buttonsPanel.add(tempButt);
                 tempButt.setActionCommand(""+i);
                 tempButt.addActionListener(new ButtonListener(tempButt));
+<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
+=======
+                matrix[j][i] = tempButt; //riempio matrice dei bottoni
+                //System.out.println("bottone generato");
+>>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java
             }
         }
 
@@ -160,4 +170,15 @@ public class GameFrame extends JFrame {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
         }
     }
+<<<<<<< HEAD:ClientProject/src/menuGUI/windows/GameFrame.java
 }
+=======
+    
+    public void disableColumn(int column) {//disabilita la colonna, viene richiamato quando la colonna è piena
+        for(int i = column,j=0;j<6;j++) {
+            matrix[j][i].setVisible(false);
+        }
+
+    }
+    }
+>>>>>>> e9f3400115813ae34cc1e3e582e08d9f868ee68b:ClientProject/src/gameGui/guiB/gameScreen/GameFrame.java

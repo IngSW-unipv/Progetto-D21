@@ -18,6 +18,9 @@ public class Grid {
 	private int victoryDiag2;
 	private boolean finalVictory;
 	
+	private int colonnaDaDisabilitare;        
+    private boolean flagColonnaDaDisabilitare;    
+	
 	public Grid() {
 		victoryDiag1 = 0;
 		victoryDiag2 = 0;
@@ -183,26 +186,29 @@ public class Grid {
 
 	public void tokenPlaced(TokenColor c, int y) {
 
-		int posPlayer = y;
-		int i;
-		for (i = 5; i >= 0; i--) {
-			if (gameGrid[i][posPlayer].getToken() == null) {
-				gameGrid[i][posPlayer].addToken(new Token(c));
-				gameGrid[i][posPlayer].cellHasToken();
-				status.updateGameStatus(posPlayer, i, c);
-					if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c)|| this.checkDiagonali(i, posPlayer, c)) {
-						System.out.println("VITTORIA " + c);
-						finalVictory=true;
-					}
-				return; // si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
-				
-			}
-		}
-		if(i<0) {
-			System.out.println("posizione non valida");
-		}
-		
-	}
+        int posPlayer = y;
+        int i;
+        for (i = 5; i >= 0; i--) {
+            if (gameGrid[i][posPlayer].getToken() == null) {
+                System.out.println("dentro al for" + gameGrid[i][posPlayer]);
+                gameGrid[i][posPlayer].addToken(new Token(c));
+                gameGrid[i][posPlayer].cellHasToken();
+                status.updateGameStatus(posPlayer, i, c);
+                    if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c) || this.checkDiagonali(i, posPlayer, c)) {
+                        System.out.println("VITTORIA " + c);
+                        finalVictory=true;
+                    }
+
+                    if(i==0) {
+                        //DISABILITA LE CELLE COME ABBIAMO DISABILITATO L'INTERFACCIA
+                        colonnaDaDisabilitare = y;
+                        flagColonnaDaDisabilitare=true;
+                    }
+                return; // si ferma alla prima cella vuota, esce dall'if appena la condizione è vera
+
+             }
+        }
+    }
 
 	public void displayGrid() {
 		// scrivo num colonne perché mi perdo
@@ -221,6 +227,18 @@ public class Grid {
 	public boolean isFinalVictory() {
 		return finalVictory;
 	}
+	
+	public int getColonnaDaDisabilitare() {
+        return colonnaDaDisabilitare; 
+    }
+	
+	public boolean isFlagColonnaDaDisabilitare() {
+        return flagColonnaDaDisabilitare;
+    }
+
+    public void setFlagColonnaDaDisabilitare(boolean flagColonnaDaDisabilitare) {
+        this.flagColonnaDaDisabilitare = flagColonnaDaDisabilitare;
+    }
 	
 }
 

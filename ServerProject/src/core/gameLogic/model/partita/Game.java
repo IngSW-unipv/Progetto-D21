@@ -90,6 +90,11 @@ public class Game {
 	public boolean isVictory() {
 		return victory;
 	}
+	
+	public Grid getGameGrid() {
+        return gameGrid;
+    }
+	
 }
 
 

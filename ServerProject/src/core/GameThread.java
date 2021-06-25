@@ -41,6 +41,12 @@ public class GameThread extends Thread{
 	public void run() {
 		
 		localGame.turn(x);
+		
+		if(localGame.getGameGrid().isFlagColonnaDaDisabilitare()) {
+            oTherPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
+            nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
+        }
+		
 		if(localGame.isVictory()){
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
@@ -53,6 +59,8 @@ public class GameThread extends Thread{
 		System.out.println("addToken,"+x+","+y+","+getColor());
 		player1.sendMessage("addToken,"+x+","+y+","+getColor());
 		player2.sendMessage("addToken,"+x+","+y+","+getColor());
+		
+		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
 		
 		
 	}
