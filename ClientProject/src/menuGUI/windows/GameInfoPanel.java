@@ -12,6 +12,7 @@ public class GameInfoPanel extends JPanel {
     private java.util.Timer turnTimer;
     private String duration;
     private JLabel turnOwner;
+    private VolumePanel volumePanel;
 
     public GameInfoPanel(String duration){
             turnTimer = new Timer();
@@ -25,6 +26,11 @@ public class GameInfoPanel extends JPanel {
             this.add(turnOwner);
             turnOwner.setVisible(true);
             turnOwner.setBounds(0,100,300,100);
+
+            volumePanel = new VolumePanel();
+            volumePanel.setBounds(0, 200, 300, 200);
+            volumePanel.setLayout(null);
+            this.add(volumePanel);
     }
 
     public void resetTimer(){

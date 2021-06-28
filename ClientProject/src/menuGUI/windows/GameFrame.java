@@ -22,6 +22,7 @@ public class GameFrame extends JFrame {
     private Container c;
     private JButton[][] matrix = new JButton[6][7]; //matrice bottoni
 
+
     public  GameFrame(String duration){
         this.duration=duration;
         myTimer = new Timer();
@@ -58,6 +59,7 @@ public class GameFrame extends JFrame {
         layeredPane.setLayer(buttonsPanel, 3);
         buttonsPanel.setBounds(50, 50, 700, 600);
         buttonsPanel.setLayout(null);
+
 
         for(int i=0;i<7;i++) {
             for(int j=0;j<6;j++) {

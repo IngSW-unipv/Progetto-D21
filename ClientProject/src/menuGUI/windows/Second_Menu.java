@@ -21,7 +21,6 @@ public class Second_Menu extends JFrame {
     private JButton button3;
     private JButton button4;
     private JMenuItem item1;
-    private JMenuItem item2;
     private JPopupMenu popupMenu;
     private GameModeFrame gameModeFrame;
     private String gameLenght;
@@ -110,25 +109,17 @@ public class Second_Menu extends JFrame {
         button4.setUI(new StyledButtonUI());
 
         popupMenu = new JPopupMenu();
-        item1 = new JMenuItem("Volume");
-        item2 = new JMenuItem("How to play");
+        item1 = new JMenuItem("How to play");
         popupMenu.add(item1);
-        popupMenu.add(item2);
         popupMenu.setBackground(new Color(0xDE8B0E));
         popupMenu.setBorder(line);
         item1.setBackground(new Color(0xDE8B0E));
-        item2.setBackground(new Color(0xDE8B0E));
         item1.setForeground(Color.white);
-        item2.setForeground(Color.white);
 
         ActionListener menubutton = e -> {
             popupMenu.show(button3, 320, -270);
         };
 
-        ActionListener volume = e -> {
-            VolumeFrame volumeFrame = new VolumeFrame();
-            volumeFrame.setVisible(true);
-        };
 
         ActionListener gameMode = e -> {
             this.gameModeFrame = new GameModeFrame();
@@ -165,11 +156,11 @@ public class Second_Menu extends JFrame {
 
         };
 
-        item1.addActionListener(volume);
+
         button4.addActionListener(tema);
         button0.addActionListener(menubutton);
         button3.addActionListener(gameMode);
-        item2.addActionListener(rules);
+        item1.addActionListener(rules);
         button1.addActionListener(invite);
         button2.addActionListener(random);
 
