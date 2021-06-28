@@ -68,7 +68,7 @@ public class Grid {
 				if (gameGrid[x][i].getHasToken()) {
 					if (gameGrid[x][i].getTokenColor() == c) {
 						victoryCounter++;
-						System.out.println(victoryCounter);
+						//System.out.println(victoryCounter);
 					} else {
 						victoryCounter = 0;
 						System.out.println("spazio");
@@ -182,7 +182,7 @@ public class Grid {
 		
 	}
 		
-	// controllo delle diagonali
+	// controllo dellgge diagonali
 
 	public void tokenPlaced(TokenColor c, int y) {
 
@@ -239,6 +239,16 @@ public class Grid {
     public void setFlagColonnaDaDisabilitare(boolean flagColonnaDaDisabilitare) {
         this.flagColonnaDaDisabilitare = flagColonnaDaDisabilitare;
     }
+
+	public Cell[][] getGameGrid() {
+		return gameGrid;
+	}
+
+	public void setGameGrid(Cell[][] gameGrid) {
+		this.gameGrid = gameGrid;
+	}
+    
+    
 	
 }
 

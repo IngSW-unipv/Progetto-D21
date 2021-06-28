@@ -22,7 +22,6 @@ public class GUIForm {
         return myGuiForm;
 
     }
-    
     private GUIForm(){
         PlayersInQueue = new JList();
         OnlinePlayersList = new JList();
@@ -31,6 +30,7 @@ public class GUIForm {
         OnlinePlayersList.setModel(ServerMemory.getServerMemory().getCurrentPlayersList());
         PlayersInQueue.setModel(Queue.getQueue().getQueueLIst());
         //ServerMemory.getServerMemory().addPlayer();
+
     }
 
     public JPanel getMainPanel() {
