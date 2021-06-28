@@ -117,7 +117,7 @@ public class VolumeFrame extends JFrame{
                             AnimationsTask.volumeOffset = 0.1;
                         }
 
-                        System.out.println("nuovo flag � "+flag);
+                        System.out.println("nuovo flag è "+flag);
                     }
                 };
 
