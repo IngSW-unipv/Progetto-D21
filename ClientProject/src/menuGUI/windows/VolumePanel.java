@@ -107,7 +107,7 @@ public class VolumePanel extends JPanel {
 
 
         };
-
+        button1.addActionListener(volumeListener);
         this.add(button1);
         this.add(slider);
     }
