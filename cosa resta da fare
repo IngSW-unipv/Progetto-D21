@@ -3,16 +3,18 @@ ATTENZIONE PUSHATE SOLO ROBA CHE FUNZIONA
 
 
 sistemare il menu del volume
-pulire il codice
+pulire il server
 messaggio in caso di abbandono dell'avversario (F)
-pareggio da gestire
+pareggio da gestire MR
 
 
- DOCUMENTAZIONE IO NON LA FACCIO
+ DOCUMENTAZIONE
  abbiamo fatto :
                 -test
                 -casi d'uso
+                -modello di dominio
+                -regole di dominio
  mancano :
           -diagrammi di classe
-          -boh
+          -architettura del sistema
 chiudi la musica quando finice la partita
