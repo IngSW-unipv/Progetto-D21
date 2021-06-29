@@ -39,5 +39,13 @@ public class SoundPlayer {
 		float db = (float) (Math.log(v)/Math.log(10)*20);
 		gain.setValue(db);
 	}
+
+	public static void setGlobalVol(double v) {
+		for(Clip entry:suoni){
+			FloatControl gain = (FloatControl)entry.getControl(FloatControl.Type.MASTER_GAIN);
+			float db = (float) (Math.log(v)/Math.log(10)*20);
+			gain.setValue(db);
+		}
+	}
 	
 }

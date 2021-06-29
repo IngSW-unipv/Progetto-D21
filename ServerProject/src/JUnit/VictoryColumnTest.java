@@ -1,11 +1,5 @@
 package JUnit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import core.gameLogic.model.partita.Grid;
 import core.gameLogic.model.partita.Token;
@@ -46,7 +40,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 
-		assertEquals("Failed", true, grid.checkColonna(2,0,TokenColor.YELLOW));
+		assertEquals(true, grid.checkColonna(2,0,TokenColor.YELLOW));
 		
 	}
 	@Test
@@ -64,7 +58,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(2,0,TokenColor.RED));
+		assertEquals(false, grid.checkColonna(2,0,TokenColor.RED));
 		
 	}
 	@Test
@@ -82,7 +76,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", true, grid.checkColonna(2,6,TokenColor.YELLOW));
+		assertEquals(true, grid.checkColonna(2,6,TokenColor.YELLOW));
 		
 	}
 	
@@ -101,7 +95,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(2,6,TokenColor.RED));
+		assertEquals(false, grid.checkColonna(2,6,TokenColor.RED));
 		
 	}
 	
@@ -122,7 +116,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(2,6,TokenColor.YELLOW));
+		assertEquals(false, grid.checkColonna(2,6,TokenColor.YELLOW));
 		
 	}
 	
@@ -141,7 +135,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(3,2,TokenColor.YELLOW));
+		assertEquals( false, grid.checkColonna(3,2,TokenColor.YELLOW));
 		
 	}
 	
@@ -160,7 +154,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(3,3,TokenColor.YELLOW));
+		assertEquals( false, grid.checkColonna(3,3,TokenColor.YELLOW));
 		
 	}
 	
@@ -181,7 +175,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", false, grid.checkColonna(1,2,TokenColor.YELLOW));
+		assertEquals(false, grid.checkColonna(1,2,TokenColor.YELLOW));
 		
 	}
 	
@@ -203,7 +197,7 @@ class VictoryColumnTest {
 		
 		grid.displayGrid();
 		
-		assertEquals("Failed", true, grid.checkColonna(0,2,TokenColor.YELLOW));
+		assertEquals(true, grid.checkColonna(0,2,TokenColor.YELLOW));
 		
 	}
 	

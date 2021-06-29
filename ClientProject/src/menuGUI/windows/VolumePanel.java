@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import core.AnimationsTask;
+import core.SoundPlayer;
 import core.VolumeControl;
 
 import javax.swing.*;
@@ -13,14 +14,17 @@ import java.awt.event.ActionListener;
 public class VolumePanel extends JPanel {
     private JSlider slider;
     private JButton button1;
+    private boolean isMute = false;
+    private ImageIcon c0;
+    private ImageIcon c1;
 
 
     public VolumePanel(){
         setSize(new Dimension(300,200));
         setBackground(Color.WHITE);
 
-        ImageIcon c0 = new ImageIcon("src/menuGUI/img/music.png");
-        ImageIcon c1 = new ImageIcon("src/menuGUI/img/music-off.png");
+        c0 = new ImageIcon("src/menuGUI/img/music.png");
+        c1 = new ImageIcon("src/menuGUI/img/music-off.png");
 
         Border line = new LineBorder(new Color(0x0F142A, true));
 
@@ -86,6 +90,21 @@ public class VolumePanel extends JPanel {
 
         //abbiamo fatto tutti gli actionListener così, inserire qui il codice dell'azione da effettuare
         ActionListener volumeListener = e -> {
+
+            isMute = !isMute;
+
+            if(isMute){
+                button1.setIcon(c1);
+                SoundPlayer.setGlobalVol(0);
+                slider.setVisible(false);
+            }
+
+            if(!isMute){
+                button1.setIcon(c0);
+                SoundPlayer.setGlobalVol(VolumeControl.volume);
+                slider.setVisible(true);
+            }
+
 
         };
 
