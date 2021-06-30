@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/CountDownTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/CountDownTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/CountDownTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CountDownTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

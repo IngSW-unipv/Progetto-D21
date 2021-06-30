@@ -109,6 +109,8 @@ public class NetworkThread extends Thread {
                 guiHandler.displayDeclineFrame();
                 break;
                 //default con gestione errore messaggio
+            case "opponetDisconnected":
+                ErrorFrame errorFrameL = new ErrorFrame("Opponent left the game");
             default:
                 ErrorFrame errorFrame = new ErrorFrame("invalid message recived");
         }

@@ -18,6 +18,7 @@ public class WorkerThread extends Thread{
     private Player player = null;
     private ServerMemory myMemory;
     private GameThread assignedGame;
+    private Player opponent;
 
 
     public WorkerThread(Socket socket){
@@ -52,6 +53,9 @@ public class WorkerThread extends Thread{
                 ServerMemory.getServerMemory().removePlayer(player.getNickName());
                 Queue.getQueue().removePlayer(player);
             }
+
+            if(opponent!=null)
+                opponent.sendMessage("opponentDisconnected");
         }
 
 
@@ -126,12 +130,14 @@ public class WorkerThread extends Thread{
 
         if(creategame){
             //ottengo il player con il quale creare la partita
-            System.out.println(myMemory.getPlayer(parts[2]));
-            Player player2 = myMemory.getPlayer(parts[2]);
-            System.out.println(player2.toString());
-            GameThread assignedGame = new GameThread(player, player2,new GameParameters(parts[3]));
+            opponent = myMemory.getPlayer(parts[2]);
+            System.out.println(opponent);
+          //  Player player2 = myMemory.getPlayer(parts[2]);
+            System.out.println(opponent.toString());
+            GameThread assignedGame = new GameThread(player, opponent,new GameParameters(parts[3]));
             this.setAssignedGame(assignedGame);
-            player2.getWorkerThread().setAssignedGame(assignedGame);
+            opponent.getWorkerThread().setAssignedGame(assignedGame);
+
 
         }
 
