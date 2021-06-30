@@ -112,5 +112,16 @@ public class GameThread extends Thread{
     	return colorString;
   
     }
+
+    public Player getOpponent(Player playerFacing){
+    	Player opponent = player1;
+    	if(playerFacing.getNickName().compareTo(player1.getNickName())==0){
+    		opponent = player2;
+		}
+    	if(playerFacing.getNickName().compareTo(player2.getNickName())==0){
+    		opponent = player1;
+		}
+    	return opponent;
+	}
     
 }

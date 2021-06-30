@@ -53,13 +53,13 @@ public class WorkerThread extends Thread{
                 ServerMemory.getServerMemory().removePlayer(player.getNickName());
                 Queue.getQueue().removePlayer(player);
             }
-
-            if(opponent!=null)
-                opponent.sendMessage("opponentDisconnected");
+            if(assignedGame!=null){
+                assignedGame.getOpponent(player).sendMessage("oppL");
+            }
         }
-
-
     }
+
+
     // metodo per inzializzare gli input e gli output
     private void setupReaders(){
         try {
@@ -129,10 +129,10 @@ public class WorkerThread extends Thread{
         }
 
         if(creategame){
+
             //ottengo il player con il quale creare la partita
             opponent = myMemory.getPlayer(parts[2]);
             System.out.println(opponent);
-          //  Player player2 = myMemory.getPlayer(parts[2]);
             System.out.println(opponent.toString());
             GameThread assignedGame = new GameThread(player, opponent,new GameParameters(parts[3]));
             this.setAssignedGame(assignedGame);
