@@ -1,8 +1,17 @@
 ATTENZIONE PUSHATE SOLO ROBA CHE FUNZIONA
 
-sistemare i temi
-  forse manca una griglia
-sistemare il menu del volume
-sistemare la schermata di vittoria/sconfitta
-pulire il codice
- DOCUMENTAZIONE IO NON LA FACCIO 
+pulire il server
+messaggio in caso di abbandono dell'avversario (F)
+pareggio da gestire MR
+
+
+ DOCUMENTAZIONE
+ abbiamo fatto :
+                -test
+                -casi d'uso
+                -modello di dominio
+                -regole di dominio
+ mancano :
+          -diagrammi di classe
+          -architettura del sistema
+chiudi la musica quando finice la partita

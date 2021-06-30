@@ -11,6 +11,7 @@ public class maintest {
         //LoserFrame loserFrame = new LoserFrame();
         //loserFrame.setVisible(true);
         //loserFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        aaa.startGameIO("5");
 
 
 

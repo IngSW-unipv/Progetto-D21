@@ -1,11 +1,13 @@
-non si chiude il menu quando entro in parita{
-  sistemare il metodo closepanel per fare cio
-  }
+disabilitare il menu quando entri in partita GRC
   
- passare il parametro relativo alla creazione della partita lenta o corta a chi effettivamente la crea{
-  netwhorkthread,aggiungi attributo mandalo al server quando accetti l'invito
-  }
-  
- error frame/vittoria quando l'avversario si disconnete 
+ passare il parametro relativo alla creazione della partita lenta o corta a chi effettivamente la crea
+    netwhorkthread,aggiungi attributo mandalo al server quando accetti l'invito (F)
  
- arriva un messaggio non valido quando non troviamo avversario in coda
+  
+ 
+ arriva un messaggio non valido quando non troviamo avversario in coda(DA CONTROLLARE)
+ 
+quando invito un giocatore questo è gia impengato posso invitarlo comunque (F)
+      rimuovo i giocatori dalla coda quando entro in parita casuale fatto, da testare
+fixare il timer (f)
+

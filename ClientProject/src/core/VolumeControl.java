@@ -14,6 +14,7 @@ public class VolumeControl implements ChangeListener {
         source.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
                 volume = ((double) (source.getValue())) / 100;
+                SoundPlayer.setVol(volume,0);
                 System.out.println(volume);
             }
         });
