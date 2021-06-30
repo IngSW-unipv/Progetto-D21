@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 
-public class Second_Menu extends JFrame {
+public class SecondMenu extends JFrame {
 
     private JLayeredPane layeredPane;
     private JLabel label1;
@@ -25,7 +25,7 @@ public class Second_Menu extends JFrame {
     private GameModeFrame gameModeFrame;
     private String gameLenght;
 
-    public Second_Menu() {
+    public SecondMenu() {
         setSize(new Dimension(700, 500));
         setResizable(false);
         this.getContentPane().setBackground(Color.yellow);
@@ -137,7 +137,7 @@ public class Second_Menu extends JFrame {
         };
 
         ActionListener tema = e -> {
-            Third_Menu third_menu = new Third_Menu();
+            ThirdMenu third_menu = new ThirdMenu();
             third_menu.setVisible(true);
             third_menu.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         };

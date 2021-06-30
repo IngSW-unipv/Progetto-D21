@@ -46,7 +46,7 @@ public class GameFrame extends JFrame {
         lblNewLabel = new JLabel("");
         lblNewLabel.setBounds(0, 0, 800, 700);
 
-        setGrid(Third_Menu.choosenTheme);
+        setGrid(ThirdMenu.choosenTheme);
 
         animationPanel = new JPanel();
         animationPanel.setOpaque(false);
@@ -91,10 +91,10 @@ public class GameFrame extends JFrame {
     public void addLabel(int x, int y, TokenColor c) {
         lbl = new JLabel("");
         if(c==TokenColor.RED) {
-            setTockenRed(Third_Menu.choosenTheme);
+            setTockenRed(ThirdMenu.choosenTheme);
         }
         if(c==TokenColor.YELLOW) {
-            setTockenYellow(Third_Menu.choosenTheme);
+            setTockenYellow(ThirdMenu.choosenTheme);
         }
         this.myTimer.schedule(new AnimationsTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
         System.out.println("aa");

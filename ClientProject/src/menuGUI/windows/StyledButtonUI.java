@@ -6,12 +6,7 @@ import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
 public class StyledButtonUI extends BasicButtonUI {
-/*
-per questa classe ho seguito un tizio su stackoverflow e in generale tutti fanno così
-non mi è chairissimo perché usano abstract button ma va bene
-installUI è solo un metodo che configura ulteriormente il JComponent del caso
-il resto sono solo impostazioni di stile/grafica quindi nulla da capire
- */
+
     @Override
     public void installUI (JComponent c) {
         super.installUI(c);

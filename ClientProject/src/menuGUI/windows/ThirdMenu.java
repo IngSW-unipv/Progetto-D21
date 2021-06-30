@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class Third_Menu extends JFrame {
+public class ThirdMenu extends JFrame {
     private BoxLayout boxLayout;
     private Container container;
     private JPanel jPanel;
@@ -20,7 +20,7 @@ public class Third_Menu extends JFrame {
     private JLayeredPane layeredPane;
     public static int choosenTheme; //TODO rendere questo attributo PROTECTED quando la GUI verrà messa TUTTA nello stesso package
 
-    public Third_Menu(){
+    public ThirdMenu(){
         setSize(new Dimension(500,700));
         setResizable(false);
         container = getContentPane();

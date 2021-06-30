@@ -56,7 +56,7 @@ public class GUI {
     }
 
     private void startLoginMenu(){
-        First_Menu loginFrame = new First_Menu();
+        FirstMenu loginFrame = new FirstMenu();
         currentOpenFrame = loginFrame;
         loginFrame.setVisible(true);
         loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +64,7 @@ public class GUI {
 
     public void openMenu(){
         closeFrame(currentOpenFrame);
-        Second_Menu menu = new Second_Menu();
+        SecondMenu menu = new SecondMenu();
     }
 
     private void closeFrame(JFrame panelToClose){

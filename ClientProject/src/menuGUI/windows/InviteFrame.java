@@ -13,9 +13,9 @@ public class InviteFrame extends JFrame {
     private JLabel label1;
     private JLabel label2;
     private JButton jb1;
-    private Second_Menu second_menu;
+    private SecondMenu second_menu;
 
-    public InviteFrame(Second_Menu second_menu){
+    public InviteFrame(SecondMenu second_menu){
 
         setSize(new Dimension(300,100));
         setResizable(false);

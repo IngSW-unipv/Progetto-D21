@@ -7,7 +7,7 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-public class First_Menu extends JFrame {
+public class FirstMenu extends JFrame {
 
     private JLayeredPane layeredPane;
     private JLabel label1;
@@ -18,7 +18,7 @@ public class First_Menu extends JFrame {
     private JTextField textField;
     private ButtonAndTextAreaListener textlistener;
 
-    public First_Menu(){
+    public FirstMenu(){
         setSize(new Dimension(626,481));
         setResizable(false);
         this.getContentPane().setBackground(Color.RED);
