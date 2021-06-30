@@ -23,10 +23,6 @@ public class GUIForm {
 
     }
     private GUIForm(){
-        PlayersInQueue = new JList();
-        OnlinePlayersList = new JList();
-        mainPanel = new JPanel();
-        loggerTextarea = new JTextArea();
         OnlinePlayersList.setModel(ServerMemory.getServerMemory().getCurrentPlayersList());
         PlayersInQueue.setModel(Queue.getQueue().getQueueLIst());
         //ServerMemory.getServerMemory().addPlayer();

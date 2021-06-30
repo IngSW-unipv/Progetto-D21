@@ -37,14 +37,12 @@ public class Queue {
                 GameThread newGame = new GameThread(player1, player2, gameParameters);
                 player1.getWorkerThread().setAssignedGame(newGame);
                 player2.getWorkerThread().setAssignedGame(newGame);
-                myQueue.removePlayer(player1);
-                myQueue.removePlayer(player2);
+                return;
             }
         }
     }
 
     public synchronized void removePlayer(Player p){
-
         queue.remove(p);
     }
 

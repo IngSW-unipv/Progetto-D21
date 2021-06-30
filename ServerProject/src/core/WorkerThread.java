@@ -73,7 +73,7 @@ public class WorkerThread extends Thread{
         TokenColor recievedColor=null;
         boolean creategame = false;
         
-        System.out.println(message);
+        System.out.println(player+" :"+message);
 
         switch (parts[0]){
             case "newNick":

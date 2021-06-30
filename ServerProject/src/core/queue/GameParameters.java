@@ -12,7 +12,7 @@ public class GameParameters {
 
 
     public GameParameters(String s){
-
+        setDuration(s);
     }
 
 

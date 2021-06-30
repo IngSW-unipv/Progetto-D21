@@ -4,6 +4,7 @@ import core.gameLogic.model.partita.Game;
 import core.gameLogic.model.partita.TokenColor;
 import core.gameLogic.model.partita.util.GridStatus;
 import core.queue.GameParameters;
+import core.queue.Queue;
 import util.PlayerStatus;
 
 import java.nio.channels.NetworkChannel;
@@ -29,6 +30,9 @@ public class GameThread extends Thread{
     }
     
     private void gameSetup() {
+
+		Queue.getQueue().removePlayer(player1);
+		Queue.getQueue().removePlayer(player2);
 
     	player1.setStatus(PlayerStatus.IN_GAME);
 		player2.setStatus(PlayerStatus.IN_GAME);
