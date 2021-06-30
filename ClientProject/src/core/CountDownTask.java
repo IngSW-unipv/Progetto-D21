@@ -18,6 +18,8 @@ public class CountDownTask extends TimerTask {
         gameDuration = Integer.parseInt(duration)*60;
         labelToUpdate.setText("0"+duration+":"+"00");
         currentTime = gameDuration;
+        minutes = currentTime/60;
+        seconds = currentTime-minutes*60;
     }
 
     @Override

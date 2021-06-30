@@ -36,9 +36,8 @@ public class GameInfoPanel extends JPanel {
 
     public void resetTimer(){
         turnTimer.cancel();
-        turnTimer.purge();
         turnTimer = new Timer();
-        turnTimer.schedule(new CountDownTask(timerFiel,duration),1000L);
+        turnTimer.scheduleAtFixedRate(new CountDownTask(timerFiel,duration),0,1000L);
     }
 
     public void setTurnOwnerME(){
