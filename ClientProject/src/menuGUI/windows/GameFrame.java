@@ -46,7 +46,7 @@ public class GameFrame extends JFrame {
         lblNewLabel = new JLabel("");
         lblNewLabel.setBounds(0, 0, 800, 700);
 
-        setGriglia(Third_Menu.choosenTheme);
+        setGrid(Third_Menu.choosenTheme);
 
         animationPanel = new JPanel();
         animationPanel.setOpaque(false);
@@ -91,10 +91,10 @@ public class GameFrame extends JFrame {
     public void addLabel(int x, int y, TokenColor c) {
         lbl = new JLabel("");
         if(c==TokenColor.RED) {
-            setTockenRosso(Third_Menu.choosenTheme);
+            setTockenRed(Third_Menu.choosenTheme);
         }
         if(c==TokenColor.YELLOW) {
-            setTockenGiallo(Third_Menu.choosenTheme);
+            setTockenYellow(Third_Menu.choosenTheme);
         }
         this.myTimer.schedule(new AnimationsTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
         System.out.println("aa");
@@ -124,7 +124,7 @@ public class GameFrame extends JFrame {
         infoPanel.setTurnOwnerOPPOSITE();
     }
 
-    public void setGriglia(int a) {
+    public void setGrid(int a) {
         if (a == 1) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchgrid.png"));
         } else if (a == 2) {
@@ -138,7 +138,7 @@ public class GameFrame extends JFrame {
         }
     }
 
-    public void setTockenRosso(int a){
+    public void setTockenRed(int a){
         if (a == 1) {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchtoken.png"));
         } else if (a == 2) {
@@ -152,7 +152,7 @@ public class GameFrame extends JFrame {
         }
     }
 
-    public void setTockenGiallo(int a){
+    public void setTockenYellow(int a){
         if (a == 1) {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/angeltoken.png"));
         } else if (a == 2) {
