@@ -13,6 +13,7 @@ public class GameInfoPanel extends JPanel {
     private String duration;
     private JLabel turnOwner;
     private VolumePanel volumePanel;
+    private CountDownTask countDownTask;
 
     public GameInfoPanel(String duration){
             turnTimer = new Timer();
@@ -31,11 +32,12 @@ public class GameInfoPanel extends JPanel {
             volumePanel.setBounds(0, 200, 300, 200);
             volumePanel.setLayout(null);
             this.add(volumePanel);
+            countDownTask = new CountDownTask(timerFiel,duration);
+            turnTimer.schedule(countDownTask,1000L);
     }
 
     public void resetTimer(){
-        turnTimer.cancel();
-        turnTimer.schedule(new CountDownTask(timerFiel,duration),1000L);
+        countDownTask.setCurrentTime(duration);
     }
 
     public void setTurnOwnerME(){

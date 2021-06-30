@@ -46,4 +46,8 @@ public class CountDownTask extends TimerTask {
         }
         return timeText = minutes+":"+seconds;
     }
+
+    public void setCurrentTime(String timeToSet){
+        currentTime = Integer.parseInt(timeToSet);
+    }
 }
