@@ -50,63 +50,21 @@ public class VolumePanel extends JPanel {
         button1.setUI(new StyledButtonUI());
         button1.setBackground(Color.GRAY.brighter());
 
-       /* button1.addActionListener(
-            new ActionListener(){
-                boolean flag= setFlag();
-                double memVol;
 
-                public boolean setFlag(){
-                    if (AnimationsTask.volumeOffset !=0) {
-                        return true;
-                    }else if(AnimationsTask.volumeOffset ==0){
-                        return false;
-                    }
-                    return false;
-                }
-
-                @Override
-                public void actionPerformed(ActionEvent arg0){
-
-                    button1.setIcon(flag ? c1 : c0);
-                    flag = !flag;
-                    if(!flag) {
-                        memVol= VolumeControl.volume;
-                        VolumeControl.volume = 0;
-                        AnimationsTask.volumeOffset = 0;
-                        slider.setVisible(false);
-
-                        //poi anche vittoria
-                    }else {
-                        slider.setVisible(true);
-                        VolumeControl.volume = memVol;
-                        AnimationsTask.volumeOffset = 0.1;
-                    }
-
-                    System.out.println("nuovo flag è "+flag);
-                }
-            });
-        */
-
-
-        //abbiamo fatto tutti gli actionListener così, inserire qui il codice dell'azione da effettuare
         ActionListener volumeListener = e -> {
-
             isMute = !isMute;
-
             if(isMute){
                 button1.setIcon(c1);
                 SoundPlayer.setGlobalVol(0);
                 slider.setVisible(false);
             }
-
             if(!isMute){
                 button1.setIcon(c0);
                 SoundPlayer.setGlobalVol(VolumeControl.volume);
                 slider.setVisible(true);
             }
-
-
         };
+
         button1.addActionListener(volumeListener);
         this.add(button1);
         this.add(slider);
