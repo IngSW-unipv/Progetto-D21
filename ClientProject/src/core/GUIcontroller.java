@@ -6,22 +6,22 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.io.File;
 
-public class GUI {
+public class GUIcontroller {
 
     private JPanel buttonsPanel;
     private JFrame menuFrame;
     private JFrame currentOpenFrame=null;
     private GameFrame gameFrame;
     private JFrame frameToOpen;
-    private static GUI myGuiHandler;
+    private static GUIcontroller myGuiHandler;
 
-    public static GUI getGuiHandler(){
+    public static GUIcontroller getGuiHandler(){
         if(myGuiHandler==null)
-            myGuiHandler = new GUI();
+            myGuiHandler = new GUIcontroller();
         return myGuiHandler;
     }
 
-    private GUI(){
+    private GUIcontroller(){
         //startGameIO("5");
         NetworkThread.getNetworkThread().setGuiHandler(this);
         startLoginMenu();

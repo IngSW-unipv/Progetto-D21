@@ -37,8 +37,8 @@ public class Queue {
                 GameThread newGame = new GameThread(player1, player2, gameParameters);
                 player1.getWorkerThread().setAssignedGame(newGame);
                 player2.getWorkerThread().setAssignedGame(newGame);
-                //newGame.start();
-                
+                myQueue.removePlayer(player1);
+                myQueue.removePlayer(player2);
             }
         }
     }

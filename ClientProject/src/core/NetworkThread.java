@@ -17,9 +17,10 @@ public class NetworkThread extends Thread {
     private BufferedReader socketInput = null;
     private static NetworkThread myThread=null;
     private JPanel animPanel;
-    private GUI guiHandler;
+    private GUIcontroller guiHandler;
     private String nickName;
     private String opponent;
+    private String inviteParameters;
 
     private NetworkThread(int port) {
         this.opponent="";
@@ -66,14 +67,14 @@ public class NetworkThread extends Thread {
         	case "abi":
         	    System.out.println("abilitato");
                 guiHandler.enableGameGui();
-                GUI.getGuiHandler().resetTimer();
-                GUI.getGuiHandler().setMyturn();
+                GUIcontroller.getGuiHandler().resetTimer();
+                GUIcontroller.getGuiHandler().setMyturn();
         		break;
         	case "NOTabi":
         	    System.out.println("disabilitato");
         	    guiHandler.disableGameGui();
-                GUI.getGuiHandler().resetTimer();
-                GUI.getGuiHandler().setOpponentTurn();
+                GUIcontroller.getGuiHandler().resetTimer();
+                GUIcontroller.getGuiHandler().setOpponentTurn();
         		break;
         	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
                   guiHandler.disableColumn(Integer.parseInt(parts[1]));
@@ -95,6 +96,7 @@ public class NetworkThread extends Thread {
         		break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]+parts[2]);
+                this.inviteParameters = parts[2];
                 this.opponent=parts[1];
                 break;
             case "gamefound" :
@@ -120,7 +122,7 @@ public class NetworkThread extends Thread {
         socketOutput.println(message);
     }
 
-    public void setGuiHandler(GUI thread){
+    public void setGuiHandler(GUIcontroller thread){
         this.guiHandler = thread;
     }
 
@@ -134,5 +136,9 @@ public class NetworkThread extends Thread {
 
     public String getOpponent(){
         return opponent;
+    }
+
+    public String getInviteParameters(){
+        return inviteParameters;
     }
 }

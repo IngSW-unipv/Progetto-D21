@@ -34,6 +34,8 @@ public class GameInfoPanel extends JPanel {
     }
 
     public void resetTimer(){
+        turnTimer.cancel();
+        turnTimer.purge();
         turnTimer.schedule(new CountDownTask(timerFiel,duration),1000L);
     }
 

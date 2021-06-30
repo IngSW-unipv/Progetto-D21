@@ -4,6 +4,7 @@ import core.gameLogic.model.partita.Game;
 import core.gameLogic.model.partita.TokenColor;
 import core.gameLogic.model.partita.util.GridStatus;
 import core.queue.GameParameters;
+import util.PlayerStatus;
 
 import java.nio.channels.NetworkChannel;
 
@@ -28,6 +29,9 @@ public class GameThread extends Thread{
     }
     
     private void gameSetup() {
+
+    	player1.setStatus(PlayerStatus.IN_GAME);
+		player2.setStatus(PlayerStatus.IN_GAME);
     	localGame = new Game(player1, player2);
     	nextPlayer = player1;
     	player1.sendMessage("begin,"+parameters.getTimestring());

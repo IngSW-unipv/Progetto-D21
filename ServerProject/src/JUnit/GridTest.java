@@ -1,11 +1,6 @@
 package JUnit;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import core.gameLogic.model.partita.Grid;
 import core.gameLogic.model.partita.TokenColor;
@@ -44,7 +39,7 @@ class GridTest {
 			}
 		}
 		
-		assertEquals("Failed", true, grid.isFinalVictory());
+		assertEquals(true, grid.isFinalVictory());
 		
 	}
 

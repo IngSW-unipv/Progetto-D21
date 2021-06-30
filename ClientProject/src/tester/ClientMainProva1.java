@@ -1,6 +1,6 @@
 package tester;
 
-import core.GUI;
+import core.GUIcontroller;
 import core.NetworkThread;
 
 import java.io.BufferedReader;
@@ -52,7 +52,7 @@ public class ClientMainProva1 {
 
     private static void startGui(){
 
-        GUI g = GUI.getGuiHandler();
+        GUIcontroller g = GUIcontroller.getGuiHandler();
 
         //TODO spostare questo codice dentro il networkthread
         /*

@@ -6,6 +6,7 @@ import java.net.Socket;
 import core.gameLogic.model.partita.TokenColor;
 import core.queue.GameParameters;
 import core.queue.Queue;
+import util.PlayerStatus;
 
 import static tester.Tester1.serverLogger;
 
@@ -17,16 +18,13 @@ public class WorkerThread extends Thread{
     private Player player = null;
     private ServerMemory myMemory;
     private GameThread assignedGame;
-    private GameParameters inviteParameters;
-    private Player invitedPLayer;
+
 
     public WorkerThread(Socket socket){
 
         this.socket = socket;
         setupReaders();
         myMemory = ServerMemory.getServerMemory();
-        inviteParameters = new GameParameters();
-        invitedPLayer = new Player();
 
     }
 
@@ -68,6 +66,7 @@ public class WorkerThread extends Thread{
         }
     }
 
+
     //TODO GESTIRE LA MANCANZA DI PRAMETRI NEI COMANDI
     public void parseString(String message){
         String[] parts = message.split(",");
@@ -91,10 +90,15 @@ public class WorkerThread extends Thread{
             	break;
 
             case "sendInvite":
-                invitedPLayer.playerBuilder(myMemory.getPlayer(parts[1]));
-            	invitedPLayer.sendMessage("invitoRicevuto,"+player.getNickName()+","+parts[2]);
-            	this.inviteParameters.setDuration(parts[2]);
-            	return;
+                Player tempPlayer = myMemory.getPlayer(parts[1]);
+
+                if(tempPlayer.getStatus()==PlayerStatus.ONLINE){
+                    tempPlayer.sendMessage("invitoRicevuto,"+player.getNickName()+","+parts[2]);
+                } else {
+                    player.sendMessage("playerIsNotOnline," + tempPlayer.getStatus());
+                }
+
+            	break;
 
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
@@ -109,9 +113,9 @@ public class WorkerThread extends Thread{
 
             case "addmeToQueue": //addmeToQueue,l
             	this.player.sendMessage("//apri la finestra di attesa");
-            	GameParameters tempGameParameters = new GameParameters();
-            	tempGameParameters.setDuration(parts[1]);
+            	GameParameters tempGameParameters = new GameParameters(parts[1]);
             	Queue.getQueue().addPlayerToQueue(player,tempGameParameters);
+                player.setStatus(PlayerStatus.IN_QUEUE);
             	System.out.println("player "+player.getNickName()+" addedd to queue on "+ parts[1]);
             	break;
             
@@ -125,7 +129,7 @@ public class WorkerThread extends Thread{
             System.out.println(myMemory.getPlayer(parts[2]));
             Player player2 = myMemory.getPlayer(parts[2]);
             System.out.println(player2.toString());
-            GameThread assignedGame = new GameThread(player, player2, inviteParameters);
+            GameThread assignedGame = new GameThread(player, player2,new GameParameters(parts[3]));
             this.setAssignedGame(assignedGame);
             player2.getWorkerThread().setAssignedGame(assignedGame);
 
@@ -134,9 +138,7 @@ public class WorkerThread extends Thread{
     }
 
 	public void setAssignedGame(GameThread assignedGame) {
-
         this.assignedGame = assignedGame;
-
 	}
 
 	public Socket getSocket(){

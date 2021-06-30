@@ -11,9 +11,11 @@ public class GameParameters {
     private String shortTime = "3";
 
 
-    public GameParameters(){
-        //TODO FORSE
+    public GameParameters(String s){
+
     }
+
+
 
     public void setDuration(String s){
         if(s.compareTo("s")==0)

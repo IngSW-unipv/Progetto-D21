@@ -20,20 +20,18 @@ public class Player {
     private PrintWriter out;
     private WorkerThread workerThread;
 
-    public Player(){
-        //costruttore vuoto per istanziare e basta
-    }
 
     public Player(Socket playerSocket, String nickName,WorkerThread thread) {
+
         this.playerSocket = playerSocket;
         this.nickName = nickName;
         this.workerThread = thread;
+        this.status = PlayerStatus.ONLINE;
         
         try {
 			this.out = new PrintWriter(new OutputStreamWriter(playerSocket.getOutputStream()),true);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
 		}
     }
 
@@ -70,10 +68,8 @@ public class Player {
 	}
     
     public void sendMessage(String message) {
-
         System.out.println(message);
     	this.out.println(message);
-    	
     }
 
 	public WorkerThread getWorkerThread() {
@@ -81,18 +77,7 @@ public class Player {
 	}
 	
 	public String toString() {
-        return this.nickName+"dbug";
+        return this.nickName+" PLAYER: "+status;
 	}
 
-    public void playerBuilder(Player p){
-
-        this.workerThread = p.getWorkerThread();
-        this.playerSocket = workerThread.getSocket();
-        try {
-            this.out = new PrintWriter(new OutputStreamWriter(playerSocket.getOutputStream()),true);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
 }

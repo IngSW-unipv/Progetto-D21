@@ -1,11 +1,11 @@
 package menuGUI.windows;
 
-import core.GUI;
+import core.GUIcontroller;
 
 public class maintest {
     public static void main(String[] args) {
 
-        GUI aaa = GUI.getGuiHandler();
+        GUIcontroller aaa = GUIcontroller.getGuiHandler();
         //aaa.displayDeclineFrame();
         //aaa.displayVictory();
         //LoserFrame loserFrame = new LoserFrame();
