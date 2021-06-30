@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/CountDownTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/CountDownTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />

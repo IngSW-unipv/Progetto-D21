@@ -47,8 +47,4 @@ public class CountDownTask extends TimerTask {
         return timeText = minutes+":"+seconds;
     }
 
-    public synchronized void setCurrentTime(String timeToSet){
-        currentTime = Integer.parseInt(timeToSet)*60;
-        System.out.println("tentativo di rimpostare il tempo");
-    }
 }
