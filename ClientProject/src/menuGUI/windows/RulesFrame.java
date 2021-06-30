@@ -24,7 +24,7 @@ public class RulesFrame extends JFrame {
         setIconImage(img);
 
         textArea = new JTextArea("Before you can start playing \nConnect Four or planning a \nstrategy, you must make sure \nthat you understand the object of \nthe game. \nIn order to win, a player must get \nfour checkers in their color in a\nrow.\nWhoever does it first is the\nwinner.\n" +
-                "There are three ways to get four\ncheckers in a row in Connect Four:\nhorizontally, vertically, and\ndiagonally.");
+                "There are three ways to get four\ntokens in a row in Connect Four:\nhorizontally, vertically, and\ndiagonally.");
         textArea.setBounds(0,0, 234, 280);
         textArea.setFont(new Font("ITC Avant Garde Gothic",Font.ITALIC,12));
         textArea.setEditable(false);

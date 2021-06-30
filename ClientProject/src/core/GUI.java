@@ -97,6 +97,7 @@ public class GUI {
 
     public void displayDeclineFrame(){
         DeclineFrame declineFrame = new DeclineFrame();
+        declineFrame.setVisible(true);
     }
 
     public void resetTimer(){
