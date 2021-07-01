@@ -62,6 +62,7 @@ public class GameThread extends Thread{
 			oTherPlayer.sendMessage("defeat");
 			nextPlayer.getWorkerThread().setAssignedGame(null);
 			oTherPlayer.getWorkerThread().setAssignedGame(null);
+			return;
 		}
 
 		alternatePlayer();
