@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/GUIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GUIcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/SoundPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
     </list>

@@ -47,5 +47,11 @@ public class SoundPlayer {
 			gain.setValue(db);
 		}
 	}
+
+	public static void stopMusic(){
+		for(Clip entry:suoni){
+			entry.stop();
+		}
+	}
 	
 }

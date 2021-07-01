@@ -43,6 +43,7 @@ public class GUIcontroller {
 
     public void victoryScreen(String victory){
         disableGameGui();
+        SoundPlayer.stopMusic();
         if(victory.equals("victory")){
             VictoryFrame victoryFrame = new VictoryFrame();
             victoryFrame.setVisible(true);
