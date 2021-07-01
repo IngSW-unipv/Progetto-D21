@@ -1,30 +1,23 @@
 package menuGUI.windows;
 
+import menuGUI.windows.util.FrameType;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class DeclineFrame extends JFrame {
+public class DeclineFrame extends InteractionFrame{
 
     private JLayeredPane layeredPane;
     private JLabel label1;
     private JLabel label2;
 
     public DeclineFrame(){
-        setSize(new Dimension(300,150));
-        setResizable(false);
+        super(FrameType.SMALLFRAME);
+        setupFrameWithCostumElements();
+    }
 
-        this.getContentPane();
-        this.setLayout(null);
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
-
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/menuGUI/img/icon.png");
-        setIconImage(img);
-
-        layeredPane = new JLayeredPane();
-        layeredPane.setBounds(0,0,300,150);
-
+    @Override
+    protected void setupFrameWithCostumElements() {
         label1 = new JLabel();
         label1.setIcon(new ImageIcon("src/menuGUI/img/blur300x150.jpg"));
         label1.setBounds(0,0,300,150);
@@ -39,4 +32,5 @@ public class DeclineFrame extends JFrame {
         layeredPane.add(label2, Integer.valueOf(1));
         this.add(layeredPane);
     }
+
 }

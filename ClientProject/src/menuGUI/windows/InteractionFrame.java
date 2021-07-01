@@ -14,7 +14,7 @@ public abstract class InteractionFrame extends JFrame {
 
     public InteractionFrame(FrameType type){
         chooseType(type);
-        setupFrameWithCostumElements();
+       // setupFrameWithCostumElements();
     }
 
     private void chooseType(FrameType type){

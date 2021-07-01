@@ -2,33 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/util/FrameType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/AnimationTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/img/themes/112705-red-blurred-background-vector.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/img/themes/angelog90px.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/img/themes/chesser.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/img/themes/designer-artist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/First_Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/Second_Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/Third_Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VolumeFrame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VolumeFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/DeclineFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/DeclineFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/ErrorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/ErrorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/maintest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/TesterFinestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InteractionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

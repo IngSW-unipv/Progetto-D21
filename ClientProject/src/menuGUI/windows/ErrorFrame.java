@@ -16,6 +16,7 @@ public class ErrorFrame extends InteractionFrame {
     public ErrorFrame(String errorMessage){
         super(FrameType.SMALLFRAME);
         this.errorMessage = errorMessage;
+        setupFrameWithCostumElements();
     }
 
     @Override
