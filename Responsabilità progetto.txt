@@ -1,7 +1,7 @@
 
-• documentazione dei requisiti marianna/riccardo
-• documentazione del progetto  greta/caterina/roberta
-• documentazione del codice flavio
-• verifica e convalida marianna/riccardo 
-• qualità del codice greta/caterina/roberta
-• progettazione dell’interfaccia (solo gruppi da 6 o 7) greta/caterina/roberta
+• documentazione dei requisiti              Riccardo
+• documentazione del progetto               Caterina
+• documentazione del codice                 Flavio
+• verifica e convalida                      Marianna
+• qualità del codice                        Roberta
+• progettazione dell’interfaccia            Greta

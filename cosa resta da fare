@@ -2,8 +2,6 @@ ATTENZIONE PUSHATE SOLO ROBA CHE FUNZIONA
 
 -pulire il server
 
--pareggio da gestire MR
-
 -DOCUMENTAZIONE!!
  
  
@@ -13,5 +11,6 @@ ATTENZIONE PUSHATE SOLO ROBA CHE FUNZIONA
                 -modello di dominio
                 -regole di dominio
  mancano :
-                -diagrammi di classe
-                -architettura del sistema            
+                -diagrammi di classe server
+                -architettura del sistema
+                -requisiti di dominio            

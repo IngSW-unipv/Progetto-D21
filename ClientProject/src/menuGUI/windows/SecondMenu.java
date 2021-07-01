@@ -24,6 +24,7 @@ public class SecondMenu extends JFrame {
     private JPopupMenu popupMenu;
     private GameModeFrame gameModeFrame;
     private String gameLenght;
+    private RandomFrame ranf;
 
     public SecondMenu() {
         setSize(new Dimension(700, 500));
@@ -147,7 +148,7 @@ public class SecondMenu extends JFrame {
             if (gameModeFrame != null) {
                 if (gameModeFrame.getGameSpeed() != null) {
                     NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + gameModeFrame.getGameSpeed());
-                    RandomFrame ranf = new RandomFrame();
+                    ranf = new RandomFrame();
                     ranf.setVisible(true);
                     return;
                 }
@@ -185,4 +186,8 @@ public class SecondMenu extends JFrame {
             }
         }return "a";
     }
+
+    public RandomFrame getRanf() {
+        return ranf;     }
+
 }

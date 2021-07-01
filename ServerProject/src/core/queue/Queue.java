@@ -3,6 +3,7 @@ package core.queue;
 import GUI.uitl.LinkedHashMapListModel;
 import core.GameThread;
 import core.Player;
+import util.PlayerStatus;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +28,8 @@ public class Queue {
         queue.put(player1, gameParameters);
         for(Map.Entry<Player,GameParameters> entry : queue.entrySet()){
 
-            if(gameParameters.compareParameters(entry.getValue())&&(player1!= entry.getKey())){
-            	
+                if(gameParameters.compareParameters(entry.getValue())&&(player1!= entry.getKey()) &&
+                        entry.getKey().getStatus() == PlayerStatus.IN_QUEUE){
             	Player player2 = entry.getKey();
             	
                 player2.sendMessage("gamefound,"+player1.getNickName());
