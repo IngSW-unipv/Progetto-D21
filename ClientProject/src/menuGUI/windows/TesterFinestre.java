@@ -2,7 +2,7 @@ package menuGUI.windows;
 
 import core.GUIcontroller;
 
-public class maintest {
+public class TesterFinestre {
     public static void main(String[] args) {
 
         GUIcontroller aaa = GUIcontroller.getGuiHandler();
