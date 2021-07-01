@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9374b75-6b0f-4c64-8c06-236b364c7816" name="Default Changelist" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientProject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />

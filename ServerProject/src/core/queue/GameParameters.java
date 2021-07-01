@@ -11,6 +11,10 @@ public class GameParameters {
     private String shortTime = "3";
 
 
+    public GameParameters(){
+        //costruttore vuoto per junit
+    }
+
     public GameParameters(String s){
         setDuration(s);
     }

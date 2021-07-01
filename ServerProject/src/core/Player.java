@@ -20,6 +20,9 @@ public class Player {
     private PrintWriter out;
     private WorkerThread workerThread;
 
+    public Player(){
+        //costruttore vuoto per junit
+    }
 
     public Player(Socket playerSocket, String nickName,WorkerThread thread) {
 
