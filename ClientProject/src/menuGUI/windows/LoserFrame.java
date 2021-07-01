@@ -43,6 +43,7 @@ public class LoserFrame extends JFrame {
 
         ActionListener backToMenu = e -> {
            this.dispose();
+            SecondMenu menu = new SecondMenu();
         };
         jb1.addActionListener(backToMenu);
 

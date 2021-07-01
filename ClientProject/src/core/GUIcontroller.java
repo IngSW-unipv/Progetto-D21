@@ -9,7 +9,7 @@ import java.io.File;
 public class GUIcontroller {
 
     private JPanel buttonsPanel;
-    private JFrame menuFrame;
+    private SecondMenu menu;
     private JFrame currentOpenFrame=null;
     private GameFrame gameFrame;
     private JFrame frameToOpen;
@@ -28,10 +28,12 @@ public class GUIcontroller {
     }
 
     public void startGameIO(String duration){
+        currentOpenFrame.setVisible(false);
         gameFrame = new GameFrame(duration);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setVisible(true);
         SoundPlayer.playSound(new File("resources/sounds/memories (online-audio-converter.com).wav"),VolumeControl.volume);
+        currentOpenFrame = gameFrame;
     }
 
     //metodi per la gestione della schermata della partita
@@ -64,7 +66,8 @@ public class GUIcontroller {
 
     public void openMenu(){
         closeFrame(currentOpenFrame);
-        SecondMenu menu = new SecondMenu();
+        menu = new SecondMenu();
+        currentOpenFrame = menu;
     }
 
     private void closeFrame(JFrame panelToClose){

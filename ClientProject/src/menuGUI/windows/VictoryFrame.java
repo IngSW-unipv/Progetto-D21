@@ -16,6 +16,7 @@ public class VictoryFrame extends JFrame {
     private JButton jb1;
     private BackToMenuLIstener backToMenuLIstener;
 
+
     public VictoryFrame(){
 
         setSize(new Dimension(700,500));
@@ -54,6 +55,7 @@ public class VictoryFrame extends JFrame {
 
         ActionListener backToMenu = e -> {
             this.dispose();
+            SecondMenu menu = new SecondMenu();
         };
         jb1.addActionListener(backToMenu);
 
