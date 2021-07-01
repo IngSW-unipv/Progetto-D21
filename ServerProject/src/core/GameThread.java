@@ -56,16 +56,14 @@ public class GameThread extends Thread{
             nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
         }
 		
-<<<<<<< Updated upstream
 
-=======
 		if(localGame.isVictory()){
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
 			nextPlayer.getWorkerThread().setAssignedGame(null);
 			oTherPlayer.getWorkerThread().setAssignedGame(null);
 		}
->>>>>>> Stashed changes
+
 		alternatePlayer();
 		int x = GridStatus.getGameStatus().getLastX();
 		int y = GridStatus.getGameStatus().getLastY();
