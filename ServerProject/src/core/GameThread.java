@@ -58,6 +58,8 @@ public class GameThread extends Thread{
 		if(localGame.isVictory()){
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
+			nextPlayer.getWorkerThread().setAssignedGame(null);
+			oTherPlayer.getWorkerThread().setAssignedGame(null);
 		}
 		alternatePlayer();
 		int x = GridStatus.getGameStatus().getLastX();

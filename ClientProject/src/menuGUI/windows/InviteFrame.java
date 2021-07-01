@@ -1,14 +1,14 @@
 package menuGUI.windows;
 
 import core.NetworkThread;
+import menuGUI.windows.util.FrameType;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class InviteFrame extends JFrame {
+public class InviteFrame extends InteractionFrame{
 
-    private JLayeredPane layeredPane;
     private JTextField textField;
     private JLabel label1;
     private JLabel label2;
@@ -16,22 +16,13 @@ public class InviteFrame extends JFrame {
     private SecondMenu second_menu;
 
     public InviteFrame(SecondMenu second_menu){
-
-        setSize(new Dimension(300,100));
-        setResizable(false);
-        this.getContentPane().setBackground(new Color(0xFFE57510, true));
-        this.setLayout(null);
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
+        super(FrameType.SMALLFRAME);
         this.second_menu = second_menu;
+        setupFrameWithCostumElements();
+    }
 
-        layeredPane = new JLayeredPane();
-        layeredPane.setBounds(0,0,300,100);
-
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/menuGUI/img/icon.png");
-        setIconImage(img);
-
+    @Override
+    protected void setupFrameWithCostumElements() {
         textField = new JTextField();
         textField.setBounds(0,20, 150, 25);
 
@@ -69,6 +60,8 @@ public class InviteFrame extends JFrame {
         layeredPane.add(label1, Integer.valueOf(1));
         layeredPane.add(jb1, Integer.valueOf(1));
         layeredPane.add(label2, Integer.valueOf(0));
-        this.add(layeredPane);
+
+        revalidate();
+        repaint();
     }
 }

@@ -2,6 +2,7 @@ package menuGUI.windows;
 
 
 import menuGUI.listeners.ButtonsListener;
+import menuGUI.windows.util.FrameType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -9,35 +10,21 @@ import javax.swing.border.LineBorder;
 
 import java.awt.*;
 
-public class RequestFrame extends JFrame {
+public class RequestFrame extends InteractionFrame{
 
-    private JLayeredPane layeredPane;
-    private JLabel label1;
     private JLabel label2;
     private JButton jb1;
     private JButton jb2;
+    private String playerName;
 
     public RequestFrame(String playerName){
-        setSize(new Dimension(300,150));
-        setResizable(false);
-        this.getContentPane();
-        this.setLayout(null);
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
+        super(FrameType.SMALLFRAME);
+        this.playerName = playerName;
+        setupFrameWithCostumElements();
+    }
 
-        layeredPane = new JLayeredPane();
-        layeredPane.setBounds(0,0,300,150);
-
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/menuGUI/img/icon.png");
-        setIconImage(img);
-
-        Border line = new LineBorder(new Color(0x0F142A, true));
-
-        label1 = new JLabel();
-        label1.setIcon(new ImageIcon("src/menuGUI/img/blur300x150.jpg"));
-        label1.setBounds(0,0,300,150);
-
+    @Override
+    protected void setupFrameWithCostumElements() {
         label2 = new JLabel("Invite recived from "+playerName);
         label2.setBounds(0,10,300, 50);
         label2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -70,11 +57,9 @@ public class RequestFrame extends JFrame {
         jb2.setActionCommand("decline");
         jb2.addActionListener(new ButtonsListener(jb2,this));
 
-        layeredPane.add(label1, Integer.valueOf(0));
         layeredPane.add(label2, Integer.valueOf(1));
         layeredPane.add(jb1, Integer.valueOf(1));
         layeredPane.add(jb2, Integer.valueOf(1));
-        this.add(layeredPane);
 
         revalidate();
         repaint();
