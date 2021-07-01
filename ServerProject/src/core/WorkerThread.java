@@ -116,13 +116,17 @@ public class WorkerThread extends Thread{
 
 
             case "addmeToQueue": //addmeToQueue,l
-            	this.player.sendMessage("//apri la finestra di attesa");
             	GameParameters tempGameParameters = new GameParameters(parts[1]);
             	Queue.getQueue().addPlayerToQueue(player,tempGameParameters);
                 player.setStatus(PlayerStatus.IN_QUEUE);
             	System.out.println("player "+player.getNickName()+" addedd to queue on "+ parts[1]);
             	break;
-            
+            case "exitFromQueue": //addmeToQueue,l
+               // System.out.println("MARI USCITA");
+                player.setStatus(PlayerStatus.ONLINE);
+                break;
+
+
             default :
             	socketOutput.println("invalid message sent by you");
             	System.out.println("invalid message recieved");

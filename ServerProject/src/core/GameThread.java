@@ -8,6 +8,7 @@ import core.queue.Queue;
 import util.PlayerStatus;
 
 import java.nio.channels.NetworkChannel;
+import java.util.concurrent.TimeUnit;
 
 public class GameThread extends Thread{
 	
@@ -55,10 +56,7 @@ public class GameThread extends Thread{
             nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
         }
 		
-		if(localGame.isVictory()){
-			nextPlayer.sendMessage("victory");
-			oTherPlayer.sendMessage("defeat");
-		}
+
 		alternatePlayer();
 		int x = GridStatus.getGameStatus().getLastX();
 		int y = GridStatus.getGameStatus().getLastY();
@@ -69,7 +67,31 @@ public class GameThread extends Thread{
 		player2.sendMessage("addToken,"+x+","+y+","+getColor());
 		
 		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
-		
+
+		if(localGame.isVictory()){
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				  //TODO Auto-generated catch block
+				  e.printStackTrace();
+			}
+			nextPlayer.sendMessage("victory");
+			oTherPlayer.sendMessage("defeat");
+			nextPlayer.setStatus(PlayerStatus.ONLINE);
+			oTherPlayer.setStatus(PlayerStatus.ONLINE);
+			}
+		if(localGame.getTurnsElapsed() > 41) {
+			try {
+				TimeUnit.SECONDS.sleep(1);
+				 } catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				 e.printStackTrace();
+			}
+			player1.sendMessage("pareggio,");
+			player2.sendMessage("pareggio,");
+			player1.setStatus(PlayerStatus.ONLINE);
+			player2.setStatus(PlayerStatus.ONLINE);
+		}
 		
 	}
 

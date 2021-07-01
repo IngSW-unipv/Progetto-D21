@@ -121,4 +121,7 @@ public class GUIcontroller {
     }
 
 
+    public SecondMenu getSecondMenu() {
+        return menu;
+    }
 }

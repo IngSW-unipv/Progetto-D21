@@ -36,7 +36,7 @@ public class NetworkThread extends Thread {
     @Override
     public void run() {
         try {
-            this.socket = new Socket("37.179.237.106", port);
+            this.socket = new Socket("localhost", port);
             clientLogger.info("Connection established");
         } catch (IOException e) {
             clientLogger.info("Impossible to establish connection to server");
@@ -87,6 +87,7 @@ public class NetworkThread extends Thread {
         		break;
         	case "begin":
         		guiHandler.startGameIO(parts[1]);
+                guiHandler.getSecondMenu().getRanf().setVisible(false);
         		break;
         	case "victory":
         		guiHandler.victoryScreen(parts[0]);
@@ -94,8 +95,11 @@ public class NetworkThread extends Thread {
         	case "defeat":
         		guiHandler.victoryScreen(parts[0]);
         		break;
+            case "pareggio":
+                guiHandler.displayInvite("aaa");      //SOSTITUIRE CON FINESTRA PAREGGIO
+                break;
             case "invitoRicevuto" :
-                guiHandler.displayInvite(parts[1]+parts[2]);
+                guiHandler.displayInvite(parts[1]);
                 this.inviteParameters = parts[2];
                 this.opponent=parts[1];
                 break;

@@ -39,28 +39,11 @@ public class Game {
 		this.gameTimer = new Timer();
 	}
 	
-	public void giveTurn(Player turnEnder) {
-		//controlla la vittoria
-		//disabilita l'interfaccia per il giocatore che gli passiamo
-	}
-	
-	// metodo eseguito all'interno di giveturn
-//	private void checkVictory(Player checked) {
-//		
-//		TokenColor tempColor = checked.getColor();
-//		if(/*condizioni di controllo colore gettoni adiacenti*/ ) {
-//
-//		 //if(/*condizioni di controllo colore gettoni adiacenti*/) {
-//			
-//		//}
-//		
-//	}
+
 	//devo impleneteare una logica fittizzia per l'alternarsi dei turni
 	public void turn(int x) {
 	
-		if(turnsElapsed>=41) {
-			return;
-		}
+		turnsElapsed++;
 		
 		this.gameGrid.tokenPlaced(this.startingColor, x);
 		this.gameGrid.displayGrid();
@@ -94,6 +77,8 @@ public class Game {
 	public Grid getGameGrid() {
         return gameGrid;
     }
+
+	public int getTurnsElapsed() {         return turnsElapsed;     }
 	
 }
 

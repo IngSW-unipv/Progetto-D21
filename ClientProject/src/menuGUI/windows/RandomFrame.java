@@ -1,5 +1,7 @@
 package menuGUI.windows;
 
+import menuGUI.listeners.CloseRandomFrameListener;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -42,5 +44,7 @@ public class RandomFrame extends JFrame {
         layeredPane.add(label2, Integer.valueOf(1));
         layeredPane.add(label3, Integer.valueOf(1));
         this.add(layeredPane);
+
+        addWindowListener(new CloseRandomFrameListener(this));
     }
 }

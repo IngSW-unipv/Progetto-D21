@@ -2,16 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d25013a7-224b-403c-b1e5-bb0b1778c4da" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/menuGUI/listeners/CloseRandomFrameListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/GUIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GUIcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -25,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -52,7 +66,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="45fa2021-bc2a-4358-8ce0-93626be3b1a9" name="Default Changelist" comment="" />
+      <changelist id="d25013a7-224b-403c-b1e5-bb0b1778c4da" name="Default Changelist" comment="" />
       <created>1625148454802</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
