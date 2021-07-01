@@ -1,5 +1,7 @@
 package menuGUI.windows;
 
+import menuGUI.windows.util.FrameType;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -7,36 +9,26 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
-public class GameModeFrame extends JFrame {
+public class GameModeFrame extends InteractionFrame{
 
     private JButton jb1;
     private JRadioButton radioButton1;
     private JRadioButton radioButton2;
-    private JLayeredPane layeredPane;
-    private JLabel label1;
     private String gameSpeed;
+    private Border line;
 
     public GameModeFrame(){
-        setSize(new Dimension(300,150));
-        setResizable(false);
-        this.getContentPane().setBackground(Color.ORANGE);
-        this.setLayout(null);
-        this.setVisible(true);
-        this.setLocationRelativeTo(null);
+        super(FrameType.SMALLFRAME);
+        setupFrameWithCostumElements();
+    }
 
-        layeredPane = new JLayeredPane();
-        layeredPane.setBounds(0,0,300,150);
+    public String getGameSpeed(){
+        return gameSpeed;
+    }
 
-        Toolkit kit = Toolkit.getDefaultToolkit();
-        Image img = kit.getImage("src/menuGUI/img/icon.png");
-        setIconImage(img);
 
-        Border line = new LineBorder(new Color(0x0F142A, true));
-
-        label1 = new JLabel();
-        label1.setBounds(0, 0, 300, 150);
-        label1.setIcon(new ImageIcon("src/menuGUI/img/blur300x150.jpg"));
-
+    @Override
+    protected void setupFrameWithCostumElements() {
         radioButton1 = new JRadioButton("Fast Game");
         radioButton1.setBounds(10,20,150,30);
         radioButton1.setOpaque(false);
@@ -87,13 +79,8 @@ public class GameModeFrame extends JFrame {
         layeredPane.add(radioButton1, Integer.valueOf(1));
         layeredPane.add(radioButton2, Integer.valueOf(1));
         layeredPane.add(jb1, Integer.valueOf(1));
-        layeredPane.add(label1, Integer.valueOf(0));
-        this.add(layeredPane);
+
+        revalidate();
+        repaint();
     }
-
-    public String getGameSpeed(){
-        return gameSpeed;
-    }
-
-
 }

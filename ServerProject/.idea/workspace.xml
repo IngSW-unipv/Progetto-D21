@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/CloseRandomFrameListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/GUIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/GUIcontroller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
@@ -14,6 +15,20 @@
       <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/queue/Queue.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InteractionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RequestFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RequestFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RulesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RulesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/TesterFinestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GameThread.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
