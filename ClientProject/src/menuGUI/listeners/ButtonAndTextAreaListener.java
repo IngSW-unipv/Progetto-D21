@@ -1,6 +1,7 @@
 package menuGUI.listeners;
 
 import core.NetworkThread;
+import menuGUI.windows.ErrorFrame;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -25,11 +26,15 @@ public class ButtonAndTextAreaListener implements ActionListener {
         switch (command){
             case "newNick":
                if(!nickField.getText().equals("")){
-                   NetworkThread.getNetworkThread().setNickName(nickField.getText());
-                   NetworkThread.getNetworkThread().sendMessage(command+","+nickField.getText());
-                   break;
+                   try {
+                       NetworkThread.getNetworkThread().setNickName(nickField.getText());
+                       NetworkThread.getNetworkThread().sendMessage(command+","+nickField.getText());
+                       break;
+                   } catch (Exception exception) {
+                       ErrorFrame errorFrame = new ErrorFrame("You are not connected to the server");
+                   }
                }
-               System.out.println("immettere un nickname composto da almeno un carattere");
+               ErrorFrame noNickError = new ErrorFrame("insert a nickname");
                break;
         }
 
