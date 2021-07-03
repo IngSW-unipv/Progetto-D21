@@ -16,11 +16,11 @@ public class NetworkThread extends Thread {
     private PrintWriter socketOutput = null;
     private BufferedReader socketInput = null;
     private static NetworkThread myThread=null;
-    private JPanel animPanel;
     private GUIcontroller guiHandler;
     private String nickName;
     private String opponent;
     private String inviteParameters;
+    private ErrorFrame errorFrame;
 
     private NetworkThread(int port) {
         this.opponent="";
@@ -116,16 +116,15 @@ public class NetworkThread extends Thread {
                 break;
                 //default con gestione errore messaggio
             case "oppL":
-                ErrorFrame errorFrameL = new ErrorFrame("Opponent left the game");
+                errorFrame = new ErrorFrame("Opponent left the game");
                 break;
+            case "playerNotFound":
+                errorFrame = new ErrorFrame("Player not found");
             default:
-                ErrorFrame errorFrame = new ErrorFrame("invalid message recived");
+                errorFrame = new ErrorFrame("invalid message recived");
         }
     }
-
-    public void setAnimPanel(JPanel animPanel) {
-        this.animPanel = animPanel;
-	}
+    
 
 	public void sendMessage(String message) {
         socketOutput.println(message);

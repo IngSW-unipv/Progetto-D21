@@ -96,13 +96,18 @@ public class WorkerThread extends Thread{
             case "sendInvite":
                 Player tempPlayer = myMemory.getPlayer(parts[1]);
 
-                if(tempPlayer.getStatus()==PlayerStatus.ONLINE){
-                    tempPlayer.sendMessage("invitoRicevuto,"+player.getNickName()+","+parts[2]);
+
+                if (tempPlayer!=null) {
+                    if(tempPlayer.getStatus()==PlayerStatus.ONLINE){
+                        tempPlayer.sendMessage("invitoRicevuto,"+player.getNickName()+","+parts[2]);
+                    } else {
+                        player.sendMessage("playerIsNotOnline," + tempPlayer.getStatus());
+                    }
                 } else {
-                    player.sendMessage("playerIsNotOnline," + tempPlayer.getStatus());
+                    player.sendMessage("playerNotFound");
                 }
 
-            	break;
+                break;
 
             case "inviteAcceptedOrRefused":
             	if(Integer.parseInt(parts[1])==1) {
