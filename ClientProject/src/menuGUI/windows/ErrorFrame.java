@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -14,7 +15,7 @@ public class ErrorFrame extends InteractionFrame {
     private String errorMessage;
 
     public ErrorFrame(String errorMessage){
-        super(FrameType.SMALLFRAME);
+        super(FrameType.SMALLFRAME, WindowsType.ERROR);
         this.errorMessage = errorMessage;
         setupFrameWithCostumElements();
     }

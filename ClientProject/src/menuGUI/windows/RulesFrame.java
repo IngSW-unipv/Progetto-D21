@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,7 +11,7 @@ public class RulesFrame extends InteractionFrame{
     private JTextArea textArea;
 
     public RulesFrame(){
-        super(FrameType.RULES);
+        super(FrameType.RULES, WindowsType.RULES);
         setupFrameWithCostumElements();
     }
 

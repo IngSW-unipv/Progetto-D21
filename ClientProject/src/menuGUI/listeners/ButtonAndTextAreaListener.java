@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 
 public class ButtonAndTextAreaListener implements ActionListener {
 
+    //TODO controllare dove si usa
+
     JButton butt;
     JTextField nickField;
 

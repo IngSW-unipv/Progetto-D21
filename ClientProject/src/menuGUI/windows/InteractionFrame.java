@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -13,10 +14,12 @@ public abstract class InteractionFrame extends JFrame {
     protected JLayeredPane layeredPane;
     protected Border line;
     protected JLabel backGround;
+    private WindowsType windowsType;
 
 
-    public InteractionFrame(FrameType type){
+    public InteractionFrame(FrameType type,WindowsType windowsType){
         layeredPane = new JLayeredPane();
+        this.windowsType = windowsType;
         chooseType(type);
        // setupFrameWithCostumElements();
     }
@@ -24,7 +27,7 @@ public abstract class InteractionFrame extends JFrame {
     private void chooseType(FrameType type){
         switch (type){
             case RULES:
-                //TODO
+                setupRulesFrame();
                 break;
             case ENDGAME:
                 setupEndgameFrame();

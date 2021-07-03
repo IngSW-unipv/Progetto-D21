@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -18,7 +19,7 @@ public class GameModeFrame extends InteractionFrame{
     private Border line;
 
     public GameModeFrame(){
-        super(FrameType.SMALLFRAME);
+        super(FrameType.SMALLFRAME, WindowsType.GAMEMODE);
         setupFrameWithCostumElements();
     }
 

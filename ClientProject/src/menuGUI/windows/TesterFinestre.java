@@ -11,8 +11,7 @@ public class TesterFinestre {
         //LoserFrame loserFrame = new LoserFrame();
         //loserFrame.setVisible(true);
         //loserFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Object test = new VictoryFrame();
-        Object test1 = new LoserFrame();
+        SecondMenu secondMenu = new SecondMenu();
 
     }
 }

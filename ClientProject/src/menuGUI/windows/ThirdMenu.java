@@ -1,5 +1,7 @@
 package menuGUI.windows;
 
+import menuGUI.windows.util.WindowsType;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -18,9 +20,11 @@ public class ThirdMenu extends JFrame {
     private JButton jb4;
     private JButton jb5;
     private JLayeredPane layeredPane;
+    private WindowsType windowsType;
     public static int choosenTheme; //TODO rendere questo attributo PROTECTED quando la GUI verrà messa TUTTA nello stesso package
 
     public ThirdMenu(){
+        windowsType = WindowsType.THEME;
         setSize(new Dimension(500,700));
         setResizable(false);
         container = getContentPane();

@@ -3,13 +3,49 @@
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RequestFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RequestFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/TesterFinestre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/TesterFinestre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/RequestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RulesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RulesFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/TesterFinestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -27,7 +63,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.ClientMainProva1">
+  <component name="RunManager" selected="Application.TesterFinestre">
     <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
       <module name="ClientProject" />
@@ -60,15 +96,15 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMainProva1" />
         <item itemvalue="Application.TesterFinestre" />
+        <item itemvalue="Application.ClientMainProva1" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="45fa2021-bc2a-4358-8ce0-93626be3b1a9" name="Default Changelist" comment="" />
+      <changelist id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="" />
       <created>1625148454802</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

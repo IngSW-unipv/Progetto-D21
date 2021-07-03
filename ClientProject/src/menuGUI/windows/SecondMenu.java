@@ -1,6 +1,8 @@
 package menuGUI.windows;
 
 import core.NetworkThread;
+import menuGUI.listeners.OpenFrameListener;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -25,6 +27,7 @@ public class SecondMenu extends JFrame {
     private GameModeFrame gameModeFrame;
     private String gameLenght;
     private RandomFrame ranf;
+    private OpenFrameListener openFrameListener;
 
     public SecondMenu() {
         setSize(new Dimension(700, 500));
@@ -109,41 +112,41 @@ public class SecondMenu extends JFrame {
         button4.setBackground(Color.orange);
         button4.setUI(new StyledButtonUI());
 
-        popupMenu = new JPopupMenu();
         item1 = new JMenuItem("How to play");
+        popupMenu = new JPopupMenu();
         popupMenu.add(item1);
         popupMenu.setBackground(new Color(0xDE8B0E));
         popupMenu.setBorder(line);
         item1.setBackground(new Color(0xDE8B0E));
         item1.setForeground(Color.white);
 
+        //!!!!
         ActionListener menubutton = e -> {
             popupMenu.show(button3, 320, -270);
         };
 
-
-        ActionListener gameMode = e -> {
+        /*ActionListener gameMode = e -> {
             this.gameModeFrame = new GameModeFrame();
             gameModeFrame.setVisible(true);
-        };
+        };*/
 
-        ActionListener invite = e -> {
-            InviteFrame inF = new InviteFrame(this);
+       /* ActionListener invite = e -> {
+            InviteFrame inF = new InviteFrame();
             inF.setVisible(true);
-        };
+        };*/
 
-        ActionListener rules = e -> {
+        /*ActionListener rules = e -> {
             RulesFrame rf = new RulesFrame();
             rf.setVisible(true);
-        };
+        };*/
 
-        ActionListener tema = e -> {
+        /*ActionListener tema = e -> {
             ThirdMenu third_menu = new ThirdMenu();
             third_menu.setVisible(true);
             third_menu.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        };
+        };*/
 
-        ActionListener random = e -> {
+        /*ActionListener random = e -> {
 
             if (gameModeFrame != null) {
                 if (gameModeFrame.getGameSpeed() != null) {
@@ -155,15 +158,34 @@ public class SecondMenu extends JFrame {
             }
             ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
 
-        };
+        };*/
 
 
-        button4.addActionListener(tema);
+        //button4.addActionListener(tema);
         button0.addActionListener(menubutton);
-        button3.addActionListener(gameMode);
-        item1.addActionListener(rules);
-        button1.addActionListener(invite);
-        button2.addActionListener(random);
+        //button3.addActionListener(gameMode);
+        //item1.addActionListener(rules);
+        //button1.addActionListener(invite);
+        //button2.addActionListener(random);
+
+        openFrameListener = new OpenFrameListener(button3, WindowsType.GAMEMODE);
+        button3.addActionListener(openFrameListener);
+
+        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
+        button1.addActionListener(openFrameListener);
+
+        openFrameListener = new OpenFrameListener(item1,WindowsType.RULES);
+        item1.addActionListener(openFrameListener);
+
+        openFrameListener = new OpenFrameListener(button4,WindowsType.THEME);
+        button4.addActionListener(openFrameListener);
+
+        openFrameListener = new OpenFrameListener(button2,WindowsType.RANDOM);
+        button2.addActionListener(openFrameListener);
+
+        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
+        button1.addActionListener(openFrameListener);
+
 
         layeredPane.add(label1, Integer.valueOf(0));
         layeredPane.add(button2, Integer.valueOf(1));
@@ -179,6 +201,7 @@ public class SecondMenu extends JFrame {
         this.revalidate();
         this.repaint();
     }
+
     public String getGameLenght() {
         if (gameModeFrame != null) {
             if (gameModeFrame.getGameSpeed() != null) {
@@ -188,6 +211,7 @@ public class SecondMenu extends JFrame {
     }
 
     public RandomFrame getRanf() {
-        return ranf;     }
+        return ranf;
+    }
 
 }

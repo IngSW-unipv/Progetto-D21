@@ -2,6 +2,7 @@ package menuGUI.windows;
 
 import core.NetworkThread;
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,10 +15,10 @@ public class InviteFrame extends InteractionFrame{
     private JLabel label2;
     private JButton jb1;
     private SecondMenu second_menu;
+    private ErrorFrame localErrorFrame;
 
-    public InviteFrame(SecondMenu second_menu){
-        super(FrameType.SMALLFRAME);
-        this.second_menu = second_menu;
+    public InviteFrame(){
+        super(FrameType.SMALLFRAME, WindowsType.INVITE);
         setupFrameWithCostumElements();
     }
 
@@ -32,10 +33,11 @@ public class InviteFrame extends InteractionFrame{
         label1.setForeground(Color.BLACK);
 
         ActionListener sendInvite = e ->{
+            second_menu = new SecondMenu();
             if((this.second_menu!=null)&&(second_menu.getGameLenght().compareTo("a")!=0)){
                 NetworkThread.getNetworkThread().sendMessage("sendInvite,"+textField.getText()+","+second_menu.getGameLenght());
                 return;
-            }ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
+            } localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
         };
 
         jb1 = new JButton("INVITE");

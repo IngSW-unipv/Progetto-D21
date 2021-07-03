@@ -1,12 +1,11 @@
 package menuGUI.windows;
 
 
-import menuGUI.listeners.ButtonsListener;
+import menuGUI.listeners.RequestListener;
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 import java.awt.*;
 
@@ -18,7 +17,7 @@ public class RequestFrame extends InteractionFrame{
     private String playerName;
 
     public RequestFrame(String playerName){
-        super(FrameType.SMALLFRAME);
+        super(FrameType.SMALLFRAME, WindowsType.REQUEST);
         this.playerName = playerName;
         setupFrameWithCostumElements();
     }
@@ -42,7 +41,7 @@ public class RequestFrame extends InteractionFrame{
         jb1.setBackground(Color.orange.brighter());
         jb1.setUI(new StyledButtonUI());
         jb1.setActionCommand("accept");
-        jb1.addActionListener(new ButtonsListener(jb1,this));
+        jb1.addActionListener(new RequestListener(jb1,this));
 
         jb2 = new JButton("DECLINE");
         jb2.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,12));
@@ -55,7 +54,7 @@ public class RequestFrame extends InteractionFrame{
         jb2.setBackground(Color.orange.brighter());
         jb2.setUI(new StyledButtonUI());
         jb2.setActionCommand("decline");
-        jb2.addActionListener(new ButtonsListener(jb2,this));
+        jb2.addActionListener(new RequestListener(jb2,this));
 
         layeredPane.add(label2, Integer.valueOf(1));
         layeredPane.add(jb1, Integer.valueOf(1));

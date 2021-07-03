@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +13,7 @@ public class DeclineFrame extends InteractionFrame{
     private JLabel label2;
 
     public DeclineFrame(){
-        super(FrameType.SMALLFRAME);
+        super(FrameType.SMALLFRAME, WindowsType.DECLINE);
         setupFrameWithCostumElements();
     }
 

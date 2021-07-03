@@ -5,6 +5,7 @@ import menuGUI.windows.util.FrameType;
 import menuGUI.listeners.CloseRandomFrameListener;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 
 import javax.swing.*;
@@ -16,7 +17,7 @@ public class RandomFrame extends InteractionFrame{
     private JLabel label3;
 
     public RandomFrame(){
-        super(FrameType.SMALLFRAME);
+        super(FrameType.SMALLFRAME, WindowsType.RANDOM);
         setupFrameWithCostumElements();
     }
 

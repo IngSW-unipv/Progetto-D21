@@ -1,6 +1,7 @@
 package menuGUI.windows;
 import menuGUI.listeners.BackToMenuLIstener;
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -16,7 +17,7 @@ public class VictoryFrame extends InteractionFrame{
     private JButton jb1;
 
     public VictoryFrame(){
-        super(FrameType.ENDGAME);
+        super(FrameType.ENDGAME, WindowsType.VICTORY);
         setupFrameWithCostumElements();
     }
 

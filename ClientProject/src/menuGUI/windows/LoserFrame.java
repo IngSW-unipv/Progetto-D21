@@ -1,6 +1,7 @@
 package menuGUI.windows;
 
 import menuGUI.windows.util.FrameType;
+import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,7 @@ public class LoserFrame extends InteractionFrame{
     private JButton jb1;
 
     public LoserFrame(){
-        super(FrameType.ENDGAME);
+        super(FrameType.ENDGAME, WindowsType.LOSER);
         setupFrameWithCostumElements();
     }
 
