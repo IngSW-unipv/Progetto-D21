@@ -168,7 +168,7 @@ public class SecondMenu extends JFrame {
         //button1.addActionListener(invite);
         //button2.addActionListener(random);
 
-        openFrameListener = new OpenFrameListener(button3, WindowsType.GAMEMODE);
+        openFrameListener = new OpenFrameListener(button3, WindowsType.GAMEMODE,this);
         button3.addActionListener(openFrameListener);
 
         openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
@@ -180,7 +180,7 @@ public class SecondMenu extends JFrame {
         openFrameListener = new OpenFrameListener(button4,WindowsType.THEME);
         button4.addActionListener(openFrameListener);
 
-        openFrameListener = new OpenFrameListener(button2,WindowsType.RANDOM);
+        openFrameListener = new OpenFrameListener(button2,WindowsType.RANDOM,this);
         button2.addActionListener(openFrameListener);
 
         openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
@@ -203,15 +203,25 @@ public class SecondMenu extends JFrame {
     }
 
     public String getGameLenght() {
-        if (gameModeFrame != null) {
-            if (gameModeFrame.getGameSpeed() != null) {
-                return gameModeFrame.getGameSpeed();
+        if (gameLenght!=null) {
+                return gameLenght;
             }
-        }return "a";
+        return "nogamemodeSelected";
     }
 
     public RandomFrame getRanf() {
         return ranf;
     }
 
+    public void setGameModeFrame(GameModeFrame gameModeFrame) {
+        this.gameModeFrame = gameModeFrame;
+    }
+
+    public GameModeFrame getGameModeFrame() {
+        return gameModeFrame;
+    }
+
+    public void setGameLenght(String gameLenght) {
+        this.gameLenght = gameLenght;
+    }
 }

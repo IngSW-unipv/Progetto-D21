@@ -37,4 +37,8 @@ public class ServerMemory {
     public synchronized void removePlayer(String nickToRemove){
         currentPlayersList.remove(nickToRemove);
     }
+
+    public void update(){
+        memory.update();
+    }
 }
