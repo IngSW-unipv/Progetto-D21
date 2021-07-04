@@ -2,28 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ServerProject/src/wiki/Connect-4 Protocol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/OpenFrameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/OpenFrameListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/ExplicitMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ServerMemory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ServerMemory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/ExplicitMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

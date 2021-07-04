@@ -7,8 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DeclineFrame extends InteractionFrame{
-
-    private JLayeredPane layeredPane;
+    
     private JLabel label1;
     private JLabel label2;
 

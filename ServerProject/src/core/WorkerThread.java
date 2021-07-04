@@ -10,6 +10,13 @@ import util.PlayerStatus;
 
 import static tester.Tester1.serverLogger;
 
+/**
+ * Questa classe si occupa di gestire le richieste in arrivo dal client
+ * attraverso l' interpretazione delle stringe che le arrivano
+ *
+ * @author Flavio Bobba
+ */
+
 public class WorkerThread extends Thread{
 
     private Socket socket;
@@ -20,7 +27,14 @@ public class WorkerThread extends Thread{
     private GameThread assignedGame;
     private Player opponent;
 
-
+    /**
+     * Costruttore della classe
+     * Accetta il socket del client connesso per la gestione delle sue richieste
+     * viene assegnata ad un attributo il riferimento alla servermemory
+     *
+     * @see ServerMemory
+     * @param socket
+     */
     public WorkerThread(Socket socket){
 
         this.socket = socket;
@@ -29,11 +43,20 @@ public class WorkerThread extends Thread{
 
     }
 
+    /**
+     * Metodo run del Thread
+     *Sta in ascotlo sul socket per messaggi in arrivo
+     *quando un messaggio arriva viene chiamato il metodo parseString
+     *che si occuperà di interpretare il messaggio in arrivo.
+     *Nel caso in cui il cilent si disconnetta questo viene riosso dalla lista
+     * dei giocatori se è stato istanziato un oggetto della classe player dedicato
+     *
+     * @see Player
+     */
     @Override
     public void run() {
 
         serverLogger.info("handling of the connection inizialized");
-
 
         try {
 
@@ -59,8 +82,12 @@ public class WorkerThread extends Thread{
         }
     }
 
+    /**
+     * Questo metodo si occupa di inizializzare il reader e il writer
+     * per ottenere e mandare i messaggi al client. Il reader e il writer istanziati
+     * vengono associati a degli attributi appositi.
+     */
 
-    // metodo per inzializzare gli input e gli output
     private void setupReaders(){
         try {
             this.socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -70,7 +97,18 @@ public class WorkerThread extends Thread{
         }
     }
 
-
+    /**
+     * Metodo che si occupa di interpretare i messaggi in arrivo dal client.
+     * I messaggi sono formattati seguendo un protocollo definito solo per
+     * questo scopo.
+     *
+     *  Casi gestiti:
+     *      -newNick: il cilent invia questo messaggio al server insieme ad una
+     *          stringa che corrisponde al nickname desiderato dall'utente, viene
+     *          istanziato quindi un oggetto player che salva il nickname il socket
+     *          e il workerThread associato
+     * @param message
+     */
     //TODO GESTIRE LA MANCANZA DI PRAMETRI NEI COMANDI
     public void parseString(String message){
         String[] parts = message.split(",");
@@ -145,19 +183,36 @@ public class WorkerThread extends Thread{
             System.out.println(opponent.toString());
             GameThread assignedGame = new GameThread(player, opponent,new GameParameters(parts[3]));
             this.setAssignedGame(assignedGame);
-            opponent.getWorkerThread().setAssignedGame(assignedGame);
+            opponent.setAssignedGame(assignedGame);
 
 
         }
 
     }
 
+    /**
+     * Setter per l'attributo assignedgame
+     * L'attributo assignedGame consiste in un gameThread
+     * serve per accoppiare i giocatori alle rispettive istanze
+     * delle partite in corso
+     *
+     * @see  GameThread
+     * @param assignedGame
+     */
 	public void setAssignedGame(GameThread assignedGame) {
         this.assignedGame = assignedGame;
 	}
 
+    /**
+     * Getter per il socket del asseghanto al thread
+     *
+     * @return socket
+     */
 	public Socket getSocket(){
         return this.socket;
     }
 
+    public PrintWriter getSocketOutput() {
+        return socketOutput;
+    }
 }
