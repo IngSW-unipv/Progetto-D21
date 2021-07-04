@@ -1,5 +1,6 @@
 package core.queue;
 
+import GUI.GUIForm;
 import GUI.uitl.LinkedHashMapListModel;
 import core.GameThread;
 import core.Player;
@@ -9,7 +10,10 @@ import util.PlayerStatus;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
+/**This class memorizes the players that put themselves in the waiting queue for
+ * a game and the parameters associated with the game type preferences.
+ * It is a Singleton class and as backbone data structure utilizes a LinkedHashmapListModel
+ *
  * Questa classe si occupa di memorizzare i giocatori in coda e i parametri di
  * ricerca della partita, inoltre accoppia i giocatori con prametri di ricerca
  * corrispondendi.
@@ -26,19 +30,22 @@ public class Queue {
     private LinkedHashMapListModel<Player,GameParameters> queue;
 
     /**
-     * Costruttore privato per il singleton
+     * Private constructor due to singleton
+     * Binds the class with the gui using the setter method of GUIForm
      *
+     * @see GUIForm
      */
     private Queue(){
-    	queue = new LinkedHashMapListModel<Player, GameParameters>();
+        queue = new LinkedHashMapListModel<Player, GameParameters>();
+        GUIForm.getGuiForm().bindQueueList(queue);
     }
 
     /**
-     * Metoto utilizzato quando serve avere un istanza della Queue
-     * nel caso non sia mai stata istanziata ne crea e ritorna un istanza
-     * altrimenti ritorna quella presente
+     * This method is used when an instance of the Queue is needed.
+     * When the Queue has not been initialized a new instance is created
+     * and returned, in a different case the existing instance is returned
      *
-     * @return
+     * @return Queue
      */
     public static Queue getQueue(){
         if(myQueue==null)
@@ -47,17 +54,13 @@ public class Queue {
     }
 
     /**
-     * Questo metodo aggiunge il player passato alla coda con i rispettivi
-     * parametri di partita, una volta che questo è stato aggiunto alla coda
-     * questa ultima viene iterata per vedere se è gia presente in coda un
-     * giocatore compatibile con quello appena aggiunto.
-     * In questo modo appena viene aggiunto un giocatore è possibile che venga
-     * trovato un avversario per questo.
-     * Quando viene trovata una corrispondenza tra due giocatori viene
-     * creata una istanza di GameThread che si occupera di creare e gestire la
-     * partita tra i due player.
+     * This method adds the given player to the queue with the corresponding GameParameters
+     * once the player is in the queue the queue is iterated too check if a player with matching
+     * GameParameters ins already in the queue. If that is the case a new GameThread is initialized
+     * with the two matching players.
      *
      * @see GameThread
+     * @see GameParameters
      *
      * @param player1
      * @param gameParameters
@@ -81,12 +84,13 @@ public class Queue {
         }
     }
 
+    /**
+     * Method that removes a given player from the Queue
+     *
+     * @param p
+     */
     public synchronized void removePlayer(Player p){
         queue.remove(p);
-    }
-
-    public LinkedHashMapListModel<Player,GameParameters> getQueueLIst(){
-        return queue;
     }
 
 }

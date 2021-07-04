@@ -14,6 +14,12 @@ import java.util.Scanner;
 
 import java.util.Timer;
 
+/**
+ * This class is responsible for checking for the victory, adding the tokens and controlling the
+ * game at a high level in general. It interfaces With the class Grid which represents the game's grid.
+ *
+ * @see Grid
+ */
 public class Game {
 	
 	private Player player1;
@@ -26,7 +32,13 @@ public class Game {
 
 
 	//il controller globale passa i giocatori alla partita generata, la partita inizializza la sua grid
-	
+
+	/**
+	 * Constructor
+	 *
+	 * @param player1
+	 * @param player2
+	 */
 	public Game(Player player1, Player player2) {
 		
 		this.player1 = player1;
@@ -65,19 +77,29 @@ public class Game {
 	public Timer getGameTimer() {
 		return this.gameTimer;
 	}
-	
-	public boolean getFinalVictory() {
-		return this.gameGrid.isFinalVictory();
-	}
 
+	/**
+	 * The grid internally checks for a victory and it is passed to the thread through this
+	 *
+	 * @return
+	 */
 	public boolean isVictory() {
 		return victory;
 	}
-	
+
+	/**
+	 * returns the grind
+	 *
+	 * @return
+	 */
 	public Grid getGameGrid() {
         return gameGrid;
     }
 
+	/**
+	 * returns the number of turns elapsed
+	 * @return
+	 */
 	public int getTurnsElapsed() {         return turnsElapsed;     }
 	
 }

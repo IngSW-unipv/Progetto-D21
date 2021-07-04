@@ -2,17 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/wiki/Connect-4 Protocol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JUnit/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/QueueTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ListenerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/ServerListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ListenerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ServerMemory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/guiB/Forza4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/guiB/control/ButtonListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/guiB/util/AnimationTask.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/queue/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/Tester1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

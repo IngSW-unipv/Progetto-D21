@@ -10,9 +10,14 @@ import util.PlayerStatus;
 
 import static tester.Tester1.serverLogger;
 
-/**
+/**[ENG]
+ * This class is listening on the given socket for incoming messages from
+ * the client, to each message corresponds a request that this class fulfills.
+ * It does so by parsing the incoming strings
+ *
+ * [IT]
  * Questa classe si occupa di gestire le richieste in arrivo dal client
- * attraverso l' interpretazione delle stringe che le arrivano
+ * attraverso l' interpretazione delle stringhe che le arrivano
  *
  * @author Flavio Bobba
  */
@@ -27,7 +32,12 @@ public class WorkerThread extends Thread{
     private GameThread assignedGame;
     private Player opponent;
 
-    /**
+    /**[ENG]
+     * Class constructor
+     *Accepts as parameter the socket of a connected client and binds the servermemory to
+     * a local attribute.
+     *
+     * [IT]
      * Costruttore della classe
      * Accetta il socket del client connesso per la gestione delle sue richieste
      * viene assegnata ad un attributo il riferimento alla servermemory
@@ -43,13 +53,21 @@ public class WorkerThread extends Thread{
 
     }
 
-    /**
+    /**[ENG]
+     * Thread's run method
+     * Is the part of the class that listens for incoming messages
+     * once a message arrives the method parseString is called which
+     * has the duty to interpret the given message.
+     * In the case of a sudden disconnection of the client, the player object
+     * bound to the thread is removed form the ServerMemory
+     *
+     * [IT]
      * Metodo run del Thread
-     *Sta in ascotlo sul socket per messaggi in arrivo
+     *Sta in ascolto sul socket per messaggi in arrivo
      *quando un messaggio arriva viene chiamato il metodo parseString
      *che si occuperà di interpretare il messaggio in arrivo.
-     *Nel caso in cui il cilent si disconnetta questo viene riosso dalla lista
-     * dei giocatori se è stato istanziato un oggetto della classe player dedicato
+     *Nel caso in cui il cilent si disconnetta questo viene rimsso dalla lista
+     * dei giocatori, se è stato istanziato un oggetto della classe player dedicato.
      *
      * @see Player
      */

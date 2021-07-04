@@ -10,12 +10,8 @@ import java.net.Socket;
 
 import core.gameLogic.model.partita.TokenColor;
 
-/**
- * Questa calsse si occupa di memorizzare e restituire dati utili
- * all'elaborazione di quello che accade durante l'elaborazione.
- * Fornisce inoltre un implementazione comoda da utilizzare del metodo
- * sendmessagge che permette, dato il player di indirizzarsi direttamente
- * al client associato
+/**This class memorizes and displays useful data necessary to the elaboration.
+ * It provides a simple way to send message to the client of a given player
  */
 public class Player {
 
@@ -31,10 +27,8 @@ public class Player {
     }
 
     /**
-     * Costruttore della classe
-     *
-     * Associa oltre ai parametri passati ad attributi, anche un reader
-     * per mandare i messaggi in modo comodo
+     * Class constructor, binds the given data to attributes inside the class
+     * and it binds a reader attribute to the reader from the client's WorkerThread
      *
      * @param playerSocket
      * @param nickName
@@ -51,7 +45,7 @@ public class Player {
     }
 
     /**
-     * Ritorna il nickname del player
+     * Returns the player's nickname
      *
      * @return Nickname
      */
@@ -59,10 +53,13 @@ public class Player {
         return nickName;
     }
     /**
-     * Ritorna lo status
-     * Lo status serve ad indicare cosa sta facendo il player sul client
-     * serve gestire inviti nel caso il giocatore sia già occupato
+     * Returns the player's status
+     * the status is used to see what a connected client is doing in order to
+     * execute the correct operations through status checks.
+     * As an example: if a player is in a game at the moment(INGAME status)
+     * it can not be invited
      *
+     * @see PlayerStatus
      * @return status
      */
     public PlayerStatus getStatus() {
@@ -70,8 +67,9 @@ public class Player {
     }
 
     /**
-     * Cambia lo status del giocatore a necessità
+     * Changes the player status according to necessity
      *
+     * @see PlayerStatus
      * @param status
      */
     public void setStatus(PlayerStatus status) {
@@ -79,9 +77,10 @@ public class Player {
     }
 
     /**
-     * Setta il colore associato al giocatore nella partita
-     * serve a tenere conto di chi sta aggiungendo i gettoni
+     * Sets the color associated with a player within a game
+     * it is useful to keep track of who is adding the tokens
      *
+     * @see TokenColor
      * @param color
      */
 	public void setColor(TokenColor color) {
@@ -89,9 +88,7 @@ public class Player {
 	}
 
     /**
-     * Metodo che scrive sul socket del client associato al player
-     * la stringa passata per mandare messaggi ai client a partire dai
-     * player associati
+     *Method that writes a message on the socketoutput in order to send it to the associated client
      *
      * @param message
      */
@@ -100,9 +97,7 @@ public class Player {
     	this.out.println(message);
     }
 
-    /**
-     * Ovverride di toString per aggiungere informazioni al player
-     * quando stampato
+    /**ToString override to provide more information
      *
      * @return
      */
@@ -112,8 +107,7 @@ public class Player {
         return this.nickName+" PLAYER: "+status;
 	}
 
-    /**
-     * Assegna la partita al thread del client
+    /**Binds the GameThread to the player's workerThread allowing the WorkerThread to work directly on the GameThread
      *
      * @see WorkerThread
      * @param assignedGame
