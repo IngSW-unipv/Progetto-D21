@@ -7,6 +7,9 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
+/**
+ * This class makes possible the volume customization during a game
+ */
 public class SoundPlayer {
 	
 	private static ArrayList<Clip> suoni = new ArrayList<Clip>();
@@ -27,6 +30,12 @@ public class SoundPlayer {
 			}		
 		}; audioThread.start();	
 	}
+
+	/**
+	 * The following methods set the volume following some different parameters
+	 * @param v
+	 * @param clip
+	 */
 	
 	private static void setVol(double v,Clip clip) {
 		FloatControl gain = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);

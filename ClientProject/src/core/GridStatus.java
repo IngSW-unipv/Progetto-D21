@@ -1,5 +1,8 @@
 package core;
 
+/**
+ * non so cosa dire
+ */
 public class GridStatus {
 	
 	private int lastX;
