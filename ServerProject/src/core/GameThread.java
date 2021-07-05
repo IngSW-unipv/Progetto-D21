@@ -86,14 +86,19 @@ public class GameThread extends Thread{
             oTherPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
             nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
         }
-		
+
 
 		if(localGame.isVictory()){
+			try {
+				TimeUnit.SECONDS.sleep(2);
+			} catch (InterruptedException e) {
+				//TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
-			nextPlayer.setAssignedGame(null);
-			oTherPlayer.setAssignedGame(null);
-			return;
+			nextPlayer.setStatus(PlayerStatus.ONLINE);
+			oTherPlayer.setStatus(PlayerStatus.ONLINE);
 		}
 
 		alternatePlayer();
@@ -107,18 +112,7 @@ public class GameThread extends Thread{
 		
 		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
 
-		if(localGame.isVictory()){
-			try {
-				TimeUnit.SECONDS.sleep(1);
-			} catch (InterruptedException e) {
-				  //TODO Auto-generated catch block
-				  e.printStackTrace();
-			}
-			nextPlayer.sendMessage("victory");
-			oTherPlayer.sendMessage("defeat");
-			nextPlayer.setStatus(PlayerStatus.ONLINE);
-			oTherPlayer.setStatus(PlayerStatus.ONLINE);
-			}
+
 		if(localGame.getTurnsElapsed() > 41) {
 			try {
 				TimeUnit.SECONDS.sleep(1);

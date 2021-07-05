@@ -12,7 +12,7 @@ import core.gameLogic.model.partita.TokenColor;
  * [IT]
  *Questa classe testa il funzionamento della griglia di gioco.
  * @see Grid
- * @author Marianna Orsi, Riccardo Pteri
+ * @author Marianna Orsi, Riccardo Petri
  */
 public class GridTest {
 

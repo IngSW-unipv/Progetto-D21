@@ -213,6 +213,8 @@ public class SecondMenu extends JFrame {
         return ranf;
     }
 
+    public void setRanf(RandomFrame f){ this.ranf = f;};
+
     public void setGameModeFrame(GameModeFrame gameModeFrame) {
         this.gameModeFrame = gameModeFrame;
     }
@@ -224,4 +226,6 @@ public class SecondMenu extends JFrame {
     public void setGameLenght(String gameLenght) {
         this.gameLenght = gameLenght;
     }
+
+
 }

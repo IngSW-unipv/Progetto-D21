@@ -58,6 +58,7 @@ public class OpenFrameListener implements ActionListener {
                     if (menu.getGameLenght().compareTo("nogamemodeSelected")!=0) {
                         NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + menu.getGameLenght());
                         ranf = new RandomFrame();
+                        menu.setRanf(ranf);
                         ranf.setVisible(true);
                         break;
                     }

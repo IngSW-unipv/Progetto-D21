@@ -13,13 +13,11 @@ import java.net.Socket;
 
 /**[ENG]
  *This class tests the Queue's functions with the instances of the queue ,the player and the game parameters.
- * [IT]
- *Questa classe testa il funzionamento della coda gi gioco, utilizzando instanze di giocatori, workerThread , socket e parametri di gioco.
  * @see Player
  * @see GameParameters
  * @see WorkerThread
  * @see Socket
- * @author Marianna Orsi, Riccardo Pteri
+ * @author Marianna Orsi, Riccardo Petri
  */
 public class QueueTest {
 

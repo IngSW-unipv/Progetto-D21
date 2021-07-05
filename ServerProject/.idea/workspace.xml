@@ -2,52 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/JUnit/Test/GridTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JUnit/Test/QueueTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/OpenFrameListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/OpenFrameListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServerProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/JUnit/GridTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/JUnit/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/JUnit/VictoryColumnTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/JUnit/VictoryDiagonalTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/JUnit/VictoryRowTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/GameThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/ServerListenerThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/ServerMemory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/ServerMemory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/guiB/Forza4$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/guiB/Forza4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/guiB/control/ButtonListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/guiB/util/AnimationTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/gameLogic/model/partita/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/GameParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/GameParameters.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/core/queue/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Connect4 Server/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Connect4 Server/tester/Tester1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/GridTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryColumnTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryDiagonalTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryRowTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/uitl/LinkedHashMapListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/uitl/LinkedHashMapListModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/GridTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/QueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryColumnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/VictoryColumnTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryDiagonalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/VictoryDiagonalTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryRowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/VictoryRowTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/gameLogic/model/partita/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/GridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GameThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +46,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.JUnit.Test in ServerProject">
+  <component name="RunManager" selected="Application.TestRunner">
     <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JUnit.TestRunner.TestRunner" />
       <module name="ServerProject" />
@@ -159,8 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JUnit.Test in ServerProject" />
         <item itemvalue="Application.TestRunner" />
+        <item itemvalue="JUnit.JUnit.Test in ServerProject" />
         <item itemvalue="JUnit.VictoryColumnTest" />
         <item itemvalue="JUnit.QueueTest" />
         <item itemvalue="JUnit.VictoryRowTest" />
