@@ -12,5 +12,4 @@ public class BackToMenuLIstener implements ActionListener {
         GUIcontroller.getGuiHandler().openMenu();
     }
 
-    //TODO controllare dove si usa
 }

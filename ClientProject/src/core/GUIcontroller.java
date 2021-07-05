@@ -6,6 +6,12 @@ import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.io.File;
 
+/**
+ * This class follows the Singleton pattern, in fact we have a private constructor. It makes sure that we can cerate a single
+ * instance of the GUIController. This class kind of follows the Facade pattern: it hides all the logic made up by the
+ * NetworkThread. Also, it can be considered a COntroller class because it manages all the JFrames that make the game
+ * playable.
+ */
 public class GUIcontroller {
 
     private JPanel buttonsPanel;
@@ -15,17 +21,29 @@ public class GUIcontroller {
     private JFrame frameToOpen;
     private static GUIcontroller myGuiHandler;
 
+    /**
+     *
+     * @return
+     */
     public static GUIcontroller getGuiHandler(){
         if(myGuiHandler==null)
             myGuiHandler = new GUIcontroller();
         return myGuiHandler;
     }
 
+    /**
+     * Constructor
+     */
     private GUIcontroller(){
         //startGameIO("5");
         NetworkThread.getNetworkThread().setGuiHandler(this);
         startLoginMenu();
     }
+
+    /**
+     * This method starts the game creating an instance of the GameFrame and playing a sound
+     * @param duration
+     */
 
     public void startGameIO(String duration){
         currentOpenFrame.setVisible(false);
@@ -36,11 +54,22 @@ public class GUIcontroller {
         currentOpenFrame = gameFrame;
     }
 
-    //metodi per la gestione della schermata della partita
+    /**
+     *
+     * @param x
+     * @param y
+     * @param c
+     */
+
     public void addLabel(int x, int y, TokenColor c) {
         gameFrame.addLabel(x,y,c);
     }
 
+    /**
+     * This method creates an instance of the VictoryFrame in case a victory occurs or a LoserFrame. Stops the background music and
+     * disposes the GameFrame previously created
+     * @param victory
+     */
     public void victoryScreen(String victory){
         disableGameGui();
         SoundPlayer.stopMusic();
@@ -57,6 +86,10 @@ public class GUIcontroller {
         }
 
     }
+
+    /**
+     * The following methods manage the instances of the different JFrames
+     */
 
     private void startLoginMenu(){
         FirstMenu loginFrame = new FirstMenu();

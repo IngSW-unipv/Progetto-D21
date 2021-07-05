@@ -99,6 +99,7 @@ public class NetworkThread extends Thread {
         		break;
             case "pareggio":
                 guiHandler.displayInvite("aaa");      //SOSTITUIRE CON FINESTRA PAREGGIO
+                //serve finestra
                 break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]);

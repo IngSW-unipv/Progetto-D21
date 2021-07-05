@@ -7,7 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * This class extends the Abstract class InteractionFrame, it defines the paramaters for the LoserFrame
+ */
 public class LoserFrame extends InteractionFrame{
 
 
@@ -19,7 +21,10 @@ public class LoserFrame extends InteractionFrame{
         super(FrameType.ENDGAME, WindowsType.LOSER);
         setupFrameWithCostumElements();
     }
-
+    /**
+     * This overrided method (inherited from the superlclass) implements an inner ActionListener that makes possible to return
+     * to the previous menu, the SecondMenu
+     */
     @Override
     protected void setupFrameWithCostumElements() {
 

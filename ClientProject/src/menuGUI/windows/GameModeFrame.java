@@ -10,6 +10,10 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 
+/**
+ * This class extends the Abstract class InteractionFrame, it makes possible the choice of the game mode of the match.
+ */
+
 public class GameModeFrame extends InteractionFrame{
 
     private JButton jb1;
@@ -48,8 +52,10 @@ public class GameModeFrame extends InteractionFrame{
         radioButton2.setBorder(line);
         radioButton2.setFocusPainted(false);
 
-
-        // action listener che chiude con enter solo se una delle modalità è stata selezionata altrimenti enter non fa nulla
+        /**
+         * Inner ActionListener that makes sure that one of the JRadioButton is pressed and changes the value of the variable
+         * gameSpeed.
+         */
         ActionListener radio = e ->{
             if(radioButton1.isSelected())
                 gameSpeed = "s";

@@ -6,6 +6,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is the one that makes possible the choice of the preferred theme. It consists in some JLabels for the main title,
+ * four main JButtons for the theme and a JButton that returns to the previous menu. The static variable choosenTheme
+ * changes value whenever one of the themes JButtons is pressed. There are some inner ActionListeners that do some minor actions
+ * such as going back to the previous menu and setting up the choosenTheme variable.
+ */
+
 public class ThirdMenu extends JFrame {
     private BoxLayout boxLayout;
     private Container container;

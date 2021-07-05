@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 
+/**
+ * This class manages the JPanel that hosts the Timer and some messages
+ */
 public class GameInfoPanel extends JPanel {
 
     private JLabel timerFiel;
@@ -13,6 +16,11 @@ public class GameInfoPanel extends JPanel {
     private String duration;
     private JLabel turnOwner;
     private VolumePanel volumePanel;
+
+    /**
+     *
+     * @param duration
+     */
 
     public GameInfoPanel(String duration){
             turnTimer = new Timer();
@@ -34,12 +42,18 @@ public class GameInfoPanel extends JPanel {
 
     }
 
+    /**
+     * Resets the timer whenever the turn is changed. This method is called in GameFrame where it is actually used
+     */
     public void resetTimer(){
         turnTimer.cancel();
         turnTimer = new Timer();
         turnTimer.scheduleAtFixedRate(new CountDownTask(timerFiel,duration),0,1000L);
     }
 
+    /**
+     * The following methods set the turn for the players displaying some text
+     */
     public void setTurnOwnerME(){
         turnOwner.setText("È il tuo turno!");
         turnOwner.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,25));
@@ -53,6 +67,10 @@ public class GameInfoPanel extends JPanel {
         turnOwner.setHorizontalAlignment(SwingConstants.CENTER);
         turnOwner.setVerticalAlignment(SwingConstants.CENTER);
     }
+
+    /**
+     * This method sets up the field that hosts the Timer (positioning, font, rate)
+     */
 
     private void setupTimerField(){
         timerFiel = new JLabel();

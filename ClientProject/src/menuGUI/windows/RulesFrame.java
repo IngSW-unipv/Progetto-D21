@@ -5,7 +5,9 @@ import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * This class extends the Abstract class InteractionFrame, it shows the rules of the game
+ */
 public class RulesFrame extends InteractionFrame{
 
     private JTextArea textArea;

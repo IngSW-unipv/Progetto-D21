@@ -9,6 +9,9 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Abstract class from which most of the JFrames inherit their features
+ */
 public abstract class InteractionFrame extends JFrame {
 
     protected JLayeredPane layeredPane;
@@ -40,6 +43,9 @@ public abstract class InteractionFrame extends JFrame {
         }
     }
 
+    /**
+     * The following methods set up the various types of JFrame that are used all along the project
+     */
     protected void setUpNormalFrame(){
         setSize(new Dimension(300,150));
         setResizable(false);

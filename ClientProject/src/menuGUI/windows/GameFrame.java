@@ -8,6 +8,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Timer;
 
+/**
+ * This class sets the actual graphic parameters (such as the grid style, the token style, the number of cells & so on)
+ * of the game. That's what we actually see when we play the game.
+ */
+
 public class GameFrame extends JFrame {
 
     private JPanel animationPanel;
@@ -22,7 +27,11 @@ public class GameFrame extends JFrame {
     private Container c;
     private JButton[][] matrix = new JButton[6][7]; //matrice bottoni
 
-
+    /**
+     * The constructor creates an instance of the Timer (which is contained in the infoPanel), creates the actual grid using
+     * a for cycle and creates an instance of the GameInfoPanel which is mentioned earlier
+     * @param duration
+     */
     public  GameFrame(String duration){
         this.duration=duration;
         myTimer = new Timer();
@@ -88,6 +97,14 @@ public class GameFrame extends JFrame {
         c.add(layeredPane);
     }
 
+    /**
+     * this method uses the static parameter of the ThirdMenu. They set the colour of the token related to the chosen theme.
+     *
+     * @param x
+     * @param y
+     * @param c
+     */
+
     public void addLabel(int x, int y, TokenColor c) {
         lbl = new JLabel("");
         if(c==TokenColor.RED) {
@@ -124,6 +141,12 @@ public class GameFrame extends JFrame {
         infoPanel.setTurnOwnerOPPOSITE();
     }
 
+    /**
+     * this method sets the grid to the preferred theme setting up an int variable that corresponds to each theme in
+     * the following ThirdMenu
+     * @param a
+     */
+
     public void setGrid(int a) {
         if (a == 1) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchgrid.png"));
@@ -137,6 +160,11 @@ public class GameFrame extends JFrame {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
         }
     }
+
+    /**
+     *
+     * @param a
+     */
 
     public void setTockenRed(int a){
         if (a == 1) {
@@ -152,6 +180,11 @@ public class GameFrame extends JFrame {
         }
     }
 
+    /**
+     *
+     * @param a
+     */
+
     public void setTockenYellow(int a){
         if (a == 1) {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/angeltoken.png"));
@@ -166,7 +199,12 @@ public class GameFrame extends JFrame {
         }
     }
 
-    public void disableColumn(int column) {//disabilita la colonna, viene richiamato quando la colonna � piena
+    /**
+     * This method disable the column when it's full of tokens
+     * @param column
+     */
+
+    public void disableColumn(int column) {
         for(int i = column,j=0;j<6;j++) {
             matrix[j][i].setVisible(false);
         }
