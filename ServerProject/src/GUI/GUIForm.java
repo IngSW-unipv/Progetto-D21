@@ -1,6 +1,5 @@
 package GUI;
 
-import com.sun.media.jfxmedia.logging.Logger;
 import core.ServerMemory;
 import core.queue.Queue;
 

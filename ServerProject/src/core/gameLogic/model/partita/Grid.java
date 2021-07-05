@@ -69,7 +69,6 @@ public class Grid {
 				}
 			
 				if (victoryCounter == 4) {
-					System.out.println("vittoria colonna");
 					return true;
 				}
 			} return false;
@@ -93,17 +92,14 @@ public class Grid {
 				if (gameGrid[x][i].getHasToken()) {
 					if (gameGrid[x][i].getTokenColor() == c) {
 						victoryCounter++;
-						//System.out.println(victoryCounter);
 					} else {
 						victoryCounter = 0;
-						System.out.println("spazio");
 					}
 				}else {
 					victoryCounter = 0;
 				}
 			
 				if (victoryCounter == 4) {
-					System.out.println("vittoria rigah");
 					return true;
 				}
 			} return false;
@@ -154,7 +150,7 @@ public class Grid {
 				} else if(gameGrid[i][j].getTokenColor() == c) {
 		
 					victoryDiag1++;
-					System.out.println("V1 upcounter"+victoryDiag1);
+					//System.out.println("V1 upcounter"+victoryDiag1);
 				}
 				if (victoryDiag1 == 5) {
 					break;
@@ -176,7 +172,7 @@ public class Grid {
 					break;
 				} else if(gameGrid[i][j].getTokenColor() == c) {
 					victoryDiag1++;
-					System.out.println("V1 downcounter "+victoryDiag1);
+					//System.out.println("V1 downcounter "+victoryDiag1);
 				}
 				if (victoryDiag1 == 5) {
 					break;
@@ -193,15 +189,15 @@ public class Grid {
 	 */
 	public void checkDiagAltoDx(int x, int y, TokenColor c) {
 		if(x!=0 && y!=6)
-			System.out.println("aa");
+			//System.out.println("aa");
 			for (int i = x, j = y; i >= 0 && j <= 6; i--, j++) { //
-				System.out.println("bb");
+				//System.out.println("bb");
 				if (!gameGrid[i][j].getHasToken() || (gameGrid[i][j].getTokenColor() != c)) {
 					break;
 				} else if(gameGrid[i][j].getTokenColor() == c) {
-					System.out.println(gameGrid[i][j].getTokenColor()+ " alto a dx ");
+					//System.out.println(gameGrid[i][j].getTokenColor()+ " alto a dx ");
 					victoryDiag2++;
-					System.out.println("V2 "+victoryDiag2);
+					//System.out.println("V2 "+victoryDiag2);
 				}
 				if (victoryDiag2 == 5) {
 					break;
@@ -221,9 +217,9 @@ public class Grid {
 					if (!gameGrid[i][j].getHasToken() || (gameGrid[i][j].getTokenColor() != c)) {
 						break;
 					} else if(gameGrid[i][j].getTokenColor() == c) {
-						System.out.println(gameGrid[i][j].getTokenColor()+ " basso a sx ");
+						//System.out.println(gameGrid[i][j].getTokenColor()+ " basso a sx ");
 						victoryDiag2++;
-						System.out.println("V2 "+victoryDiag2);
+						//System.out.println("V2 "+victoryDiag2);
 					}
 					if (victoryDiag2 == 5) {
 						break;
@@ -247,12 +243,12 @@ public class Grid {
         int i;
         for (i = 5; i >= 0; i--) {
             if (gameGrid[i][posPlayer].getToken() == null) {
-                System.out.println("dentro al for" + gameGrid[i][posPlayer]);
+                //System.out.println("dentro al for" + gameGrid[i][posPlayer]);
                 gameGrid[i][posPlayer].addToken(new Token(c));
                 gameGrid[i][posPlayer].cellHasToken();
                 status.updateGameStatus(posPlayer, i, c);
                     if (this.checkColonna(i, posPlayer, c) || this.checkRiga(i, posPlayer, c) || this.checkDiagonali(i, posPlayer, c)) {
-                        System.out.println("VITTORIA " + c);
+                       // System.out.println("VITTORIA " + c);
                         finalVictory=true;
                     }
 
