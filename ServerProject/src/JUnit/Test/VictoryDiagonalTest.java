@@ -1,38 +1,45 @@
-package JUnit;
+package JUnit.Test;
 
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import core.gameLogic.model.partita.Grid;
 import core.gameLogic.model.partita.Token;
 import core.gameLogic.model.partita.TokenColor;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+/**[ENG]
+ *This class tests the victory's  diagonal algorithm, with the manual insertion of tokens.
+ * [IT]
+ *Questa classe testa l'algoritmo di controllo di vittoria relativo alla diagonale, con l'inserimento manuale dei token.
+ *
+ * @see Grid
+ * @see Token
+ * @author Marianna Orsi, Riccardo Pteri
+ */
 
-class VictoryDiagonalTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+ public class VictoryDiagonalTest {
 
 	Grid grid ;
 	Token tokY;
 	Token tokR;
 	
-	@BeforeEach
-	void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		grid = new Grid();
 		tokY = new Token(TokenColor.YELLOW);
 		tokR = new Token(TokenColor.RED);
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		grid = null;
 		tokY = null;
 		tokR = null;
 	}
 	
 	@Test
-	void testDiagonal1() {
+	public void testDiagonal1() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -67,13 +74,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[2][3].addToken(tokY);	
 		grid.getGameGrid()[2][3].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(true, grid.checkDiagonali(2,3,TokenColor.YELLOW));
 	}
 	
 	@Test
-	void testDiagonal2() {
+	public void testDiagonal2() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -108,13 +115,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[2][3].addToken(tokR);	
 		grid.getGameGrid()[2][3].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkDiagonali(2,0,TokenColor.YELLOW));
 	}
 	
 	@Test
-	void testDiagonal3() {
+	public void testDiagonal3() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -149,13 +156,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[2][3].addToken(tokR);	
 		grid.getGameGrid()[2][3].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(true, grid.checkDiagonali(2,0,TokenColor.RED));
 	}
 	
 	@Test
-	void testDiagonal4() {
+	public void testDiagonal4() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -182,13 +189,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[2][3].addToken(tokR);	
 		grid.getGameGrid()[2][3].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkDiagonali(2,0,TokenColor.RED));
 	}
 	
 	@Test
-	void testDiagonal5() {
+	public void testDiagonal5() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -215,13 +222,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[2][3].addToken(tokR);	
 		grid.getGameGrid()[2][3].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals( false, grid.checkDiagonali(2,0,TokenColor.YELLOW));
 	}
 	
 	@Test
-	void testDiagonal6() {
+	public void testDiagonal6() {
 		
 		grid.getGameGrid()[5][6].addToken(tokY);	
 		grid.getGameGrid()[5][6].cellHasToken();
@@ -250,13 +257,13 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[3][2].addToken(tokR);	
 		grid.getGameGrid()[3][2].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkDiagonali(1,2,TokenColor.YELLOW));
 	}
 	
 	@Test
-	void testDiagonal7() {
+	public void testDiagonal7() {
 		
 		grid.getGameGrid()[5][6].addToken(tokY);	
 		grid.getGameGrid()[5][6].cellHasToken();
@@ -285,7 +292,7 @@ class VictoryDiagonalTest {
 		grid.getGameGrid()[3][2].addToken(tokR);	
 		grid.getGameGrid()[3][2].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals( false, grid.checkDiagonali(0,4,TokenColor.RED));
 	}

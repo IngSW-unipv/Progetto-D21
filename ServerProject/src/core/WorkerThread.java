@@ -53,6 +53,10 @@ public class WorkerThread extends Thread{
 
     }
 
+    public WorkerThread(){
+    //costruttore vuoto per JUnit.
+    }
+
     /**[ENG]
      * Thread's run method
      * Is the part of the class that listens for incoming messages

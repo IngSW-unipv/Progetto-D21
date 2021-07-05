@@ -1,37 +1,47 @@
-package JUnit;
+package JUnit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import core.gameLogic.model.partita.Grid;
 import core.gameLogic.model.partita.Token;
 import core.gameLogic.model.partita.TokenColor;
 
-class VictoryColumnTest {
+import java.net.Socket;
+
+/**[ENG]
+ *This class tests the victory's column algorithm, with the manual insertion of tokens.
+ * [IT]
+ *Questa classe testa l'algoritmo di controllo di vittoria relativo alla colonna, con l'inserimento manuale dei token.
+ *
+ * @see Grid
+ * @see Token
+
+ * @author Marianna Orsi, Riccardo Pteri
+ */
+public class VictoryColumnTest {
 
 	Grid grid ;
 	Token tokY;
 	Token tokR;
 	
-	@BeforeEach
-	void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		grid = new Grid();
 		tokY = new Token(TokenColor.YELLOW);
 		tokR = new Token(TokenColor.RED);
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 		grid = null;
 		tokY = null;
 		tokR = null;
 	}
 
 	@Test
-	void testColumn1() {
+	public void testColumn1() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -43,13 +53,13 @@ class VictoryColumnTest {
 		grid.getGameGrid()[2][0].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 
 		assertEquals( true, grid.checkColonna(2,0,TokenColor.YELLOW));
 		
 	}
 	@Test
-	void testColumn2() {
+	public void testColumn2() {
 		
 		grid.getGameGrid()[5][0].addToken(tokY);	
 		grid.getGameGrid()[5][0].cellHasToken();
@@ -61,13 +71,13 @@ class VictoryColumnTest {
 		grid.getGameGrid()[2][0].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals( false, grid.checkColonna(2,0,TokenColor.RED));
 		
 	}
 	@Test
-	void testColumn3() {
+	public void testColumn3() {
 		
 		grid.getGameGrid()[5][6].addToken(tokY);	
 		grid.getGameGrid()[5][6].cellHasToken();
@@ -79,14 +89,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[2][6].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals( true, grid.checkColonna(2,6,TokenColor.YELLOW));
 		
 	}
 	
 	@Test
-	void testColumn4() {
+	public void testColumn4() {
 		
 		grid.getGameGrid()[5][6].addToken(tokY);	
 		grid.getGameGrid()[5][6].cellHasToken();
@@ -98,14 +108,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[2][6].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkColonna(2,6,TokenColor.RED));
 		
 	}
 	
 	@Test
-	void testColumn5() {
+	public void testColumn5() {
 		
 		grid.getGameGrid()[5][6].addToken(tokY);	
 		grid.getGameGrid()[5][6].cellHasToken();
@@ -119,14 +129,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[2][6].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkColonna(2,6,TokenColor.YELLOW));
 		
 	}
 	
 	@Test
-	void testColumn6() {
+	public void testColumn6() {
 		
 		grid.getGameGrid()[5][2].addToken(tokY);	
 		grid.getGameGrid()[5][2].cellHasToken();
@@ -138,14 +148,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[3][2].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkColonna(3,2,TokenColor.YELLOW));
 		
 	}
 	
 	@Test
-	void testColumn7() {
+	public void testColumn7() {
 		
 		grid.getGameGrid()[5][2].addToken(tokY);	
 		grid.getGameGrid()[5][2].cellHasToken();
@@ -157,14 +167,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[3][3].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkColonna(3,3,TokenColor.YELLOW));
 		
 	}
 	
 	@Test
-	void testColumn8() {
+	public void testColumn8() {
 		
 		grid.getGameGrid()[5][2].addToken(tokY);	
 		grid.getGameGrid()[5][2].cellHasToken();
@@ -178,14 +188,14 @@ class VictoryColumnTest {
 		grid.getGameGrid()[1][2].cellHasToken();
 		
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(false, grid.checkColonna(1,2,TokenColor.YELLOW));
 		
 	}
 	
 	@Test
-	void testColumn9() {
+	public void testColumn9() {
 		
 		grid.getGameGrid()[5][2].addToken(tokY);	
 		grid.getGameGrid()[5][2].cellHasToken();
@@ -200,7 +210,7 @@ class VictoryColumnTest {
 		grid.getGameGrid()[0][2].addToken(tokY);	
 		grid.getGameGrid()[0][2].cellHasToken();
 		
-		grid.displayGrid();
+		//grid.displayGrid();
 		
 		assertEquals(true, grid.checkColonna(0,2,TokenColor.YELLOW));
 		

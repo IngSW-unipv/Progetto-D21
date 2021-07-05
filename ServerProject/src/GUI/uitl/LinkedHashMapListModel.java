@@ -45,7 +45,7 @@ public class LinkedHashMapListModel<K,V> extends AbstractListModel<V> {
         } else {
             delegate.put(key, value);
             fireContentsChanged(this, delegate.size() - 1, delegate.size() - 1);
-            System.out.println("addedToeffectivelist");
+            //System.out.println("addedToeffectivelist");
         }
     }
 

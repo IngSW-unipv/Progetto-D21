@@ -4,10 +4,8 @@ import GUI.GUIForm;
 import GUI.uitl.LinkedHashMapListModel;
 import core.GameThread;
 import core.Player;
-import core.ServerMemory;
 import util.PlayerStatus;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**This class memorizes the players that put themselves in the waiting queue for
