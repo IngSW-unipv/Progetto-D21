@@ -1,0 +1,181 @@
+package core;
+
+import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
+
+import javax.swing.JPanel;
+
+import menuGUI.windows.ErrorFrame;
+
+import static tester.ClientMainProva1.clientLogger;
+
+/**
+ *The NetworkThread class extends Thread and listens on the specific socket for an incoming message (String)25565
+ */
+
+public class NetworkThread extends Thread {
+
+    private Socket socket;
+    private static int port=22222;
+    private PrintWriter socketOutput = null;
+    private BufferedReader socketInput = null;
+    private static NetworkThread myThread=null;
+    private GUIcontroller guiHandler;
+    private String nickName;
+    private String opponent;
+    private String inviteParameters;
+    private ErrorFrame errorFrame;
+
+    private NetworkThread(int port) {
+        this.opponent="";
+        this.port = port;
+    }
+    
+    public static NetworkThread getNetworkThread() {
+    	if(myThread==null)
+    		myThread = new NetworkThread(port);
+    	return myThread;
+    }
+
+    /**
+     * The run() method is overrided in order to make possible a connection with the Server. It also makes possible
+     * to read Strings invoking the parseString() method. It's possible that some errors could happen, if so, this method
+     * creates an instance of an ErrorFrame that displays a JFrame with a message188.216.113.154
+     */
+    @Override
+    public void run() {
+        try {
+            this.socket = new Socket(InetAddress.getLocalHost(), port);
+            clientLogger.info("Connection established");
+        } catch (IOException e) {
+            clientLogger.info("Impossible to establish connection to server");
+            ErrorFrame errorFrame = new ErrorFrame("Impossible to establish \n connection to server");
+            return;
+        }
+        try {
+            socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            socketOutput = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);
+        } catch (IOException e) {
+            clientLogger.info("I/O Error");
+        }
+        while (socket.isBound()) {
+            try {
+                parseString(this.socketInput.readLine());
+            } catch (IOException e) {
+                ErrorFrame errorFrame = new ErrorFrame("Connection dropped");
+                break;
+            }
+        }
+    }
+
+    /**
+     * This method makes possible the execution of the main actions of the program parsing some Strings (messages) received from
+     * the Server. Every case is handled by the main Controller of this Client (class GUIController)
+     *
+     * @param message
+     */
+    
+    public void parseString(String message){
+        String[] parts = message.split(",");
+        System.out.println(message);
+
+        switch (parts[0]){
+        	case "abi":
+        	    System.out.println("abilitato");
+                guiHandler.enableGameGui();
+                GUIcontroller.getGuiHandler().resetTimer();
+                GUIcontroller.getGuiHandler().setMyturn();
+        		break;
+        	case "NOTabi":
+        	    System.out.println("disabilitato");
+        	    guiHandler.disableGameGui();
+                GUIcontroller.getGuiHandler().resetTimer();
+                GUIcontroller.getGuiHandler().setOpponentTurn();
+        		break;
+        	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
+                  guiHandler.disableColumn(Integer.parseInt(parts[1]));
+                  break;
+        	case "addToken": //addToken,x,y
+                if (parts[3].compareTo("r")==0)
+                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
+                if (parts[3].compareTo("y")==0)
+                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);
+        		break;
+        	case "begin":
+        		guiHandler.startGameIO(parts[1]);
+                if(guiHandler.getSecondMenu().getRanf()!=null){
+                    guiHandler.getSecondMenu().getRanf().setVisible(false);
+                }
+        		break;
+        	case "victory":
+        		guiHandler.victoryScreen(parts[0]);
+        		break;
+        	case "defeat":
+        		guiHandler.victoryScreen(parts[0]);
+        		break;
+            case "pareggio":
+                guiHandler.displayInvite("aaa");      //SOSTITUIRE CON FINESTRA PAREGGIO
+                //serve finestra
+                break;
+            case "invitoRicevuto" :
+                guiHandler.displayInvite(parts[1]);
+                this.inviteParameters = parts[2];
+                this.opponent=parts[1];
+                break;
+            case "gamefound" :
+                System.out.println("parita trovata");
+                break;
+            case "openMainMenu":
+                guiHandler.openMenu();
+                break;
+            case "decline":
+                guiHandler.displayDeclineFrame();
+                break;
+                //default con gestione errore messaggio
+            case "oppL":
+                errorFrame = new ErrorFrame("Opponent left the game");
+                break;
+            case "playerNotFound":
+                errorFrame = new ErrorFrame("Player not found");
+            default:
+                errorFrame = new ErrorFrame("invalid message recived");
+        }
+    }
+
+    /**
+     * This method makes possible sending String messages
+     * @param message
+     */
+	public void sendMessage(String message) {
+        socketOutput.println(message);
+    }
+
+    /**
+     * This method makes possible to create some sort of Facade between the user and the NetworkThread
+     * @param thread
+     */
+    public void setGuiHandler(GUIcontroller thread){
+        this.guiHandler = thread;
+    }
+
+    /**
+     * The following methods are some simple getters/setters to improve the encapsulation of the program
+     * @param nickName
+     */
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public String getOpponent(){
+        return opponent;
+    }
+
+    public String getInviteParameters(){
+        return inviteParameters;
+    }
+}

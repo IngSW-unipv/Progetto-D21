@@ -2,7 +2,7 @@ package menuGUI.windows;
 
 import core.AnimationsTask;
 import core.TokenColor;
-import menuGUI.listeners.ButtonListener;
+import menuGUI.listeners.AddTokenListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,7 +80,7 @@ public class GameFrame extends JFrame {
                 tempButt.setBounds(i*100, j*100, buttonsize, buttonsize);
                 buttonsPanel.add(tempButt);
                 tempButt.setActionCommand(""+i);
-                tempButt.addActionListener(new ButtonListener(tempButt));
+                tempButt.addActionListener(new AddTokenListener(tempButt));
                 matrix[j][i] = tempButt; //riempio matrice dei bottoni
                 //System.out.println("bottone generato");
             }

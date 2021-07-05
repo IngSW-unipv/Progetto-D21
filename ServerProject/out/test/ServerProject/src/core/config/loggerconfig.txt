@@ -1,0 +1,2 @@
+#Logging
+handlers = core.queue.util.LoggerTextArea

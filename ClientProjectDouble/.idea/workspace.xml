@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/GridTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/QueueTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryColumnTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryDiagonalTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryRowTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/GridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryColumnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryColumnTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryDiagonalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryDiagonalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryRowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryRowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/TicTacToe.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Painter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/TicTacToe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueCircle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/board.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redCircle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redX.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1uiVZdwNVPmW3iTHfz5yYaqmEtJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager" selected="Application.ClientMainProva1">
+    <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
+      <module name="ClientProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tester.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TesterFinestre" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="menuGUI.windows.TesterFinestre" />
+      <module name="ClientProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="menuGUI.windows.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ClientMainProva1" />
+      <item itemvalue="Application.TesterFinestre" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientMainProva1" />
+        <item itemvalue="Application.TesterFinestre" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="" />
+      <created>1625148454802</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625148454802</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

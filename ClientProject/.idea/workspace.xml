@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/AddTokenListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/TesterFinestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" afterDir="false" />
@@ -64,11 +69,11 @@
       </method>
     </configuration>
     <configuration name="TesterFinestre" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="menuGUI.windows.TesterFinestre" />
+      <option name="MAIN_CLASS_NAME" value="tester.TesterFinestre" />
       <module name="ClientProject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="menuGUI.windows.*" />
+          <option name="PATTERN" value="tester.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

@@ -1,0 +1,1224 @@
+Index: src/tester/Tester1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package tester;\r\n\r\nimport GUI.GUIForm;\r\nimport core.ListenerThread;\r\nimport core.queue.util.TextAreaLoggerHandler;\r\n\r\nimport javax.swing.*;\r\nimport java.io.IOException;\r\nimport java.net.ServerSocket;\r\nimport java.util.Properties;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\npublic class Tester1 {\r\n\r\n    public static int port = 25565;\r\n    public static Logger serverLogger = Logger.getLogger(\"logger_1\");\r\n    public static GUIForm guiHandler ;\r\n\r\n    public static void main(String[] args) {\r\n\r\n        guiHandler = GUIForm.getGuiForm();\r\n        setUpLogger();\r\n\r\n        JFrame mainFrame = new JFrame(\"Server\");\r\n        mainFrame.setContentPane(guiHandler.getMainPanel());\r\n        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);\r\n        mainFrame.pack();\r\n        mainFrame.setVisible(true);\r\n\r\n        try {\r\n\r\n            serverLogger.info(\"Server starting...\");\r\n\r\n            ServerSocket serverSocket = new ServerSocket(port);\r\n            ListenerThread serverListenerThread = new ListenerThread(serverSocket);\r\n            serverListenerThread.start();\r\n\r\n            serverLogger.info(\"listening started on port:\"+port);\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n\r\n    }\r\n\r\n\r\n    // leggo da file la configurazione del logger\r\n    private static void setUpLogger(){\r\n\r\n        serverLogger.setLevel(Level.ALL);\r\n        serverLogger.info(\"loading logger config\");\r\n        serverLogger.addHandler(new TextAreaLoggerHandler());\r\n\r\n        Properties logConfig = new Properties();\r\n\r\n        /*\r\n        try {\r\n\r\n            FileInputStream config = new FileInputStream(\"src/core/config/loggerconfig.txt\");\r\n           // logConfig.load(config);\r\n            System.out.println(\"aa\");\r\n            LogManager.getLogManager().readConfiguration(config);\r\n\r\n        } catch (IOException e) {\r\n            System.out.println(\"WARNING: could not open config file CONSOLE OUTPUT ONLY\");\r\n        }*/\r\n\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/tester/Tester1.java b/src/tester/Tester1.java
+--- a/src/tester/Tester1.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/tester/Tester1.java	(date 1625478328989)
+@@ -13,7 +13,7 @@
+ 
+ public class Tester1 {
+ 
+-    public static int port = 25565;
++    public static int port = 22222;
+     public static Logger serverLogger = Logger.getLogger("logger_1");
+     public static GUIForm guiHandler ;
+ 
+Index: ../TicTacToe/.idea/.gitignore
+===================================================================
+diff --git a/../TicTacToe/.idea/.gitignore b/../TicTacToe/.idea/.gitignore
+deleted file mode 100644
+--- a/../TicTacToe/.idea/.gitignore	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: ../TicTacToe/TicTacToe.iml
+===================================================================
+diff --git a/../TicTacToe/TicTacToe.iml b/../TicTacToe/TicTacToe.iml
+deleted file mode 100644
+--- a/../TicTacToe/TicTacToe.iml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: ../TicTacToe/src/TicTacToe.java
+===================================================================
+diff --git a/../TicTacToe/src/TicTacToe.java b/../TicTacToe/src/TicTacToe.java
+deleted file mode 100644
+--- a/../TicTacToe/src/TicTacToe.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,168 +0,0 @@
+-import javax.imageio.ImageIO;
+-import javax.swing.*;
+-import java.awt.*;
+-import java.awt.image.BufferedImage;
+-import java.io.DataInputStream;
+-import java.io.DataOutputStream;
+-import java.io.IOException;
+-import java.net.ServerSocket;
+-import java.net.Socket;
+-import java.util.Scanner;
+-
+-public class TicTacToe implements Runnable{
+-    private String ip = "localhost";
+-    private int port = 22222;
+-    private JFrame frame;
+-    private final int WIDTH = 506;
+-    private final int HEIGHT = 527;
+-    private Thread thread;
+-    private Socket socket; //connects to server
+-    private DataOutputStream dos;
+-    private DataInputStream dis;
+-    private ServerSocket serverSocket; //for the server
+-    private BufferedImage board;
+-    private BufferedImage redX;
+-    private BufferedImage blueX;
+-    private BufferedImage redCircle;
+-    private BufferedImage blueCircle;
+-    private String [] spaces = new String[9];
+-    private String unableToCommunicateWithOpponentString = "Unable to communicate with opponent.";
+-    private boolean yourTurn = false;
+-    private boolean circle = true;
+-    private boolean accepted = false;
+-    private boolean unableToCommunicateWithOpponent = false;
+-    private boolean won = false;
+-    private boolean enemywon = false;
+-
+-    private int lenghtOfSpace = 160; //squares
+-    private int errors = 0;
+-    private int firstSpot = -1; //firstspot
+-    private int secondSpot = -1; //thirdsport
+-
+-    private Font font = new Font("Verdana",Font.BOLD,32);
+-    private Font smallerfont = new Font("Verdana",Font.BOLD,20);
+-    private Font largerfont = new Font("Verdana",Font.BOLD,50);
+-
+-    private String waitingString = "Waiting for another player";
+-    private String unabletoComm = "Unable to communicate with opponent";
+-    private String wonString = "You won!";
+-    private String enemyWonString = "Opponent Won!";
+-
+-    private Scanner scanner = new Scanner(System.in);
+-    private Painter painter = new Painter();
+-
+-    public TicTacToe(){
+-        System.out.println("Input IP: ");
+-        ip = scanner.nextLine();
+-        System.out.printf("Input port: ");
+-        port = scanner.nextInt();
+-
+-        while(port<1||port>65535){
+-            System.out.println("Port invalid");
+-        }
+-
+-        loadImages();
+-    }
+-
+-    private void loadImages(){
+-        try{
+-            board = ImageIO.read(getClass().getResourceAsStream("res/board.png"));
+-            redX = ImageIO.read(getClass().getResourceAsStream("res/redX.png"));
+-            redCircle = ImageIO.read(getClass().getResourceAsStream("res/redCircle.png"));
+-            blueX = ImageIO.read(getClass().getResourceAsStream("res/blueX.png"));
+-            blueCircle = ImageIO.read(getClass().getResourceAsStream("res/blueCircle.png"));
+-        }catch (IOException e){
+-            e.printStackTrace();
+-        }
+-    }
+-
+-    private void listenerForServerRequest(){
+-        Socket socket = null;
+-        try{
+-            socket = serverSocket.accept();
+-            dos = new DataOutputStream(socket.getOutputStream());
+-            dis = new DataInputStream(socket.getInputStream());
+-            accepted = true;
+-            System.out.println("Client has requested to join & we have accepted");
+-        }catch(IOException e){
+-            e.printStackTrace();
+-        }
+-    }
+-
+-    @Override
+-    public void run() {
+-        while(true){
+-            tick();
+-            painter.repaint();
+-
+-            if(!circle&&!accepted){
+-                listenerForServerRequest();
+-            }
+-        }
+-    }
+-
+-    private void tick() {
+-        if(!yourTurn && !unableToCommunicateWithOpponent){
+-            try{
+-                int space = dis.readInt();
+-                if(circle){
+-                    spaces[space] = "X";
+-                }else{
+-                    spaces[space] = "O";
+-                }
+-                checkForEnemyWin();
+-                yourTurn = true;
+-            }catch (IOException e){
+-                
+-            }
+-        }
+-    }
+-    //can do better in gui, do it
+-    private void render(Graphics g){
+-        g.drawImage(board,0,0,null);
+-        if(unableToCommunicateWithOpponent){
+-            g.setColor(Color.RED);
+-            g.setFont(smallerfont);
+-            Graphics2D g2 = (Graphics2D) g;
+-            g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+-            //how logn the string is cuz we can center the string in the center of the screen
+-            int stringWidth = g2.getFontMetrics().stringWidth(unableToCommunicateWithOpponentString);
+-            g.drawString(unableToCommunicateWithOpponentString,WIDTH/2-stringWidth/2, HEIGHT/2);
+-            return;
+-        }
+-        if(accepted){
+-            for(int i = 0; i < spaces.length; i++){
+-                if(spaces[i].equals("X")){
+-                    if(circle){
+-                        //rendering in the correct box on the screen
+-                        g.drawImage(redX,(i%3)*lenghtOfSpace+10*(i%3),(int)(i/3)*lenghtOfSpace+10*(int)(i/3),null);
+-                    }else{
+-                        g.drawImage(blueX,(i%3)*lenghtOfSpace+10*(i%3),(int)(i/3)*lenghtOfSpace+10*(int)(i/3),null);
+-                    }
+-                }else if(spaces[i].equals("O")){
+-                    if(circle){
+-                        g.drawImage(redCircle,(i%3)*lenghtOfSpace+10*(i%3),(int)(i/3)*lenghtOfSpace+10*(int)(i/3),null);
+-                    }else{
+-                        g.drawImage(blueCircle,(i%3)*lenghtOfSpace+10*(i%3),(int)(i/3)*lenghtOfSpace+10*(int)(i/3),null);
+-                    }
+-                }
+-            }
+-            if(won||enemywon){
+-                Graphics2D g2 = (Graphics2D) g;
+-                g2.setStroke(new BasicStroke(10));
+-                g.setColor(Color.BLACK);
+-                g.drawLine(firstSpot % 3*lenghtOfSpace+10*firstSpot%3+lenghtOfSpace/2,(int)(firstSpot/3)*lenghtOfSpace+10*(int)(firstSpot/3)+lenghtOfSpace/2,secondSpot%3*lenghtOfSpace+10*secondSpot%3+lenghtOfSpace/2, (int)(secondSpot/3)*lenghtOfSpace+10*(int)(secondSpot/3)+lenghtOfSpace/2);
+-                g.setColor(Color.red);
+-                g.setFont(largerfont);
+-
+-                if(won){
+-                    int string
+-                }
+-            }
+-        }
+-    }
+-
+-    private void checkForEnemyWin() {
+-    }
+-
+-}
+Index: ../TicTacToe/.idea/modules.xml
+===================================================================
+diff --git a/../TicTacToe/.idea/modules.xml b/../TicTacToe/.idea/modules.xml
+deleted file mode 100644
+--- a/../TicTacToe/.idea/modules.xml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/TicTacToe.iml" filepath="$PROJECT_DIR$/TicTacToe.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../TicTacToe/.idea/misc.xml
+===================================================================
+diff --git a/../TicTacToe/.idea/misc.xml b/../TicTacToe/.idea/misc.xml
+deleted file mode 100644
+--- a/../TicTacToe/.idea/misc.xml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="16" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../TicTacToe/.idea/vcs.xml
+===================================================================
+diff --git a/../TicTacToe/.idea/vcs.xml b/../TicTacToe/.idea/vcs.xml
+deleted file mode 100644
+--- a/../TicTacToe/.idea/vcs.xml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: ../TicTacToe/src/Painter.java
+===================================================================
+diff --git a/../TicTacToe/src/Painter.java b/../TicTacToe/src/Painter.java
+deleted file mode 100644
+--- a/../TicTacToe/src/Painter.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,37 +0,0 @@
+-import javax.swing.*;
+-import java.awt.*;
+-import java.awt.event.MouseEvent;
+-import java.awt.event.MouseListener;
+-
+-public class Painter extends JPanel implements MouseListener {
+-    public Painter(){
+-        setFocusable(true);
+-        requestFocus();
+-        setBackground(Color.white);
+-        addMouseListener(this);
+-    }
+-    @Override
+-    public void mouseClicked(MouseEvent e) {
+-
+-    }
+-
+-    @Override
+-    public void mousePressed(MouseEvent e) {
+-
+-    }
+-
+-    @Override
+-    public void mouseReleased(MouseEvent e) {
+-
+-    }
+-
+-    @Override
+-    public void mouseEntered(MouseEvent e) {
+-
+-    }
+-
+-    @Override
+-    public void mouseExited(MouseEvent e) {
+-
+-    }
+-}
+Index: ../TicTacToe/src/Main.java
+===================================================================
+diff --git a/../TicTacToe/src/Main.java b/../TicTacToe/src/Main.java
+deleted file mode 100644
+--- a/../TicTacToe/src/Main.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ /dev/null	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
+@@ -1,5 +0,0 @@
+-public class Main {
+-    public static void main(String[] args) {
+-
+-    }
+-}
+Index: ../ClientProject/src/menuGUI/windows/FirstMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport menuGUI.listeners.ButtonAndTextAreaListener;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\n\r\n/**\r\n * This is one of the main frames of the Client: this class creates the menu in which the player can add their nickname.\r\n * There are 3 labels used for images and backgrounds. The only JButton sends a message to the server triggering the\r\n * setActionCommand that sends the String newNick. Simple class with only a constructor.\r\n */\r\n\r\npublic class FirstMenu extends JFrame {\r\n\r\n    private JLayeredPane layeredPane;\r\n    private JLabel label1;\r\n    private JLabel label2;\r\n    private JLabel label3;\r\n    private JLabel label4;\r\n    private JButton button1;\r\n    private JTextField textField;\r\n    private ButtonAndTextAreaListener textlistener;\r\n\r\n    public FirstMenu(){\r\n        setSize(new Dimension(626,481));\r\n        setResizable(false);\r\n        this.getContentPane().setBackground(Color.RED);\r\n        this.setLayout(null);\r\n\r\n        Toolkit kit = Toolkit.getDefaultToolkit();\r\n        Image img = kit.getImage(\"src/menuGUI/img/icon.png\");\r\n        setIconImage(img);\r\n\r\n        layeredPane = new JLayeredPane();\r\n        layeredPane.setBounds(0,0,626,481);\r\n\r\n        label1 = new JLabel();\r\n        label1.setOpaque(true);\r\n        label1.setIcon(new ImageIcon(\"src/menuGUI/img/red-yellow-retro.jpg\"));\r\n        label1.setBounds(0,0,626,481);\r\n\r\n        label2 = new JLabel();\r\n        label2.setOpaque(false);\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/logo.png\"));\r\n        label2.setBounds(100,80,500,120);\r\n\r\n        label3 = new JLabel();\r\n        label3.setIcon(new ImageIcon(\"src/menuGUI/img/ENTER YOUR NICKNAME.png\"));\r\n        label3.setBounds(180,200,220,47);\r\n\r\n        Border line = new LineBorder(new Color(0x0F142A, true));\r\n\r\n        button1 = new JButton();\r\n        button1.setBounds(260,285,100,35);\r\n        button1.setBorder(line);\r\n        button1.setContentAreaFilled(false);\r\n        button1.setBackground(Color.ORANGE);\r\n        button1.setUI(new StyledButtonUI());\r\n\r\n        label4 = new JLabel();\r\n        label4.setIcon(new ImageIcon(\"src/menuGUI/img/PLAY.png\"));\r\n        label4.setBounds(267,242,200,117);\r\n\r\n        textField = new JTextField();\r\n        textField.setBackground(Color.white);\r\n        textField.setForeground(Color.BLACK);\r\n        textField.setFont(new Font(\"ITC Avant Garde Gothic\",Font.PLAIN,15));\r\n        textField.setBounds(235,240,150,25);\r\n\r\n        textlistener = new ButtonAndTextAreaListener(button1,textField);\r\n        button1.setActionCommand(\"newNick\");\r\n        button1.addActionListener(textlistener);\r\n\r\n        layeredPane.add(label1,Integer.valueOf(0));\r\n        layeredPane.add(label2,Integer.valueOf(1));\r\n        layeredPane.add(label3, Integer.valueOf(1));\r\n        layeredPane.add(textField,Integer.valueOf(1));\r\n        layeredPane.add(button1,Integer.valueOf(1));\r\n        layeredPane.add(label4,Integer.valueOf(2));\r\n        this.add(layeredPane);\r\n        this.setLocationRelativeTo(null);\r\n\r\n        //TODO wtf\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/FirstMenu.java b/../ClientProject/src/menuGUI/windows/FirstMenu.java
+--- a/../ClientProject/src/menuGUI/windows/FirstMenu.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/FirstMenu.java	(date 1625494055791)
+@@ -1,6 +1,7 @@
+ package menuGUI.windows;
+ 
+ import menuGUI.listeners.ButtonAndTextAreaListener;
++import menuGUI.windows.util.StyledButtonUI;
+ 
+ import javax.swing.*;
+ import javax.swing.border.Border;
+Index: ../ClientProject/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"606d8cde-fbf5-4ff9-86a6-f0383f1f9674\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/GameThread.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/GameThread.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/Player.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/Player.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/Forza4.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/control/ButtonListener.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/util/AnimationTask.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Cell.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Cell.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Grid.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Grid.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Token.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Token.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1uiVZdwNVPmW3iTHfz5yYaqmEtJ\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Project\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.TesterFinestre\">\r\n    <configuration name=\"ClientMainProva1\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tester.ClientMainProva1\" />\r\n      <module name=\"ClientProject\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tester.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TesterFinestre\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"menuGUI.windows.TesterFinestre\" />\r\n      <module name=\"ClientProject\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"menuGUI.windows.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.ClientMainProva1\" />\r\n      <item itemvalue=\"Application.TesterFinestre\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.TesterFinestre\" />\r\n        <item itemvalue=\"Application.ClientMainProva1\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"606d8cde-fbf5-4ff9-86a6-f0383f1f9674\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1625148454802</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1625148454802</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/.idea/workspace.xml b/../ClientProject/.idea/workspace.xml
+--- a/../ClientProject/.idea/workspace.xml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/.idea/workspace.xml	(date 1625494056211)
+@@ -3,22 +3,75 @@
+   <component name="ChangeListManager">
+     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/GUIcontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/GUIcontroller.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/FirstMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/FirstMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RequestFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RequestFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/core/AnimationsTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/AnimationsTask.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuListener.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/FirstMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/FirstMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/StyledButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/util/StyledButtonUI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/TesterFinestre.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/VolumePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/VolumePanel.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/GridTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/QueueTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryColumnTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryDiagonalTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/VictoryRowTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/GridTest.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/QueueTest.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/Forza4.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/control/ButtonListener.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/guiB/util/AnimationTask.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Cell.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Grid.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/model/partita/Token.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryColumnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryColumnTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryDiagonalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryDiagonalTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryRowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/VictoryRowTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/misc.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/modules.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/vcs.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/TicTacToe.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Main.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Painter.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/TicTacToe.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueCircle.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueX.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/board.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redCircle.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redX.png" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -45,12 +98,15 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ClientProjectDouble" />
+     <property name="project.structure.last.edited" value="Project" />
+     <property name="project.structure.proportion" value="0.0" />
+     <property name="project.structure.side.proportion" value="0.0" />
+   </component>
+-  <component name="RunManager" selected="Application.TesterFinestre">
+-    <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="Application.ClientMainProva1">
++    <configuration name="ClientMainProva1" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
++      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+       <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
+       <module name="ClientProject" />
+       <extension name="coverage">
+@@ -64,11 +120,11 @@
+       </method>
+     </configuration>
+     <configuration name="TesterFinestre" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="menuGUI.windows.TesterFinestre" />
++      <option name="MAIN_CLASS_NAME" value="tester.TesterFinestre" />
+       <module name="ClientProject" />
+       <extension name="coverage">
+         <pattern>
+-          <option name="PATTERN" value="menuGUI.windows.*" />
++          <option name="PATTERN" value="menuGUI.windows.util.*" />
+           <option name="ENABLED" value="true" />
+         </pattern>
+       </extension>
+@@ -82,8 +138,8 @@
+     </list>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Application.TesterFinestre" />
+         <item itemvalue="Application.ClientMainProva1" />
++        <item itemvalue="Application.TesterFinestre" />
+       </list>
+     </recent_temporary>
+   </component>
+Index: ../ClientProject/src/menuGUI/listeners/ButtonListener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/listeners/ButtonListener.java b/../ClientProject/src/menuGUI/listeners/AddTokenListener.java
+rename from ../ClientProject/src/menuGUI/listeners/ButtonListener.java
+rename to ../ClientProject/src/menuGUI/listeners/AddTokenListener.java
+--- a/../ClientProject/src/menuGUI/listeners/ButtonListener.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/listeners/AddTokenListener.java	(date 1625494186736)
+@@ -7,19 +7,19 @@
+ 
+ import core.NetworkThread;
+ 
+-public class ButtonListener implements ActionListener {
++public class AddTokenListener implements ActionListener {
+ 	
+ 	private JButton butt;
+ 	private NetworkThread networkThread;
+ 	
+-	public ButtonListener(JButton b) {
++	public AddTokenListener(JButton b) {
+ 		this.butt=b;
+ 		this.networkThread = NetworkThread.getNetworkThread();
+ 	}
+ 
+ 	@Override
+ 	public void actionPerformed(ActionEvent arg0) {
+-		System.out.println("Bottone premuto,successso "+ butt.getActionCommand());	
++		//System.out.println("Bottone premuto,successso "+ butt.getActionCommand());
+ 		networkThread.sendMessage("addTokenInvirtualGrid,"+butt.getActionCommand());
+ 	}
+ 	
+Index: ../ClientProject/src/menuGUI/windows/ThirdMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\n\r\n/**\r\n * This class is the one that makes possible the choice of the preferred theme. It consists in some JLabels for the main title,\r\n * four main JButtons for the theme and a JButton that returns to the previous menu. The static variable choosenTheme\r\n * changes value whenever one of the themes JButtons is pressed. There are some inner ActionListeners that do some minor actions\r\n * such as going back to the previous menu and setting up the choosenTheme variable.\r\n */\r\n\r\npublic class ThirdMenu extends JFrame {\r\n    private BoxLayout boxLayout;\r\n    private Container container;\r\n    private JPanel jPanel;\r\n    private JLabel label1;\r\n    private JLabel label2;\r\n    private JLabel label3;\r\n    private JLabel label4;\r\n    private JButton jb1;\r\n    private JButton jb2;\r\n    private JButton jb3;\r\n    private JButton jb4;\r\n    private JButton jb5;\r\n    private JLayeredPane layeredPane;\r\n    private WindowsType windowsType;\r\n    public static int choosenTheme; //TODO rendere questo attributo PROTECTED quando la GUI verrà messa TUTTA nello stesso package\r\n\r\n    public ThirdMenu(){\r\n        windowsType = WindowsType.THEME;\r\n        setSize(new Dimension(500,700));\r\n        setResizable(false);\r\n        container = getContentPane();\r\n        this.setLayout(null);\r\n        this.setLocationRelativeTo(null);\r\n\r\n        layeredPane = new JLayeredPane();\r\n        layeredPane.setBounds(0,0,500,700);\r\n\r\n        Toolkit kit = Toolkit.getDefaultToolkit();\r\n        Image img = kit.getImage(\"src/menuGUI/img/icon.png\");\r\n        setIconImage(img);\r\n\r\n        jPanel = new JPanel();\r\n        jPanel.setBackground(new Color(0xDE8B0E, true));\r\n        jPanel.setBounds(175,145,200,580);\r\n        boxLayout = new BoxLayout(jPanel, BoxLayout.Y_AXIS);\r\n        jPanel.setLayout(boxLayout);\r\n\r\n        jb1 = new JButton();\r\n        jb1.setBackground(Color.ORANGE);\r\n        jb1.setIcon(new ImageIcon(\"src/menuGUI/img/themes/stitch.png\"));\r\n        jb1.setUI(new StyledButtonUI());\r\n\r\n        jb2 = new JButton();\r\n        jb2.setBackground(Color.ORANGE);\r\n        jb2.setIcon(new ImageIcon(\"src/menuGUI/img/themes/avengers.png\"));\r\n        jb2.setUI(new StyledButtonUI());\r\n\r\n        jb3 = new JButton();\r\n        jb3.setBackground(Color.orange);\r\n        jb3.setIcon(new ImageIcon(\"src/menuGUI/img/themes/mario.png\"));\r\n        jb3.setUI(new StyledButtonUI());\r\n\r\n        jb4 = new JButton(\"Default theme\");\r\n        jb4.setBounds(170, 610, 140, 30);\r\n        jb4.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,14));\r\n        jb4.setBackground(new Color(0xC61F29));\r\n        jb4.setForeground(Color.BLACK);\r\n        jb4.setUI(new StyledButtonUI());\r\n\r\n        ActionListener Theme1 = e -> {\r\n            choosenTheme = 1;\r\n        };\r\n        ActionListener Theme2 = e -> {\r\n            choosenTheme = 2;\r\n        };\r\n        ActionListener Theme3 = e -> {\r\n            choosenTheme = 3;\r\n        };\r\n        ActionListener Theme4 = e -> {\r\n            choosenTheme = 0;\r\n        };\r\n\r\n        jb1.addActionListener(Theme1);\r\n        jb2.addActionListener(Theme2);\r\n        jb3.addActionListener(Theme3);\r\n        jb4.addActionListener(Theme4);\r\n\r\n        jb5 = new JButton();\r\n        jb5.setBackground(new Color(0xC61F29));\r\n        jb5.setBounds(30,621,35,35);\r\n        jb5.setIcon(new ImageIcon(\"src/menuGUI/img/double-arrow-left.png\"));\r\n        jb5.setUI(new StyledButtonUI());\r\n\r\n        ActionListener BackToMenu = e -> {\r\n            this.dispose();\r\n        };\r\n\r\n        jb5.addActionListener(BackToMenu);\r\n\r\n        label1 = new JLabel();\r\n        label1.setIcon(new ImageIcon(\"src/menuGUI/img/blur500x700.jpg\"));\r\n        label1.setBounds(0,0,500,700);\r\n\r\n        label2 = new JLabel();\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/CHOOSE YOUR.png\"));\r\n        label2.setBounds(10,10,700,80);\r\n\r\n        label3 = new JLabel();\r\n        label3.setBackground(Color.green);\r\n        label3.setForeground(Color.WHITE);\r\n        label3.setBounds(170,50,300,50);\r\n        label3.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,35));\r\n\r\n        label4 = new JLabel();\r\n        label4.setIcon(new ImageIcon(\"src/menuGUI/img/THEME.png\"));\r\n        label4.setBounds(120,70,700,80);\r\n\r\n        jPanel.add(jb1);\r\n        jPanel.add(Box.createRigidArea(new Dimension(0,50)));\r\n        jPanel.add(jb2);\r\n        jPanel.add(Box.createRigidArea(new Dimension(0,50)));\r\n        jPanel.add(jb3);\r\n        jPanel.add(Box.createRigidArea(new Dimension(0,50)));\r\n\r\n        layeredPane.add(jPanel,Integer.valueOf(1));\r\n        layeredPane.add(label2,Integer.valueOf(2));\r\n        layeredPane.add(label3,Integer.valueOf(1));\r\n        layeredPane.add(label1,Integer.valueOf(0));\r\n        layeredPane.add(label4, Integer.valueOf(1));\r\n        layeredPane.add(jb4, Integer.valueOf(2));\r\n        layeredPane.add(jb5, Integer.valueOf(2));\r\n        container.add(layeredPane);\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/ThirdMenu.java b/../ClientProject/src/menuGUI/windows/ThirdMenu.java
+--- a/../ClientProject/src/menuGUI/windows/ThirdMenu.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/ThirdMenu.java	(date 1625494055808)
+@@ -1,5 +1,6 @@
+ package menuGUI.windows;
+ 
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+Index: ../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.listeners;\r\n\r\nimport core.NetworkThread;\r\nimport menuGUI.windows.ErrorFrame;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class ButtonAndTextAreaListener implements ActionListener {\r\n\r\n    //TODO controllare dove si usa\r\n\r\n    JButton butt;\r\n    JTextField nickField;\r\n\r\n    public ButtonAndTextAreaListener(JButton butt,JTextField nickField){\r\n        this.butt=butt;\r\n        this.nickField=nickField;\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        String command = butt.getActionCommand();\r\n\r\n        switch (command){\r\n            case \"newNick\":\r\n               if(!nickField.getText().equals(\"\")){\r\n                   try {\r\n                       NetworkThread.getNetworkThread().setNickName(nickField.getText());\r\n                       NetworkThread.getNetworkThread().sendMessage(command+\",\"+nickField.getText());\r\n                       break;\r\n                   } catch (Exception exception) {\r\n                       ErrorFrame errorFrame = new ErrorFrame(\"You are not connected to the server\");\r\n                   }\r\n               }\r\n               ErrorFrame noNickError = new ErrorFrame(\"insert a nickname\");\r\n               break;\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java b/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java
+--- a/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java	(date 1625475814120)
+@@ -7,10 +7,12 @@
+ import java.awt.event.ActionEvent;
+ import java.awt.event.ActionListener;
+ 
++/**
++ * This class implements ActionListener, its role is to send a message ("newNick") to the server using the class NetworkThread
++ * whenever the JButton that makes possible to add a player is pressed
++ */
+ public class ButtonAndTextAreaListener implements ActionListener {
+ 
+-    //TODO controllare dove si usa
+-
+     JButton butt;
+     JTextField nickField;
+ 
+@@ -19,6 +21,10 @@
+         this.nickField=nickField;
+     }
+ 
++    /**
++     * Overrided method from superclass which sends the actual String and creates (possibly) an ErrorFrame
++     * @param e
++     */
+     @Override
+     public void actionPerformed(ActionEvent e) {
+         String command = butt.getActionCommand();
+Index: ../ClientProject/src/menuGUI/windows/SecondMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport core.NetworkThread;\r\nimport menuGUI.listeners.OpenFrameListener;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\n\r\n\r\npublic class SecondMenu extends JFrame {\r\n\r\n    private JLayeredPane layeredPane;\r\n    private JLabel label1;\r\n    private JLabel label2;\r\n    private JLabel label3;\r\n    private JButton button0;\r\n    private JButton button1;\r\n    private JButton button2;\r\n    private JButton button3;\r\n    private JButton button4;\r\n    private JMenuItem item1;\r\n    private JPopupMenu popupMenu;\r\n    private GameModeFrame gameModeFrame;\r\n    private String gameLenght;\r\n    private RandomFrame ranf;\r\n    private OpenFrameListener openFrameListener;\r\n\r\n    public SecondMenu() {\r\n        setSize(new Dimension(700, 500));\r\n        setResizable(false);\r\n        this.getContentPane().setBackground(Color.yellow);\r\n        this.setLayout(null);\r\n        this.setVisible(true);\r\n        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        this.setLocationRelativeTo(null);\r\n\r\n        layeredPane = new JLayeredPane();\r\n        layeredPane.setBounds(0, 0, 700, 500);\r\n\r\n        Toolkit kit = Toolkit.getDefaultToolkit();\r\n        Image img = kit.getImage(\"src/menuGUI/img/icon.png\");\r\n        setIconImage(img);\r\n\r\n        label1 = new JLabel();\r\n        label1.setBounds(0, 0, 700, 500);\r\n        label1.setIcon(new ImageIcon(\"src/menuGUI/img/blur.jpg\"));\r\n\r\n        label2 = new JLabel();\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/CHOOSE YOUR.png\"));\r\n        label2.setOpaque(false);\r\n        label2.setBounds(110, 0, 450, 180);\r\n\r\n        label3 = new JLabel();\r\n        label3.setIcon(new ImageIcon(\"src/menuGUI/img/OPPONENT.png\"));\r\n        label3.setOpaque(false);\r\n        label3.setBounds(160, 60, 400, 180);\r\n\r\n        Border line = new LineBorder(new Color(0x0F142A, true));\r\n\r\n        button0 = new JButton();\r\n        button0.setIcon(new ImageIcon(\"src/menuGUI/img/white-gear.png\"));\r\n        button0.setBounds(640, 20, 35, 35);\r\n        button0.setFocusPainted(false);\r\n        button0.setBorder(line);\r\n        button0.setContentAreaFilled(false);\r\n\r\n        button1 = new JButton(\"Invite Player\");\r\n        button1.setFont(new Font(\"ITC Avant Garde Gothic\", Font.BOLD, 17));\r\n        button1.setForeground(Color.BLACK);\r\n        button1.setOpaque(true);\r\n        button1.setContentAreaFilled(false);\r\n        button1.setFocusPainted(false);\r\n        button1.setBorder(line);\r\n        button1.setBounds(260, 193, 170, 45);\r\n        button1.setBackground(Color.orange);\r\n        button1.setUI(new StyledButtonUI());\r\n\r\n        button2 = new JButton(\"Random Player\");\r\n        button2.setFont(new Font(\"ITC Avant Garde Gothic\", Font.BOLD, 17));\r\n        button2.setForeground(Color.BLACK);\r\n        button2.setOpaque(true);\r\n        button2.setContentAreaFilled(false);\r\n        button2.setFocusPainted(false);\r\n        button2.setBorder(line);\r\n        button2.setBounds(260, 260, 170, 45);\r\n        button2.setBackground(Color.orange);\r\n        button2.setUI(new StyledButtonUI());\r\n\r\n        button3 = new JButton(\"Game Mode\");\r\n        button3.setFont(new Font(\"ITC Avant Garde Gothic\", Font.BOLD, 17));\r\n        button3.setForeground(Color.BLACK);\r\n        button3.setOpaque(true);\r\n        button3.setContentAreaFilled(false);\r\n        button3.setFocusPainted(false);\r\n        button3.setBorder(line);\r\n        button3.setBounds(260, 325, 170, 45);\r\n        button3.setBackground(Color.orange);\r\n        button3.setUI(new StyledButtonUI());\r\n\r\n        button4 = new JButton(\"Themes\");\r\n        button4.setFont(new Font(\"ITC Avant Garde Gothic\", Font.BOLD, 17));\r\n        button4.setForeground(Color.BLACK);\r\n        button4.setOpaque(true);\r\n        button4.setContentAreaFilled(false);\r\n        button4.setFocusPainted(false);\r\n        button4.setBorder(line);\r\n        button4.setBounds(260, 390, 170, 45);\r\n        button4.setBackground(Color.orange);\r\n        button4.setUI(new StyledButtonUI());\r\n\r\n        item1 = new JMenuItem(\"How to play\");\r\n        popupMenu = new JPopupMenu();\r\n        popupMenu.add(item1);\r\n        popupMenu.setBackground(new Color(0xDE8B0E));\r\n        popupMenu.setBorder(line);\r\n        item1.setBackground(new Color(0xDE8B0E));\r\n        item1.setForeground(Color.white);\r\n\r\n        //!!!!\r\n        ActionListener menubutton = e -> {\r\n            popupMenu.show(button3, 320, -270);\r\n        };\r\n\r\n        /*ActionListener gameMode = e -> {\r\n            this.gameModeFrame = new GameModeFrame();\r\n            gameModeFrame.setVisible(true);\r\n        };*/\r\n\r\n       /* ActionListener invite = e -> {\r\n            InviteFrame inF = new InviteFrame();\r\n            inF.setVisible(true);\r\n        };*/\r\n\r\n        /*ActionListener rules = e -> {\r\n            RulesFrame rf = new RulesFrame();\r\n            rf.setVisible(true);\r\n        };*/\r\n\r\n        /*ActionListener tema = e -> {\r\n            ThirdMenu third_menu = new ThirdMenu();\r\n            third_menu.setVisible(true);\r\n            third_menu.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);\r\n        };*/\r\n\r\n        /*ActionListener random = e -> {\r\n\r\n            if (gameModeFrame != null) {\r\n                if (gameModeFrame.getGameSpeed() != null) {\r\n                    NetworkThread.getNetworkThread().sendMessage(\"addmeToQueue,\" + gameModeFrame.getGameSpeed());\r\n                    ranf = new RandomFrame();\r\n                    ranf.setVisible(true);\r\n                    return;\r\n                }\r\n            }\r\n            ErrorFrame localErrorFrame = new ErrorFrame(\"Press Game Mode to set game duration\");\r\n\r\n        };*/\r\n\r\n\r\n        //button4.addActionListener(tema);\r\n        button0.addActionListener(menubutton);\r\n        //button3.addActionListener(gameMode);\r\n        //item1.addActionListener(rules);\r\n        //button1.addActionListener(invite);\r\n        //button2.addActionListener(random);\r\n\r\n        openFrameListener = new OpenFrameListener(button3, WindowsType.GAMEMODE,this);\r\n        button3.addActionListener(openFrameListener);\r\n\r\n        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);\r\n        button1.addActionListener(openFrameListener);\r\n\r\n        openFrameListener = new OpenFrameListener(item1,WindowsType.RULES);\r\n        item1.addActionListener(openFrameListener);\r\n\r\n        openFrameListener = new OpenFrameListener(button4,WindowsType.THEME);\r\n        button4.addActionListener(openFrameListener);\r\n\r\n        openFrameListener = new OpenFrameListener(button2,WindowsType.RANDOM,this);\r\n        button2.addActionListener(openFrameListener);\r\n\r\n        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);\r\n        button1.addActionListener(openFrameListener);\r\n\r\n\r\n        layeredPane.add(label1, Integer.valueOf(0));\r\n        layeredPane.add(button2, Integer.valueOf(1));\r\n        layeredPane.add(label2, Integer.valueOf(2));\r\n        layeredPane.add(button3, Integer.valueOf(1));\r\n        layeredPane.add(button4, Integer.valueOf(1));\r\n        layeredPane.add(popupMenu, Integer.valueOf(1));\r\n        layeredPane.add(button0, Integer.valueOf(1));\r\n        layeredPane.add(label3, Integer.valueOf(2));\r\n        layeredPane.add(button1, Integer.valueOf(1));\r\n        this.add(layeredPane);\r\n\r\n        this.revalidate();\r\n        this.repaint();\r\n    }\r\n\r\n    public String getGameLenght() {\r\n        if (gameLenght!=null) {\r\n                return gameLenght;\r\n            }\r\n        return \"nogamemodeSelected\";\r\n    }\r\n\r\n    public RandomFrame getRanf() {\r\n        return ranf;\r\n    }\r\n\r\n    public void setGameModeFrame(GameModeFrame gameModeFrame) {\r\n        this.gameModeFrame = gameModeFrame;\r\n    }\r\n\r\n    public GameModeFrame getGameModeFrame() {\r\n        return gameModeFrame;\r\n    }\r\n\r\n    public void setGameLenght(String gameLenght) {\r\n        this.gameLenght = gameLenght;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/SecondMenu.java b/../ClientProject/src/menuGUI/windows/SecondMenu.java
+--- a/../ClientProject/src/menuGUI/windows/SecondMenu.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/SecondMenu.java	(date 1625494055822)
+@@ -1,7 +1,7 @@
+ package menuGUI.windows;
+ 
+-import core.NetworkThread;
+ import menuGUI.listeners.OpenFrameListener;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+Index: ../ClientProject/src/core/AnimationsTask.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package core;\r\n\r\nimport java.io.File;\r\nimport java.util.TimerTask;\r\nimport javax.swing.JLabel;\r\nimport javax.swing.JPanel;\r\n\r\npublic class AnimationsTask extends TimerTask {\r\n\t\r\n\tprivate JLabel imageToMove;\r\n\tprivate int startY;\r\n\tprivate int X;\r\n\tprivate int finishY;\r\n\tprivate JPanel panelToupdate;\r\n\tprivate int size;\r\n\tpublic static double volumeOffset = 0.1; //maggiorazione di suono per alcuni eventi : tok, vittoria....\r\n\r\n\tpublic AnimationsTask(JLabel l, JPanel p, int iy, int fy, int x) {\r\n\t\tsuper();\r\n\t\tthis.imageToMove=l;\r\n\t\tthis.panelToupdate=p;\r\n\t\tthis.startY=iy;\r\n\t\tthis.X=x;\r\n\t\tthis.finishY=fy;\r\n\t\tthis.size=100;\r\n\t}\r\n\r\n\t@Override\r\n\tpublic void run() {\r\n\t\tint slidingY = this.startY;\r\n\t\t\r\n\t\tfor(int f = finishY+1;slidingY<f;slidingY++) {\r\n\t\t\timageToMove.setBounds(X, slidingY, size, size);\r\n\t\t\tpanelToupdate.add(imageToMove);\r\n\t\t\tpanelToupdate.revalidate();\r\n\t\t\tpanelToupdate.repaint();\r\n\t\t}\r\n\t\t//SoundPlayer.playSound((new File(\"resources/sounds/tok.wav\")),0.5);\r\n\t\tSoundPlayer.playSound((new File(\"resources/sounds/tok.wav\")),VolumeControl.volume + volumeOffset);\r\n\t\t\r\n\t\tcancel();\r\n\t}\r\n\t\r\n\tpublic void muteVolumeOffset() {\r\n        volumeOffset =0;\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/core/AnimationsTask.java b/../ClientProject/src/core/AnimationsTask.java
+--- a/../ClientProject/src/core/AnimationsTask.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/core/AnimationsTask.java	(date 1625491557457)
+@@ -5,6 +5,9 @@
+ import javax.swing.JLabel;
+ import javax.swing.JPanel;
+ 
++/**
++ * This class implements the animation for the tokens in every grid
++ */
+ public class AnimationsTask extends TimerTask {
+ 	
+ 	private JLabel imageToMove;
+Index: ../ClientProject/src/menuGUI/listeners/BackToMenuLIstener.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.listeners;\r\n\r\nimport core.GUIcontroller;\r\n\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class BackToMenuLIstener implements ActionListener {\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n        GUIcontroller.getGuiHandler().closeGameFrame();\r\n        GUIcontroller.getGuiHandler().openMenu();\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/listeners/BackToMenuLIstener.java b/../ClientProject/src/menuGUI/listeners/BackToMenuListener.java
+rename from ../ClientProject/src/menuGUI/listeners/BackToMenuLIstener.java
+rename to ../ClientProject/src/menuGUI/listeners/BackToMenuListener.java
+--- a/../ClientProject/src/menuGUI/listeners/BackToMenuLIstener.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/listeners/BackToMenuListener.java	(date 1625494055832)
+@@ -5,7 +5,7 @@
+ import java.awt.event.ActionEvent;
+ import java.awt.event.ActionListener;
+ 
+-public class BackToMenuLIstener implements ActionListener {
++public class BackToMenuListener implements ActionListener {
+     @Override
+     public void actionPerformed(ActionEvent e) {
+         GUIcontroller.getGuiHandler().closeGameFrame();
+Index: src/GUI/GUIForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package GUI;\r\n\r\nimport com.sun.media.jfxmedia.logging.Logger;\r\nimport core.ServerMemory;\r\nimport core.queue.Queue;\r\n\r\nimport javax.swing.*;\r\n\r\nimport static tester.Tester1.serverLogger;\r\n\r\n/**Class generated using inelliJ's windowbuilder\r\n * it contains the method to bind the data to the GUI.\r\n * It is a singleton Class\r\n *\r\n * @return\r\n */\r\n\r\npublic class GUIForm {\r\n    private JList OnlinePlayersList;\r\n    private JScrollPane OnlinePlayersPane;\r\n    private JScrollPane InQueuePane;\r\n    private JScrollPane LoggerPane;\r\n    private JPanel mainPanel;\r\n    private JList PlayersInQueue;\r\n    private JTextArea loggerTextarea;\r\n    private static GUIForm myGuiForm=null;\r\n\r\n    /**Getter method for singleton class\r\n     *\r\n     * @return\r\n     */\r\n    public static GUIForm getGuiForm(){\r\n\r\n        if(myGuiForm==null)\r\n            myGuiForm = new GUIForm();\r\n        return myGuiForm;\r\n\r\n    }\r\n\r\n    /**Private constructor for singleton class\r\n     *\r\n     */\r\n    private GUIForm(){\r\n        // OnlinePlayersList.setModel(ServerMemory.getServerMemory().getCurrentPlayersList());\r\n        // PlayersInQueue.setModel(Queue.getQueue().getQueueLIst());\r\n        //ServerMemory.getServerMemory().addPlayer();\r\n        serverLogger.info(\"gui inizalised\");\r\n    }\r\n\r\n    /**\r\n     * Returns the mainpanel to which the GUI element's are added\r\n     * @return\r\n     */\r\n    public JPanel getMainPanel() {\r\n        return mainPanel;\r\n    }\r\n\r\n    /**\r\n     * Appends the logger output to the textarea's text\r\n     * @param message\r\n     */\r\n    public void appendToLoggerText(String message){\r\n        loggerTextarea.append(message);\r\n    }\r\n\r\n    /**\r\n     * Binds the listmodel to the JList\r\n     * @param listModel\r\n     */\r\n    public void bindQueueList(ListModel listModel){\r\n        PlayersInQueue.setModel(listModel);\r\n    }\r\n\r\n    /**\r\n     * Binds the listmodel to the JList\r\n     * @param listModel\r\n     */\r\n    public void bindOnlinePlayers(ListModel listModel){\r\n        OnlinePlayersList.setModel(listModel);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/GUI/GUIForm.java b/src/GUI/GUIForm.java
+--- a/src/GUI/GUIForm.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/GUI/GUIForm.java	(date 1625477114567)
+@@ -1,6 +1,6 @@
+ package GUI;
+ 
+-import com.sun.media.jfxmedia.logging.Logger;
++//import com.sun.media.jfxmedia.logging.Logger;
+ import core.ServerMemory;
+ import core.queue.Queue;
+ 
+Index: ../ClientProject/src/menuGUI/windows/TesterFinestre.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/TesterFinestre.java b/../ClientProject/src/tester/TesterFinestre.java
+rename from ../ClientProject/src/menuGUI/windows/TesterFinestre.java
+rename to ../ClientProject/src/tester/TesterFinestre.java
+--- a/../ClientProject/src/menuGUI/windows/TesterFinestre.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/tester/TesterFinestre.java	(date 1625494055796)
+@@ -1,6 +1,7 @@
+-package menuGUI.windows;
++package tester;
+ 
+ import core.GUIcontroller;
++import menuGUI.windows.SecondMenu;
+ 
+ public class TesterFinestre {
+     public static void main(String[] args) {
+Index: ../ClientProject/src/menuGUI/windows/VolumePanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport core.AnimationsTask;\r\nimport core.SoundPlayer;\r\nimport core.VolumeControl;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class VolumePanel extends JPanel {\r\n    private JSlider slider;\r\n    private JButton button1;\r\n    private boolean isMute = false;\r\n    private ImageIcon c0;\r\n    private ImageIcon c1;\r\n\r\n\r\n    public VolumePanel(){\r\n        setSize(new Dimension(300,200));\r\n        setBackground(Color.WHITE);\r\n\r\n        c0 = new ImageIcon(\"src/menuGUI/img/music.png\");\r\n        c1 = new ImageIcon(\"src/menuGUI/img/music-off.png\");\r\n\r\n        Border line = new LineBorder(new Color(0x0F142A, true));\r\n\r\n        slider = new JSlider(JSlider.HORIZONTAL,0,90, (int)((VolumeControl.volume)*100)); //cambiamento\r\n        slider.setBounds(30,30,170,50);\r\n        slider.setMinorTickSpacing(2);\r\n        slider.setMajorTickSpacing (10);\r\n        slider.setPaintTicks (true);\r\n        slider.setPaintLabels (true);\r\n        slider.addChangeListener(new VolumeControl());\r\n\r\n        button1 = new JButton();\r\n        if (AnimationsTask.volumeOffset !=0) {\r\n            button1.setIcon(c0);\r\n        }else if(AnimationsTask.volumeOffset ==0){\r\n            button1.setIcon(c1);\r\n        }\r\n\r\n        button1.setBounds(250,38,36,37);\r\n        button1.setContentAreaFilled(false);\r\n        button1.setFocusPainted(false);\r\n        button1.setBorder(line);\r\n        button1.setUI(new StyledButtonUI());\r\n        button1.setBackground(Color.GRAY.brighter());\r\n\r\n\r\n        ActionListener volumeListener = e -> {\r\n            isMute = !isMute;\r\n            if(isMute){\r\n                button1.setIcon(c1);\r\n                SoundPlayer.setGlobalVol(0);\r\n                slider.setVisible(false);\r\n            }\r\n            if(!isMute){\r\n                button1.setIcon(c0);\r\n                SoundPlayer.setGlobalVol(VolumeControl.volume);\r\n                slider.setVisible(true);\r\n            }\r\n        };\r\n\r\n        button1.addActionListener(volumeListener);\r\n        this.add(button1);\r\n        this.add(slider);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/VolumePanel.java b/../ClientProject/src/menuGUI/windows/VolumePanel.java
+--- a/../ClientProject/src/menuGUI/windows/VolumePanel.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/VolumePanel.java	(date 1625494055812)
+@@ -3,14 +3,17 @@
+ import core.AnimationsTask;
+ import core.SoundPlayer;
+ import core.VolumeControl;
++import menuGUI.windows.util.StyledButtonUI;
+ 
+ import javax.swing.*;
+ import javax.swing.border.Border;
+ import javax.swing.border.LineBorder;
+ import java.awt.*;
+-import java.awt.event.ActionEvent;
+ import java.awt.event.ActionListener;
+ 
++/**
++ * Simple JPanel that manages the volume settings for the background music
++ */
+ public class VolumePanel extends JPanel {
+     private JSlider slider;
+     private JButton button1;
+@@ -18,7 +21,10 @@
+     private ImageIcon c0;
+     private ImageIcon c1;
+ 
+-
++    /**
++     * public constructor that implements an inner ActionListener related to the JButton for the mute option
++     * 
++     */
+     public VolumePanel(){
+         setSize(new Dimension(300,200));
+         setBackground(Color.WHITE);
+Index: src/JUnit/VictoryColumnTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package JUnit;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport core.gameLogic.model.partita.Grid;\r\nimport core.gameLogic.model.partita.Token;\r\nimport core.gameLogic.model.partita.TokenColor;\r\n\r\nclass VictoryColumnTest {\r\n\r\n\tGrid grid ;\r\n\tToken tokY;\r\n\tToken tokR;\r\n\t\r\n\t@BeforeEach\r\n\tvoid setUp() throws Exception {\r\n\t\tgrid = new Grid();\r\n\t\ttokY = new Token(TokenColor.YELLOW);\r\n\t\ttokR = new Token(TokenColor.RED);\r\n\t}\r\n\r\n\t@AfterEach\r\n\tvoid tearDown() throws Exception {\r\n\t\tgrid = null;\r\n\t\ttokY = null;\r\n\t\ttokR = null;\r\n\t}\r\n\r\n\t@Test\r\n\tvoid testColumn1() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\r\n\t\tassertEquals( true, grid.checkColonna(2,0,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t@Test\r\n\tvoid testColumn2() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals( false, grid.checkColonna(2,0,TokenColor.RED));\r\n\t\t\r\n\t}\r\n\t@Test\r\n\tvoid testColumn3() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][6].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][6].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals( true, grid.checkColonna(2,6,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn4() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][6].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][6].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkColonna(2,6,TokenColor.RED));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn5() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][6].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[1][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[1][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][6].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][6].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkColonna(2,6,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn6() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkColonna(3,2,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn7() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkColonna(3,3,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn8() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[1][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[1][2].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkColonna(1,2,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testColumn9() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokR);\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[1][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[1][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[0][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[0][2].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(true, grid.checkColonna(0,2,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/JUnit/VictoryColumnTest.java b/src/JUnit/VictoryColumnTest.java
+--- a/src/JUnit/VictoryColumnTest.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/JUnit/VictoryColumnTest.java	(date 1625477202164)
+@@ -1,4 +1,4 @@
+-package JUnit;
++/*package JUnit;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+@@ -209,3 +209,4 @@
+ 	
+ 
+ }
++*/
+\ No newline at end of file
+Index: src/JUnit/GridTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package JUnit;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport core.gameLogic.model.partita.Grid;\r\nimport core.gameLogic.model.partita.TokenColor;\r\n\r\nclass GridTest {\r\n\r\n\tGrid grid = new Grid();\r\n\tTokenColor temp = TokenColor.YELLOW;\r\n\t\r\n\t@BeforeEach\r\n\tvoid setUp() throws Exception {\r\n\t}\r\n\r\n\t@AfterEach\r\n\tvoid tearDown() throws Exception {\r\n\t}\r\n\r\n\t@Test\r\n\tvoid test() {\r\n\t\tfor(int i=0; i<42;i++) {\r\n\t\t\tint colonna =(int) (7* Math.random());\r\n\t\t\tif(grid.getGameGrid()[0][colonna].getToken() != null) {\r\n\t\t\t\ti--;\r\n\t\t\t\tcontinue;\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t\tgrid.tokenPlaced(temp, colonna);\r\n\t\t\tgrid.displayGrid();\r\n\t\t\tif(grid.isFinalVictory() == true) {\r\n\t\t\t\tbreak;\r\n\t\t\t}\r\n\t\t\tinvertTokenColor();\r\n\t\t\tif(i == 42) {\r\n\t\t\t\tSystem.out.println(\"Pareggio\");\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t\tassertEquals( true, grid.isFinalVictory());\r\n\t\t\r\n\t}\r\n\r\n\tpublic void invertTokenColor() {\r\n\t\tif(temp == TokenColor.YELLOW) {\r\n\t\t\ttemp = TokenColor.RED;\r\n\t\t}else temp = TokenColor.YELLOW; \r\n\t}\r\n\t\r\n\t\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/JUnit/GridTest.java b/src/JUnit/GridTest.java
+--- a/src/JUnit/GridTest.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/JUnit/GridTest.java	(date 1625491640195)
+@@ -1,4 +1,4 @@
+-package JUnit;
++/*package JUnit;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+@@ -53,4 +53,4 @@
+ 	}
+ 	
+ 	
+-}
++}*/
+Index: ../ClientProject/src/core/NetworkThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package core;\r\n\r\nimport java.io.*;\r\nimport java.net.Socket;\r\n\r\nimport javax.swing.JPanel;\r\n\r\nimport menuGUI.windows.ErrorFrame;\r\n\r\nimport static tester.ClientMainProva1.clientLogger;\r\n\r\npublic class NetworkThread extends Thread {\r\n\r\n    private Socket socket;\r\n    private static int port=25565;\r\n    private PrintWriter socketOutput = null;\r\n    private BufferedReader socketInput = null;\r\n    private static NetworkThread myThread=null;\r\n    private GUIcontroller guiHandler;\r\n    private String nickName;\r\n    private String opponent;\r\n    private String inviteParameters;\r\n    private ErrorFrame errorFrame;\r\n\r\n    private NetworkThread(int port) {\r\n        this.opponent=\"\";\r\n        this.port = port;\r\n    }\r\n    \r\n    public static NetworkThread getNetworkThread() {\r\n    \tif(myThread==null)\r\n    \t\tmyThread = new NetworkThread(port);\r\n    \treturn myThread;\r\n    }\r\n\r\n    @Override\r\n    public void run() {\r\n        try {\r\n            this.socket = new Socket(\"188.216.113.154\", port);\r\n            clientLogger.info(\"Connection established\");\r\n        } catch (IOException e) {\r\n            clientLogger.info(\"Impossible to establish connection to server\");\r\n            ErrorFrame errorFrame = new ErrorFrame(\"Impossible to establish \\n connection to server\");\r\n            return;\r\n        }\r\n        try {\r\n            socketInput = new BufferedReader(new InputStreamReader(socket.getInputStream()));\r\n            socketOutput = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);\r\n        } catch (IOException e) {\r\n            clientLogger.info(\"I/O Error\");\r\n        }\r\n        while (socket.isBound()) {\r\n            try {\r\n                parseString(this.socketInput.readLine());\r\n            } catch (IOException e) {\r\n                ErrorFrame errorFrame = new ErrorFrame(\"Connection dropped\");\r\n                break;\r\n            }\r\n        }\r\n    }\r\n    \r\n    public void parseString(String message){\r\n        String[] parts = message.split(\",\");\r\n        System.out.println(message);\r\n\r\n        switch (parts[0]){\r\n        \tcase \"abi\":\r\n        \t    System.out.println(\"abilitato\");\r\n                guiHandler.enableGameGui();\r\n                GUIcontroller.getGuiHandler().resetTimer();\r\n                GUIcontroller.getGuiHandler().setMyturn();\r\n        \t\tbreak;\r\n        \tcase \"NOTabi\":\r\n        \t    System.out.println(\"disabilitato\");\r\n        \t    guiHandler.disableGameGui();\r\n                GUIcontroller.getGuiHandler().resetTimer();\r\n                GUIcontroller.getGuiHandler().setOpponentTurn();\r\n        \t\tbreak;\r\n        \tcase \"NOTabiCOLONNA\"://disabilita colonna quando è riempita di token\r\n                  guiHandler.disableColumn(Integer.parseInt(parts[1]));\r\n                  break;\r\n        \tcase \"addToken\": //addToken,x,y\r\n                if (parts[3].compareTo(\"r\")==0)\r\n                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);\r\n                if (parts[3].compareTo(\"y\")==0)\r\n                    guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.YELLOW);\r\n        \t\tbreak;\r\n        \tcase \"begin\":\r\n        \t\tguiHandler.startGameIO(parts[1]);\r\n                if(guiHandler.getSecondMenu().getRanf()!=null){\r\n                    guiHandler.getSecondMenu().getRanf().setVisible(false);\r\n                }\r\n        \t\tbreak;\r\n        \tcase \"victory\":\r\n        \t\tguiHandler.victoryScreen(parts[0]);\r\n        \t\tbreak;\r\n        \tcase \"defeat\":\r\n        \t\tguiHandler.victoryScreen(parts[0]);\r\n        \t\tbreak;\r\n            case \"pareggio\":\r\n                guiHandler.displayInvite(\"aaa\");      //SOSTITUIRE CON FINESTRA PAREGGIO\r\n                //serve finestra\r\n                break;\r\n            case \"invitoRicevuto\" :\r\n                guiHandler.displayInvite(parts[1]);\r\n                this.inviteParameters = parts[2];\r\n                this.opponent=parts[1];\r\n                break;\r\n            case \"gamefound\" :\r\n                System.out.println(\"parita trovata\");\r\n                break;\r\n            case \"openMainMenu\":\r\n                guiHandler.openMenu();\r\n                break;\r\n            case \"decline\":\r\n                guiHandler.displayDeclineFrame();\r\n                break;\r\n                //default con gestione errore messaggio\r\n            case \"oppL\":\r\n                errorFrame = new ErrorFrame(\"Opponent left the game\");\r\n                break;\r\n            case \"playerNotFound\":\r\n                errorFrame = new ErrorFrame(\"Player not found\");\r\n            default:\r\n                errorFrame = new ErrorFrame(\"invalid message recived\");\r\n        }\r\n    }\r\n\r\n\r\n\tpublic void sendMessage(String message) {\r\n        socketOutput.println(message);\r\n    }\r\n\r\n    public void setGuiHandler(GUIcontroller thread){\r\n        this.guiHandler = thread;\r\n    }\r\n\r\n    public void setNickName(String nickName) {\r\n        this.nickName = nickName;\r\n    }\r\n\r\n    public String getNickName() {\r\n        return nickName;\r\n    }\r\n\r\n    public String getOpponent(){\r\n        return opponent;\r\n    }\r\n\r\n    public String getInviteParameters(){\r\n        return inviteParameters;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/core/NetworkThread.java b/../ClientProject/src/core/NetworkThread.java
+--- a/../ClientProject/src/core/NetworkThread.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/core/NetworkThread.java	(date 1625492648757)
+@@ -1,6 +1,7 @@
+ package core;
+ 
+ import java.io.*;
++import java.net.InetAddress;
+ import java.net.Socket;
+ 
+ import javax.swing.JPanel;
+@@ -9,6 +10,10 @@
+ 
+ import static tester.ClientMainProva1.clientLogger;
+ 
++/**
++ *The NetworkThread class extends Thread and listens on the specific socket for an incoming message (String)
++ */
++
+ public class NetworkThread extends Thread {
+ 
+     private Socket socket;
+@@ -33,6 +38,11 @@
+     	return myThread;
+     }
+ 
++    /**
++     * The run() method is overrided in order to make possible a connection with the Server. It also makes possible
++     * to read Strings invoking the parseString() method. It's possible that some errors could happen, if so, this method
++     * creates an instance of an ErrorFrame that displays a JFrame with a message
++     */
+     @Override
+     public void run() {
+         try {
+@@ -58,6 +68,13 @@
+             }
+         }
+     }
++
++    /**
++     * This method makes possible the execution of the main actions of the program parsing some Strings (messages) received from
++     * the Server. Every case is handled by the main Controller of this Client (class GUIController)
++     *
++     * @param message
++     */
+     
+     public void parseString(String message){
+         String[] parts = message.split(",");
+@@ -76,10 +93,10 @@
+                 GUIcontroller.getGuiHandler().resetTimer();
+                 GUIcontroller.getGuiHandler().setOpponentTurn();
+         		break;
+-        	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
++        	case "NOTabiCOLONNA":
+                   guiHandler.disableColumn(Integer.parseInt(parts[1]));
+                   break;
+-        	case "addToken": //addToken,x,y
++        	case "addToken":
+                 if (parts[3].compareTo("r")==0)
+                     guiHandler.addLabel(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]),TokenColor.RED);
+                 if (parts[3].compareTo("y")==0)
+@@ -126,15 +143,26 @@
+         }
+     }
+ 
+-
++    /**
++     * This method makes possible sending String messages
++     * @param message
++     */
+ 	public void sendMessage(String message) {
+         socketOutput.println(message);
+     }
+ 
++    /**
++     * This method makes possible to create some sort of Facade between the user and the NetworkThread
++     * @param thread
++     */
+     public void setGuiHandler(GUIcontroller thread){
+         this.guiHandler = thread;
+     }
+ 
++    /**
++     * The following methods are some simple getters/setters to improve the encapsulation of the program
++     * @param nickName
++     */
+     public void setNickName(String nickName) {
+         this.nickName = nickName;
+     }
+Index: src/JUnit/QueueTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package JUnit;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport core.Player;\r\nimport core.queue.GameParameters;\r\nimport core.queue.Queue;\r\n\r\nclass QueueTest {\r\n\t\r\n\tQueue q;\r\n\tPlayer p1;\r\n\tGameParameters gp ;\r\n\t\r\n\t@BeforeEach\r\n\tvoid setUp() throws Exception {\r\n\t\tq= Queue.getQueue();\r\n\t\tp1 = new Player();\r\n\t\tgp = new GameParameters();\r\n\t}\r\n\r\n\t@AfterEach\r\n\tvoid tearDown() throws Exception {\r\n\t\tq=null;\r\n\t\tp1=null;\r\n\t\tgp=null;\r\n\t}\r\n\r\n\t@Test\r\n\tvoid test() throws Exception {\r\n\t\t\r\n\t\tq.addPlayerToQueue(p1,gp);\r\n\t\t//assertEquals(true , (q.getQueueLIst()).contains(p1));\r\n\t\tq.removePlayer(p1);\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid test1() throws Exception {\r\n\t\tq.addPlayerToQueue(p1,gp);\r\n\t\tq.removePlayer(p1);\r\n\t//\tassertEquals( false , (q.getQueueLIst()).contains(p1));\r\n\t\t\r\n\t}\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/JUnit/QueueTest.java b/src/JUnit/QueueTest.java
+--- a/src/JUnit/QueueTest.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/JUnit/QueueTest.java	(date 1625477202092)
+@@ -1,4 +1,4 @@
+-package JUnit;
++/*package JUnit;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+@@ -48,3 +48,4 @@
+ 	}
+ 
+ }
++*/
+\ No newline at end of file
+Index: ../ClientProject/src/menuGUI/windows/RequestFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\n\r\nimport menuGUI.listeners.RequestListener;\r\nimport menuGUI.windows.util.FrameType;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\n\r\nimport java.awt.*;\r\n/**\r\n * This class extends the Abstract class InteractionFrame, sets up the RequestFrame that shows a simple JFrame where the invited\r\n * player receives from another player. It shows some simple messages (such as \"Invite received from...) and it implements two\r\n * JButtons in order to accept or decline the request received\r\n */\r\npublic class RequestFrame extends InteractionFrame{\r\n\r\n    private JLabel label2;\r\n    private JButton jb1;\r\n    private JButton jb2;\r\n    private String playerName;\r\n\r\n    public RequestFrame(String playerName){\r\n        super(FrameType.SMALLFRAME, WindowsType.REQUEST);\r\n        this.playerName = playerName;\r\n        setupFrameWithCostumElements();\r\n    }\r\n    /**\r\n     * overrided method inherited from the superclass that sets up the frame with custom parameters\r\n     */\r\n    @Override\r\n    protected void setupFrameWithCostumElements() {\r\n        label2 = new JLabel(\"Invite recived from \"+playerName);\r\n        label2.setBounds(0,10,300, 50);\r\n        label2.setHorizontalAlignment(SwingConstants.CENTER);\r\n        label2.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,15));\r\n        label2.setForeground(Color.BLACK);\r\n\r\n        jb1 = new JButton(\"ACCEPT\");\r\n        jb1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,12));\r\n        jb1.setForeground(Color.BLACK);\r\n        jb1.setOpaque(true);\r\n        jb1.setContentAreaFilled(false);\r\n        jb1.setFocusPainted(false);\r\n        jb1.setBorder(line);\r\n        jb1.setBounds(35,70,100,20);\r\n        jb1.setBackground(Color.orange.brighter());\r\n        jb1.setUI(new StyledButtonUI());\r\n        jb1.setActionCommand(\"accept\");\r\n        jb1.addActionListener(new RequestListener(jb1,this));\r\n\r\n        jb2 = new JButton(\"DECLINE\");\r\n        jb2.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,12));\r\n        jb2.setForeground(Color.BLACK);\r\n        jb2.setOpaque(true);\r\n        jb2.setContentAreaFilled(false);\r\n        jb2.setFocusPainted(false);\r\n        jb2.setBorder(line);\r\n        jb2.setBounds(155,70,100,20);\r\n        jb2.setBackground(Color.orange.brighter());\r\n        jb2.setUI(new StyledButtonUI());\r\n        jb2.setActionCommand(\"decline\");\r\n        jb2.addActionListener(new RequestListener(jb2,this));\r\n\r\n        layeredPane.add(label2, Integer.valueOf(1));\r\n        layeredPane.add(jb1, Integer.valueOf(1));\r\n        layeredPane.add(jb2, Integer.valueOf(1));\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/RequestFrame.java b/../ClientProject/src/menuGUI/windows/RequestFrame.java
+--- a/../ClientProject/src/menuGUI/windows/RequestFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/RequestFrame.java	(date 1625494055843)
+@@ -3,6 +3,7 @@
+ 
+ import menuGUI.listeners.RequestListener;
+ import menuGUI.windows.util.FrameType;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$/..\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedIndex\" value=\"2\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1tTU69x1eRBmWxxKGYe2ZPUqt1Z\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"Downloaded.Files.Path.Enabled\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Annotations\" value=\"false\" />\r\n    <property name=\"Repository.Attach.JavaDocs\" value=\"false\" />\r\n    <property name=\"Repository.Attach.Sources\" value=\"false\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"run.code.analysis.last.selected.profile\" value=\"pProject Default\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.lookFeel\" />\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tester1\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"$USER_HOME$/.jdks/openjdk-16.0.1-1\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"tester.Tester1\" />\r\n      <module name=\"ServerProject\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"tester.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Tester1\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1622792396816</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1622792396816</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/.idea/workspace.xml	(date 1625494056193)
+@@ -1,7 +1,79 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="" />
++    <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/util/StyledButtonUI.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/AnimationsTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/AnimationsTask.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/BackToMenuLIstener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/BackToMenuListener.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/ButtonAndTextAreaListener.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/FirstMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/FirstMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RequestFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/RequestFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/StyledButtonUI.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/tester/TesterFinestre.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/ThirdMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/ThirdMenu.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VictoryFrame.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VolumePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/VolumePanel.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ServerProject.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/GridTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/QueueTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryColumnTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryDiagonalTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/VictoryRowTest.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/GameThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/ListenerThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/Grid.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/queue/Queue.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUIForm.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/JUnit/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/GridTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/JUnit/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/QueueTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryColumnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/VictoryColumnTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryDiagonalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/VictoryDiagonalTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/JUnit/VictoryRowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/VictoryRowTest.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/Tester1.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/.gitignore" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/misc.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/modules.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/.idea/vcs.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/TicTacToe.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Main.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/Painter.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/TicTacToe.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueCircle.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/blueX.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/board.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redCircle.png" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/../TicTacToe/src/res/redX.png" beforeDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -17,6 +89,14 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+   </component>
++  <component name="GitSEFilterConfiguration">
++    <file-type-list>
++      <filtered-out-file-type name="LOCAL_BRANCH" />
++      <filtered-out-file-type name="REMOTE_BRANCH" />
++      <filtered-out-file-type name="TAG" />
++      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
++    </file-type-list>
++  </component>
+   <component name="ProblemsViewState">
+     <option name="selectedIndex" value="2" />
+   </component>
+@@ -34,12 +114,15 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
++    <property name="project.structure.last.edited" value="Modules" />
++    <property name="project.structure.proportion" value="0.15" />
++    <property name="project.structure.side.proportion" value="0.2" />
+     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+   </component>
+   <component name="RunManager">
+     <configuration name="Tester1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/openjdk-16.0.1-1" />
++      <option name="ALTERNATIVE_JRE_PATH" value="C:\Program Files\Java\jdk-11.0.9" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+       <option name="MAIN_CLASS_NAME" value="tester.Tester1" />
+       <module name="ServerProject" />
+Index: ../ClientProject/src/menuGUI/windows/VictoryFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\nimport menuGUI.listeners.BackToMenuLIstener;\r\nimport menuGUI.windows.util.FrameType;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\n\r\n\r\npublic class VictoryFrame extends InteractionFrame{\r\n\r\n    private JLabel label0, label1;\r\n    private JLabel label2;\r\n    private JButton jb1;\r\n\r\n    public VictoryFrame(){\r\n        super(FrameType.ENDGAME, WindowsType.VICTORY);\r\n        setupFrameWithCostumElements();\r\n    }\r\n\r\n    @Override\r\n    protected void setupFrameWithCostumElements() {\r\n\r\n        jb1 = new JButton(\"BACK TO MENU\");\r\n        jb1.setBounds(255, 350, 180, 40);\r\n        jb1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,16));\r\n        jb1.setBackground(Color.ORANGE.brighter());\r\n        jb1.setForeground(Color.BLACK);\r\n        jb1.setUI(new StyledButtonUI());\r\n\r\n        ActionListener backToMenu = e -> {\r\n            this.dispose();\r\n            SecondMenu menu = new SecondMenu();\r\n        };\r\n        jb1.addActionListener(backToMenu);\r\n\r\n        label2 = new JLabel();\r\n        label2.setBounds(0,0,700,500);\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/blur.jpg\"));\r\n\r\n        label0 = new JLabel();\r\n        label0.setBounds(70,50,600,200);\r\n        label0.setIcon(new ImageIcon(\"src/menuGUI/img/CONGRATULATIONS.png\"));\r\n\r\n        label1 = new JLabel();\r\n        label1.setBounds(200,120,600,200);\r\n        label1.setIcon(new ImageIcon(\"src/menuGUI/img/YOU WON!.png\"));\r\n\r\n        layeredPane.add(label0, Integer.valueOf(1));\r\n        layeredPane.add(label1, Integer.valueOf(1));\r\n        layeredPane.add(jb1, Integer.valueOf(1));\r\n        layeredPane.add(label2, Integer.valueOf(0));\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/VictoryFrame.java b/../ClientProject/src/menuGUI/windows/VictoryFrame.java
+--- a/../ClientProject/src/menuGUI/windows/VictoryFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/VictoryFrame.java	(date 1625494055816)
+@@ -1,14 +1,14 @@
+ package menuGUI.windows;
+-import menuGUI.listeners.BackToMenuLIstener;
+ import menuGUI.windows.util.FrameType;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+-import javax.swing.border.Border;
+-import javax.swing.border.LineBorder;
+ import java.awt.*;
+ import java.awt.event.ActionListener;
+-
++/**
++ * This class extends the Abstract class InteractionFrame, it defines the paramaters for the LoserFrame
++ */
+ 
+ public class VictoryFrame extends InteractionFrame{
+ 
+@@ -20,7 +20,10 @@
+         super(FrameType.ENDGAME, WindowsType.VICTORY);
+         setupFrameWithCostumElements();
+     }
+-
++    /**
++     * This overrided method (inherited from the superlclass) implements an inner ActionListener that makes possible to return
++     * to the previous menu, the SecondMenu & sets up the custom style for this JFrame
++     */
+     @Override
+     protected void setupFrameWithCostumElements() {
+ 
+Index: ../ClientProject/src/menuGUI/windows/InviteFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport core.NetworkThread;\r\nimport menuGUI.windows.util.FrameType;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\n/**\r\n * This class extends the Abstract class InteractionFrame, sets up the InviteFrame in order to make possible to invite\r\n * another player.\r\n */\r\npublic class InviteFrame extends InteractionFrame{\r\n\r\n    private JTextField textField;\r\n    private JLabel label1;\r\n    private JLabel label2;\r\n    private JButton jb1;\r\n    private SecondMenu second_menu;\r\n    private ErrorFrame localErrorFrame;\r\n\r\n    public InviteFrame(){\r\n        super(FrameType.SMALLFRAME, WindowsType.INVITE);\r\n        setupFrameWithCostumElements();\r\n    }\r\n\r\n    /**\r\n     * This overrided method (inherited from the superlclass) implements an inner ActionListener that make possible to communicate\r\n     * to the NetworkThread the message the intention to invite another known player. If necessary, it creates an instance of\r\n     * an ErrorFrame if the game mode has not been set\r\n     */\r\n    @Override\r\n    protected void setupFrameWithCostumElements() {\r\n        textField = new JTextField();\r\n        textField.setBounds(0,20, 150, 25);\r\n\r\n        label1 = new JLabel(\"Enter the nickname:\");\r\n        label1.setBounds(0,4,150,10);\r\n        label1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,12));\r\n        label1.setForeground(Color.BLACK);\r\n\r\n        ActionListener sendInvite = e ->{\r\n            second_menu = new SecondMenu();\r\n            if((this.second_menu!=null)&&(second_menu.getGameLenght().compareTo(\"a\")!=0)){\r\n                NetworkThread.getNetworkThread().sendMessage(\"sendInvite,\"+textField.getText()+\",\"+second_menu.getGameLenght());\r\n                return;\r\n            } localErrorFrame = new ErrorFrame(\"Press Game Mode to set game duration\");\r\n        };\r\n\r\n        jb1 = new JButton(\"INVITE\");\r\n        jb1.setBounds(180, 20, 100, 25);\r\n        jb1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,12));\r\n        jb1.setBackground(Color.ORANGE.brighter());\r\n        jb1.setForeground(Color.BLACK);\r\n        jb1.addActionListener(sendInvite);\r\n        jb1.setUI(new StyledButtonUI());\r\n\r\n        ActionListener closeFrame = e -> {\r\n            this.dispose();\r\n        };\r\n\r\n        jb1.addActionListener(closeFrame);\r\n\r\n        label2 = new JLabel();\r\n        label2.setBounds(0,0,300,100);\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/blur300x100.jpg\"));\r\n\r\n        layeredPane.add(textField, Integer.valueOf(1));\r\n        layeredPane.add(label1, Integer.valueOf(1));\r\n        layeredPane.add(jb1, Integer.valueOf(1));\r\n        layeredPane.add(label2, Integer.valueOf(0));\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/InviteFrame.java b/../ClientProject/src/menuGUI/windows/InviteFrame.java
+--- a/../ClientProject/src/menuGUI/windows/InviteFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/InviteFrame.java	(date 1625494055802)
+@@ -2,6 +2,7 @@
+ 
+ import core.NetworkThread;
+ import menuGUI.windows.util.FrameType;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+Index: ../ClientProject/src/menuGUI/windows/GameFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport core.AnimationsTask;\r\nimport core.TokenColor;\r\nimport menuGUI.listeners.ButtonListener;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.util.Timer;\r\n\r\n/**\r\n * This class sets the actual graphic parameters (such as the grid style, the token style, the number of cells & so on)\r\n * of the game. That's what we actually see when we play the game.\r\n */\r\n\r\npublic class GameFrame extends JFrame {\r\n\r\n    private JPanel animationPanel;\r\n    private JPanel buttonsPanel;\r\n    public static final int buttonsize = 100;\r\n    private String duration;\r\n    private Timer myTimer;\r\n    private JLayeredPane layeredPane;\r\n    private GameInfoPanel infoPanel;\r\n    private JLabel lblNewLabel;\r\n    private JLabel lbl;\r\n    private Container c;\r\n    private JButton[][] matrix = new JButton[6][7]; //matrice bottoni\r\n\r\n    /**\r\n     * The constructor creates an instance of the Timer (which is contained in the infoPanel), creates the actual grid using\r\n     * a for cycle and creates an instance of the GameInfoPanel which is mentioned earlier\r\n     * @param duration\r\n     */\r\n    public  GameFrame(String duration){\r\n        this.duration=duration;\r\n        myTimer = new Timer();\r\n\r\n        c = new Container();\r\n        c = getContentPane();\r\n        c.setBackground(Color.WHITE);\r\n        setBounds(100, 100, 1129, 737);\r\n        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n        c.setLayout(null);\r\n        setResizable(false);\r\n\r\n        layeredPane = new JLayeredPane();\r\n        layeredPane.setBackground(Color.CYAN);\r\n        layeredPane.setBounds(0, 0, 800, 700);\r\n\r\n        Toolkit kit = Toolkit.getDefaultToolkit();\r\n        Image img = kit.getImage(\"src/menuGUI/img/icon.png\");\r\n        setIconImage(img);\r\n\r\n        lblNewLabel = new JLabel(\"\");\r\n        lblNewLabel.setBounds(0, 0, 800, 700);\r\n\r\n        setGrid(ThirdMenu.choosenTheme);\r\n\r\n        animationPanel = new JPanel();\r\n        animationPanel.setOpaque(false);\r\n        layeredPane.setLayer(animationPanel, 2);\r\n        animationPanel.setBounds(0, 0, 800, 700);\r\n        animationPanel.setLayout(null);\r\n\r\n        buttonsPanel = new JPanel();\r\n        buttonsPanel.setOpaque(false);\r\n        layeredPane.setLayer(buttonsPanel, 3);\r\n        buttonsPanel.setBounds(50, 50, 700, 600);\r\n        buttonsPanel.setLayout(null);\r\n\r\n\r\n        for(int i=0;i<7;i++) {\r\n            for(int j=0;j<6;j++) {\r\n                JButton tempButt = new JButton();\r\n                tempButt.setFocusPainted( false );\r\n                tempButt.setContentAreaFilled( false );\r\n                tempButt.setOpaque(false);\r\n                tempButt.setBorderPainted(false);\r\n                tempButt.setBounds(i*100, j*100, buttonsize, buttonsize);\r\n                buttonsPanel.add(tempButt);\r\n                tempButt.setActionCommand(\"\"+i);\r\n                tempButt.addActionListener(new ButtonListener(tempButt));\r\n                matrix[j][i] = tempButt; //riempio matrice dei bottoni\r\n                //System.out.println(\"bottone generato\");\r\n            }\r\n        }\r\n\r\n        infoPanel = new GameInfoPanel(duration);\r\n        c.add(infoPanel);\r\n        infoPanel.setBounds(800,0,300,600);\r\n        infoPanel.setVisible(true);\r\n\r\n        layeredPane.add(lblNewLabel);\r\n        layeredPane.add(animationPanel);\r\n        layeredPane.add(buttonsPanel);\r\n        c.add(layeredPane);\r\n    }\r\n\r\n    /**\r\n     * this method uses the static parameter of the ThirdMenu. They set the colour of the token related to the chosen theme.\r\n     *\r\n     * @param x\r\n     * @param y\r\n     * @param c\r\n     */\r\n\r\n    public void addLabel(int x, int y, TokenColor c) {\r\n        lbl = new JLabel(\"\");\r\n        if(c==TokenColor.RED) {\r\n            setTockenRed(ThirdMenu.choosenTheme);\r\n        }\r\n        if(c==TokenColor.YELLOW) {\r\n            setTockenYellow(ThirdMenu.choosenTheme);\r\n        }\r\n        this.myTimer.schedule(new AnimationsTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );\r\n        System.out.println(\"aa\");\r\n    }\r\n\r\n    public JPanel getAnimationPanel() {\r\n        return animationPanel;\r\n    }\r\n\r\n    public JPanel getButtonsPanel() {\r\n        return buttonsPanel;\r\n    }\r\n\r\n    public void addToLayeredPane(Component component,int level){\r\n        layeredPane.add(component,Integer.valueOf(level));\r\n    }\r\n\r\n    public void resetTimer(){\r\n        infoPanel.resetTimer();\r\n    }\r\n\r\n    public void setMyTurn(){\r\n        infoPanel.setTurnOwnerME();\r\n    }\r\n\r\n    public void setOppositeTurn(){\r\n        infoPanel.setTurnOwnerOPPOSITE();\r\n    }\r\n\r\n    /**\r\n     * this method sets the grid to the preferred theme setting up an int variable that corresponds to each theme in\r\n     * the following ThirdMenu\r\n     * @param a\r\n     */\r\n\r\n    public void setGrid(int a) {\r\n        if (a == 1) {\r\n            lblNewLabel.setIcon(new ImageIcon(\"src/menuGUI/img/themes/stitchgrid.png\"));\r\n        } else if (a == 2) {\r\n            lblNewLabel.setIcon(new ImageIcon(\"src/menuGUI/img/themes/ironmangrid.png\"));\r\n        } else if (a == 3) {\r\n            lblNewLabel.setIcon(new ImageIcon(\"src/menuGUI/img/themes/firstmariogrid.png\"));\r\n        } else if (a == 0) {\r\n            lblNewLabel.setIcon(new ImageIcon(\"src/menuGUI/img/themes/GrigliaBackgrond3.png\"));\r\n        } else {\r\n            lblNewLabel.setIcon(new ImageIcon(\"src/menuGUI/img/themes/GrigliaBackgrond3.png\"));\r\n        }\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param a\r\n     */\r\n\r\n    public void setTockenRed(int a){\r\n        if (a == 1) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/stitchtoken.png\"));\r\n        } else if (a == 2) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/capamericatoken.png\"));\r\n        } else if (a == 3) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/poweruptokenred.png\"));\r\n        } else if (a == 0) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/RedToken2.png\"));\r\n        } else {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/RedToken2.png\"));\r\n        }\r\n    }\r\n\r\n    /**\r\n     *\r\n     * @param a\r\n     */\r\n\r\n    public void setTockenYellow(int a){\r\n        if (a == 1) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/angeltoken.png\"));\r\n        } else if (a == 2) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/ironmantoken.png\"));\r\n        } else if (a == 3) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/poweruptoken.png\"));\r\n        } else if (a == 0) {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/YellowToken2.png\"));\r\n        } else {\r\n            lbl.setIcon(new ImageIcon(\"src/menuGUI/img/themes/YellowToken2.png\"));\r\n        }\r\n    }\r\n\r\n    /**\r\n     * This method disable the column when it's full of tokens\r\n     * @param column\r\n     */\r\n\r\n    public void disableColumn(int column) {\r\n        for(int i = column,j=0;j<6;j++) {\r\n            matrix[j][i].setVisible(false);\r\n        }\r\n\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/GameFrame.java b/../ClientProject/src/menuGUI/windows/GameFrame.java
+--- a/../ClientProject/src/menuGUI/windows/GameFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/GameFrame.java	(date 1625494186742)
+@@ -2,7 +2,7 @@
+ 
+ import core.AnimationsTask;
+ import core.TokenColor;
+-import menuGUI.listeners.ButtonListener;
++import menuGUI.listeners.AddTokenListener;
+ 
+ import javax.swing.*;
+ import java.awt.*;
+@@ -80,7 +80,7 @@
+                 tempButt.setBounds(i*100, j*100, buttonsize, buttonsize);
+                 buttonsPanel.add(tempButt);
+                 tempButt.setActionCommand(""+i);
+-                tempButt.addActionListener(new ButtonListener(tempButt));
++                tempButt.addActionListener(new AddTokenListener(tempButt));
+                 matrix[j][i] = tempButt; //riempio matrice dei bottoni
+                 //System.out.println("bottone generato");
+             }
+Index: ../ClientProject/src/menuGUI/windows/StyledButtonUI.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/StyledButtonUI.java b/../ClientProject/src/menuGUI/windows/util/StyledButtonUI.java
+rename from ../ClientProject/src/menuGUI/windows/StyledButtonUI.java
+rename to ../ClientProject/src/menuGUI/windows/util/StyledButtonUI.java
+--- a/../ClientProject/src/menuGUI/windows/StyledButtonUI.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/util/StyledButtonUI.java	(date 1625494055838)
+@@ -1,4 +1,4 @@
+-package menuGUI.windows;
++package menuGUI.windows.util;
+ 
+ import javax.swing.*;
+ import javax.swing.border.EmptyBorder;
+Index: src/JUnit/VictoryRowTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package JUnit;\r\n\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport core.gameLogic.model.partita.Grid;\r\nimport core.gameLogic.model.partita.Token;\r\nimport core.gameLogic.model.partita.TokenColor;\r\n\r\nclass VictoryRowTest {\r\n\tGrid grid ;\r\n\tToken tokY;\r\n\tToken tokR;\r\n\t\r\n\t@BeforeEach\r\n\tvoid setUp() throws Exception {\r\n\t\tgrid = new Grid();\r\n\t\ttokY = new Token(TokenColor.YELLOW);\r\n\t\ttokR = new Token(TokenColor.RED);\r\n\t}\r\n\r\n\t@AfterEach\r\n\tvoid tearDown() throws Exception {\r\n\t\tgrid = null;\r\n\t\ttokY = null;\r\n\t\ttokR = null;\r\n\t}\r\n\r\n\t@Test\r\n\tvoid testRiga() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][4].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][4].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals( false, grid.checkRiga(5,4,TokenColor.YELLOW ));\r\n\t\t\r\n\t}\r\n\t@Test\r\n\tvoid testRiga2() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkRiga(5,3,TokenColor.RED ));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testRiga3() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkRiga(5,3,TokenColor.YELLOW ));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testRiga4() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][4].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][4].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][5].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][5].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\t\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(true, grid.checkRiga(5,6,TokenColor.YELLOW ));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testRiga5() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(true, grid.checkRiga(4,3,TokenColor.YELLOW ));\r\n\t\t\r\n\t}\r\n\t\r\n\t\t\r\n\t\t\r\n\t@Test\r\n\tvoid testRiga6() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkRiga(4,3,TokenColor.RED ));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testRiga7() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkRiga(2,1,TokenColor.YELLOW));\r\n\t\t\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testRiga8() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkRiga(2,3,TokenColor.RED));\r\n\t\t\r\n\t}\r\n\t\t\r\n\t\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/JUnit/VictoryRowTest.java b/src/JUnit/VictoryRowTest.java
+--- a/src/JUnit/VictoryRowTest.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/JUnit/VictoryRowTest.java	(date 1625477202133)
+@@ -1,4 +1,4 @@
+-package JUnit;
++/*package JUnit;
+ 
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+@@ -251,4 +251,4 @@
+ 		
+ 	
+ 
+-}
++}*/
+Index: ServerProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"module-library\">\r\n      <library name=\"JUnit5.7.0\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ServerProject.iml b/ServerProject.iml
+--- a/ServerProject.iml	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/ServerProject.iml	(date 1625477798670)
+@@ -3,6 +3,7 @@
+   <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$" type="java-test-resource" />
+       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+Index: src/JUnit/VictoryDiagonalTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package JUnit;\r\n\r\n\r\nimport org.junit.jupiter.api.AfterEach;\r\nimport org.junit.jupiter.api.BeforeEach;\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport core.gameLogic.model.partita.Grid;\r\nimport core.gameLogic.model.partita.Token;\r\nimport core.gameLogic.model.partita.TokenColor;\r\n\r\nimport static org.junit.jupiter.api.Assertions.assertEquals;\r\n\r\nclass VictoryDiagonalTest {\r\n\r\n\tGrid grid ;\r\n\tToken tokY;\r\n\tToken tokR;\r\n\t\r\n\t@BeforeEach\r\n\tvoid setUp() throws Exception {\r\n\t\tgrid = new Grid();\r\n\t\ttokY = new Token(TokenColor.YELLOW);\r\n\t\ttokR = new Token(TokenColor.RED);\r\n\t}\r\n\r\n\t@AfterEach\r\n\tvoid tearDown() throws Exception {\r\n\t\tgrid = null;\r\n\t\ttokY = null;\r\n\t\ttokR = null;\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal1() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(true, grid.checkDiagonali(2,3,TokenColor.YELLOW));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal2() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkDiagonali(2,0,TokenColor.YELLOW));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal3() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][2].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][2].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(true, grid.checkDiagonali(2,0,TokenColor.RED));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal4() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkDiagonali(2,0,TokenColor.RED));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal5() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][1].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals( false, grid.checkDiagonali(2,0,TokenColor.YELLOW));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal6() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][5].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][5].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][4].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][4].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][6].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][4].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][4].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals(false, grid.checkDiagonali(1,2,TokenColor.YELLOW));\r\n\t}\r\n\t\r\n\t@Test\r\n\tvoid testDiagonal7() {\r\n\t\t\r\n\t\tgrid.getGameGrid()[5][6].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[5][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][5].addToken(tokY);\r\n\t\tgrid.getGameGrid()[5][5].cellHasToken();\r\n\t\tgrid.getGameGrid()[5][4].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[5][4].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][0].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[4][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[4][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[4][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][0].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][0].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][6].addToken(tokR);\r\n\t\tgrid.getGameGrid()[3][6].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][3].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[3][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][4].addToken(tokY);\t\r\n\t\tgrid.getGameGrid()[2][4].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][1].addToken(tokY);\r\n\t\tgrid.getGameGrid()[2][1].cellHasToken();\r\n\t\tgrid.getGameGrid()[2][3].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[2][3].cellHasToken();\r\n\t\tgrid.getGameGrid()[3][2].addToken(tokR);\t\r\n\t\tgrid.getGameGrid()[3][2].cellHasToken();\r\n\t\t\r\n\t\tgrid.displayGrid();\r\n\t\t\r\n\t\tassertEquals( false, grid.checkDiagonali(0,4,TokenColor.RED));\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/JUnit/VictoryDiagonalTest.java b/src/JUnit/VictoryDiagonalTest.java
+--- a/src/JUnit/VictoryDiagonalTest.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/src/JUnit/VictoryDiagonalTest.java	(date 1625477202113)
+@@ -1,4 +1,4 @@
+-package JUnit;
++/*package JUnit;
+ 
+ 
+ import org.junit.jupiter.api.AfterEach;
+@@ -289,4 +289,4 @@
+ 		
+ 		assertEquals( false, grid.checkDiagonali(0,4,TokenColor.RED));
+ 	}
+-}
++}*/
+Index: ../ClientProject/src/menuGUI/windows/GameModeFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport menuGUI.windows.util.FrameType;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.Border;\r\nimport javax.swing.border.LineBorder;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.event.WindowEvent;\r\n\r\n/**\r\n * This class extends the Abstract class InteractionFrame, it makes possible the choice of the game mode of the match.\r\n */\r\n\r\npublic class GameModeFrame extends InteractionFrame{\r\n\r\n    private JButton jb1;\r\n    private JRadioButton radioButton1;\r\n    private JRadioButton radioButton2;\r\n    private SecondMenu menu;\r\n\r\n\r\n    public GameModeFrame(SecondMenu menu){\r\n        super(FrameType.SMALLFRAME, WindowsType.GAMEMODE);\r\n        this.menu = menu;\r\n        setupFrameWithCostumElements();\r\n    }\r\n\r\n\r\n\r\n    @Override\r\n    protected void setupFrameWithCostumElements() {\r\n        radioButton1 = new JRadioButton(\"Fast Game\");\r\n        radioButton1.setBounds(10,20,150,30);\r\n        radioButton1.setOpaque(false);\r\n        radioButton1.setForeground(Color.black);\r\n        radioButton1.setBackground(new Color(0x0FFFFFF, true));\r\n        radioButton1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,18));\r\n        radioButton1.setBorder(line);\r\n        radioButton1.setFocusPainted(false);\r\n\r\n        radioButton2 = new JRadioButton(\"Slow Game\");\r\n        radioButton2.setBounds(160,20,150,30);\r\n        radioButton2.setOpaque(false);\r\n        radioButton2.setForeground(Color.black);\r\n        radioButton2.setBackground(new Color(0x0FFFFFF, true));\r\n        radioButton2.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,18));\r\n        radioButton2.setBorder(line);\r\n        radioButton2.setFocusPainted(false);\r\n\r\n        /**\r\n         * Inner ActionListener that makes sure that one of the JRadioButton is pressed and changes the value of the variable\r\n         * gameSpeed.\r\n         */\r\n        ActionListener radio = e ->{\r\n            if(radioButton1.isSelected())\r\n                menu.setGameLenght(\"s\");\r\n            if(radioButton2.isSelected())\r\n                menu.setGameLenght(\"l\");\r\n            if(radioButton1.isSelected()||radioButton2.isSelected()){\r\n                WindowEvent closeFrame = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);\r\n                Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeFrame);\r\n            }\r\n        };\r\n\r\n        ButtonGroup bg = new ButtonGroup();\r\n        bg.add(radioButton1);\r\n        bg.add(radioButton2);\r\n\r\n        jb1 = new JButton(\"ENTER\");\r\n        jb1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,12));\r\n        jb1.setForeground(Color.BLACK);\r\n        jb1.setOpaque(true);\r\n        jb1.setContentAreaFilled(false);\r\n        jb1.setFocusPainted(false);\r\n        jb1.setBorder(line);\r\n        jb1.setBounds(90,70,100,20);\r\n        jb1.setBackground(Color.orange.brighter());\r\n        jb1.setUI(new StyledButtonUI());\r\n        jb1.addActionListener(radio);\r\n\r\n        layeredPane.add(radioButton1, Integer.valueOf(1));\r\n        layeredPane.add(radioButton2, Integer.valueOf(1));\r\n        layeredPane.add(jb1, Integer.valueOf(1));\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/GameModeFrame.java b/../ClientProject/src/menuGUI/windows/GameModeFrame.java
+--- a/../ClientProject/src/menuGUI/windows/GameModeFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/GameModeFrame.java	(date 1625494055848)
+@@ -1,11 +1,10 @@
+ package menuGUI.windows;
+ 
+ import menuGUI.windows.util.FrameType;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+-import javax.swing.border.Border;
+-import javax.swing.border.LineBorder;
+ import java.awt.*;
+ import java.awt.event.ActionListener;
+ import java.awt.event.WindowEvent;
+Index: ../ClientProject/src/menuGUI/windows/LoserFrame.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package menuGUI.windows;\r\n\r\nimport menuGUI.windows.util.FrameType;\r\nimport menuGUI.windows.util.WindowsType;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionListener;\r\n\r\n/**\r\n * This class extends the Abstract class InteractionFrame, it defines the paramaters for the LoserFrame\r\n */\r\npublic class LoserFrame extends InteractionFrame{\r\n\r\n\r\n    private JLabel label0, label1;\r\n    private JLabel label2;\r\n    private JButton jb1;\r\n\r\n    public LoserFrame(){\r\n        super(FrameType.ENDGAME, WindowsType.LOSER);\r\n        setupFrameWithCostumElements();\r\n    }\r\n    /**\r\n     * This overrided method (inherited from the superlclass) implements an inner ActionListener that makes possible to return\r\n     * to the previous menu, the SecondMenu\r\n     */\r\n    @Override\r\n    protected void setupFrameWithCostumElements() {\r\n\r\n        jb1 = new JButton(\"BACK TO MENU\");\r\n        jb1.setBounds(255, 350, 180, 40);\r\n        jb1.setFont(new Font(\"ITC Avant Garde Gothic\",Font.BOLD,16));\r\n        jb1.setBackground(Color.ORANGE.brighter());\r\n        jb1.setForeground(Color.BLACK);\r\n        jb1.setUI(new StyledButtonUI());\r\n\r\n        ActionListener backToMenu = e -> {\r\n            this.dispose();\r\n            SecondMenu menu = new SecondMenu();\r\n        };\r\n        jb1.addActionListener(backToMenu);\r\n\r\n        label2 = new JLabel();\r\n        label2.setBounds(0,0,700,500);\r\n        label2.setIcon(new ImageIcon(\"src/menuGUI/img/blur.jpg\"));\r\n\r\n        label0 = new JLabel();\r\n        label0.setBounds(70,50,600,200);\r\n        label0.setIcon(new ImageIcon(\"src/menuGUI/img/I'M SORRY . . ..png\"));\r\n\r\n        label1 = new JLabel();\r\n        label1.setBounds(200,120,600,200);\r\n        label1.setIcon(new ImageIcon(\"src/menuGUI/img/YOU LOST!.png\"));\r\n\r\n        layeredPane.add(label0, Integer.valueOf(1));\r\n        layeredPane.add(label1, Integer.valueOf(1));\r\n        layeredPane.add(jb1, Integer.valueOf(1));\r\n        layeredPane.add(label2, Integer.valueOf(0));\r\n\r\n\r\n\r\n        revalidate();\r\n        repaint();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../ClientProject/src/menuGUI/windows/LoserFrame.java b/../ClientProject/src/menuGUI/windows/LoserFrame.java
+--- a/../ClientProject/src/menuGUI/windows/LoserFrame.java	(revision 7588143d454a4bb3efa4cdd268eb11f45a0247cd)
++++ b/../ClientProject/src/menuGUI/windows/LoserFrame.java	(date 1625494055828)
+@@ -1,6 +1,7 @@
+ package menuGUI.windows;
+ 
+ import menuGUI.windows.util.FrameType;
++import menuGUI.windows.util.StyledButtonUI;
+ import menuGUI.windows.util.WindowsType;
+ 
+ import javax.swing.*;
+@@ -23,7 +24,7 @@
+     }
+     /**
+      * This overrided method (inherited from the superlclass) implements an inner ActionListener that makes possible to return
+-     * to the previous menu, the SecondMenu
++     * to the previous menu, the SecondMenu & sets up the custom style for this JFrame
+      */
+     @Override
+     protected void setupFrameWithCostumElements() {
