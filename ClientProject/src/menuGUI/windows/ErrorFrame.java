@@ -7,6 +7,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+/**
+ * Simple class of a ErrorFrame (which pops whenever an error occurs anywhere in the program)
+ */
 
 public class ErrorFrame extends InteractionFrame {
 
@@ -19,6 +22,10 @@ public class ErrorFrame extends InteractionFrame {
         this.errorMessage = errorMessage;
         setupFrameWithCostumElements();
     }
+    /**
+     * This method creates the ErrorFrame and adds it to the JLayerdPane, revalidate() & repaint() make sure
+     * that the old content is erased whenever is needed a new ErrorFrame
+     */
 
     @Override
     protected void setupFrameWithCostumElements() {

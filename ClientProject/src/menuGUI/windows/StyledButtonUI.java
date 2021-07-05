@@ -5,8 +5,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
+/**
+ * This class makes possible to create some new custom Buttons
+ */
 public class StyledButtonUI extends BasicButtonUI {
-
+    /**
+     * The following methods set some generic parameters that can be customized whenever an instance of StyledButtonUI
+     * is created
+     * @param c
+     */
     @Override
     public void installUI (JComponent c) {
         super.installUI(c);

@@ -10,7 +10,10 @@ import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
-
+/**
+ * This class extends the Abstract class InteractionFrame, sets up the InviteFrame in order to make possible to look for another
+ * random player with the same settings that match the ones that the first player has chosen
+ */
 public class RandomFrame extends InteractionFrame{
 
     private JLabel label2;
@@ -21,6 +24,10 @@ public class RandomFrame extends InteractionFrame{
         setupFrameWithCostumElements();
     }
 
+    /**
+     * overrided method inherited from the superclass that sets up the frame with custom parameters, implementes an instance
+     * of a CloseRandomFrameListener
+     */
     @Override
     protected void setupFrameWithCostumElements() {
         label2 = new JLabel();

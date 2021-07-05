@@ -1,0 +1,189 @@
+<changelist name="Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]" date="1625494324958" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 05/07/2021 16:12 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="../TicTacToe/src/res/blueX.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/JUnit/VictoryColumnTest.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/FirstMenu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/FirstMenu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/InteractionFrame$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/LoserFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/LoserFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/queue/Queue.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/queue/Queue.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/Queue.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/InteractionFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/JUnit/VictoryRowTest.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/listeners/ButtonAndTextAreaListener.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/ButtonAndTextAreaListener.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/Grid.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/Grid.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/Grid.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../TicTacToe/src/res/board.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/InviteFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/core/GUIcontroller.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/core/GUIcontroller.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/GUIcontroller.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../TicTacToe/src/res/blueCircle.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/JUnit/VictoryDiagonalTest.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/WorkerThread.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/WorkerThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/WorkerThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/StyledButtonUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/GameInfoPanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RulesFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/RulesFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/ErrorFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/ErrorFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/DeclineFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/DeclineFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RandomFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/RandomFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/GameFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/SoundPlayer$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/VictoryFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/GameThread.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/GameThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/GameThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../TicTacToe/src/res/redX.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/ListenerThread.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/ListenerThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/ListenerThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/RequestFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/RequestFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/ThirdMenu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/ThirdMenu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/JUnit/QueueTest.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/core/NetworkThread.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/core/NetworkThread.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/NetworkThread.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../TicTacToe/src/res/redCircle.png" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" />
+    <option name="AFTER_PATH" value="../ClientProject/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/GameModeFrame.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/JUnit/GridTest.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/core/gameLogic/model/partita/util/SoundPlayer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/SoundPlayer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/ServerProject/tester/Tester1.class" />
+    <option name="AFTER_PATH" value="out/production/ServerProject/tester/Tester1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12_[Default_Changelist]/Tester1.class" />
+  </binary>
+</changelist>

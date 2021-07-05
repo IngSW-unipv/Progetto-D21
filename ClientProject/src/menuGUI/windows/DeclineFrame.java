@@ -5,6 +5,9 @@ import menuGUI.windows.util.WindowsType;
 
 import javax.swing.*;
 import java.awt.*;
+/**
+ * Simple class of a DeclineFrame (which pops when the invited player refuses a request)
+ */
 
 public class DeclineFrame extends InteractionFrame{
     
@@ -15,6 +18,10 @@ public class DeclineFrame extends InteractionFrame{
         super(FrameType.SMALLFRAME, WindowsType.DECLINE);
         setupFrameWithCostumElements();
     }
+
+    /**
+     * This method creates the DeclineFrame and adds it to the JLayerdPane
+     */
 
     @Override
     protected void setupFrameWithCostumElements() {

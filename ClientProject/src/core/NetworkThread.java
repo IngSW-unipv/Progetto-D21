@@ -9,6 +9,10 @@ import menuGUI.windows.ErrorFrame;
 
 import static tester.ClientMainProva1.clientLogger;
 
+/**
+ * This class is the Thread that actually receives messages (String) from the server.
+ */
+
 public class NetworkThread extends Thread {
 
     private Socket socket;
@@ -33,6 +37,10 @@ public class NetworkThread extends Thread {
     	return myThread;
     }
 
+    /**
+     * This Override establish a simple connection client-server and, possibly, returns an ErrorFrame if
+     * some Exceptions occurs
+     */
     @Override
     public void run() {
         try {
@@ -58,6 +66,12 @@ public class NetworkThread extends Thread {
             }
         }
     }
+
+    /**
+     * This method parses a message received from the server. Every String is unique and makes possible every
+     * action in this program
+     * @param message
+     */
     
     public void parseString(String message){
         String[] parts = message.split(",");
@@ -99,6 +113,7 @@ public class NetworkThread extends Thread {
         		break;
             case "pareggio":
                 guiHandler.displayInvite("aaa");      //SOSTITUIRE CON FINESTRA PAREGGIO
+                //serve finestra
                 break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]);
@@ -121,7 +136,7 @@ public class NetworkThread extends Thread {
             case "playerNotFound":
                 errorFrame = new ErrorFrame("Player not found");
             default:
-                errorFrame = new ErrorFrame("invalid message recived");
+                errorFrame = new ErrorFrame("invalid message received");
         }
     }
 

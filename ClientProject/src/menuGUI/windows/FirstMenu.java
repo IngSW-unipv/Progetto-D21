@@ -7,6 +7,12 @@ import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
+/**
+ * This is one of the main frames of the Client: this class creates the menu in which the player can add their nickname.
+ * There are 3 labels used for images and backgrounds. The only JButton sends a message to the server triggering the
+ * setActionCommand that sends the String newNick. Simple class with only a constructor.
+ */
+
 public class FirstMenu extends JFrame {
 
     private JLayeredPane layeredPane;
@@ -76,6 +82,8 @@ public class FirstMenu extends JFrame {
         layeredPane.add(label4,Integer.valueOf(2));
         this.add(layeredPane);
         this.setLocationRelativeTo(null);
+
+        //TODO wtf
 
         revalidate();
         repaint();

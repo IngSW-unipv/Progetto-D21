@@ -4,6 +4,9 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+/**
+ * bo che dire
+ */
 public class VolumeControl implements ChangeListener { 
 
     public static double volume = 0.50;

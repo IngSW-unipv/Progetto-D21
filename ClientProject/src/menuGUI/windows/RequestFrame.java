@@ -8,7 +8,11 @@ import menuGUI.windows.util.WindowsType;
 import javax.swing.*;
 
 import java.awt.*;
-
+/**
+ * This class extends the Abstract class InteractionFrame, sets up the RequestFrame that shows a simple JFrame where the invited
+ * player receives from another player. It shows some simple messages (such as "Invite received from...) and it implements two
+ * JButtons in order to accept or decline the request received
+ */
 public class RequestFrame extends InteractionFrame{
 
     private JLabel label2;
@@ -21,7 +25,9 @@ public class RequestFrame extends InteractionFrame{
         this.playerName = playerName;
         setupFrameWithCostumElements();
     }
-
+    /**
+     * overrided method inherited from the superclass that sets up the frame with custom parameters
+     */
     @Override
     protected void setupFrameWithCostumElements() {
         label2 = new JLabel("Invite recived from "+playerName);

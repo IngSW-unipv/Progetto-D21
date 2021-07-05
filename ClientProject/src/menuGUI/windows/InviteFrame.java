@@ -7,7 +7,10 @@ import menuGUI.windows.util.WindowsType;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-
+/**
+ * This class extends the Abstract class InteractionFrame, sets up the InviteFrame in order to make possible to invite
+ * another player.
+ */
 public class InviteFrame extends InteractionFrame{
 
     private JTextField textField;
@@ -22,6 +25,11 @@ public class InviteFrame extends InteractionFrame{
         setupFrameWithCostumElements();
     }
 
+    /**
+     * This overrided method (inherited from the superlclass) implements an inner ActionListener that make possible to communicate
+     * to the NetworkThread the message the intention to invite another known player. If necessary, it creates an instance of
+     * an ErrorFrame if the game mode has not been set
+     */
     @Override
     protected void setupFrameWithCostumElements() {
         textField = new JTextField();

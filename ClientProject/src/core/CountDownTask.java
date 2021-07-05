@@ -5,6 +5,9 @@ import core.NetworkThread;
 import javax.swing.*;
 import java.util.TimerTask;
 
+/**
+ * Class that customize the game Timer. Overrides the run() method as TimerTask implements Runnable
+ */
 public class CountDownTask extends TimerTask {
 
     private JLabel labelToUpdate;

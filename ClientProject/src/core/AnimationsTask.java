@@ -5,6 +5,10 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * Class that extends TimerTask (a task that can be scheduled for one-time or repeated execution by a Timer), implements
+ * and overrides the run() method
+ */
 public class AnimationsTask extends TimerTask {
 	
 	private JLabel imageToMove;
@@ -25,6 +29,10 @@ public class AnimationsTask extends TimerTask {
 		this.size=100;
 	}
 
+	/**
+	 * this ovveride makes possible the update of the grid. Plays a background sound. The method cancel()
+	 * (which is used to cancel the timer task) is also invoked at the end
+	 */
 	@Override
 	public void run() {
 		int slidingY = this.startY;
