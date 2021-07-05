@@ -19,17 +19,15 @@ public class GameModeFrame extends InteractionFrame{
     private JButton jb1;
     private JRadioButton radioButton1;
     private JRadioButton radioButton2;
-    private String gameSpeed;
-    private Border line;
+    private SecondMenu menu;
 
-    public GameModeFrame(){
+
+    public GameModeFrame(SecondMenu menu){
         super(FrameType.SMALLFRAME, WindowsType.GAMEMODE);
+        this.menu = menu;
         setupFrameWithCostumElements();
     }
 
-    public String getGameSpeed(){
-        return gameSpeed;
-    }
 
 
     @Override
@@ -58,9 +56,9 @@ public class GameModeFrame extends InteractionFrame{
          */
         ActionListener radio = e ->{
             if(radioButton1.isSelected())
-                gameSpeed = "s";
+                menu.setGameLenght("s");
             if(radioButton2.isSelected())
-                gameSpeed = "l";
+                menu.setGameLenght("l");
             if(radioButton1.isSelected()||radioButton2.isSelected()){
                 WindowEvent closeFrame = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
                 Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeFrame);

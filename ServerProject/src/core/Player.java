@@ -10,7 +10,9 @@ import java.net.Socket;
 
 import core.gameLogic.model.partita.TokenColor;
 
-
+/**This class memorizes and displays useful data necessary to the elaboration.
+ * It provides a simple way to send message to the client of a given player
+ */
 public class Player {
 
     private Socket playerSocket;
@@ -24,63 +26,94 @@ public class Player {
         //costruttore vuoto per junit
     }
 
+    /**
+     * Class constructor, binds the given data to attributes inside the class
+     * and it binds a reader attribute to the reader from the client's WorkerThread
+     *
+     * @param playerSocket
+     * @param nickName
+     * @param thread
+     */
     public Player(Socket playerSocket, String nickName,WorkerThread thread) {
 
         this.playerSocket = playerSocket;
         this.nickName = nickName;
         this.workerThread = thread;
         this.status = PlayerStatus.ONLINE;
-        
-        try {
-			this.out = new PrintWriter(new OutputStreamWriter(playerSocket.getOutputStream()),true);
-		} catch (IOException e) {
+        this.out = workerThread.getSocketOutput();
 
-		}
     }
 
-    public Socket getPlayerSocket() {
-        return playerSocket;
-    }
-
-    public void setPlayerSocket(Socket playerSocket) {
-        this.playerSocket = playerSocket;
-    }
-
+    /**
+     * Returns the player's nickname
+     *
+     * @return Nickname
+     */
     public String getNickName() {
         return nickName;
     }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
+    /**
+     * Returns the player's status
+     * the status is used to see what a connected client is doing in order to
+     * execute the correct operations through status checks.
+     * As an example: if a player is in a game at the moment(INGAME status)
+     * it can not be invited
+     *
+     * @see PlayerStatus
+     * @return status
+     */
     public PlayerStatus getStatus() {
         return status;
     }
 
+    /**
+     * Changes the player status according to necessity
+     *
+     * @see PlayerStatus
+     * @param status
+     */
     public void setStatus(PlayerStatus status) {
         this.status = status;
     }
 
-	public TokenColor getColor() {
-		return color;
-	}
-
+    /**
+     * Sets the color associated with a player within a game
+     * it is useful to keep track of who is adding the tokens
+     *
+     * @see TokenColor
+     * @param color
+     */
 	public void setColor(TokenColor color) {
 		this.color = color;
 	}
-    
+
+    /**
+     *Method that writes a message on the socketoutput in order to send it to the associated client
+     *
+     * @param message
+     */
     public void sendMessage(String message) {
         System.out.println(message);
     	this.out.println(message);
     }
 
-	public WorkerThread getWorkerThread() {
-		return workerThread;
-	}
-	
+    /**ToString override to provide more information
+     *
+     * @return
+     */
+
+    @Override
 	public String toString() {
         return this.nickName+" PLAYER: "+status;
 	}
+
+    /**Binds the GameThread to the player's workerThread allowing the WorkerThread to work directly on the GameThread
+     *
+     * @see WorkerThread
+     * @param assignedGame
+     */
+	public void setAssignedGame(GameThread assignedGame){
+        workerThread.setAssignedGame(assignedGame);
+    }
 
 }

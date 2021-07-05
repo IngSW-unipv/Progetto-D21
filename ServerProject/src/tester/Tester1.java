@@ -1,16 +1,14 @@
 package tester;
 
 import GUI.GUIForm;
-import core.ServerListenerThread;
+import core.ListenerThread;
 import core.queue.util.TextAreaLoggerHandler;
 
 import javax.swing.*;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.Properties;
 import java.util.logging.Level;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class Tester1 {
@@ -35,7 +33,7 @@ public class Tester1 {
             serverLogger.info("Server starting...");
 
             ServerSocket serverSocket = new ServerSocket(port);
-            ServerListenerThread serverListenerThread = new ServerListenerThread(serverSocket);
+            ListenerThread serverListenerThread = new ListenerThread(serverSocket);
             serverListenerThread.start();
 
             serverLogger.info("listening started on port:"+port);

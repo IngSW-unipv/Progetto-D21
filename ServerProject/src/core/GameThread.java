@@ -10,6 +10,12 @@ import util.PlayerStatus;
 import java.nio.channels.NetworkChannel;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This class consists in a thread responsible for handling the events of the game.
+ * It creates a Game class instance and makes the players interface with it.
+ *
+ * @see Game
+ */
 public class GameThread extends Thread{
 	
 	private Player player1;
@@ -20,6 +26,16 @@ public class GameThread extends Thread{
 	private Player nextPlayer;
 	private Player oTherPlayer;
 
+	/**
+	 * Constructor that utilizes the given players and the info inside GameParameters to setup a new Game instance
+	 *
+	 * @see GameParameters
+	 * @see Player
+	 *
+	 * @param player1
+	 * @param player2
+	 * @param parameters
+	 */
     public GameThread(Player player1, Player player2,GameParameters parameters) {
     	
     	this.player1=player1;
@@ -29,8 +45,16 @@ public class GameThread extends Thread{
     	gameSetup();
     	
     }
-    
-    private void gameSetup() {
+
+	/**
+	 * this method does the necessary operations to correctly start a new game:
+	 * -it removes the players from the queue
+	 * -it sets the player's status to IN_GAME
+	 * -creates a new Game instance
+	 * -tells the clients to start the game IO
+	 * -tells the clients whose turn is first
+	 */
+	private void gameSetup() {
 
 		Queue.getQueue().removePlayer(player1);
 		Queue.getQueue().removePlayer(player2);
@@ -46,6 +70,13 @@ public class GameThread extends Thread{
     	
     }
 
+	/**
+	 * The run method of this thread is responsible for adding the tokens to the game's virtual grid
+	 * and the relative victory checks, it alternates the players in order to handle the turns.
+	 * When a token is correctly added to the grid it sends the client a message to make them add the token to their
+	 * interactive grids
+	 *
+	 */
 	@Override
 	public void run() {
 		
@@ -60,8 +91,8 @@ public class GameThread extends Thread{
 		if(localGame.isVictory()){
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
-			nextPlayer.getWorkerThread().setAssignedGame(null);
-			oTherPlayer.getWorkerThread().setAssignedGame(null);
+			nextPlayer.setAssignedGame(null);
+			oTherPlayer.setAssignedGame(null);
 			return;
 		}
 
@@ -103,16 +134,19 @@ public class GameThread extends Thread{
 		
 	}
 
-	public int getX() {
-		return x;
-	}
-
+	/**
+	 * sets the added token's x
+	 *
+	 * @param x
+	 */
 	public void setX(int x) {
 		this.x = x;
 	}
-    
-    
-    private void alternatePlayer() {
+
+	/**
+	 * Alternates the player's interface abilitation by sending them a message
+	 */
+	private void alternatePlayer() {
     	if(nextPlayer.equals(player1)) {
     		nextPlayer=player2;
     		oTherPlayer = player1;
@@ -130,8 +164,12 @@ public class GameThread extends Thread{
     	}
     	
     }
-    
-    private String getColor() {
+
+	/**
+	 * gets the color of the added token
+	 * @return
+	 */
+	private String getColor() {
     	
     	String colorString=null;
     	if(GridStatus.getGameStatus().getLastColor()==TokenColor.RED)
@@ -143,6 +181,11 @@ public class GameThread extends Thread{
   
     }
 
+	/**
+	 * Returns the opponent of a given player in the game
+	 * @param playerFacing
+	 * @return
+	 */
     public Player getOpponent(Player playerFacing){
     	Player opponent = player1;
     	if(playerFacing.getNickName().compareTo(player1.getNickName())==0){

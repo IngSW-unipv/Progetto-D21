@@ -20,6 +20,7 @@ public class OpenFrameListener implements ActionListener {
     private PopupMenu popupMenu;
     private ThirdMenu thirdMenu;
     private RandomFrame ranf;
+    private SecondMenu menu;
 
     public OpenFrameListener(JButton button,WindowsType type){
         this.type = type;
@@ -30,10 +31,17 @@ public class OpenFrameListener implements ActionListener {
         this.type = type;
         this.item = item;
     }
+
+    public OpenFrameListener(JButton button,WindowsType type, SecondMenu menu){
+        this.type = type;
+        this.button = button;
+        this.menu = menu;
+    }
+
     private void chooseType(WindowsType type){
         switch (type){
             case GAMEMODE:
-                gameModeFrame = new GameModeFrame();
+                gameModeFrame = new GameModeFrame(menu);
                 gameModeFrame.setVisible(true);
                 break;
             case RULES:
@@ -47,14 +55,12 @@ public class OpenFrameListener implements ActionListener {
                 break;
             case RANDOM:
                 //TODO aggiungi un metodo a parte
-                if (gameModeFrame != null) {
-                    if (gameModeFrame.getGameSpeed() != null) {
-                        NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + gameModeFrame.getGameSpeed());
+                    if (menu.getGameLenght().compareTo("nogamemodeSelected")!=0) {
+                        NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + menu.getGameLenght());
                         ranf = new RandomFrame();
                         ranf.setVisible(true);
-                        return;
+                        break;
                     }
-                }
                 ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
                 break;
             case INVITE:

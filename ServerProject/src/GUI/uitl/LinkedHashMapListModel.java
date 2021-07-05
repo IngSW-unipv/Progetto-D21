@@ -68,6 +68,9 @@ public class LinkedHashMapListModel<K,V> extends AbstractListModel<V> {
         return delegate.entrySet();
     }
 
+    public void update(){
+        fireContentsChanged(this,0,delegate.size()-1);
+    }
 
 
 }

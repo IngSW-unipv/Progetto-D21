@@ -1,0 +1,26 @@
+
+Connect-4 Protocol
+
+Descrizonde del protocollo utilizzato per la creazione e l' interpretazione
+dei messaggi dell'architettura client-server del progetto.
+
+    Definizione dei campi
+
+        I campi dei messaggi sono tra di loro separati dal carattere ","
+        sono di lunghezza variabile e seguono questo pattern:
+        -Primo campo: il primo campo contiene l'informazione relativa
+            all' operazione che si vuole effettuare. La codifica utilizzata
+            per questo campo consite in una parola che descriva l'operazione
+            da effettuare.
+
+        -Campi seguenti: i campi seguenti al primo contengono le informazioni
+            necessarie a eseguire le operazioni indicate nel primo campo
+
+        Esempio : addToken,3,2,r
+                  come possiamo evincere facilmente l'operazione richiesta
+                  è l'aggiunta di un token alla griglia dei giocatori, 3
+                  e 2 ne indicano le coordinate mentre r il colore
+
+Note: Avremmo potuto definire un protocollo più regolare, ad esempio con un numero
+      di campi fissi ma per il ristretto numero di messaggi da inviare non conveniva.
+

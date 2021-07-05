@@ -5,6 +5,13 @@ import java.util.Arrays;
 
 import core.gameLogic.model.partita.util.GridStatus;
 
+/**
+ * This class rappresents an array of Cells which constitutes the grid where the token are added
+ * it handles the effettive adding of the tokens to the grid with the relative controls
+ * it updates the GridStatus instance which gives information to the other classes about the last token added
+ *
+ * @see GridStatus
+ */
 public class Grid {
 
 	// Matrice di celle della griglia
@@ -19,8 +26,12 @@ public class Grid {
 	private boolean finalVictory;
 	
 	private int colonnaDaDisabilitare;        
-    private boolean flagColonnaDaDisabilitare;    
-	
+    private boolean flagColonnaDaDisabilitare;
+
+	/**
+	 * Constructor, it sets the counters responsible for counting the adjacent tokens
+	 * and obtains an istance of the gridstatus
+	 */
 	public Grid() {
 		victoryDiag1 = 0;
 		victoryDiag2 = 0;
@@ -37,7 +48,14 @@ public class Grid {
 
 	}
 
-	// controllo colonna
+	/**
+	 * controls if there is a column-win around a given token of a given color
+	 *
+	 * @param x
+	 * @param y
+	 * @param c
+	 * @return
+	 */
 		public boolean checkColonna(int x, int y, TokenColor c) {
 			int victoryCounter = 0;
 
@@ -60,6 +78,13 @@ public class Grid {
 
 		// controllo righe
 
+	/**
+	 * Checks if around a given token of a given color a row victory is present
+	 * @param x
+	 * @param y
+	 * @param c
+	 * @return
+	 */
 		public boolean checkRiga(int x, int y, TokenColor c) {
 			int victoryCounter = 0;
 
@@ -84,7 +109,13 @@ public class Grid {
 			} return false;
 		}
 
-
+	/**
+	 * Checks if around a given token of a given color there is a diagonal victory
+	 * @param x
+	 * @param y
+	 * @param c
+	 * @return
+	 */
 	public boolean checkDiagonali(int x, int y, TokenColor c) {
 		
 		this.checkDiagAltoDx(x, y, c);
@@ -105,9 +136,14 @@ public class Grid {
 		
 		return false;
 	}
-		
-		
-		
+
+
+	/**
+	 * Checks the specified daiagonal for a vicotry around a given token of a given color
+ 	 * @param x
+	 * @param y
+	 * @param c
+	 */
 	public void checkDiagAltoSx(int x, int y, TokenColor c) {//int i = x, j = y; i >= 0 && j <= 6; i--, j++
 	//	if (x!=0 && y!=0) {
 			for (int i = x , j = y ; i >= 0 && j >=0; i--, j--) {
@@ -127,7 +163,12 @@ public class Grid {
 		
 	//	}
 	}
-	
+	/**
+	 * Checks the specified daiagonal for a vicotry around a given token of a given color
+	 * @param x
+	 * @param y
+	 * @param c
+	 */
 	public void checkDiagBassoDx(int x, int y, TokenColor c) {
 	//	if(x!=5 && y!=6) {
 			for (int i = x, j = y; i <= 5 && j <= 6; i++, j++) {
@@ -144,7 +185,12 @@ public class Grid {
 	//	}
 		
 	}
-	
+	/**
+	 * Checks the specified daiagonal for a vicotry around a given token of a given color
+	 * @param x
+	 * @param y
+	 * @param c
+	 */
 	public void checkDiagAltoDx(int x, int y, TokenColor c) {
 		if(x!=0 && y!=6)
 			System.out.println("aa");
@@ -163,7 +209,12 @@ public class Grid {
 		}
 		
 	}
-	
+	/**
+	 * Checks the specified daiagonal for a vicotry around a given token of a given color
+	 * @param x
+	 * @param y
+	 * @param c
+	 */
 	public void checkDiagBassoSx(int x, int y, TokenColor c) {
 		//if(x!= 5 && y!=0) {
 			for (int i = x, j = y; i<6 && j >= 0; i++, j--) {
@@ -184,6 +235,12 @@ public class Grid {
 		
 	// controllo dellgge diagonali
 
+	/**
+	 * This method places a token of a given color in a given column, it is responsible of the calculation
+	 * of the row in wich the token will end up
+	 * @param c
+	 * @param y
+	 */
 	public void tokenPlaced(TokenColor c, int y) {
 
         int posPlayer = y;
@@ -210,6 +267,9 @@ public class Grid {
         }
     }
 
+	/**
+	 * Displays the grid via text
+	 */
 	public void displayGrid() {
 		// scrivo num colonne perché mi perdo
 		System.out.println("   0  1  2  3  4  5  6");
@@ -224,6 +284,10 @@ public class Grid {
 		}
 	}
 
+	/**
+	 * returns true if the game was won
+	 * @return
+	 */
 	public boolean isFinalVictory() {
 		return finalVictory;
 	}
@@ -240,15 +304,13 @@ public class Grid {
         this.flagColonnaDaDisabilitare = flagColonnaDaDisabilitare;
     }
 
+	/**
+	 * returns the array of cells used in the game
+	 * @return
+	 */
 	public Cell[][] getGameGrid() {
 		return gameGrid;
 	}
 
-	public void setGameGrid(Cell[][] gameGrid) {
-		this.gameGrid = gameGrid;
-	}
-    
-    
-	
 }
 
