@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/GUIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GUIcontroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuLIstener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/DeclineFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ErrorFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/FirstMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/FirstMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameModeFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InteractionFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RequestFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RulesFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RulesFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/StyledButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/StyledButtonUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/ThirdMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,12 +27,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.ClientMainProva1">
+  <component name="RunManager" selected="Application.TesterFinestre">
     <configuration name="ClientMainProva1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
       <module name="ClientProject" />
@@ -85,8 +64,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientMainProva1" />
         <item itemvalue="Application.TesterFinestre" />
+        <item itemvalue="Application.ClientMainProva1" />
       </list>
     </recent_temporary>
   </component>
