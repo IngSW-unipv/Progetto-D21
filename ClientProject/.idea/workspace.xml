@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="Merge branch 'main' of https://github.com/IngSW-unipv/Progetto-D21 into main&#10;&#10;# Conflicts:&#10;#&#9;ClientProject/out/production/ClientConnect4/core/AnimationsTask.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/CountDownTask.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/GridStatus.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/SoundPlayer$1.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/SoundPlayer.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/TokenColor.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/VolumeControl$1.class&#10;#&#9;ClientProject/out/production/ClientConnect4/core/VolumeControl.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/listeners/BackToMenuLIstener.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/listeners/ButtonAndTextAreaListener.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/listeners/ButtonListener.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/DeclineFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/ErrorFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/GameFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/GameInfoPanel.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/GameModeFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/InviteFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/LoserFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/RandomFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/RequestFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/RulesFrame.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/StyledButtonUI.class&#10;#&#9;ClientProject/out/production/ClientConnect4/menuGUI/windows/VictoryFrame.class&#10;#&#9;ServerProject/.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/AnimationsTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/AnimationsTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/CountDownTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CountDownTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/GridStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GridStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/SoundPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/VolumeControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/VolumeControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/AddTokenListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/AddTokenListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/BackToMenuListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/ButtonAndTextAreaListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/ServerProva.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/out/production/ServerProva/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/out/production/ServerProva/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/src/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProva/src/Test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
