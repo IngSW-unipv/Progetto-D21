@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
+import core.GUIcontroller;
 import core.NetworkThread;
 
 /**
@@ -27,6 +28,7 @@ public class AddTokenListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		//System.out.println("Bottone premuto,successso "+ butt.getActionCommand());
+		GUIcontroller.getGuiHandler().disableGameGui();
 		networkThread.sendMessage("addTokenInvirtualGrid,"+butt.getActionCommand());
 	}
 	

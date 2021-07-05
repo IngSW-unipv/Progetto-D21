@@ -65,14 +65,6 @@ public class WorkerThread extends Thread{
      * In the case of a sudden disconnection of the client, the player object
      * bound to the thread is removed form the ServerMemory
      *
-     * [IT]
-     * Metodo run del Thread
-     *Sta in ascolto sul socket per messaggi in arrivo
-     *quando un messaggio arriva viene chiamato il metodo parseString
-     *che si occuperà di interpretare il messaggio in arrivo.
-     *Nel caso in cui il cilent si disconnetta questo viene rimsso dalla lista
-     * dei giocatori, se è stato istanziato un oggetto della classe player dedicato.
-     *
      * @see Player
      */
     @Override
@@ -155,7 +147,6 @@ public class WorkerThread extends Thread{
 
             case "sendInvite":
                 Player tempPlayer = myMemory.getPlayer(parts[1]);
-
 
                 if (tempPlayer!=null) {
                     if(tempPlayer.getStatus()==PlayerStatus.ONLINE){

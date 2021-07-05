@@ -81,50 +81,13 @@ public class GameThread extends Thread{
 	public void run() {
 		
 		localGame.turn(x);
-		
-		if(localGame.getGameGrid().isFlagColonnaDaDisabilitare()) {
-            oTherPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
-            nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
-        }
-
-
-		if(localGame.isVictory()){
-			try {
-				TimeUnit.SECONDS.sleep(2);
-			} catch (InterruptedException e) {
-				//TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			nextPlayer.sendMessage("victory");
-			oTherPlayer.sendMessage("defeat");
-			nextPlayer.setStatus(PlayerStatus.ONLINE);
-			oTherPlayer.setStatus(PlayerStatus.ONLINE);
-		}
-
+		disableFullColumn();
+		checkForVictory();
 		alternatePlayer();
-		int x = GridStatus.getGameStatus().getLastX();
-		int y = GridStatus.getGameStatus().getLastY();
-		
-		
-		System.out.println("addToken,"+x+","+y+","+getColor());
-		player1.sendMessage("addToken,"+x+","+y+","+getColor());
-		player2.sendMessage("addToken,"+x+","+y+","+getColor());
-		
+		updateClientsGui();
 		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
+		checkForDraw();
 
-
-		if(localGame.getTurnsElapsed() > 41) {
-			try {
-				TimeUnit.SECONDS.sleep(1);
-				 } catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				 e.printStackTrace();
-			}
-			player1.sendMessage("pareggio,");
-			player2.sendMessage("pareggio,");
-			player1.setStatus(PlayerStatus.ONLINE);
-			player2.setStatus(PlayerStatus.ONLINE);
-		}
 		
 	}
 
@@ -190,5 +153,49 @@ public class GameThread extends Thread{
 		}
     	return opponent;
 	}
-    
+
+    private void disableFullColumn(){
+		if(localGame.getGameGrid().isFlagColonnaDaDisabilitare()) {
+			oTherPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
+			nextPlayer.sendMessage("NOTabiCOLONNA,"+localGame.getGameGrid().getColonnaDaDisabilitare());
+		}
+	}
+
+	private void checkForVictory(){
+		if(localGame.isVictory()){
+			try {
+				TimeUnit.SECONDS.sleep(2);
+			} catch (InterruptedException e) {
+				//TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			nextPlayer.sendMessage("victory");
+			oTherPlayer.sendMessage("defeat");
+			nextPlayer.setStatus(PlayerStatus.ONLINE);
+			oTherPlayer.setStatus(PlayerStatus.ONLINE);
+		}
+	}
+
+	private void checkForDraw(){
+		if(localGame.getTurnsElapsed() > 41) {
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			player1.sendMessage("pareggio,");
+			player2.sendMessage("pareggio,");
+			player1.setStatus(PlayerStatus.ONLINE);
+			player2.setStatus(PlayerStatus.ONLINE);
+		}
+	}
+	private void updateClientsGui(){
+		int x = GridStatus.getGameStatus().getLastX();
+		int y = GridStatus.getGameStatus().getLastY();
+
+		System.out.println("addToken,"+x+","+y+","+getColor());
+		player1.sendMessage("addToken,"+x+","+y+","+getColor());
+		player2.sendMessage("addToken,"+x+","+y+","+getColor());
+	}
 }
