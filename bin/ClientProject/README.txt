@@ -1,1 +1,0 @@
-Cartella contentente il progetto del server
