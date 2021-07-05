@@ -44,7 +44,7 @@ public class NetworkThread extends Thread {
     @Override
     public void run() {
         try {
-            this.socket = new Socket("130.25.65.140", port);
+            this.socket = new Socket("188.216.113.154", port);
             clientLogger.info("Connection established");
         } catch (IOException e) {
             clientLogger.info("Impossible to establish connection to server");
