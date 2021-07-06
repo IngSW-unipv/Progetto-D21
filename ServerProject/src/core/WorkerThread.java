@@ -157,6 +157,7 @@ public class WorkerThread extends Thread{
                     creategame = true;
                     System.out.println("INVITO RICEVUTO DA "+parts[2]);
                 } else {
+
             	    myMemory.getPlayer(parts[2]).sendMessage("decline");
                 }
 

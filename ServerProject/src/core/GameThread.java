@@ -78,7 +78,6 @@ public class GameThread extends Thread{
 	 */
 	@Override
 	public void run() {
-		
 		localGame.turn(x);
 		disableFullColumn();
 		updateClientsGui();
@@ -86,7 +85,7 @@ public class GameThread extends Thread{
 		checkForDraw();
 		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
 		alternatePlayer();
-		
+
 	}
 
 	/**
@@ -163,7 +162,7 @@ public class GameThread extends Thread{
 	private void checkForVictory(){
 		if(localGame.isVictory()){
 			try {
-				TimeUnit.SECONDS.sleep(2);
+				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e) {
 				//TODO Auto-generated catch block
 				e.printStackTrace();
