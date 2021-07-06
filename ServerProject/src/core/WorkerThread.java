@@ -10,14 +10,10 @@ import util.PlayerStatus;
 
 import static tester.Tester1.serverLogger;
 
-/**[ENG]
+/**
  * This class is listening on the given socket for incoming messages from
  * the client, to each message corresponds a request that this class fulfills.
  * It does so by parsing the incoming strings
- *
- * [IT]
- * Questa classe si occupa di gestire le richieste in arrivo dal client
- * attraverso l' interpretazione delle stringhe che le arrivano
  *
  * @author Flavio Bobba
  */
@@ -32,15 +28,10 @@ public class WorkerThread extends Thread{
     private GameThread assignedGame;
     private Player opponent;
 
-    /**[ENG]
+    /**
      * Class constructor
      *Accepts as parameter the socket of a connected client and binds the servermemory to
      * a local attribute.
-     *
-     * [IT]
-     * Costruttore della classe
-     * Accetta il socket del client connesso per la gestione delle sue richieste
-     * viene assegnata ad un attributo il riferimento alla servermemory
      *
      * @see ServerMemory
      * @param socket
@@ -53,11 +44,14 @@ public class WorkerThread extends Thread{
 
     }
 
+    /**
+     * Epmty constructor for JUnit usage
+     */
     public WorkerThread(){
     //costruttore vuoto per JUnit.
     }
 
-    /**[ENG]
+    /**
      * Thread's run method
      * Is the part of the class that listens for incoming messages
      * once a message arrives the method parseString is called which
@@ -97,9 +91,7 @@ public class WorkerThread extends Thread{
     }
 
     /**
-     * Questo metodo si occupa di inizializzare il reader e il writer
-     * per ottenere e mandare i messaggi al client. Il reader e il writer istanziati
-     * vengono associati a degli attributi appositi.
+     * This method initializes the reader and writer for the socket
      */
 
     private void setupReaders(){

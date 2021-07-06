@@ -162,11 +162,13 @@ public class GameFrame extends JFrame {
     }
 
     /**
+     *This method sets the token's label image depeding by the theme selected
      *
      * @param a
      */
 
     public void setTockenRed(int a){
+        /*
         if (a == 1) {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchtoken.png"));
         } else if (a == 2) {
@@ -178,10 +180,27 @@ public class GameFrame extends JFrame {
         } else {
             lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
         }
+         */
+        switch (a){
+            case 0:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
+                break;
+            case 1:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchtoken.png"));
+                break;
+            case 2:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/capamericatoken.png"));
+                break;
+            case 3:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/poweruptokenred.png"));
+                break;
+            default:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
+        }
     }
 
     /**
-     *
+     *This method sets the token's label depending on the theme selected
      * @param a
      */
 

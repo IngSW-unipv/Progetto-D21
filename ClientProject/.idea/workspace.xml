@@ -1,53 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
+    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tester/TesterFinestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/TesterFinestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/QueueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/QueueTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/ServerProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/GUI/GUIForm.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/GUI/GUIForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/JUnit/GridTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/JUnit/QueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/JUnit/VictoryColumnTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/JUnit/VictoryDiagonalTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/JUnit/VictoryRowTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/GameThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/ListenerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/ServerMemory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/WorkerThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/config/loggerconfig.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/Cell.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/TokenColor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/util/GridStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/gameLogic/model/partita/util/SoundPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/queue/GameParameters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/queue/Queue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/queue/util/GameDuration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/core/queue/util/TextAreaLoggerHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/tester/Tester1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/util/GameControls.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/util/PlayerStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/test/ServerProject/src/wiki/Connect-4 Protocol" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TesterFinestre">
     <configuration name="StartClient" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
       <module name="ClientProject" />
@@ -66,6 +29,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TesterFinestre" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tester.TesterFinestre" />
+      <module name="ClientProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tester.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.StartClient" />
+      <item itemvalue="Application.TesterFinestre" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TesterFinestre" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <servers />
