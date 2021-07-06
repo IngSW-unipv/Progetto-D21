@@ -185,19 +185,6 @@ public class GameFrame extends JFrame {
      */
 
     public void setTockenRed(int a){
-        /*
-        if (a == 1) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchtoken.png"));
-        } else if (a == 2) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/capamericatoken.png"));
-        } else if (a == 3) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/poweruptokenred.png"));
-        } else if (a == 0) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
-        } else {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
-        }
-         */
         switch (a){
             case 0:
                 lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/RedToken2.png"));
@@ -222,17 +209,23 @@ public class GameFrame extends JFrame {
      */
 
     public void setTockenYellow(int a){
-        if (a == 1) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/angeltoken.png"));
-        } else if (a == 2) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/ironmantoken.png"));
-        } else if (a == 3) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/poweruptoken.png"));
-        } else if (a == 0) {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
-        } else {
-            lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
+        switch (a){
+            case 1:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/angeltoken.png"));
+                break;
+            case 2:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/ironmantoken.png"));
+                break;
+            case 3:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/poweruptoken.png"));
+                break;
+            case 0:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
+                break;
+            default:
+                lbl.setIcon(new ImageIcon("src/menuGUI/img/themes/YellowToken2.png"));
         }
+
     }
 
     /**
