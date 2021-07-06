@@ -1,9 +1,7 @@
 
-package core.gameLogic.model.partita;
+package core.gameLogic;
 
-import java.util.Arrays;
-
-import core.gameLogic.model.partita.util.GridStatus;
+import core.gameLogic.util.GridStatus;
 
 /**
  * This class rappresents an array of Cells which constitutes the grid where the token are added

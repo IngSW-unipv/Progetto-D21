@@ -2,13 +2,10 @@ package core;
 
 import util.PlayerStatus;
 
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.TokenColor;
 
 /**This class memorizes and displays useful data necessary to the elaboration.
  * It provides a simple way to send message to the client of a given player

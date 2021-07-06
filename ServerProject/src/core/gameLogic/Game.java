@@ -1,16 +1,9 @@
-package core.gameLogic.model.partita;
+package core.gameLogic;
 
 
 //inizializzo il game come singletone?
 
-import java.util.TimerTask;
-
 import core.Player;
-import core.gameLogic.model.partita.util.GridStatus;
-import core.gameLogic.model.partita.util.SoundPlayer;
-
-import java.io.File;
-import java.util.Scanner;
 
 import java.util.Timer;
 

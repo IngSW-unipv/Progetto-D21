@@ -4,11 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import core.gameLogic.model.partita.Grid;
-import core.gameLogic.model.partita.Token;
-import core.gameLogic.model.partita.TokenColor;
-
-import java.net.Socket;
+import core.gameLogic.Grid;
+import core.gameLogic.Token;
+import core.gameLogic.TokenColor;
 
 /**[ENG]
  *This class tests the victory's column algorithm, with the manual insertion of tokens.

@@ -1,4 +1,4 @@
-package core.gameLogic.model.partita;
+package core.gameLogic;
 
 /**
  * this class represents a cell of the grid, it can display if it is occupied or not and by which token it is occupied
@@ -53,7 +53,8 @@ public class Cell {
 	}
 
 	/**
-	 * translates the tokencolor in to a string value
+	 * translates the tokenColor in to a string value
+	 *
 	 * @return
 	 */
 	public String toString() {

@@ -1,4 +1,4 @@
-package core.gameLogic.model.partita;
+package core.gameLogic;
 
 /**
  * Simple class describing a token

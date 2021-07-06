@@ -1,5 +1,6 @@
 package menuGUI.windows;
 
+import core.GUIcontroller;
 import core.NetworkThread;
 import menuGUI.windows.util.FrameType;
 import menuGUI.windows.util.WindowsType;
@@ -32,6 +33,7 @@ public class InviteFrame extends InteractionFrame{
      */
     @Override
     protected void setupFrameWithCostumElements() {
+        second_menu = GUIcontroller.getGuiHandler().getSecondMenu();
         textField = new JTextField();
         textField.setBounds(0,20, 150, 25);
 

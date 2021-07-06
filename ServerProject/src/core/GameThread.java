@@ -1,13 +1,12 @@
 package core;
 
-import core.gameLogic.model.partita.Game;
-import core.gameLogic.model.partita.TokenColor;
-import core.gameLogic.model.partita.util.GridStatus;
+import core.gameLogic.Game;
+import core.gameLogic.TokenColor;
+import core.gameLogic.util.GridStatus;
 import core.queue.GameParameters;
 import core.queue.Queue;
 import util.PlayerStatus;
 
-import java.nio.channels.NetworkChannel;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -82,12 +81,11 @@ public class GameThread extends Thread{
 		
 		localGame.turn(x);
 		disableFullColumn();
-		checkForVictory();
-		alternatePlayer();
 		updateClientsGui();
-		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
+		checkForVictory();
 		checkForDraw();
-
+		localGame.getGameGrid().setFlagColonnaDaDisabilitare(false);
+		alternatePlayer();
 		
 	}
 
@@ -124,7 +122,8 @@ public class GameThread extends Thread{
 
 	/**
 	 * gets the color of the added token
-	 * @return
+	 *
+	 * @return token color rappresented via string
 	 */
 	private String getColor() {
     	

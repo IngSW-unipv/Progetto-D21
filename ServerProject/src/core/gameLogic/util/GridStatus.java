@@ -1,6 +1,6 @@
-package core.gameLogic.model.partita.util;
+package core.gameLogic.util;
 
-import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.TokenColor;
 
 public class GridStatus {
 	

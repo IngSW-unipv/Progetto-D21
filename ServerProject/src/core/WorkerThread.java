@@ -3,7 +3,7 @@ package core;
 import java.io.*;
 import java.net.Socket;
 
-import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.TokenColor;
 import core.queue.GameParameters;
 import core.queue.Queue;
 import util.PlayerStatus;
@@ -157,7 +157,7 @@ public class WorkerThread extends Thread{
                     creategame = true;
                     System.out.println("INVITO RICEVUTO DA "+parts[2]);
                 } else {
-            	    player.sendMessage("decline");
+            	    myMemory.getPlayer(parts[2]).sendMessage("decline");
                 }
 
             	break;

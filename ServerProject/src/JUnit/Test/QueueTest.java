@@ -1,6 +1,6 @@
 package JUnit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 import core.ServerMemory;
 import core.WorkerThread;
 import org.junit.After;

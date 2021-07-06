@@ -1,11 +1,12 @@
 package JUnit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import core.gameLogic.model.partita.Grid;
-import core.gameLogic.model.partita.TokenColor;
+import core.gameLogic.Grid;
+import core.gameLogic.TokenColor;
+
+import static org.junit.Assert.assertEquals;
 
 /**[ENG]
  *This class tests the functioning of the game grid.
