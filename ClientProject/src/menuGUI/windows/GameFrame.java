@@ -98,7 +98,7 @@ public class GameFrame extends JFrame {
     }
 
     /**
-     * this method uses the static parameter of the ThirdMenu. They set the colour of the token related to the chosen theme.
+     * this method uses the static parameter of the ThirdMenu. It sets the colour of the token related to the chosen theme.
      *
      * @param x
      * @param y
@@ -114,7 +114,6 @@ public class GameFrame extends JFrame {
             setTockenYellow(ThirdMenu.choosenTheme);
         }
         this.myTimer.schedule(new AnimationsTask(lbl, animationPanel, 0, 50+y*100, 50+x*100),1L );
-        System.out.println("aa");
     }
 
     public JPanel getAnimationPanel() {
@@ -148,7 +147,25 @@ public class GameFrame extends JFrame {
      */
 
     public void setGrid(int a) {
-        if (a == 1) {
+
+        switch (a){
+            case 0:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
+                break;
+            case 1:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchgrid.png"));
+                break;
+            case 2:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/ironmangrid.png"));
+                break;
+            case 3:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/firstmariogrid.png"));
+                break;
+            default:
+                lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
+        }
+
+        /*if (a == 1) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchgrid.png"));
         } else if (a == 2) {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/ironmangrid.png"));
@@ -158,7 +175,7 @@ public class GameFrame extends JFrame {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
         } else {
             lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
-        }
+        }*/
     }
 
     /**

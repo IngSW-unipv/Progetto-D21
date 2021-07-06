@@ -11,6 +11,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class is a simple extension of the JPanel class, it creates a mechanism for the volume settings.
+ * It implements ad inner ActionListener for the mute option
+ */
 public class VolumePanel extends JPanel {
     private JSlider slider;
     private JButton button1;

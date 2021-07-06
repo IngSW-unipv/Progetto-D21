@@ -75,8 +75,14 @@ public abstract class InteractionFrame extends JFrame {
         repaint();
     }
 
+    /**
+     * Abstract method that's overrided in some sublasses
+     */
     protected abstract void setupFrameWithCostumElements();
 
+    /**
+     * This method sets up the specific EndGameFrame
+     */
     protected void setupEndgameFrame(){
 
         setSize(new Dimension(700,500));
@@ -103,6 +109,9 @@ public abstract class InteractionFrame extends JFrame {
         revalidate();
         repaint();
     }
+    /**
+     * This method sets up the specific RulesFrame
+     */
 
     private void setupRulesFrame(){
         setSize(new Dimension(234,280));

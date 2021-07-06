@@ -5,7 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * bo che dire
+ * This class implements ChangeListener (listener is notified when the object has changed)
  */
 public class VolumeControl implements ChangeListener { 
 

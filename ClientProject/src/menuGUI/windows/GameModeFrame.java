@@ -29,7 +29,9 @@ public class GameModeFrame extends InteractionFrame{
     }
 
 
-
+    /**
+     * This method Overrides the setUpFrameWithCustomElements of the superclass with come custom parameters (JRadioButtons)
+     */
     @Override
     protected void setupFrameWithCostumElements() {
         radioButton1 = new JRadioButton("Fast Game");

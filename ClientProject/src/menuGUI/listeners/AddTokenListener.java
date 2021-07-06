@@ -22,7 +22,7 @@ public class AddTokenListener implements ActionListener {
 	}
 
 	/**
-	 * This method senda a String to the class NetworkThread. The message is clearly interpreted by the NetworkThread
+	 * This method sends a String to the class NetworkThread. The message is clearly interpreted by the NetworkThread
 	 * @param arg0
 	 */
 	@Override

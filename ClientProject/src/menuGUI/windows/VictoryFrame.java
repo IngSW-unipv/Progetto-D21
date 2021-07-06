@@ -6,7 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * This class extends the InteractionFrame superclass, it creates a JFrame that displays a Win message
+ */
 public class VictoryFrame extends InteractionFrame{
 
     private JLabel label0, label1;
@@ -17,7 +19,10 @@ public class VictoryFrame extends InteractionFrame{
         super(FrameType.ENDGAME, WindowsType.VICTORY);
         setupFrameWithCostumElements();
     }
-
+    /**
+     * This overrided method (inherited from the superlclass) implements an inner ActionListener that makes possible to return
+     * to the previous menu, the SecondMenu, and adds some customs parameters at the JFrame
+     */
     @Override
     protected void setupFrameWithCostumElements() {
 

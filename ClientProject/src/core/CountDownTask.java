@@ -25,6 +25,10 @@ public class CountDownTask extends TimerTask {
         seconds = currentTime-minutes*60;
     }
 
+    /**
+     * The run method actually sets up the timer with the parameters we chose if the timer isn't out. If the timer is out
+     * it sends a message to the server
+     */
     @Override
     public void run() {
         if(currentTime!=0){
@@ -41,6 +45,11 @@ public class CountDownTask extends TimerTask {
         }
 
     }
+
+    /**
+     * It displays the String of the timer
+     * @return
+     */
 
     private String timeText(){
         String timeText="";

@@ -17,7 +17,6 @@ public class OpenFrameListener implements ActionListener {
     private InviteFrame inviteFrame;
     private RulesFrame rulesFrame;
     private JMenuItem item;
-    private PopupMenu popupMenu;
     private ThirdMenu thirdMenu;
     private RandomFrame ranf;
     private SecondMenu menu;

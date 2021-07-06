@@ -29,6 +29,13 @@ public class StyledButtonUI extends BasicButtonUI {
         super.paint(g, c);
     }
 
+    /**
+     * This method makes possible to optimize the quality of the button using some specific graphic functions
+     * @param g
+     * @param c
+     * @param yOffset
+     */
+
     private void paintBackground (Graphics g, JComponent c, int yOffset) {
         Dimension size = c.getSize();
         Graphics2D g2 = (Graphics2D) g;

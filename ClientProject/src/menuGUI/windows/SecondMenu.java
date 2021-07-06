@@ -10,7 +10,9 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * This class represents the main menu in which players can choose their gamemode or theme and invite other players
+ */
 public class SecondMenu extends JFrame {
 
     private JLayeredPane layeredPane;
@@ -29,6 +31,10 @@ public class SecondMenu extends JFrame {
     private RandomFrame ranf;
     private OpenFrameListener openFrameListener;
 
+    /**
+     * Constructor where the frame parameters are set, it also creates instances of some ActionListeners that make possible
+     * the opening of the frames related to each and every button
+     */
     public SecondMenu() {
         setSize(new Dimension(700, 500));
         setResizable(false);
@@ -202,6 +208,13 @@ public class SecondMenu extends JFrame {
         this.repaint();
     }
 
+    /**
+     * This method returns the gameLength (the actual duration of the match). The return type is a String and it's
+     * used to communicate to the OpenFrameListener class if players are ready for a game (it is derogatory
+     * to set a preference on the timer for the game to start)
+     * @return
+     */
+
     public String getGameLenght() {
         if (gameLenght!=null) {
                 return gameLenght;
@@ -209,11 +222,17 @@ public class SecondMenu extends JFrame {
         return "nogamemodeSelected";
     }
 
+    /**
+     * The following methods are a simple getter and setter for the RandomFrame
+     * @return
+     */
     public RandomFrame getRanf() {
         return ranf;
     }
 
-    public void setRanf(RandomFrame f){ this.ranf = f;};
+    public void setRanf(RandomFrame f){
+        this.ranf = f;
+    }
 
     public void setGameModeFrame(GameModeFrame gameModeFrame) {
         this.gameModeFrame = gameModeFrame;

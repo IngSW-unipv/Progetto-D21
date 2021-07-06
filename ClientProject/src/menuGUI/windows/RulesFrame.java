@@ -16,7 +16,9 @@ public class RulesFrame extends InteractionFrame{
         super(FrameType.RULES, WindowsType.RULES);
         setupFrameWithCostumElements();
     }
-
+    /**
+     * This overrided method (inherited from the superlclass) makes possible the customization of the simple RulesFrame
+     */
     @Override
     protected void setupFrameWithCostumElements() {
         textArea = new JTextArea("Before you can start playing \nConnect Four or planning a \nstrategy, you must make sure \nthat you understand the object of \nthe game. \nIn order to win, a player must get \nfour checkers in their color in a\nrow.\nWhoever does it first is the\nwinner.\n" +

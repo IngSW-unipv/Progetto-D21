@@ -83,8 +83,6 @@ public class FirstMenu extends JFrame {
         this.add(layeredPane);
         this.setLocationRelativeTo(null);
 
-        //TODO wtf
-
         revalidate();
         repaint();
     }

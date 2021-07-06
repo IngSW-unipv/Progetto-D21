@@ -1,6 +1,7 @@
 package core;
 
 import java.io.*;
+import java.net.InetAddress;
 import java.net.Socket;
 
 import javax.swing.JPanel;
@@ -140,10 +141,19 @@ public class NetworkThread extends Thread {
         }
     }
 
+    /**
+     * This method is the actual one that sends messages (String) to the server, it is necessary for the communication
+     * between the client and its server
+     * @param message
+     */
 
 	public void sendMessage(String message) {
         socketOutput.println(message);
     }
+    /**
+     * The following methods are some simple but necessary getters and setters
+     *
+     */
 
     public void setGuiHandler(GUIcontroller thread){
         this.guiHandler = thread;
