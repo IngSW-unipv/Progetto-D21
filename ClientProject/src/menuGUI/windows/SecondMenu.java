@@ -1,6 +1,5 @@
 package menuGUI.windows;
 
-import core.NetworkThread;
 import menuGUI.listeners.OpenFrameListener;
 import menuGUI.windows.util.WindowsType;
 
@@ -21,7 +20,7 @@ public class SecondMenu extends JFrame {
     private JLabel label3;
     private JButton button0;
     private JButton button1;
-    private JButton button2;
+    private JButton randoomQueueButton;
     private JButton button3;
     private JButton button4;
     private JMenuItem item1;
@@ -85,16 +84,16 @@ public class SecondMenu extends JFrame {
         button1.setBackground(Color.orange);
         button1.setUI(new StyledButtonUI());
 
-        button2 = new JButton("Random Player");
-        button2.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        button2.setForeground(Color.BLACK);
-        button2.setOpaque(true);
-        button2.setContentAreaFilled(false);
-        button2.setFocusPainted(false);
-        button2.setBorder(line);
-        button2.setBounds(260, 260, 170, 45);
-        button2.setBackground(Color.orange);
-        button2.setUI(new StyledButtonUI());
+        randoomQueueButton = new JButton("Random Player");
+        randoomQueueButton.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        randoomQueueButton.setForeground(Color.BLACK);
+        randoomQueueButton.setOpaque(true);
+        randoomQueueButton.setContentAreaFilled(false);
+        randoomQueueButton.setFocusPainted(false);
+        randoomQueueButton.setBorder(line);
+        randoomQueueButton.setBounds(260, 260, 170, 45);
+        randoomQueueButton.setBackground(Color.orange);
+        randoomQueueButton.setUI(new StyledButtonUI());
 
         button3 = new JButton("Game Mode");
         button3.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
@@ -126,75 +125,30 @@ public class SecondMenu extends JFrame {
         item1.setBackground(new Color(0xDE8B0E));
         item1.setForeground(Color.white);
 
-        //!!!!
         ActionListener menubutton = e -> {
             popupMenu.show(button3, 320, -270);
         };
 
-        /*ActionListener gameMode = e -> {
-            this.gameModeFrame = new GameModeFrame();
-            gameModeFrame.setVisible(true);
-        };*/
-
-       /* ActionListener invite = e -> {
-            InviteFrame inF = new InviteFrame();
-            inF.setVisible(true);
-        };*/
-
-        /*ActionListener rules = e -> {
-            RulesFrame rf = new RulesFrame();
-            rf.setVisible(true);
-        };*/
-
-        /*ActionListener tema = e -> {
-            ThirdMenu third_menu = new ThirdMenu();
-            third_menu.setVisible(true);
-            third_menu.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        };*/
-
-        /*ActionListener random = e -> {
-
-            if (gameModeFrame != null) {
-                if (gameModeFrame.getGameSpeed() != null) {
-                    NetworkThread.getNetworkThread().sendMessage("addmeToQueue," + gameModeFrame.getGameSpeed());
-                    ranf = new RandomFrame();
-                    ranf.setVisible(true);
-                    return;
-                }
-            }
-            ErrorFrame localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");
-
-        };*/
-
-
-        //button4.addActionListener(tema);
         button0.addActionListener(menubutton);
-        //button3.addActionListener(gameMode);
-        //item1.addActionListener(rules);
-        //button1.addActionListener(invite);
-        //button2.addActionListener(random);
-
-        openFrameListener = new OpenFrameListener(button3, WindowsType.GAMEMODE,this);
-        button3.addActionListener(openFrameListener);
-
-        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
-        button1.addActionListener(openFrameListener);
-
-        openFrameListener = new OpenFrameListener(item1,WindowsType.RULES);
-        item1.addActionListener(openFrameListener);
-
-        openFrameListener = new OpenFrameListener(button4,WindowsType.THEME);
-        button4.addActionListener(openFrameListener);
-
-        openFrameListener = new OpenFrameListener(button2,WindowsType.RANDOM,this);
-        button2.addActionListener(openFrameListener);
-
-        openFrameListener = new OpenFrameListener(button1,WindowsType.INVITE);
-        button1.addActionListener(openFrameListener);
 
 
+        OpenFrameListener openFrameListener3 = new OpenFrameListener(button3, WindowsType.GAMEMODE,this);
+        button3.addActionListener(openFrameListener3);
+
+        OpenFrameListener openFrameListener1 = new OpenFrameListener(button1,WindowsType.INVITE);
+        button1.addActionListener(openFrameListener1);
+
+        OpenFrameListener openFrameListenerItem1 = new OpenFrameListener(item1,WindowsType.RULES);
+        item1.addActionListener(openFrameListenerItem1);
+
+        OpenFrameListener openFrameListener4 = new OpenFrameListener(button4,WindowsType.THEME);
+        button4.addActionListener(openFrameListener4);
+
+        OpenFrameListener openRandomQueueList = new OpenFrameListener(randoomQueueButton,WindowsType.RANDOM,this);
+        randoomQueueButton.addActionListener(openRandomQueueList);
+        
         layeredPane.add(label1, Integer.valueOf(0));
-        layeredPane.add(button2, Integer.valueOf(1));
+        layeredPane.add(randoomQueueButton, Integer.valueOf(1));
         layeredPane.add(label2, Integer.valueOf(2));
         layeredPane.add(button3, Integer.valueOf(1));
         layeredPane.add(button4, Integer.valueOf(1));

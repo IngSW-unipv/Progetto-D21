@@ -32,7 +32,7 @@ public class Tester1 {
 
             serverLogger.info("Server starting...");
 
-            ServerSocket serverSocket = new ServerSocket(port);
+            ServerSocket serverSocket = new ServerSocket(25565);
             ListenerThread serverListenerThread = new ListenerThread(serverSocket);
             serverListenerThread.start();
 
