@@ -1,83 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="...">
+    <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/CountDownTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/CountDownTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/GridStatus.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/BackToMenuLIstener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/CloseRandomFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/CloseRandomFrameListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/OpenFrameListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/RequestListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/listeners/RequestListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameModeFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InteractionFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/PopupMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RulesFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/SecondMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/StyledButtonUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VolumePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VolumePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/ServerProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
-  </component>
-  <component name="ProjectId" id="1uwB7IfiaqrOmr9zt0l6kg15vzs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerProject" />
   </component>
-  <component name="RunManager" selected="Application.StartClient">
-    <configuration name="StartClient" type="Application" factoryName="Application" singleton="false">
+  <component name="RunManager">
+    <configuration name="StartClient" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="tester.ClientMainProva1" />
       <module name="ClientProject" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TesterFinestre" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tester.TesterFinestre" />
-      <module name="ClientProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tester.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.StartClient" />
-      <item itemvalue="Application.TesterFinestre" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TesterFinestre" />
-      </list>
-    </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="..." />
-      <created>1625566605637</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1625566605637</updated>
-    </task>
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

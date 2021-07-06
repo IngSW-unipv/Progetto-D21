@@ -4,20 +4,17 @@
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/SecondMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/SecondMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/core/ListenerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tester/Tester1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,9 +28,6 @@
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="2" />
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1tTU69x1eRBmWxxKGYe2ZPUqt1Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,7 +47,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.Tester1">
+  <component name="RunManager" selected="Application.TestRunner">
     <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JUnit.TestRunner.TestRunner" />
       <module name="ServerProject" />
@@ -80,6 +74,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GridTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ServerProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JUnit.Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="JUnit.Test" />
+      <option name="MAIN_CLASS_NAME" value="JUnit.Test.GridTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JUnit.Test in ServerProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ServerProject" />
       <extension name="coverage">
@@ -90,21 +99,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="JUnit.Test" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QueueTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ServerProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="JUnit.Test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="JUnit.Test" />
-      <option name="MAIN_CLASS_NAME" value="JUnit.Test.QueueTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -126,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tester1" />
-        <item itemvalue="JUnit.JUnit.Test in ServerProject" />
         <item itemvalue="Application.TestRunner" />
+        <item itemvalue="JUnit.JUnit.Test in ServerProject" />
+        <item itemvalue="JUnit.GridTest" />
+        <item itemvalue="Application.Tester1" />
         <item itemvalue="JUnit.VictoryColumnTest" />
-        <item itemvalue="JUnit.QueueTest" />
       </list>
     </recent_temporary>
   </component>

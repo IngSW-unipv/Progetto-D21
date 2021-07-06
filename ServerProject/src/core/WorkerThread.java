@@ -158,6 +158,7 @@ public class WorkerThread extends Thread{
                     System.out.println("INVITO RICEVUTO DA "+parts[2]);
                 } else {
             	    player.sendMessage("decline");
+            	    opponent.sendMessage("decline");
                 }
 
             	break;
