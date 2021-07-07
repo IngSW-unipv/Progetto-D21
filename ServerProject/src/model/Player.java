@@ -32,7 +32,7 @@ public class Player {
         this.playerSocket = playerSocket;
         this.nickName = nickName;
         this.workerThread = thread;
-
+        this.status = PlayerStatus.ONLINE;
         this.out = workerThread.getSocketOutput();
 
     }
