@@ -3,7 +3,7 @@ package core;
 import GUI.GUIForm;
 import GUI.uitl.LinkedHashMapListModel;
 
-/**[ENG]
+/**
  * This class memorizes the players connected at the moment to the server,
  * it was made using the Singleton pattern because the server will need only
  * one instance of the connected players list.
@@ -33,7 +33,7 @@ public class ServerMemory {
         GUIForm.getGuiForm().bindOnlinePlayers(currentPlayersList);
     }
 
-    /**[ENG]
+    /**
      * Static method to get the existing instance of ServerMemory,
      * if one wasn't initialised this method will do it.
      *
@@ -46,7 +46,6 @@ public class ServerMemory {
     }
 
     /**
-     * [ENG]
      * Adds a player to the list of the connected ones.
      *
      * @param p
@@ -56,7 +55,7 @@ public class ServerMemory {
         System.out.println("Player"+p.getNickName()+"added");
     }
 
-    /**[ENG]
+    /**
      * Returns a player given the nickname, returns null if the player
      * is absent.
      *
@@ -68,7 +67,7 @@ public class ServerMemory {
 
     }
 
-    /**[ENG]
+    /**
      * Removes a player given the nickname.
      *
      * @param nickToRemove

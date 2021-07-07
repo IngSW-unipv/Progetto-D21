@@ -46,7 +46,7 @@ public class GUIcontroller {
      */
 
     public void startGameIO(String duration){
-        currentOpenFrame.setVisible(false);
+        closeFrame(currentOpenFrame);
         gameFrame = new GameFrame(duration);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setVisible(true);
