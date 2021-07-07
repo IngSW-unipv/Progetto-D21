@@ -15,9 +15,11 @@ public class CountDownTask extends TimerTask {
     private int currentTime;
     private int seconds;
     private int minutes;
+    private Boolean isMyTurn;
 
-    public CountDownTask(JLabel labelToUpdate,String duration){
+    public CountDownTask(JLabel labelToUpdate,String duration,Boolean isMyTurn){
         this.labelToUpdate=labelToUpdate;
+        this.isMyTurn=isMyTurn;
         gameDuration = Integer.parseInt(duration)*60;
         labelToUpdate.setText("0"+duration+":"+"00");
         currentTime = gameDuration;
@@ -32,15 +34,14 @@ public class CountDownTask extends TimerTask {
     @Override
     public void run() {
         if(currentTime!=0){
-            //calcolo i minuti e i secondi da displayare nel timer
             minutes = currentTime/60;
             seconds = currentTime-minutes*60;
-            //decremento il timer
             currentTime-=1;
-            //update alla label
             labelToUpdate.setText(timeText());
         }else {
-            NetworkThread.getNetworkThread().sendMessage("addTokenInvirtualGrid,turnTimeOut");
+            if (isMyTurn) {
+                NetworkThread.getNetworkThread().sendMessage("addTokenInvirtualGrid,turnTimeOut");
+            }
             this.cancel();
         }
 

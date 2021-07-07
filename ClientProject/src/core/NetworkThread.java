@@ -113,8 +113,7 @@ public class NetworkThread extends Thread {
         		guiHandler.victoryScreen(parts[0]);
         		break;
             case "pareggio":
-                guiHandler.displayInvite("aaa");      //SOSTITUIRE CON FINESTRA PAREGGIO
-                //serve finestra
+                ErrorFrame errorFrame = new ErrorFrame("pareggio"); 
                 break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]);
