@@ -1,13 +1,13 @@
 package JUnit.Test;
 
 import static org.junit.Assert.assertEquals;
-import core.ServerMemory;
-import core.WorkerThread;
+import model.ServerMemory;
+import model.WorkerThread;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import core.Player;
-import core.queue.GameParameters;
+import model.Player;
+import model.queue.GameParameters;
 
 import java.net.Socket;
 

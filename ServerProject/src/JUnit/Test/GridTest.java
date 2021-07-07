@@ -3,8 +3,8 @@ package JUnit.Test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import core.gameLogic.Grid;
-import core.gameLogic.TokenColor;
+import model.gameLogic.Grid;
+import model.gameLogic.TokenColor;
 
 import static org.junit.Assert.assertEquals;
 

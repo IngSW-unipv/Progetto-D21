@@ -9,9 +9,9 @@ import org.junit.Test;
 
 
 
-import core.gameLogic.Grid;
-import core.gameLogic.Token;
-import core.gameLogic.TokenColor;
+import model.gameLogic.Grid;
+import model.gameLogic.Token;
+import model.gameLogic.TokenColor;
 
 /**[ENG]
  *This class tests the victory's row algorithm , with the manual insertion of tokens.

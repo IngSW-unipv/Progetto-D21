@@ -3,11 +3,61 @@
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/RandomFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/RandomFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/LoserFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/VictoryFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/GUIForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/GUI/uitl/LinkedHashMapListModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/GridTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/GridTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/QueueTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/QueueTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryColumnTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryColumnTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryDiagonalTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryDiagonalTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryRowTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/JUnit/Test/VictoryRowTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/GameThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ListenerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/ServerMemory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/WorkerThread.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/Cell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/Grid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/TokenColor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/gameLogic/util/GridStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/GameParameters.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/Queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/util/GameDuration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/core/queue/util/TextAreaLoggerHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/tester/Tester1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/util/GameControls.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/util/PlayerStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/view/GUIForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/view/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/GUI/uitl/LinkedHashMapListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/control/LinkedHashMapListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/GridTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/QueueTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryColumnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryColumnTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryDiagonalTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryDiagonalTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryRowTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/JUnit/Test/VictoryRowTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/ListenerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/ServerMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/TokenColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/TokenColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/gameLogic/util/GridStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/gameLogic/util/GridStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/GameParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/queue/GameParameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/queue/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/util/GameDuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/queue/util/GameDuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/core/queue/util/TextAreaLoggerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/queue/util/TextAreaLoggerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/tester/Tester1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/util/GameControls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/util/PlayerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/util/PlayerStatus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

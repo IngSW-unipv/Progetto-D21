@@ -1,8 +1,8 @@
 package tester;
 
-import GUI.GUIForm;
-import core.ListenerThread;
-import core.queue.util.TextAreaLoggerHandler;
+import view.GUIForm;
+import model.ListenerThread;
+import model.queue.util.TextAreaLoggerHandler;
 
 import javax.swing.*;
 import java.io.IOException;
