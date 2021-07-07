@@ -3,15 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/NetworkThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/listeners/RequestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/listeners/RequestListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/model/WorkerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/model/WorkerThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerProject/src/model/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/WorkerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/model/ListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/ListenerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

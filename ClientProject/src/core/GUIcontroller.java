@@ -50,11 +50,12 @@ public class GUIcontroller {
         gameFrame = new GameFrame(duration);
         gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         gameFrame.setVisible(true);
-        SoundPlayer.playSound(new File("resources/sounds/memories (online-audio-converter.com).wav"),VolumeControl.volume);
+        SoundPlayer.playSoundLoop(new File("resources/sounds/memories (online-audio-converter.com).wav"),VolumeControl.volume);
         currentOpenFrame = gameFrame;
     }
 
     /**
+     *Adds a label playing the animation to a given x,y couple of a given colour
      *
      * @param x
      * @param y

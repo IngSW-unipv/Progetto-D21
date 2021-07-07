@@ -31,6 +31,24 @@ public class SoundPlayer {
 		}; audioThread.start();	
 	}
 
+	public static synchronized void playSoundLoop(File f,double v) {
+		Thread audioThread = new Thread() {
+
+			public void run() {
+				try {
+					Clip clip = AudioSystem.getClip();
+					clip.open(AudioSystem.getAudioInputStream(f));
+					suoni.add(clip);
+					setVol(v,clip);
+					clip.start();
+					clip.loop(Clip.LOOP_CONTINUOUSLY);
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}; audioThread.start();
+	}
+
 	/**
 	 * The following methods set the volume following some different parameters
 	 * @param v

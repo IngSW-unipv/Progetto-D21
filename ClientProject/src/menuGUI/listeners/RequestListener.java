@@ -31,6 +31,7 @@ public class RequestListener implements ActionListener {
             case "accept":
                 NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,1,"+NetworkThread.getNetworkThread().getOpponent()+","+NetworkThread.getNetworkThread().getInviteParameters());
                 System.out.println("inviteAcceptedOrRefused,1,"+NetworkThread.getNetworkThread().getOpponent());
+                frame.dispose();
                 break;
             case "decline":
                 NetworkThread.getNetworkThread().sendMessage("inviteAcceptedOrRefused,0,"+NetworkThread.getNetworkThread().getOpponent());

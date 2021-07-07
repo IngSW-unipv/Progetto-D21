@@ -58,7 +58,7 @@ public class GameInfoPanel extends JPanel {
      */
     public void setTurnOwnerME(){
         turnOwner.setText("È il tuo turno!");
-        turnOwner.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,25));
+        turnOwner.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,20));
         turnOwner.setHorizontalAlignment(SwingConstants.CENTER);
         turnOwner.setVerticalAlignment(SwingConstants.CENTER);
         isMyTurn=true;
@@ -66,7 +66,7 @@ public class GameInfoPanel extends JPanel {
 
     public void setTurnOwnerOPPOSITE(){
         turnOwner.setText("È il turno dell'avversario!");
-        turnOwner.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,25));
+        turnOwner.setFont(new Font("ITC Avant Garde Gothic",Font.BOLD,20));
         turnOwner.setHorizontalAlignment(SwingConstants.CENTER);
         turnOwner.setVerticalAlignment(SwingConstants.CENTER);
         isMyTurn=false;

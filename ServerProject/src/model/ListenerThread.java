@@ -52,8 +52,8 @@ public class ListenerThread extends Thread{
      */
     @Override
     public void run() {
-        //TODO implementare logica decente es controllo stato socket e che non si a chiuso
-        while (true){
+
+        while (serverSocket.isBound()){
 
             try {
 
