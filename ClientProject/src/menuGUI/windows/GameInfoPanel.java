@@ -17,6 +17,7 @@ public class GameInfoPanel extends JPanel {
     private JLabel turnOwner;
     private VolumePanel volumePanel;
     private boolean isMyTurn = true;
+    private CountDownTask countDownTask;
 
     /**
      *
@@ -49,7 +50,7 @@ public class GameInfoPanel extends JPanel {
     public void resetTimer(){
         turnTimer.cancel();
         turnTimer = new Timer();
-        turnTimer.scheduleAtFixedRate(new CountDownTask(timerFiel,duration,isMyTurn),0,1000L);
+        turnTimer.scheduleAtFixedRate(countDownTask=new CountDownTask(timerFiel,duration,isMyTurn),0,1000L);
     }
 
     /**
@@ -83,6 +84,6 @@ public class GameInfoPanel extends JPanel {
         timerFiel.setHorizontalAlignment(SwingConstants.CENTER);
         timerFiel.setVerticalAlignment(SwingConstants.CENTER);
         timerFiel.setFont(new Font("ITC Avant Garde Gothic",Font.PLAIN,80));
-        turnTimer.scheduleAtFixedRate(new CountDownTask(timerFiel,duration,isMyTurn),0,1000L);
+        turnTimer.scheduleAtFixedRate(countDownTask=new CountDownTask(timerFiel,duration,isMyTurn),0,1000L);
     }
 }

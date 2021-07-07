@@ -19,7 +19,7 @@ public class SecondMenu extends JFrame {
     private JLabel label2;
     private JLabel label3;
     private JButton button0;
-    private JButton button1;
+    private JButton inviteButton;
     private JButton randoomQueueButton;
     private JButton button3;
     private JButton button4;
@@ -73,16 +73,16 @@ public class SecondMenu extends JFrame {
         button0.setBorder(line);
         button0.setContentAreaFilled(false);
 
-        button1 = new JButton("Invite Player");
-        button1.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
-        button1.setForeground(Color.BLACK);
-        button1.setOpaque(true);
-        button1.setContentAreaFilled(false);
-        button1.setFocusPainted(false);
-        button1.setBorder(line);
-        button1.setBounds(260, 193, 170, 45);
-        button1.setBackground(Color.orange);
-        button1.setUI(new StyledButtonUI());
+        inviteButton = new JButton("Invite Player");
+        inviteButton.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        inviteButton.setForeground(Color.BLACK);
+        inviteButton.setOpaque(true);
+        inviteButton.setContentAreaFilled(false);
+        inviteButton.setFocusPainted(false);
+        inviteButton.setBorder(line);
+        inviteButton.setBounds(260, 193, 170, 45);
+        inviteButton.setBackground(Color.orange);
+        inviteButton.setUI(new StyledButtonUI());
 
         randoomQueueButton = new JButton("Random Player");
         randoomQueueButton.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
@@ -135,8 +135,8 @@ public class SecondMenu extends JFrame {
         OpenFrameListener openFrameListener3 = new OpenFrameListener(button3, WindowsType.GAMEMODE,this);
         button3.addActionListener(openFrameListener3);
 
-        OpenFrameListener openFrameListener1 = new OpenFrameListener(button1,WindowsType.INVITE);
-        button1.addActionListener(openFrameListener1);
+        OpenFrameListener openFrameListener1 = new OpenFrameListener(inviteButton,WindowsType.INVITE);
+        inviteButton.addActionListener(openFrameListener1);
 
         OpenFrameListener openFrameListenerItem1 = new OpenFrameListener(item1,WindowsType.RULES);
         item1.addActionListener(openFrameListenerItem1);
@@ -155,7 +155,7 @@ public class SecondMenu extends JFrame {
         layeredPane.add(popupMenu, Integer.valueOf(1));
         layeredPane.add(button0, Integer.valueOf(1));
         layeredPane.add(label3, Integer.valueOf(2));
-        layeredPane.add(button1, Integer.valueOf(1));
+        layeredPane.add(inviteButton, Integer.valueOf(1));
         this.add(layeredPane);
 
         this.revalidate();

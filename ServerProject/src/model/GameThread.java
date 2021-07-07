@@ -169,6 +169,8 @@ public class GameThread extends Thread{
 			}
 			nextPlayer.sendMessage("victory");
 			oTherPlayer.sendMessage("defeat");
+			nextPlayer.setAssignedGame(null);
+			oTherPlayer.setAssignedGame(null);
 			nextPlayer.setStatus(PlayerStatus.ONLINE);
 			oTherPlayer.setStatus(PlayerStatus.ONLINE);
 		}
@@ -184,6 +186,8 @@ public class GameThread extends Thread{
 			}
 			player1.sendMessage("pareggio,");
 			player2.sendMessage("pareggio,");
+			nextPlayer.setAssignedGame(null);
+			oTherPlayer.setAssignedGame(null);
 			player1.setStatus(PlayerStatus.ONLINE);
 			player2.setStatus(PlayerStatus.ONLINE);
 		}

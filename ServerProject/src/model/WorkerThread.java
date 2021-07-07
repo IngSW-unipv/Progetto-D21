@@ -120,7 +120,7 @@ public class WorkerThread extends Thread{
         String[] parts = message.split(",");
         TokenColor recievedColor=null;
         boolean creategame = false;
-        
+
         System.out.println(player+" :"+message);
 
         switch (parts[0]){
@@ -176,10 +176,10 @@ public class WorkerThread extends Thread{
                 break;
             case "turnTimeOut":
                 player.sendMessage("defeat");
-                opponent.sendMessage("victory");
+                assignedGame.getOpponent(player).sendMessage("victory");
 
             default :
-            	socketOutput.println("invalid message sent by you");
+            	//socketOutput.println("invalid message sent by you"+message);
             	System.out.println("invalid message recieved");
         }
 

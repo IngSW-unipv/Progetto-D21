@@ -82,14 +82,15 @@ public class NetworkThread extends Thread {
         	case "abi":
         	    System.out.println("abilitato");
                 guiHandler.enableGameGui();
-                GUIcontroller.getGuiHandler().resetTimer();
-                GUIcontroller.getGuiHandler().setMyturn();
+                guiHandler.setMyturn();
+                guiHandler.resetTimer();
         		break;
         	case "NOTabi":
         	    System.out.println("disabilitato");
         	    guiHandler.disableGameGui();
-                GUIcontroller.getGuiHandler().resetTimer();
-                GUIcontroller.getGuiHandler().setOpponentTurn();
+                guiHandler.setOpponentTurn();
+                guiHandler.resetTimer();
+
         		break;
         	case "NOTabiCOLONNA":
                   guiHandler.disableColumn(Integer.parseInt(parts[1]));
@@ -140,7 +141,7 @@ public class NetworkThread extends Thread {
                 errorFrame = new ErrorFrame("Player is not online "+parts[1]);
                 break;
             default:
-                errorFrame = new ErrorFrame("invalid message received");
+                errorFrame = new ErrorFrame("invalid message received "+message);
         }
     }
 
@@ -151,6 +152,8 @@ public class NetworkThread extends Thread {
      */
 
 	public void sendMessage(String message) {
+
+        System.out.println(message);
         socketOutput.println(message);
     }
     /**
