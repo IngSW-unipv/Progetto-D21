@@ -135,6 +135,10 @@ public class NetworkThread extends Thread {
                 break;
             case "playerNotFound":
                 errorFrame = new ErrorFrame("Player not found");
+                break;
+            case "playerIsNotOnline":
+                errorFrame = new ErrorFrame("Player is not online "+parts[1]);
+                break;
             default:
                 errorFrame = new ErrorFrame("invalid message received");
         }
