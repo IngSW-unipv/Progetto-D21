@@ -174,7 +174,9 @@ public class WorkerThread extends Thread{
                 Queue.getQueue().removePlayer(player);
                 player.setStatus(PlayerStatus.ONLINE);
                 break;
-
+            case "turnTimeout":
+                player.sendMessage("defeat");
+                opponent.sendMessage("victory");
 
             default :
             	socketOutput.println("invalid message sent by you");

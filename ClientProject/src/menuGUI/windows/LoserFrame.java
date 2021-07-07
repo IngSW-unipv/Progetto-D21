@@ -59,8 +59,6 @@ public class LoserFrame extends InteractionFrame{
         layeredPane.add(jb1, Integer.valueOf(1));
         layeredPane.add(label2, Integer.valueOf(0));
 
-
-
         revalidate();
         repaint();
     }

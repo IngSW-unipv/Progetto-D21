@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="606d8cde-fbf5-4ff9-86a6-f0383f1f9674" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/CountDownTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CountDownTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/GameInfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menuGUI/windows/LoserFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/out/production/ServerProject/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerProject/src/model/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerProject/src/model/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
