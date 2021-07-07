@@ -32,13 +32,14 @@ public class VolumePanel extends JPanel {
 
         Border line = new LineBorder(new Color(0x0F142A, true));
 
-        slider = new JSlider(JSlider.HORIZONTAL,0,90, (int)((VolumeControl.volume)*100)); //cambiamento
+        slider = new JSlider(JSlider.HORIZONTAL,0,100, (int)((VolumeControl.volume)*100)); //cambiamento
         slider.setBounds(30,30,170,50);
         slider.setMinorTickSpacing(2);
         slider.setMajorTickSpacing (10);
         slider.setPaintTicks (true);
         slider.setPaintLabels (true);
         slider.addChangeListener(new VolumeControl());
+        slider.setBackground(Color.WHITE);
 
         button1 = new JButton();
         if (AnimationsTask.volumeOffset !=0) {

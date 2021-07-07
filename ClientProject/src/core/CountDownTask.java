@@ -17,9 +17,9 @@ public class CountDownTask extends TimerTask {
     private int minutes;
     private Boolean isMyTurn;
 
-    public CountDownTask(JLabel labelToUpdate,String duration,Boolean isMyTurn){
+    public CountDownTask(JLabel labelToUpdate,String duration,Boolean turn){
         this.labelToUpdate=labelToUpdate;
-        this.isMyTurn=isMyTurn;
+        this.isMyTurn=turn;
         gameDuration = Integer.parseInt(duration)*60;
         labelToUpdate.setText("0"+duration+":"+"00");
         currentTime = gameDuration;
@@ -40,7 +40,7 @@ public class CountDownTask extends TimerTask {
             labelToUpdate.setText(timeText());
         }else {
             if (isMyTurn) {
-                NetworkThread.getNetworkThread().sendMessage("addTokenInvirtualGrid,turnTimeOut");
+                NetworkThread.getNetworkThread().sendMessage("turnTimeOut");
             }
             this.cancel();
         }

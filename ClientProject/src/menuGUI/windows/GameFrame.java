@@ -164,18 +164,6 @@ public class GameFrame extends JFrame {
             default:
                 lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
         }
-
-        /*if (a == 1) {
-            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/stitchgrid.png"));
-        } else if (a == 2) {
-            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/ironmangrid.png"));
-        } else if (a == 3) {
-            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/firstmariogrid.png"));
-        } else if (a == 0) {
-            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
-        } else {
-            lblNewLabel.setIcon(new ImageIcon("src/menuGUI/img/themes/GrigliaBackgrond3.png"));
-        }*/
     }
 
     /**

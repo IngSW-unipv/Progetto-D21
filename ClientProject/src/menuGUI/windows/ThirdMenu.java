@@ -28,7 +28,7 @@ public class ThirdMenu extends JFrame {
     private JButton jb5;
     private JLayeredPane layeredPane;
     private WindowsType windowsType;
-    public static int choosenTheme; //TODO rendere questo attributo PROTECTED quando la GUI verrà messa TUTTA nello stesso package
+    public static int choosenTheme;
 
     public ThirdMenu(){
         windowsType = WindowsType.THEME;

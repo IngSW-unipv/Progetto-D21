@@ -91,7 +91,7 @@ public class NetworkThread extends Thread {
                 GUIcontroller.getGuiHandler().resetTimer();
                 GUIcontroller.getGuiHandler().setOpponentTurn();
         		break;
-        	case "NOTabiCOLONNA"://disabilita colonna quando è riempita di token
+        	case "NOTabiCOLONNA":
                   guiHandler.disableColumn(Integer.parseInt(parts[1]));
                   break;
         	case "addToken": //addToken,x,y
@@ -113,7 +113,7 @@ public class NetworkThread extends Thread {
         		guiHandler.victoryScreen(parts[0]);
         		break;
             case "pareggio":
-                ErrorFrame errorFrame = new ErrorFrame("pareggio"); 
+                ErrorFrame errorFrame = new ErrorFrame("pareggio");
                 break;
             case "invitoRicevuto" :
                 guiHandler.displayInvite(parts[1]);

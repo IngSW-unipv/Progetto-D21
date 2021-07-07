@@ -52,7 +52,6 @@ public class ServerMemory {
      */
     public synchronized void addPlayer(Player p){
         currentPlayersList.put(p.getNickName(),p);
-        System.out.println("Player"+p.getNickName()+"added");
     }
 
     /**
