@@ -43,7 +43,7 @@ public class InviteFrame extends InteractionFrame{
         label1.setForeground(Color.BLACK);
 
         ActionListener sendInvite = e ->{
-            if((this.second_menu!=null)&&(second_menu.getGameLenght().compareTo("a")!=0)){
+            if((this.second_menu!=null)&&(second_menu.getGameLenght().compareTo("nogamemodeSelected")!=0)){
                 NetworkThread.getNetworkThread().sendMessage("sendInvite,"+textField.getText()+","+second_menu.getGameLenght());
                 return;
             } localErrorFrame = new ErrorFrame("Press Game Mode to set game duration");

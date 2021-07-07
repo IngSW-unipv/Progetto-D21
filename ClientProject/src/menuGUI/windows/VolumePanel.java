@@ -34,8 +34,8 @@ public class VolumePanel extends JPanel {
 
         slider = new JSlider(JSlider.HORIZONTAL,0,100, (int)((VolumeControl.volume)*100)); //cambiamento
         slider.setBounds(30,30,170,50);
-        slider.setMinorTickSpacing(2);
-        slider.setMajorTickSpacing (10);
+        slider.setMinorTickSpacing(10);
+        slider.setMajorTickSpacing (25);
         slider.setPaintTicks (true);
         slider.setPaintLabels (true);
         slider.addChangeListener(new VolumeControl());
