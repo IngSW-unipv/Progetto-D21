@@ -171,7 +171,7 @@ public class WorkerThread extends Thread{
             	System.out.println("player "+player.getNickName()+" addedd to queue on "+ parts[1]);
             	break;
             case "exitFromQueue": //addmeToQueue,l
-               // System.out.println("MARI USCITA");
+                Queue.getQueue().removePlayer(player);
                 player.setStatus(PlayerStatus.ONLINE);
                 break;
 
