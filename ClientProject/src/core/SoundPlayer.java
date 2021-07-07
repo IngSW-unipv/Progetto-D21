@@ -51,6 +51,7 @@ public class SoundPlayer {
 
 	/**
 	 * The following methods set the volume following some different parameters
+	 *
 	 * @param v
 	 * @param clip
 	 */

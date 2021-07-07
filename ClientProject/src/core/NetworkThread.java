@@ -133,6 +133,8 @@ public class NetworkThread extends Thread {
                 //default con gestione errore messaggio
             case "oppL":
                 errorFrame = new ErrorFrame("Opponent left the game");
+                GUIcontroller.getGuiHandler().closeGameFrame();
+                GUIcontroller.getGuiHandler().openMenu();
                 break;
             case "playerNotFound":
                 errorFrame = new ErrorFrame("Player not found");

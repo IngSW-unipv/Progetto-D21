@@ -3,11 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/GUIcontroller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/core/NetworkThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/GameInfoPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/out/production/ClientProject/menuGUI/windows/InviteFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/RequestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/listeners/RequestListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/InviteFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/GUIcontroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/GUIcontroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/SoundPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/SoundPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/menuGUI/windows/SecondMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ListenerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ListenerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/model/ListenerThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/model/ListenerThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

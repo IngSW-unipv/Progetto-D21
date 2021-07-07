@@ -80,13 +80,16 @@ public class WorkerThread extends Thread{
             //quando la lettura fallisce è perche i reader sono chiusi quindi il socket disconnesso
             serverLogger.info("client "+socket.getInetAddress()+" disconnected");
             if(player!=null){
-                //se il player è gia stato istanziato lo rimuovo da coda e elenco di giocatori
-                ServerMemory.getServerMemory().removePlayer(player.getNickName());
+                if(assignedGame!=null){
+                    assignedGame.getOpponent(player).sendMessage("oppL");
+                    assignedGame.getOpponent(player).setAssignedGame(null);
+                    assignedGame.getOpponent(player).setStatus(PlayerStatus.ONLINE);
+                }
                 Queue.getQueue().removePlayer(player);
+                ServerMemory.getServerMemory().removePlayer(player.getNickName());
+
             }
-            if(assignedGame!=null){
-                assignedGame.getOpponent(player).sendMessage("oppL");
-            }
+
         }
     }
 

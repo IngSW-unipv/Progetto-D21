@@ -113,6 +113,7 @@ public class GUIcontroller {
 
     public void closeGameFrame(){
         closeFrame(gameFrame);
+        SoundPlayer.stopMusic();
     }
 
     public void disableGameGui(){

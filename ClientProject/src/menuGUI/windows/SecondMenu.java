@@ -85,7 +85,7 @@ public class SecondMenu extends JFrame {
         inviteButton.setUI(new StyledButtonUI());
 
         randoomQueueButton = new JButton("Random Player");
-        randoomQueueButton.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 17));
+        randoomQueueButton.setFont(new Font("ITC Avant Garde Gothic", Font.BOLD, 15));
         randoomQueueButton.setForeground(Color.BLACK);
         randoomQueueButton.setOpaque(true);
         randoomQueueButton.setContentAreaFilled(false);
