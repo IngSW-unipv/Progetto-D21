@@ -1,5 +1,6 @@
 package menuGUI.windows;
 
+import core.GUIcontroller;
 import menuGUI.windows.util.FrameType;
 import menuGUI.windows.util.WindowsType;
 
@@ -37,7 +38,7 @@ public class LoserFrame extends InteractionFrame{
 
         ActionListener backToMenu = e -> {
             this.dispose();
-            SecondMenu menu = new SecondMenu();
+            GUIcontroller.getGuiHandler().openMenu();
         };
         jb1.addActionListener(backToMenu);
 
