@@ -144,6 +144,7 @@ public class NetworkThread extends Thread {
                 break;
             case "nickAlreadyPresent":
                 errorFrame = new ErrorFrame("Nickname già in uso");
+                break;
             default:
                 errorFrame = new ErrorFrame("invalid message received "+message);
         }
