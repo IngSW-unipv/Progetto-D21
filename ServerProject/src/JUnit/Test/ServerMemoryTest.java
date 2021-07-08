@@ -19,7 +19,7 @@ import java.net.Socket;
  * @see Socket
  * @author Marianna Orsi, Riccardo Petri
  */
-public class QueueTest {
+public class ServerMemoryTest {
 
 	Player p1,p2,p3;
 	GameParameters gp ;

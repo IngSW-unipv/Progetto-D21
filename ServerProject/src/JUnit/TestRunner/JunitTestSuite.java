@@ -7,10 +7,7 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        QueueTest.class,
-        VictoryColumnTest.class,
-        VictoryDiagonalTest.class,
-        VictoryRowTest.class,
+        ServerMemoryTest.class,
         GridTest.class
 })
 public class JunitTestSuite {
