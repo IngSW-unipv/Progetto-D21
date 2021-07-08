@@ -118,7 +118,7 @@ public class WorkerThread extends Thread{
      *          e il workerThread associato
      * @param message
      */
-    //TODO GESTIRE LA MANCANZA DI PRAMETRI NEI COMANDI
+
     public void parseString(String message){
         String[] parts = message.split(",");
         TokenColor recievedColor=null;
@@ -128,11 +128,15 @@ public class WorkerThread extends Thread{
 
         switch (parts[0]){
             case "newNick":
-                this.player = new Player(socket,parts[1],this);
-                this.myMemory.addPlayer(player);
-                System.out.println(this.player.toString()+"debugincaseswitch");
-                player.sendMessage("openMainMenu");
-                this.setName(parts[1]);
+                if(!myMemory.nickAlreadyPresent(parts[1])){
+                    this.player = new Player(socket,parts[1],this);
+                    this.myMemory.addPlayer(player);
+                    System.out.println(this.player.toString()+"debugincaseswitch");
+                    player.sendMessage("openMainMenu");
+                    this.setName(parts[1]);
+                }else {
+                    socketOutput.println("nickAlreadyPresent");
+                }
                 break;
             
             case "addTokenInvirtualGrid":

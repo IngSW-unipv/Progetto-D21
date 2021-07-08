@@ -142,6 +142,8 @@ public class NetworkThread extends Thread {
             case "playerIsNotOnline":
                 errorFrame = new ErrorFrame("Player is not online "+parts[1]);
                 break;
+            case "nickAlreadyPresent":
+                errorFrame = new ErrorFrame("Nickname già in uso");
             default:
                 errorFrame = new ErrorFrame("invalid message received "+message);
         }

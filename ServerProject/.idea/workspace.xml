@@ -3,20 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5f2fcad4-c6f1-4c43-b17e-2425a8b3cc74" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_07_2021_16_12__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientProject/src/core/NetworkThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/GridTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/GridTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/QueueTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/VictoryColumnTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/VictoryDiagonalTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/Test/VictoryRowTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ServerProject/JUnit/TestRunner/JunitTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ServerProject/JUnit/TestRunner/JunitTestSuite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/GridTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/GridTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/QueueTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/Test/ServerMemoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/VictoryColumnTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/VictoryDiagonalTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/Test/VictoryRowTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JUnit/TestRunner/JunitTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JUnit/TestRunner/JunitTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ServerMemory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ServerMemory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/WorkerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/WorkerThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +59,7 @@
       <recent name="core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestRunner">
+  <component name="RunManager" selected="Application.Tester1">
     <configuration name="TestRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="16" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -153,9 +143,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Tester1" />
         <item itemvalue="Application.TestRunner" />
         <item itemvalue="JUnit.GridTest" />
-        <item itemvalue="Application.Tester1" />
         <item itemvalue="JUnit.JUnit.Test in ServerProject" />
         <item itemvalue="JUnit.VictoryColumnTest" />
       </list>

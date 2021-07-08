@@ -79,4 +79,17 @@ public class ServerMemory {
     public void update(){
         memory.update();
     }
+
+    /**
+     * This method checks if a player is already present on the server
+     * @param nickName
+     * @return
+     */
+    public boolean nickAlreadyPresent(String nickName){
+        for(String nick:currentPlayersList.keySet()){
+            if(nick.compareTo(nickName)==0)
+                return true;
+        }
+        return false;
+    }
 }
